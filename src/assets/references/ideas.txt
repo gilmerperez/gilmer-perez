@@ -1,0 +1,10 @@
+Header
+- Make header a floating bubble with blur effect
+- Sticky header that disappears on scroll
+
+Main
+- Make body color a gradient
+- - On dark mode goes from bottom darker to top lighter
+- - On light mode goes from bottom ligher to top darker
+
+Kayvons Website: https://www.kayvonkazemini.com/
