@@ -1,26 +1,26 @@
-/* Google font import */
-@import url("");
+/* Source Code Pro */
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap");
 
 /* Light mode */
 html[data-theme="light"] {
   --header-bg-color: hsl(0, 0%, 100%);
-  --bg-color: hsl(0, 0%, 100%);
-  --text-primary: hsl(0, 0%, 100%);
-  --text-secondary: hsl(0, 0%, 100%);
-  --primary: hsl(0, 0%, 100%);
-  --primary-dark: hsl(0, 0%, 100%);
+  --bg-color: hsl(0, 0%, 95%);
+  --text-primary: hsl(0, 0%, 0%);
+  --text-secondary: hsl(0, 0%, 20%);
+  --primary: hsl(204, 100%, 50%);
+  --primary-dark: hsl(204, 100%, 40%);
   --footer-bg-color: hsl(0, 0%, 100%);
 }
 
 /* Dark mode */
 html[data-theme="dark"] {
-  --header-bg-color: hsl(0, 0%, 0%);
-  --bg-color: hsl(0, 0%, 0%);
-  --text-primary: hsl(0, 0%, 0%);
-  --text-secondary: hsl(0, 0%, 0%);
-  --primary: hsl(0, 0%, 0%);
-  --primary-dark: hsl(0, 0%, 0%);
-  --footer-bg-color: hsl(0, 0%, 0%);
+  --header-bg-color: hsl(0, 0%, 2.5%);
+  --bg-color: hsl(0, 0%, 5%);
+  --text-primary: hsl(0, 0%, 100%);
+  --text-secondary: hsl(0, 0%, 80%);
+  --primary: hsl(204, 100%, 50%);
+  --primary-dark: hsl(204, 100%, 40%);
+  --footer-bg-color: hsl(0, 0%, 2.5%);
 }
 
 /* Highlighted text */
@@ -93,10 +93,10 @@ body {
   overflow-x: hidden; /* Prevents horizontal scroll */
   flex-direction: column; /* Stacks header, main, and footer vertically */
   color: var(--text-primary); /* Sets a default text color */
-  font-family: Arial, sans-serif; /* Modern system font stack */
   background-color: var(--bg-color); /* Sets a default background color */
   -moz-osx-font-smoothing: grayscale; /* Better font rendering on macOS Firefox */
   -webkit-font-smoothing: antialiased; /* Better font rendering on WebKit browsers */
+  font-family: "Source Code Pro", monospace, "General Sans", sans-serif; /* Modern system font stack */
 }
 
 /* Header - Shared structural styling */
