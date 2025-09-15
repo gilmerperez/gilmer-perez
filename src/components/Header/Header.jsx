@@ -114,6 +114,10 @@ function Header() {
               >
                 <i className={`fa-solid ${theme === "dark" ? "fa-moon" : "fa-sun"}`} aria-hidden="true"></i>
               </button>
+              {/* Resume button */}
+              <button className={styles.resumeButton} aria-label="Download my resume">
+                RESUME
+              </button>
             </div>
           </div>
 
@@ -199,6 +203,14 @@ function Header() {
                 >
                   PROJECTS
                 </NavLink>
+                <button
+                  aria-label="Download my resume"
+                  onClick={() => setMenuOpen(false)}
+                  className={`${styles.sidebarResumeButton} ${navLinkClass({ isActive: false })}`}
+                >
+                  <i className="fa-regular fa-file-pdf"></i>
+                  RESUME
+                </button>
               </nav>
               {/* Sidebar footer */}
               <footer className={styles.sidebarFooter}>
