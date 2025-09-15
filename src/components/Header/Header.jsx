@@ -76,6 +76,28 @@ function Header() {
     window.location.href = "tel:(407) 295-1212";
   };
 
+  // * Resume link handler
+  const [isLoading, setIsLoading] = useState(false);
+  const handleResumeClick = () => {
+    try {
+      setIsLoading(true);
+      // Open google drive link in new tab
+      window.open(
+        "https://docs.google.com/document/d/1QmNaxVlksOkM19y5q-MwhkdiBU8DjDdTBXb9G2vBHX0/edit?usp=drive_link",
+        "_blank",
+        "noopener noreferrer"
+      );
+      // Reset loading state after a short delay
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 1000);
+    } catch (error) {
+      setIsLoading(false);
+      console.error("Error opening resume:", error);
+      alert("Sorry, there was an error opening the resume. Please try again.");
+    }
+  };
+
   return (
     <>
       <header className={`${isScrollingUp ? styles.visible : styles.hidden}`} role="banner" aria-label="Site header">
@@ -115,8 +137,13 @@ function Header() {
                 <i className={`fa-solid ${theme === "dark" ? "fa-moon" : "fa-sun"}`} aria-hidden="true"></i>
               </button>
               {/* Resume button */}
-              <button className={styles.resumeButton} aria-label="Download my resume">
-                RESUME
+              <button
+                disabled={isLoading}
+                onClick={handleResumeClick}
+                className={styles.resumeButton}
+                aria-label={isLoading ? "Opening resume" : "View my resume"}
+              >
+                {isLoading ? "OPENING" : "RESUME"}
               </button>
             </div>
           </div>
@@ -205,12 +232,16 @@ function Header() {
                 </NavLink>
                 <hr className={styles.sidebarSeparator} />
                 <button
-                  aria-label="Download my resume"
-                  onClick={() => setMenuOpen(false)}
+                  disabled={isLoading}
+                  aria-label={isLoading ? "Opening resume" : "View my resume"}
                   className={`${styles.sidebarResumeButton} ${navLinkClass({ isActive: false })}`}
+                  onClick={() => {
+                    setMenuOpen(false);
+                    handleResumeClick();
+                  }}
                 >
                   <i className="fa-regular fa-file-pdf"></i>
-                  RESUME
+                  {isLoading ? "OPENING" : "RESUME"}
                 </button>
               </nav>
               {/* Sidebar footer */}

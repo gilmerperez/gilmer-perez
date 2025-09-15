@@ -126,9 +126,15 @@ header {
   box-shadow: 0px 0px 10px hsl(204, 100%, 50%);
 }
 
-.resumeButton:hover {
+.resumeButton:hover:not(:disabled) {
   transform: translateY(-3px);
   box-shadow: 0px 0px 30px hsl(204, 100%, 50%);
+}
+
+.resumeButton:disabled {
+  opacity: 0.75;
+  transform: none;
+  cursor: not-allowed;
 }
 
 /* Tablet responsiveness */
@@ -232,6 +238,11 @@ header {
   font-weight: 600;
   font-size: 1.15rem;
   font-style: italic;
+  border-radius: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  transition: 0.3s ease-in;
+  border: 1px solid var(--primary);
+  box-shadow: 0px 0px 10px hsl(204, 100%, 50%);
 }
 
 /* Hamburger menu button */
@@ -367,8 +378,13 @@ header {
   box-shadow: 0px 0px 10px hsl(204, 100%, 50%);
 }
 
-.sidebarResumeButton:hover {
+.sidebarResumeButton:hover:not(:disabled) {
   box-shadow: 0px 0px 30px hsl(204, 100%, 50%);
+}
+
+.sidebarResumeButton:disabled {
+  opacity: 0.75;
+  cursor: not-allowed;
 }
 
 /* Sidebar footer */
