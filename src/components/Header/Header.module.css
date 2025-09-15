@@ -35,7 +35,7 @@ header {
 
 /* Logo */
 .logo {
-  font-weight: 700;
+  font-weight: 600;
   font-size: 1.5rem;
   font-style: italic;
   transition: 0.3s ease-in;
@@ -210,7 +210,7 @@ header {
 
 /* Logo */
 .mobileLogo {
-  font-weight: 700;
+  font-weight: 600;
   font-size: 1.15rem;
   font-style: italic;
 }
