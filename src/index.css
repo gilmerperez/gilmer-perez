@@ -127,11 +127,7 @@ footer {
 
 /* Scrollbar */
 body::-webkit-scrollbar {
-  width: 8px;
-}
-
-body::-webkit-scrollbar-track {
-  box-shadow: inset 0px 0px 0px hsla(0, 0%, 0%, 0);
+  width: 6px;
 }
 
 body::-webkit-scrollbar-thumb {
