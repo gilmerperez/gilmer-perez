@@ -23,7 +23,7 @@ function Header() {
   const navLinkClass = ({ isActive }) => (isActive ? styles.activeLink : undefined);
 
   // * Theme switch
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState("dark");
 
   // Make theme be set in DOM
   useEffect(() => {
