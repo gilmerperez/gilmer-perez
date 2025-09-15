@@ -203,6 +203,7 @@ function Header() {
                 >
                   PROJECTS
                 </NavLink>
+                <hr className={styles.sidebarSeparator} />
                 <button
                   aria-label="Download my resume"
                   onClick={() => setMenuOpen(false)}
