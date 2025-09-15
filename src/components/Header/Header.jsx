@@ -83,8 +83,8 @@ function Header() {
           {/* Desktop Layout */}
           <div className={styles.desktopLayout}>
             {/* Logo */}
-            <NavLink to="/" className={styles.logoContainer} aria-label="Go to home page">
-              <img src="/logo.jpg" alt="Bubbalous Bodacious BBQ Logo" />
+            <NavLink to="/" aria-label="Go to home page">
+              <span className={styles.logo}>GILMER PEREZ</span>
             </NavLink>
             {/* Site navigation */}
             <div className={styles.navContainer}>
@@ -92,14 +92,14 @@ function Header() {
                 <NavLink to="/" className={navLinkClass} aria-label="Go to home page">
                   HOME
                 </NavLink>
-                <NavLink to="/menu" className={navLinkClass} aria-label="View our menu">
-                  MENU
+                <NavLink to="/about" className={navLinkClass} aria-label="Go to about page">
+                  ABOUT
                 </NavLink>
-                <NavLink to="/party-packs" className={navLinkClass} aria-label="Browse party packs">
-                  PARTY PACKS
+                <NavLink to="/contact" className={navLinkClass} aria-label="Go to contact page">
+                  CONTACT
                 </NavLink>
-                <NavLink to="/order-online" className={navLinkClass} aria-label="Order online">
-                  ORDER ONLINE
+                <NavLink to="/projects" className={navLinkClass} aria-label="Go to projects page">
+                  PROJECTS
                 </NavLink>
               </nav>
               {/* Separator */}
@@ -113,7 +113,6 @@ function Header() {
                 aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
               >
                 <i className={`fa-solid ${theme === "dark" ? "fa-moon" : "fa-sun"}`} aria-hidden="true"></i>
-                <p>{theme === "dark" ? "DARK" : "LIGHT"}</p>
               </button>
             </div>
           </div>
@@ -122,25 +121,26 @@ function Header() {
           <div className={styles.mobileLayout}>
             {/* Phone button */}
             <button
-              className={styles.phoneButton}
-              onClick={handlePhoneClick}
-              aria-label="Call us at (407) 295-1212"
               type="button"
+              onClick={handlePhoneClick}
+              className={styles.phoneButton}
+              aria-label="Call me at (407) 350-1805"
             >
-              <i className="fa-solid fa-phone fa-xl" aria-hidden="true"></i>
+              <i className="fa-solid fa-phone" aria-hidden="true"></i>
             </button>
             {/* Logo */}
-            <NavLink to="/" className={styles.mobileLogoContainer} aria-label="Go to home page">
-              <img src="/logo.jpg" alt="Bubbalous Bodacious BBQ Logo" />
+            <NavLink to="/" aria-label="Go to home page">
+              <span className={styles.mobileLogo}>GILMER PEREZ</span>
             </NavLink>
             {/* Hamburger menu button */}
             <button
+              type="button"
               aria-expanded={menuOpen}
               className={styles.hamburger}
               onClick={handleHamburgerClick}
               aria-label="Open navigation menu"
             >
-              <i className={`fa-solid fa-bars fa-xl ${isSpinning ? styles.spin : ""}`} aria-hidden="true"></i>
+              <i className={`fa-solid fa-bars ${isSpinning ? styles.spin : ""}`} aria-hidden="true"></i>
             </button>
           </div>
         </div>
@@ -173,35 +173,31 @@ function Header() {
                   aria-label="Go to home page"
                   onClick={() => setMenuOpen(false)}
                 >
-                  <i className="fa-solid fa-house" aria-hidden="true"></i>
                   HOME
                 </NavLink>
                 <NavLink
-                  to="/menu"
+                  to="/about"
                   className={navLinkClass}
-                  aria-label="View our menu"
+                  aria-label="Go to about page"
                   onClick={() => setMenuOpen(false)}
                 >
-                  <i className="fa-solid fa-burger" aria-hidden="true"></i>
-                  MENU
+                  ABOUT
                 </NavLink>
                 <NavLink
-                  to="/party-packs"
+                  to="/contact"
                   className={navLinkClass}
-                  aria-label="Browse party packs"
+                  aria-label="Go to contact page"
                   onClick={() => setMenuOpen(false)}
                 >
-                  <i className="fa-solid fa-box" aria-hidden="true"></i>
-                  PARTY PACKS
+                  CONTACT
                 </NavLink>
                 <NavLink
-                  to="/order-online"
+                  to="/projects"
                   className={navLinkClass}
                   aria-label="Order online"
                   onClick={() => setMenuOpen(false)}
                 >
-                  <i className="fa-solid fa-mobile-screen-button" aria-hidden="true"></i>
-                  ORDER ONLINE
+                  PROJECTS
                 </NavLink>
               </nav>
               {/* Sidebar footer */}
@@ -217,19 +213,10 @@ function Header() {
                 </button>
                 {/* Legal pages */}
                 <NavLink
-                  to="/contact"
-                  aria-label="Contact us"
-                  className={navLinkClass}
-                  onClick={() => setMenuOpen(false)}
-                >
-                  <i className="fa-solid fa-paper-plane" aria-hidden="true"></i>
-                  CONTACT
-                </NavLink>
-                <NavLink
                   to="/privacy-policy"
                   className={navLinkClass}
                   onClick={() => setMenuOpen(false)}
-                  aria-label="Read our privacy policy"
+                  aria-label="Read my privacy policy"
                 >
                   <i className="fa-solid fa-shield-halved" aria-hidden="true"></i>
                   PRIVACY POLICY
