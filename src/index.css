@@ -92,7 +92,7 @@ body {
   background-color: var(--bg-color); /* Sets a default background color */
   -moz-osx-font-smoothing: grayscale; /* Better font rendering on macOS Firefox */
   -webkit-font-smoothing: antialiased; /* Better font rendering on WebKit browsers */
-  font-family: "Source Code Pro", monospace, "General Sans", sans-serif; /* Modern system font stack */
+  font-family: "Source Code Pro", monospace, sans-serif; /* Modern system font stack */
 }
 
 /* Header - Shared structural styling */
