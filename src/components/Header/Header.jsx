@@ -106,7 +106,7 @@ function Header() {
           <div className={styles.desktopLayout}>
             {/* Logo */}
             <NavLink to="/" aria-label="Go to home page">
-              <span className={styles.logo}>GILMER PEREZ</span>
+              <span className={styles.logo}>GILMERPEREZ</span>
             </NavLink>
             {/* Site navigation */}
             <div className={styles.navContainer}>
@@ -161,7 +161,7 @@ function Header() {
             </button>
             {/* Logo */}
             <NavLink to="/" aria-label="Go to home page">
-              <span className={styles.mobileLogo}>GILMER PEREZ</span>
+              <span className={styles.mobileLogo}>GILMERPEREZ</span>
             </NavLink>
             {/* Hamburger menu button */}
             <button

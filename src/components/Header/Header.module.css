@@ -1,9 +1,12 @@
-/* Sticky header and box shadow */
 header {
   top: 0;
+  width: 100%;
   z-index: 999;
   position: sticky;
+  padding: 1.5rem 2rem;
+  transition: 0.3s ease-in;
   box-shadow: var(--shadow);
+  background-color: var(--header-bg-color);
 }
 
 /* Show mobile header on scroll up */
@@ -35,14 +38,10 @@ header {
 
 /* Logo */
 .logo {
-  font-weight: 600;
+  font-weight: 500;
   font-size: 1.5rem;
-  font-style: italic;
-  border-radius: 0.5rem;
-  padding: 0.25rem 0.75rem;
   transition: 0.3s ease-in;
-  border: 2px solid var(--primary);
-  box-shadow: 0px 0px 10px hsl(204, 100%, 50%);
+  border-bottom: 2px solid var(--primary);
 }
 
 /* Site navigation */
@@ -93,7 +92,7 @@ header {
 
 /* Active link */
 .navItems a.activeLink {
-  font-style: italic;
+  border-bottom: 2px solid var(--primary);
 }
 
 /* Separator */
@@ -139,6 +138,10 @@ header {
 
 /* Tablet responsiveness */
 @media (max-width: 768px) {
+  header {
+    padding: 1.25rem 1.5rem;
+  }
+
   .logo {
     font-size: 1.25rem;
   }
@@ -168,7 +171,6 @@ header {
 @media (max-width: 675px) {
   .logo {
     font-size: 1.15rem;
-    border: 1px solid var(--primary);
   }
 
   .navContainer {
@@ -235,14 +237,10 @@ header {
 
 /* Logo */
 .mobileLogo {
-  font-weight: 600;
+  font-weight: 500;
   font-size: 1.15rem;
-  font-style: italic;
-  border-radius: 0.5rem;
-  padding: 0.25rem 0.5rem;
   transition: 0.3s ease-in;
-  border: 1px solid var(--primary);
-  box-shadow: 0px 0px 10px hsl(204, 100%, 50%);
+  border-bottom: 2px solid var(--primary);
 }
 
 /* Hamburger menu button */
@@ -279,6 +277,10 @@ header {
 
 /* Mobile responsiveness - hide desktop layout and show mobile layout */
 @media (max-width: 480px) {
+  header {
+    padding: 1rem;
+  }
+
   .desktopLayout {
     display: none;
   }
@@ -353,7 +355,7 @@ header {
 
 /* Active link */
 .sidebarNavItems a.activeLink {
-  font-style: italic;
+  color: var(--primary);
 }
 
 .sidebarSeparator {

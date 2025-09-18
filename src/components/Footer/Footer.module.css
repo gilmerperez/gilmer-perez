@@ -1,6 +1,9 @@
-/* Box shadow */
 footer {
+  width: 100%;
+  padding: 2rem;
+  transition: 0.3s ease-in;
   box-shadow: var(--shadow);
+  background-color: var(--footer-bg-color);
 }
 
 .footerContainer {
@@ -92,6 +95,10 @@ footer {
 
 /* Tablet responsiveness */
 @media (max-width: 768px) {
+  footer {
+    padding: 1.5rem;
+  }
+
   .bottomContainer {
     gap: 0.25rem;
     flex-direction: column;
@@ -107,6 +114,10 @@ footer {
 
 /* Mobile responsiveness */
 @media (max-width: 480px) {
+  footer {
+    padding: 1rem;
+  }
+
   .legalDisclaimer {
     font-size: 0.95rem;
   }
