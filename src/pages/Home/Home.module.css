@@ -70,7 +70,7 @@
   box-shadow: 0px 0px 30px hsl(204, 100%, 50%);
 }
 
-/* Responsive Design */
+/* Tablet responsiveness */
 @media (max-width: 768px) {
   .heroSection {
     margin: 2rem;
@@ -93,6 +93,7 @@
   }
 }
 
+/* Mobile responsiveness */
 @media (max-width: 480px) {
   .heroSection {
     margin: 1rem;

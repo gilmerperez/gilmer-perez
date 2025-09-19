@@ -70,7 +70,7 @@
   box-shadow: 0px 0px 30px rgba(0, 123, 255, 0.5);
 }
 
-/* Mobile responsiveness */
+/* Tablet responsiveness */
 @media (max-width: 768px) {
   .contactSection {
     margin: 2rem;
@@ -94,6 +94,7 @@
   }
 }
 
+/* Mobile responsiveness */
 @media (max-width: 480px) {
   .contactSection {
     margin: 1rem;
