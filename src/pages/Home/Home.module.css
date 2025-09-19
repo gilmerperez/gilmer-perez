@@ -17,6 +17,7 @@
   align-items: center;
   flex-direction: column;
   justify-content: center;
+  transition: 0.3s ease-in;
 }
 
 /* Greeting */
