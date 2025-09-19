@@ -134,7 +134,7 @@ function Header() {
                 className={styles.themeButton}
                 aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
               >
-                <i className={`fa-solid ${theme === "dark" ? "fa-moon" : "fa-sun"}`} aria-hidden="true"></i>
+                <i className={`fa-regular ${theme === "dark" ? "fa-moon" : "fa-sun"}`} aria-hidden="true"></i>
               </button>
               {/* Resume button */}
               <button
@@ -252,7 +252,7 @@ function Header() {
                   className={`${styles.themeButton} ${styles.sidebarThemeButton}`}
                   aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
                 >
-                  <i className={`fa-solid ${theme === "dark" ? "fa-moon" : "fa-sun"}`} aria-hidden="true"></i>
+                  <i className={`fa-regular ${theme === "dark" ? "fa-moon" : "fa-sun"}`} aria-hidden="true"></i>
                   <p>{theme === "dark" ? "DARK" : "LIGHT"}</p>
                 </button>
                 {/* Legal pages */}
