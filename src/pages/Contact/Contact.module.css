@@ -11,8 +11,8 @@
 /* Contact section */
 .contactSection {
   width: 100%;
-  margin: 3rem;
   display: flex;
+  min-height: 50vh;
   text-align: center;
   align-items: center;
   flex-direction: column;
@@ -72,10 +72,6 @@
 
 /* Tablet responsiveness */
 @media (max-width: 768px) {
-  .contactSection {
-    margin: 2rem;
-  }
-
   .contactHeading {
     font-size: 2.5rem;
   }
@@ -96,10 +92,6 @@
 
 /* Mobile responsiveness */
 @media (max-width: 480px) {
-  .contactSection {
-    margin: 1rem;
-  }
-
   .contactHeading {
     font-size: 2rem;
   }

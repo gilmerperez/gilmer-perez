@@ -11,8 +11,8 @@
 /* Hero section */
 .heroSection {
   width: 100%;
-  margin: 3rem;
   display: flex;
+  min-height: 50vh;
   text-align: center;
   align-items: center;
   flex-direction: column;
@@ -72,10 +72,6 @@
 
 /* Tablet responsiveness */
 @media (max-width: 768px) {
-  .heroSection {
-    margin: 2rem;
-  }
-
   .greeting {
     font-size: 1.5rem;
   }
@@ -95,10 +91,6 @@
 
 /* Mobile responsiveness */
 @media (max-width: 480px) {
-  .heroSection {
-    margin: 1rem;
-  }
-
   .greeting {
     font-size: 1.15rem;
   }
