@@ -1,6 +1,5 @@
 Header
 - Make header a floating bubble with blur effect
-- Sticky header that disappears on scroll
 
 Main
 - Make body color a gradient
