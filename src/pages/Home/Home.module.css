@@ -12,7 +12,7 @@
 .heroSection {
   width: 100%;
   display: flex;
-  min-height: 50vh;
+  min-height: 75vh;
   text-align: center;
   align-items: center;
   flex-direction: column;
