@@ -121,13 +121,13 @@ body::-webkit-scrollbar-thumb {
 /* Tablet responsiveness */
 @media (max-width: 768px) {
   main {
-    padding: 1.5rem;
+    padding: 1.75rem;
   }
 }
 
 /* Mobile responsiveness */
 @media (max-width: 480px) {
   main {
-    padding: 1rem;
+    padding: 1.5rem;
   }
 }

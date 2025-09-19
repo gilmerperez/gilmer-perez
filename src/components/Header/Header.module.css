@@ -3,7 +3,7 @@ header {
   width: 100%;
   z-index: 999;
   position: sticky;
-  padding: 1.5rem 2rem;
+  padding: 1.25rem 2rem;
   transition: 0.3s ease-in;
   box-shadow: var(--shadow);
   background-color: var(--header-bg-color);
@@ -139,7 +139,7 @@ header {
 /* Tablet responsiveness */
 @media (max-width: 768px) {
   header {
-    padding: 1.25rem 1.5rem;
+    padding: 1rem 1.75rem;
   }
 
   .logo {
@@ -278,7 +278,7 @@ header {
 /* Mobile responsiveness - hide desktop layout and show mobile layout */
 @media (max-width: 480px) {
   header {
-    padding: 1rem;
+    padding: 1rem 1.5rem;
   }
 
   .desktopLayout {

@@ -96,7 +96,7 @@ footer {
 /* Tablet responsiveness */
 @media (max-width: 768px) {
   footer {
-    padding: 1.5rem;
+    padding: 1.75rem;
   }
 
   .bottomContainer {
@@ -115,7 +115,7 @@ footer {
 /* Mobile responsiveness */
 @media (max-width: 480px) {
   footer {
-    padding: 1rem;
+    padding: 1.5rem;
   }
 
   .legalDisclaimer {
