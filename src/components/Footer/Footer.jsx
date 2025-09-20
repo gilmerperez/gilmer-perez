@@ -48,7 +48,7 @@ function Footer() {
               <nav className={styles.navItems} aria-label="Contact information">
                 {/* Phone number */}
                 <a href="tel:+14073501805" aria-label="Call me at (407) 350-1805" className={styles.contactLink}>
-                  (407) 350-1805
+                  407-350-1805
                 </a>
                 {/* Email */}
                 <a
