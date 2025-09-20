@@ -168,7 +168,11 @@
   }
 
   .techSubheading {
-    font-size: 1rem;
+    font-size: 1.25rem;
+  }
+
+  .techItem {
+    font-size: 1.15rem;
   }
 
   /* Alternating alignment for mobile */
