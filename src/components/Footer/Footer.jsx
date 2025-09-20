@@ -40,40 +40,6 @@ function Footer() {
                 </NavLink>
               </nav>
             </section>
-            {/* Contact info */}
-            <section className={styles.contactInfo} aria-labelledby="contact-heading">
-              <h5 id="contact-heading" className={styles.navHeader}>
-                CONTACT
-              </h5>
-              <nav className={styles.navItems} aria-label="Contact information">
-                {/* Phone number */}
-                <a href="tel:+14073501805" aria-label="Call me at (407) 350-1805" className={styles.contactLink}>
-                  407-350-1805
-                </a>
-                {/* Email */}
-                <a
-                  className={styles.contactLink}
-                  href="mailto:gilmer2002@outlook.com"
-                  aria-label="Email me at gilmer2002@outlook.com"
-                >
-                  gilmer2002@outlook.com
-                </a>
-              </nav>
-            </section>
-            {/* Legal pages */}
-            <section className={styles.legalPages} aria-labelledby="legal-heading">
-              <h5 id="legal-heading" className={styles.navHeader}>
-                LEGAL
-              </h5>
-              <nav className={styles.navItems} aria-label="Legal pages">
-                <NavLink to="/privacy-policy" aria-label="Read my privacy policy">
-                  Privacy Policy
-                </NavLink>
-                <NavLink to="/terms-of-service" aria-label="Read my terms of service">
-                  Terms of Service
-                </NavLink>
-              </nav>
-            </section>
             {/* Social links */}
             <section className={styles.socialLinks} aria-labelledby="connect-heading">
               <h5 id="connect-heading" className={styles.navHeader}>
@@ -99,6 +65,40 @@ function Footer() {
                   href="https://www.linkedin.com/in/gilmer-perez-a35ba0354/"
                 >
                   LinkedIn
+                </a>
+              </nav>
+            </section>
+            {/* Legal pages */}
+            <section className={styles.legalPages} aria-labelledby="legal-heading">
+              <h5 id="legal-heading" className={styles.navHeader}>
+                LEGAL
+              </h5>
+              <nav className={styles.navItems} aria-label="Legal pages">
+                <NavLink to="/privacy-policy" aria-label="Read my privacy policy">
+                  Privacy Policy
+                </NavLink>
+                <NavLink to="/terms-of-service" aria-label="Read my terms of service">
+                  Terms of Service
+                </NavLink>
+              </nav>
+            </section>
+            {/* Contact info */}
+            <section className={styles.contactInfo} aria-labelledby="contact-heading">
+              <h5 id="contact-heading" className={styles.navHeader}>
+                CONTACT
+              </h5>
+              <nav className={styles.navItems} aria-label="Contact information">
+                {/* Phone number */}
+                <a href="tel:+14073501805" aria-label="Call me at (407) 350-1805" className={styles.contactLink}>
+                  407-350-1805
+                </a>
+                {/* Email */}
+                <a
+                  className={styles.contactLink}
+                  href="mailto:gilmer2002@outlook.com"
+                  aria-label="Email me at gilmer2002@outlook.com"
+                >
+                  gilmer2002@outlook.com
                 </a>
               </nav>
             </section>

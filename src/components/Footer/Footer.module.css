@@ -57,9 +57,9 @@ footer {
 }
 
 .siteNavigation,
-.contactInfo,
+.socialLinks,
 .legalPages,
-.socialLinks {
+.contactInfo {
   display: flex;
   flex-direction: column;
   transition: 0.3s ease-in;
@@ -105,9 +105,9 @@ footer {
   }
 
   .siteNavigation:not(:last-child),
-  .contactInfo:not(:last-child),
+  .socialLinks:not(:last-child),
   .legalPages:not(:last-child),
-  .socialLinks:not(:last-child) {
+  .contactInfo:not(:last-child) {
     margin-bottom: 1rem;
   }
 }
