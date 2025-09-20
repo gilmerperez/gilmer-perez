@@ -157,7 +157,7 @@ function Header() {
               className={styles.phoneButton}
               aria-label="Call me at (407) 350-1805"
             >
-              <i className="fa-solid fa-phone" aria-hidden="true"></i>
+              <i className="fa-solid fa-phone-volume" aria-hidden="true"></i>
             </button>
             {/* Logo */}
             <NavLink to="/" aria-label="Go to home page">
