@@ -142,6 +142,31 @@
   }
 }
 
+/* Make technologies list go on top of each other */
+@media (max-width: 550px) {
+  .technologiesList {
+    gap: 1rem;
+    flex-direction: column;
+  }
+
+  /* Alternating alignment for mobile */
+  .techColumn:nth-child(2) {
+    text-align: right;
+  }
+
+  .techColumn:nth-child(2) .techItem {
+    justify-content: flex-end;
+  }
+
+  .techColumn:nth-child(4) {
+    text-align: right;
+  }
+
+  .techColumn:nth-child(4) .techItem {
+    justify-content: flex-end;
+  }
+}
+
 /* Mobile responsiveness */
 @media (max-width: 480px) {
   .title {
@@ -162,33 +187,11 @@
     font-size: 1.75rem;
   }
 
-  .technologiesList {
-    gap: 1rem;
-    flex-direction: column;
-  }
-
   .techSubheading {
     font-size: 1.25rem;
   }
 
   .techItem {
     font-size: 1.15rem;
-  }
-
-  /* Alternating alignment for mobile */
-  .techColumn:nth-child(2) {
-    text-align: right;
-  }
-
-  .techColumn:nth-child(2) .techItem {
-    justify-content: flex-end;
-  }
-
-  .techColumn:nth-child(4) {
-    text-align: right;
-  }
-
-  .techColumn:nth-child(4) .techItem {
-    justify-content: flex-end;
   }
 }
