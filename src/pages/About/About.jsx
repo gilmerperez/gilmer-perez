@@ -125,7 +125,7 @@ function About() {
 
           {/* Image */}
           <section className={styles.imageContainer}>
-            <img src="/images/me2.jpg" alt="Gilmer Perez" className={styles.profileImage} />
+            <img src="/images/profile-image-1.jpg" alt="Gilmer Perez" className={styles.profileImage} />
           </section>
         </div>
       </main>
