@@ -1,5 +1,5 @@
 Header
-- Make header a floating bubble with blur effect
+- Make header have a blur effect
 
 Main
 - Make body color a gradient
