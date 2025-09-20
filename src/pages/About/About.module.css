@@ -80,9 +80,16 @@
 
 .techColumn {
   flex: 1;
-  gap: 1rem;
+  gap: 0.5rem;
   display: flex;
   flex-direction: column;
+  transition: 0.3s ease-in;
+}
+
+.techSubheading {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--primary);
   transition: 0.3s ease-in;
 }
 
@@ -129,6 +136,10 @@
     gap: 2rem;
   }
 
+  .techSubheading {
+    font-size: 1.15rem;
+  }
+
   .techItem {
     font-size: 1rem;
   }
@@ -151,5 +162,9 @@
 
   .technologiesList {
     flex-direction: column;
+  }
+
+  .techSubheading {
+    font-size: 1rem;
   }
 }

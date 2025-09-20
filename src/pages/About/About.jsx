@@ -46,6 +46,7 @@ function About() {
             <div className={styles.technologiesList}>
               {/* Column 1 - Tools */}
               <div className={styles.techColumn}>
+                <h3 className={styles.techSubheading}>TOOLS</h3>
                 <div className={styles.techItem}>
                   <span>Git</span>
                 </div>
@@ -70,6 +71,7 @@ function About() {
               </div>
               {/* Column 2 - Front-End */}
               <div className={styles.techColumn}>
+                <h3 className={styles.techSubheading}>FRONT-END</h3>
                 <div className={styles.techItem}>
                   <span>CSS</span>
                 </div>
@@ -91,6 +93,7 @@ function About() {
               </div>
               {/* Column 3 - Back-End */}
               <div className={styles.techColumn}>
+                <h3 className={styles.techSubheading}>BACK-END</h3>
                 <div className={styles.techItem}>
                   <span>Node.js</span>
                 </div>
@@ -106,6 +109,7 @@ function About() {
               </div>
               {/* Column 4 - Databases */}
               <div className={styles.techColumn}>
+                <h3 className={styles.techSubheading}>DATABASES</h3>
                 <div className={styles.techItem}>
                   <span>JSON</span>
                 </div>
