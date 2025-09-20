@@ -7,3 +7,7 @@ Main
 - - On light mode goes from bottom ligher to top darker
 
 Kayvons Website: https://www.kayvonkazemini.com/
+
+About Page:
+Make each list of technologies alternate sides and text align
+Make image of me have cool hover effect
