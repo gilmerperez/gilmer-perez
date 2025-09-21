@@ -7,3 +7,49 @@
   flex-direction: column;
   justify-content: center;
 }
+
+.headerSection {
+  text-align: center;
+  margin-bottom: 6rem;
+}
+
+.pageTitle {
+  font-size: 4rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 2rem;
+  line-height: 1.1;
+}
+
+.pageDescription {
+  font-size: 1.2rem;
+  color: #9ca3af;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.projectsList {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .projectsContainer {
+    padding: 2rem 1rem;
+  }
+
+  .headerSection {
+    margin-bottom: 4rem;
+  }
+
+  .pageTitle {
+    font-size: 2.5rem;
+  }
+
+  .pageDescription {
+    font-size: 1rem;
+  }
+}

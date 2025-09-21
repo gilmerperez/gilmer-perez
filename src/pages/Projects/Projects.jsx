@@ -1,5 +1,7 @@
 import { useEffect } from "react";
 import styles from "./Projects.module.css";
+import projectsData from "../../data/projects.json";
+import Project from "../../components/Project/Project";
 
 function Projects() {
   // * Set page title
@@ -10,7 +12,30 @@ function Projects() {
   return (
     <>
       <main>
-        <div className={styles.projectsContainer}>projects</div>
+        <div className={styles.projectsContainer}>
+          <div className={styles.headerSection}>
+            {/* Title */}
+            <h1 className={styles.pageTitle}>PROJECTS</h1>
+            {/* Description */}
+            <p className={styles.pageDescription}>
+              Explore my portfolio of web development projects, showcasing modern technologies, responsive design, and
+              innovative solutions for various industries.
+            </p>
+          </div>
+
+          <div className={styles.projectsList}>
+            {projectsData.map((project, index) => (
+              <Project
+                key={project.id}
+                logo={project.logo}
+                title={project.title}
+                description={project.description}
+                hoverImage={project.hoverImage}
+                isReversed={index % 2 === 1}
+              />
+            ))}
+          </div>
+        </div>
       </main>
     </>
   );
