@@ -32,6 +32,7 @@ function Projects() {
                 title={project.title}
                 isReversed={index % 2 === 1}
                 description={project.description}
+                deployedLink={project.deployedLink}
               />
             ))}
           </section>

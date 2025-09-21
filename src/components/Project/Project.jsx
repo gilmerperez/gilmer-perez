@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useState, useRef } from "react";
 import styles from "./Project.module.css";
 
-function Project({ logo, title, description, isReversed = false }) {
+function Project({ logo, title, description, deployedLink, isReversed = false }) {
   // * State for hover effect
   const [isHovered, setIsHovered] = useState(false);
 
@@ -63,10 +63,17 @@ function Project({ logo, title, description, isReversed = false }) {
           <h2 className={styles.projectTitle}>{title}</h2>
           {/* Project description */}
           <p className={styles.projectDescription}>{description}</p>
-          {/* View project button */}
-          <Link to="/" className={styles.viewButton}>
-            VIEW PROJECT
-          </Link>
+          {/* Button container */}
+          <div className={styles.buttonContainer}>
+            {/* View project button */}
+            <Link to="/" className={styles.viewButton}>
+              VIEW PROJECT
+            </Link>
+            {/* Visit website button */}
+            <a href={deployedLink} target="_blank" rel="noopener noreferrer" className={styles.visitButton}>
+              VISIT WEBSITE
+            </a>
+          </div>
         </div>
       </div>
     </>

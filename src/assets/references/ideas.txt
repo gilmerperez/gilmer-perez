@@ -2,5 +2,3 @@ Main
 - Make body color a gradient
 - - On dark mode goes from bottom darker to top lighter
 - - On light mode goes from bottom ligher to top darker
-
-Add another button that says "VISIT WEBSITE" and make it link to the deployed application. Use the deployedLink from the projects.json file. Style it the same way as the "VIEW PROJECT" button.
