@@ -23,15 +23,16 @@ function Projects() {
             </p>
           </div>
 
+          {/* Projects list */}
           <div className={styles.projectsList}>
             {projectsData.map((project, index) => (
               <Project
                 key={project.id}
                 logo={project.logo}
                 title={project.title}
-                description={project.description}
-                hoverImage={project.hoverImage}
                 isReversed={index % 2 === 1}
+                hoverImage={project.hoverImage}
+                description={project.description}
               />
             ))}
           </div>
