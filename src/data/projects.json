@@ -19,7 +19,7 @@
     "id": 3,
     "title": "Moonstar Esthetics",
     "description": "A modern, responsive website for Moonstar Esthetics — a professional esthetician studio offering facial treatments, laser/IPL, body care, and waxing services. Built with React and styled for elegance, accessibility, and performance. Designed to reflect confidence, care, and clarity.",
-    "logo": "/projects/moonstar-esthetics/logo.png",
+    "logo": "/projects/moonstar-esthetics/logo.jpg",
     "hoverImage": "/projects/moonstar-esthetics/hover-image.jpg",
     "deployedLink": "https://moonstar-esthetics.onrender.com/"
   },

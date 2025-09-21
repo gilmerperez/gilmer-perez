@@ -1,10 +1,8 @@
-import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import styles from "./Project.module.css";
+import { useState, useEffect } from "react";
 
 function Project({ logo, title, description, hoverImage, isReversed = false }) {
-  // * State for hover effect
-  const [isHovered, setIsHovered] = useState(false);
   // * State for mobile detection
   const [isMobile, setIsMobile] = useState(false);
 
@@ -19,6 +17,9 @@ function Project({ logo, title, description, hoverImage, isReversed = false }) {
 
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
+
+  // * State for hover effect
+  const [isHovered, setIsHovered] = useState(false);
 
   // * Determine which image to show based on screen size and hover state
   const getImageSrc = () => {
@@ -42,8 +43,8 @@ function Project({ logo, title, description, hoverImage, isReversed = false }) {
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
           >
-            {/* Project image - responsive based on screen size */}
-            <img src={getImageSrc()} alt={title} className={styles.projectImage} />
+            {/* Project image */}
+            <img src={getImageSrc()} className={styles.projectImage} alt={title} />
             <div className={styles.gradientOverlay}></div>
           </div>
         </div>
@@ -56,10 +57,10 @@ function Project({ logo, title, description, hoverImage, isReversed = false }) {
           <p className={styles.projectDescription}>{description}</p>
           {/* View project button */}
           <Link to="/" className={styles.viewButton}>
-            View all
+            VIEW PROJECT
           </Link>
         </div>
-      </section>
+      </section> 
     </>
   );
 }

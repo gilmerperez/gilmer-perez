@@ -2,3 +2,7 @@ Main
 - Make body color a gradient
 - - On dark mode goes from bottom darker to top lighter
 - - On light mode goes from bottom ligher to top darker
+
+Make sure the default projectImage is the image called logo. The image should already have a gradient over it, and when the user hovers over it, make the gradient go away. Also when the user hovers over the image duplicate the 3d hover tilt effect that we did on the About page. So when the user hovers over the projectImage, the gradient should go away and the 3d hover tilt effect should go into effect. We are completely getting rid of hoverImage since it makes the aspect ratios look off and throws off the page.
+
+Add another button that says "VISIT WEBSITE" and make it link to the deployed application. Use the deployedLink from the projects.json file. Style it the same way as the "VIEW PROJECT" button.
