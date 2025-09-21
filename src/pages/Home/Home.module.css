@@ -50,7 +50,8 @@
 .description strong {
   font-weight: 700;
   color: var(--primary);
-  text-shadow: 0px 0px 10px hsl(204, 100%, 50%);
+  text-transform: uppercase;
+  text-shadow: 0px 0px 10px hsl(204, 100%, 50%, 0.75);
 }
 
 /* CTA button */

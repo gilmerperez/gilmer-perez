@@ -67,7 +67,7 @@
 
 .contactButton:hover {
   transform: translateY(-3px);
-  box-shadow: 0px 0px 30px rgba(0, 123, 255, 0.5);
+  box-shadow: 0px 0px 30px hsl(204, 100%, 50%);
 }
 
 /* Tablet responsiveness */

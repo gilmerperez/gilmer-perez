@@ -1,5 +1,5 @@
-import { useEffect, useState, useRef } from "react";
 import styles from "./About.module.css";
+import { useEffect, useState, useRef } from "react";
 
 function About() {
   // * Set page title

@@ -8,6 +8,10 @@
   justify-content: center;
 }
 
+* {
+  border: 1px solid red;
+}
+
 /* Text content */
 .textContent {
   width: 100%;
@@ -20,7 +24,7 @@
   line-height: 1;
   font-size: 4rem;
   font-style: italic;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
   transition: 0.3s ease-in;
 }
 
@@ -41,10 +45,9 @@
 
 .description p strong {
   font-weight: 700;
-  font-style: italic;
   color: var(--primary);
   text-transform: uppercase;
-  text-shadow: 0px 0px 10px hsl(204, 100%, 50%);
+  text-shadow: 0px 0px 10px hsl(204, 100%, 50%, 0.75);
 }
 
 /* Divider */
@@ -65,9 +68,9 @@
 }
 
 .technologiesTitle {
-  font-size: 3rem;
+  font-size: 4rem;
   font-style: italic;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   transition: 0.3s ease-in;
 }
 
@@ -130,7 +133,7 @@
   }
 
   .technologiesTitle {
-    font-size: 2rem;
+    font-size: 3rem;
   }
 
   .technologiesList {
@@ -152,43 +155,20 @@
     gap: 1rem;
     flex-direction: column;
   }
-
-  /* Alternating alignment for mobile */
-  .techColumn:nth-child(2) {
-    text-align: right;
-  }
-
-  .techColumn:nth-child(2) .techItem {
-    justify-content: flex-end;
-  }
-
-  .techColumn:nth-child(4) {
-    text-align: right;
-  }
-
-  .techColumn:nth-child(4) .techItem {
-    justify-content: flex-end;
-  }
 }
 
 /* Mobile responsiveness */
 @media (max-width: 480px) {
   .title {
     font-size: 2.25rem;
-    margin-bottom: 0.75rem;
   }
 
   .description p {
-    text-align: left;
     font-size: 0.95rem;
   }
 
-  .description p:nth-child(2) {
-    text-align: right;
-  }
-
   .technologiesTitle {
-    font-size: 1.75rem;
+    font-size: 2.25rem;
   }
 
   .techSubheading {
