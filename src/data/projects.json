@@ -4,31 +4,61 @@
     "title": "Bubbalous Bodacious BBQ",
     "description": "A responsive and modern website for Orlando's favorite BBQ restaurant. Built with React + Vite, and modern web technologies, featuring a complete menu system, party pack ordering, and online ordering capabilities. Includes comprehensive restaurant information, contact details, and legal pages with mobile-first responsive design.",
     "logo": "/projects/bubbalous-bodacious-bbq/logo.jpg",
-    "hoverImage": "/projects/bubbalous-bodacious-bbq/hover-image.jpg",
-    "deployedLink": "https://bubbalous-bodacious-bbq.onrender.com/"
+    "deployedLink": "https://bubbalous-bodacious-bbq.onrender.com/",
+    "screenshots": [
+      "/projects/bubbalous-bodacious-bbq/screenshots/homePage.jpg",
+      "/projects/bubbalous-bodacious-bbq/screenshots/menuPage.jpg",
+      "/projects/bubbalous-bodacious-bbq/screenshots/PartyPacksPage.png",
+      "/projects/bubbalous-bodacious-bbq/screenshots/orderOnlinePage.jpg",
+      "/projects/bubbalous-bodacious-bbq/screenshots/checkoutPage.png",
+      "/projects/bubbalous-bodacious-bbq/screenshots/darkThemeMode.jpg",
+      "/projects/bubbalous-bodacious-bbq/screenshots/footer.jpg"
+    ]
   },
   {
     "id": 2,
     "title": "Kingdom Movement",
     "description": "A modern, sleek and responsive CrossFit Studio website. Features nutrition menus, dynamic class schedules, membership tiers, and other community content. Includes mobile-first responsive design with CSS Grid and Flexbox, and JSON-based data management. Built for Kingdom Movement to showcase their fitness community and brand identity.",
     "logo": "/projects/kingdom-movement/logo.jpg",
-    "hoverImage": "/projects/kingdom-movement/hover-image.jpg",
-    "deployedLink": "https://kingdom-movement.onrender.com/"
+    "deployedLink": "https://kingdom-movement.onrender.com/",
+    "screenshots": [
+      "/projects/kingdom-movement/screenshots/homePage.png",
+      "/projects/kingdom-movement/screenshots/nutritionPage.png",
+      "/projects/kingdom-movement/screenshots/schedulePage.png",
+      "/projects/kingdom-movement/screenshots/membershipPage.png",
+      "/projects/kingdom-movement/screenshots/lightThemeMode.jpg",
+      "/projects/kingdom-movement/screenshots/footer.png"
+    ]
   },
   {
     "id": 3,
     "title": "Moonstar Esthetics",
     "description": "A modern, responsive website for Moonstar Esthetics — a professional esthetician studio offering facial treatments, laser/IPL, body care, and waxing services. Built with React and styled for elegance, accessibility, and performance. Designed to reflect confidence, care, and clarity.",
     "logo": "/projects/moonstar-esthetics/logo.jpg",
-    "hoverImage": "/projects/moonstar-esthetics/hover-image.jpg",
-    "deployedLink": "https://moonstar-esthetics.onrender.com/"
+    "deployedLink": "https://moonstar-esthetics.onrender.com/",
+    "screenshots": [
+      "/projects/moonstar-esthetics/screenshots/homePage.png",
+      "/projects/moonstar-esthetics/screenshots/servicesPage.png",
+      "/projects/moonstar-esthetics/screenshots/reviewsPage.png",
+      "/projects/moonstar-esthetics/screenshots/informationPage.png",
+      "/projects/moonstar-esthetics/screenshots/contactPage.png",
+      "/projects/moonstar-esthetics/screenshots/darkThemeMode.png"
+    ]
   },
   {
     "id": 4,
     "title": "Reelix",
     "description": "A sleek, responsive Movie and TV show discovery app built with React and Vite, featuring dynamic data from the TMDB API. It offers seamless client-side routing with React Router, a dark-themed desktop-first design, optimized API handling, and regional auto-language support for an immersive user experience.",
     "logo": "/projects/reelix/logo.png",
-    "hoverImage": "/projects/reelix/hover-image.jpg",
-    "deployedLink": "https://reelix.onrender.com/"
+    "deployedLink": "https://reelix.onrender.com/",
+    "screenshots": [
+      "/projects/reelix/screenshots/homePage.png",
+      "/projects/reelix/screenshots/moviesPage.png",
+      "/projects/reelix/screenshots/tvShowsPage.png",
+      "/projects/reelix/screenshots/topIMDBPage.png",
+      "/projects/reelix/screenshots/contactPage.png",
+      "/projects/reelix/screenshots/privacyPolicyPage.png",
+      "/projects/reelix/screenshots/termsOfServicePage.png"
+    ]
   }
 ]
