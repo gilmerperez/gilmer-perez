@@ -13,7 +13,7 @@ function Projects() {
     <>
       <main>
         <div className={styles.projectsContainer}>
-          <div className={styles.headerSection}>
+          <section className={styles.headerSection}>
             {/* Title */}
             <h1 className={styles.pageTitle}>PROJECTS</h1>
             {/* Description */}
@@ -21,10 +21,10 @@ function Projects() {
               Explore my portfolio of web development projects, showcasing modern technologies, responsive design, and
               innovative solutions for various industries.
             </p>
-          </div>
+          </section>
 
           {/* Projects list */}
-          <div className={styles.projectsList}>
+          <section className={styles.projectsList}>
             {projectsData.map((project, index) => (
               <Project
                 key={project.id}
@@ -35,7 +35,7 @@ function Projects() {
                 description={project.description}
               />
             ))}
-          </div>
+          </section>
         </div>
       </main>
     </>
