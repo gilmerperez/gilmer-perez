@@ -2,7 +2,7 @@
   {
     "id": 1,
     "title": "Bubbalous Bodacious BBQ",
-    "description": "A responsive and modern website for Orlando's favorite BBQ restaurant. Built with React + Vite, and modern web technologies, featuring a complete menu system, party pack ordering, and online ordering capabilities. Includes comprehensive restaurant information, contact details, and legal pages with mobile-first responsive design.",
+    "description": "Savor the digital flavor of Orlando's premier BBQ experience! This mouth-watering website brings the smoky goodness of Bubbalous Bodacious BBQ directly to your screen. Customers can browse our signature menu, order party packs for special occasions, and place online orders with just a few clicks. Built with cutting-edge web technology that works seamlessly on phones, tablets, and computers, ensuring every customer gets the full BBQ experience whether they're dining in or ordering from home.",
     "logo": "/projects/bubbalous-bodacious-bbq/logo.jpg",
     "deployedLink": "https://bubbalous-bodacious-bbq.onrender.com/",
     "screenshots": [
@@ -18,7 +18,7 @@
   {
     "id": 2,
     "title": "Kingdom Movement",
-    "description": "A modern, sleek and responsive CrossFit Studio website. Features nutrition menus, dynamic class schedules, membership tiers, and other community content. Includes mobile-first responsive design with CSS Grid and Flexbox, and JSON-based data management. Built for Kingdom Movement to showcase their fitness community and brand identity.",
+    "description": "Transform your fitness journey with Kingdom Movement's powerful digital platform! This dynamic website empowers fitness enthusiasts to discover their strength through interactive class schedules, personalized nutrition guidance, and flexible membership options. Whether you're a CrossFit beginner or seasoned athlete, the platform adapts to your device and fitness goals. The smart technology behind the scenes ensures smooth navigation and real-time updates, making it easier than ever to join the Kingdom Movement community and achieve your wellness aspirations.",
     "logo": "/projects/kingdom-movement/logo.jpg",
     "deployedLink": "https://kingdom-movement.onrender.com/",
     "screenshots": [
@@ -33,7 +33,7 @@
   {
     "id": 3,
     "title": "Moonstar Esthetics",
-    "description": "A modern, responsive website for Moonstar Esthetics — a professional esthetician studio offering facial treatments, laser/IPL, body care, and waxing services. Built with React and styled for elegance, accessibility, and performance. Designed to reflect confidence, care, and clarity.",
+    "description": "Discover your natural radiance with Moonstar Esthetics' luxurious digital sanctuary! This elegant website invites clients into a world of professional skincare excellence, showcasing advanced facial treatments, precision laser services, and comprehensive body care solutions. The sophisticated design mirrors the premium quality of services offered, while intelligent web technology ensures effortless booking and seamless user experience across all devices. Every pixel reflects the confidence, care, and clarity that defines the Moonstar Esthetics brand.",
     "logo": "/projects/moonstar-esthetics/logo.jpg",
     "deployedLink": "https://moonstar-esthetics.onrender.com/",
     "screenshots": [
@@ -48,7 +48,7 @@
   {
     "id": 4,
     "title": "Reelix",
-    "description": "A sleek, responsive Movie and TV show discovery app built with React and Vite, featuring dynamic data from the TMDB API. It offers seamless client-side routing with React Router, a dark-themed desktop-first design, optimized API handling, and regional auto-language support for an immersive user experience.",
+    "description": "Dive into the ultimate entertainment universe with Reelix! This cinematic discovery platform transforms how you explore movies and TV shows, featuring real-time data from the world's largest entertainment database. Navigate effortlessly through trending films, top-rated series, and personalized recommendations with lightning-fast performance. The sleek dark interface creates the perfect movie theater ambiance, while smart technology automatically adapts to your region and language preferences. Whether you're a casual viewer or film enthusiast, Reelix delivers an immersive entertainment experience that brings the magic of cinema to your fingertips.",
     "logo": "/projects/reelix/logo.png",
     "deployedLink": "https://reelix.onrender.com/",
     "screenshots": [
