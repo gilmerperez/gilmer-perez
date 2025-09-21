@@ -36,7 +36,7 @@ function Project({ logo, title, description, deployedLink, isReversed = false })
     const rotateX = (mouseY / rect.height) * -20; // Tilt up/down
     const rotateY = (mouseX / rect.width) * 20; // Tilt left/right
     // Set transform
-    imageRef.current.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
+    imageRef.current.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1)`;
   };
 
   return (

@@ -10,29 +10,29 @@ function About() {
 
   // * State for profile picture images
   const imageRef = useRef(null);
-  const [currentImage, setCurrentImage] = useState("/images/profile-image-1.jpg");
+  const [currentImage, setCurrentImage] = useState("/images/gilmer-perez-1.jpg");
 
   // * Handle image click to switch images
   const handleImageClick = () => {
     setCurrentImage((prev) =>
-      prev === "/images/profile-image-1.jpg" ? "/images/profile-image-2.jpg" : "/images/profile-image-1.jpg"
+      prev === "/images/gilmer-perez-1.jpg" ? "/images/gilmer-perez-2.jpg" : "/images/gilmer-perez-1.jpg"
     );
   };
 
   // * Handle mouse move for 3D tilt effect
   const handleMouseMove = (e) => {
     if (!imageRef.current) return;
-
+    // Get image dimensions
     const rect = imageRef.current.getBoundingClientRect();
     const centerX = rect.left + rect.width / 2;
     const centerY = rect.top + rect.height / 2;
-
+    // Calculate mouse position
     const mouseX = e.clientX - centerX;
     const mouseY = e.clientY - centerY;
-
+    // Calculate rotation angles
     const rotateX = (mouseY / rect.height) * -20; // Tilt up/down
     const rotateY = (mouseX / rect.width) * 20; // Tilt left/right
-
+    // Set transform
     imageRef.current.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
   };
 
