@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "title": "Bubbalous Bodacious BBQ",
+    "description": "A responsive and modern website for Orlando's favorite BBQ restaurant. Built with React + Vite, and modern web technologies, featuring a complete menu system, party pack ordering, and online ordering capabilities. Includes comprehensive restaurant information, contact details, and legal pages with mobile-first responsive design.",
+    "logo": "/projects/bubbalous-bodacious-bbq/logo.png",
+    "hoverImage": "/projects/bubbalous-bodacious-bbq/hover-image.png",
+    "deployedLink": "https://bubbalous-bodacious-bbq.onrender.com/"
+  },
+  {
+    "id": 2,
+    "title": "Kingdom Movement",
+    "description": "A modern, sleek and responsive CrossFit Studio website. Features nutrition menus, dynamic class schedules, membership tiers, and other community content. Includes mobile-first responsive design with CSS Grid and Flexbox, and JSON-based data management. Built for Kingdom Movement to showcase their fitness community and brand identity.",
+    "logo": "/projects/kingdom-movement/logo.png",
+    "hoverImage": "/projects/kingdom-movement/hover-image.png",
+    "deployedLink": "https://kingdom-movement.onrender.com/"
+  },
+  {
+    "id": 3,
+    "title": "Moonstar Esthetics",
+    "description": "A modern, responsive website for Moonstar Esthetics — a professional esthetician studio offering facial treatments, laser/IPL, body care, and waxing services. Built with React and styled for elegance, accessibility, and performance. Designed to reflect confidence, care, and clarity.",
+    "logo": "/projects/moonstar-esthetics/logo.png",
+    "hoverImage": "/projects/moonstar-esthetics/hover-image.png",
+    "deployedLink": "https://moonstar-esthetics.onrender.com/"
+  },
+  {
+    "id": 4,
+    "title": "Reelix",
+    "description": "A sleek, responsive Movie and TV show discovery app built with React and Vite, featuring dynamic data from the TMDB API. It offers seamless client-side routing with React Router, a dark-themed desktop-first design, optimized API handling, and regional auto-language support for an immersive user experience.",
+    "logo": "/projects/reelix/logo.png",
+    "hoverImage": "/projects/reelix/hover-image.png",
+    "deployedLink": "https://reelix.onrender.com/"
+  }
+]
