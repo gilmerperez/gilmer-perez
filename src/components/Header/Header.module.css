@@ -1,15 +1,16 @@
 header {
   top: 1rem;
   z-index: 999;
-  margin: 0 auto;
   position: sticky;
+  margin: 1rem auto;
   padding: 1.25rem 2rem;
   border-radius: 0.5rem;
   width: calc(100% - 2rem);
   transition: 0.3s ease-in;
   box-shadow: var(--shadow);
+  backdrop-filter: blur(100px);
+  background-color: transparent;
   border: 1px solid var(--primary);
-  background-color: var(--header-bg-color);
 }
 
 /* Show mobile header on scroll up */
@@ -109,7 +110,8 @@ header {
 .themeButton {
   font-size: 1.15rem;
   color: var(--text-primary);
-  background-color: var(--header-bg-color);
+  backdrop-filter: blur(100px);
+  background-color: transparent;
   transition: transform 0.2s ease-in, color 0.3s ease-in;
 }
 

@@ -8,10 +8,6 @@
   justify-content: center;
 }
 
-* {
-  border: 1px solid red;
-}
-
 /* Text content */
 .textContent {
   width: 100%;
