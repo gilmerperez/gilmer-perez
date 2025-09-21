@@ -1,0 +1,112 @@
+{
+  "technologies": {
+    "frontend": [
+      {
+        "name": "HTML",
+        "category": "Markup",
+        "proficiency": "Advanced"
+      },
+      {
+        "name": "CSS",
+        "category": "Styling",
+        "proficiency": "Advanced"
+      },
+      {
+        "name": "JavaScript",
+        "category": "Programming Language",
+        "proficiency": "Advanced"
+      },
+      {
+        "name": "TypeScript",
+        "category": "Programming Language",
+        "proficiency": "Intermediate"
+      },
+      {
+        "name": "React",
+        "category": "Frontend Framework",
+        "proficiency": "Advanced"
+      },
+      {
+        "name": "Bootstrap",
+        "category": "CSS Framework",
+        "proficiency": "Advanced"
+      }
+    ],
+    "backend": [
+      {
+        "name": "Node.js",
+        "category": "Runtime Environment",
+        "proficiency": "Advanced"
+      },
+      {
+        "name": "Express",
+        "category": "Web Framework",
+        "proficiency": "Advanced"
+      },
+      {
+        "name": "RESTful APIs",
+        "category": "API Development",
+        "proficiency": "Advanced"
+      },
+      {
+        "name": "Authentication",
+        "category": "Security",
+        "proficiency": "Intermediate"
+      }
+    ],
+    "databases": [
+      {
+        "name": "JSON",
+        "category": "Data Format",
+        "proficiency": "Advanced"
+      },
+      {
+        "name": "MongoDB",
+        "category": "NoSQL Database",
+        "proficiency": "Intermediate"
+      },
+      {
+        "name": "PostgreSQL",
+        "category": "SQL Database",
+        "proficiency": "Intermediate"
+      }
+    ],
+    "tools": [
+      {
+        "name": "Git",
+        "category": "Version Control",
+        "proficiency": "Advanced"
+      },
+      {
+        "name": "GitHub",
+        "category": "Version Control Platform",
+        "proficiency": "Advanced"
+      },
+      {
+        "name": "Vite",
+        "category": "Build Tool",
+        "proficiency": "Advanced"
+      },
+      {
+        "name": "Render",
+        "category": "Deployment Platform",
+        "proficiency": "Intermediate"
+      },
+      {
+        "name": "Vercel",
+        "category": "Deployment Platform",
+        "proficiency": "Intermediate"
+      },
+      {
+        "name": "Netlify",
+        "category": "Deployment Platform",
+        "proficiency": "Intermediate"
+      },
+      {
+        "name": "Insomnia",
+        "category": "API Testing",
+        "proficiency": "Intermediate"
+      }
+    ]
+  }
+}
