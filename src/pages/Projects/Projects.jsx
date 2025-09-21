@@ -31,7 +31,6 @@ function Projects() {
                 logo={project.logo}
                 title={project.title}
                 isReversed={index % 2 === 1}
-                hoverImage={project.hoverImage}
                 description={project.description}
               />
             ))}

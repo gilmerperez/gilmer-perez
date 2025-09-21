@@ -1,51 +1,59 @@
 import { Link } from "react-router-dom";
+import { useState, useRef } from "react";
 import styles from "./Project.module.css";
-import { useState, useEffect } from "react";
 
-function Project({ logo, title, description, hoverImage, isReversed = false }) {
-  // * State for mobile detection
-  const [isMobile, setIsMobile] = useState(false);
-
-  // * Check if screen is mobile size (480px or smaller)
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth <= 480);
-    };
-
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-
-    return () => window.removeEventListener("resize", checkMobile);
-  }, []);
-
+function Project({ logo, title, description, isReversed = false }) {
   // * State for hover effect
   const [isHovered, setIsHovered] = useState(false);
 
-  // * Determine which image to show based on screen size and hover state
-  const getImageSrc = () => {
-    if (isMobile) {
-      // On mobile: show logo by default, hoverImage on hover
-      return isHovered ? hoverImage : logo;
-    } else {
-      // On large screens: show hoverImage by default, logo on hover
-      return isHovered ? logo : hoverImage;
+  // * Handle mouse enter
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  // * Reset transform when mouse leaves
+  const handleMouseLeave = () => {
+    if (imageRef.current) {
+      imageRef.current.style.transform = "perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)";
     }
+    setIsHovered(false);
+  };
+
+  // * Ref for image element
+  const imageRef = useRef(null);
+
+  // * Handle mouse move for 3D tilt effect
+  const handleMouseMove = (e) => {
+    if (!imageRef.current) return;
+    // Get image dimensions
+    const rect = imageRef.current.getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+    // Calculate mouse position
+    const mouseX = e.clientX - centerX;
+    const mouseY = e.clientY - centerY;
+    // Calculate rotation angles
+    const rotateX = (mouseY / rect.height) * -20; // Tilt up/down
+    const rotateY = (mouseX / rect.width) * 20; // Tilt left/right
+    // Set transform
+    imageRef.current.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
   };
 
   return (
     <>
       {/* Project container */}
-      <section className={`${styles.projectContainer} ${isReversed ? styles.reversed : ""}`}>
+      <div className={`${styles.projectContainer} ${isReversed ? styles.reversed : ""}`}>
         {/* Image content */}
         <div className={styles.imageContainer}>
           <div
+            onMouseMove={handleMouseMove}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
             className={styles.imageWrapper}
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
           >
             {/* Project image */}
-            <img src={getImageSrc()} className={styles.projectImage} alt={title} />
-            <div className={styles.gradientOverlay}></div>
+            <img src={logo} ref={imageRef} className={styles.projectImage} alt={title} />
+            <div className={`${styles.gradientOverlay} ${isHovered ? styles.gradientHidden : ""}`}></div>
           </div>
         </div>
 
@@ -60,7 +68,7 @@ function Project({ logo, title, description, hoverImage, isReversed = false }) {
             VIEW PROJECT
           </Link>
         </div>
-      </section> 
+      </div>
     </>
   );
 }

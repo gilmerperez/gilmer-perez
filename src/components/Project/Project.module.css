@@ -29,6 +29,11 @@
 
 /* Project image */
 .projectImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform-style: preserve-3d;
+  transition: transform 0.1s ease-out;
 }
 
 .gradientOverlay {
@@ -38,7 +43,11 @@
   bottom: 0;
   position: absolute;
   pointer-events: none;
-  background-color: hsla(204, 100%, 50%, 0.25);
+  transition: opacity 0.3s ease;
+}
+
+.gradientHidden {
+  opacity: 0;
 }
 
 /* Project content */
