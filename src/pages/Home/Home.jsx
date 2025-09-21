@@ -15,7 +15,9 @@ function Home() {
           {/* Hero section */}
           <section className={styles.heroSection}>
             {/* Greeting */}
-            <h2 className={styles.greeting}>Hi, I'm Gilmer</h2>
+            <h2 className={styles.greeting}>
+              Hi, I'm <span className={styles.greetingName}>Gilmer</span>{" "}
+            </h2>
             {/* Main title */}
             <h1 className={styles.mainTitle}>
               FRONT-END
