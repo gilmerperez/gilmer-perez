@@ -3,7 +3,7 @@
     "id": 1,
     "title": "Bubbalous Bodacious BBQ",
     "description": "A responsive and modern website for Orlando's favorite BBQ restaurant. Built with React + Vite, and modern web technologies, featuring a complete menu system, party pack ordering, and online ordering capabilities. Includes comprehensive restaurant information, contact details, and legal pages with mobile-first responsive design.",
-    "logo": "/projects/bubbalous-bodacious-bbq/logo.webp",
+    "logo": "/projects/bubbalous-bodacious-bbq/logo.jpg",
     "hoverImage": "/projects/bubbalous-bodacious-bbq/hover-image.jpg",
     "deployedLink": "https://bubbalous-bodacious-bbq.onrender.com/"
   },

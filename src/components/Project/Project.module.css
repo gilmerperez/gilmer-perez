@@ -93,7 +93,7 @@
 /* Tablet responsiveness */
 @media (max-width: 768px) {
   .projectContainer {
-    gap: 1rem;
+    gap: 1.5rem;
     flex-direction: column;
   }
 
@@ -106,6 +106,10 @@
     max-width: 100%;
   }
 
+  .contentContainer {
+    padding: 0rem;
+  }
+
   .projectTitle {
     font-size: 2.25rem;
   }
@@ -114,7 +118,7 @@
 /* Mobile responsiveness */
 @media (max-width: 480px) {
   .projectContainer {
-    gap: 0.5rem;
+    gap: 1rem;
   }
 
   .projectTitle {
