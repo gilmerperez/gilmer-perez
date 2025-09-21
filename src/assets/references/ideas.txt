@@ -1,6 +1,3 @@
-Header
-- Make header have a blur effect
-
 Main
 - Make body color a gradient
 - - On dark mode goes from bottom darker to top lighter

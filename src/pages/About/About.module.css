@@ -70,36 +70,6 @@
   transition: 0.3s ease-in;
 }
 
-.technologiesList {
-  gap: 3rem;
-  width: 100%;
-  display: flex;
-  transition: 0.3s ease-in;
-  justify-content: space-between;
-}
-
-.techColumn {
-  flex: 1;
-  gap: 0.5rem;
-  display: flex;
-  flex-direction: column;
-  transition: 0.3s ease-in;
-}
-
-.techSubheading {
-  font-weight: 700;
-  font-size: 1.25rem;
-  color: var(--primary);
-  transition: 0.3s ease-in;
-}
-
-.techItem {
-  display: flex;
-  font-size: 1.15rem;
-  transition: 0.3s ease-in;
-  color: var(--text-secondary);
-}
-
 /* Image */
 .imageContainer {
   width: 100%;

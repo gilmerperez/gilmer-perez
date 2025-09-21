@@ -1,5 +1,6 @@
 import styles from "./About.module.css";
 import { useEffect, useState, useRef } from "react";
+import Technologies from "../../components/Technologies/Technologies";
 
 function About() {
   // * Set page title
@@ -78,84 +79,8 @@ function About() {
           {/* Technologies */}
           <section className={styles.technologiesSection}>
             <h2 className={styles.technologiesTitle}>TECHNOLOGIES</h2>
-            <div className={styles.technologiesList}>
-              {/* Column 1 - Tools */}
-              <div className={styles.techColumn}>
-                <h3 className={styles.techSubheading}>TOOLS</h3>
-                <div className={styles.techItem}>
-                  <span>Git</span>
-                </div>
-                <div className={styles.techItem}>
-                  <span>Vite</span>
-                </div>
-                <div className={styles.techItem}>
-                  <span>GitHub</span>
-                </div>
-                <div className={styles.techItem}>
-                  <span>Render</span>
-                </div>
-                <div className={styles.techItem}>
-                  <span>Vercel</span>
-                </div>
-                <div className={styles.techItem}>
-                  <span>Netlify</span>
-                </div>
-                <div className={styles.techItem}>
-                  <span>Insomnia</span>
-                </div>
-              </div>
-              {/* Column 2 - Front-End */}
-              <div className={styles.techColumn}>
-                <h3 className={styles.techSubheading}>FRONT-END</h3>
-                <div className={styles.techItem}>
-                  <span>CSS</span>
-                </div>
-                <div className={styles.techItem}>
-                  <span>HTML</span>
-                </div>
-                <div className={styles.techItem}>
-                  <span>React</span>
-                </div>
-                <div className={styles.techItem}>
-                  <span>Bootstrap</span>
-                </div>
-                <div className={styles.techItem}>
-                  <span>JavaScript</span>
-                </div>
-                <div className={styles.techItem}>
-                  <span>TypeScript</span>
-                </div>
-              </div>
-              {/* Column 3 - Back-End */}
-              <div className={styles.techColumn}>
-                <h3 className={styles.techSubheading}>BACK-END</h3>
-                <div className={styles.techItem}>
-                  <span>Node.js</span>
-                </div>
-                <div className={styles.techItem}>
-                  <span>Express</span>
-                </div>
-                <div className={styles.techItem}>
-                  <span>RESTful APIs</span>
-                </div>
-                <div className={styles.techItem}>
-                  <span>Authentication</span>
-                </div>
-              </div>
-              {/* Column 4 - Databases */}
-              <div className={styles.techColumn}>
-                <h3 className={styles.techSubheading}>DATABASES</h3>
-                <div className={styles.techItem}>
-                  <span>JSON</span>
-                </div>
-                <div className={styles.techItem}>
-                  <span>MongoDB</span>
-                </div>
-                <div className={styles.techItem}>
-                  <span>PostgreSQL</span>
-                </div>
-              </div>
-            </div>
+            {/* Technologies component */}
+            <Technologies />
           </section>
 
           {/* Image */}

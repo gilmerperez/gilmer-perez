@@ -2,110 +2,70 @@
   "technologies": {
     "frontend": [
       {
-        "name": "HTML",
-        "category": "Markup",
-        "proficiency": "Advanced"
+        "name": "CSS"
       },
       {
-        "name": "CSS",
-        "category": "Styling",
-        "proficiency": "Advanced"
+        "name": "HTML"
       },
       {
-        "name": "JavaScript",
-        "category": "Programming Language",
-        "proficiency": "Advanced"
+        "name": "React"
       },
       {
-        "name": "TypeScript",
-        "category": "Programming Language",
-        "proficiency": "Intermediate"
+        "name": "Bootstrap"
       },
       {
-        "name": "React",
-        "category": "Frontend Framework",
-        "proficiency": "Advanced"
+        "name": "JavaScript"
       },
       {
-        "name": "Bootstrap",
-        "category": "CSS Framework",
-        "proficiency": "Advanced"
+        "name": "TypeScript"
       }
     ],
     "backend": [
       {
-        "name": "Node.js",
-        "category": "Runtime Environment",
-        "proficiency": "Advanced"
+        "name": "Node.js"
       },
       {
-        "name": "Express",
-        "category": "Web Framework",
-        "proficiency": "Advanced"
+        "name": "Express"
       },
       {
-        "name": "RESTful APIs",
-        "category": "API Development",
-        "proficiency": "Advanced"
+        "name": "RESTful APIs"
       },
       {
-        "name": "Authentication",
-        "category": "Security",
-        "proficiency": "Intermediate"
+        "name": "Authentication"
       }
     ],
     "databases": [
       {
-        "name": "JSON",
-        "category": "Data Format",
-        "proficiency": "Advanced"
+        "name": "JSON"
       },
       {
-        "name": "MongoDB",
-        "category": "NoSQL Database",
-        "proficiency": "Intermediate"
+        "name": "MongoDB"
       },
       {
-        "name": "PostgreSQL",
-        "category": "SQL Database",
-        "proficiency": "Intermediate"
+        "name": "PostgreSQL"
       }
     ],
     "tools": [
       {
-        "name": "Git",
-        "category": "Version Control",
-        "proficiency": "Advanced"
+        "name": "Git"
       },
       {
-        "name": "GitHub",
-        "category": "Version Control Platform",
-        "proficiency": "Advanced"
+        "name": "Vite"
       },
       {
-        "name": "Vite",
-        "category": "Build Tool",
-        "proficiency": "Advanced"
+        "name": "GitHub"
       },
       {
-        "name": "Render",
-        "category": "Deployment Platform",
-        "proficiency": "Intermediate"
+        "name": "Render"
       },
       {
-        "name": "Vercel",
-        "category": "Deployment Platform",
-        "proficiency": "Intermediate"
+        "name": "Vercel"
       },
       {
-        "name": "Netlify",
-        "category": "Deployment Platform",
-        "proficiency": "Intermediate"
+        "name": "Netlify"
       },
       {
-        "name": "Insomnia",
-        "category": "API Testing",
-        "proficiency": "Intermediate"
+        "name": "Insomnia"
       }
     ]
   }
