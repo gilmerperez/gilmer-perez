@@ -27,6 +27,7 @@ function Projects() {
           <section className={styles.projectsList}>
             {projectsData.map((project, index) => (
               <Project
+                id={project.id}
                 key={project.id}
                 logo={project.logo}
                 title={project.title}
