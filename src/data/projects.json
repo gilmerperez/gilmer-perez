@@ -10,21 +10,21 @@
       "Legal Compliance Pages: Complete Privacy Policy and Terms of Service pages ensuring regulatory compliance and transparency for business operations.",
       "Accessibility Features: Semantic HTML structure, ARIA labels, keyboard navigation support, and high contrast theme options for inclusive user experience.",
       "Theme Toggle System: Seamless dark/light mode switching with persistent user preferences stored in localStorage and automatic system preference detection.",
-      "Party Pack Ordering: Specialized section for catering and large group orders with detailed package information, serving sizes, and pricing for events of various scales.",
       "Performance Optimized: Fast loading times through Vite bundling, efficient image formats (AVIF), and optimized component rendering for superior user experience.",
+      "Party Pack Ordering: Specialized section for catering and large group orders with detailed package information, serving sizes, and pricing for events of various scales.",
       "Mobile-First Responsive Design: Optimized layouts for all screen sizes with a collapsible mobile navigation menu featuring smooth animations and intuitive touch interactions.",
-      "Interactive Contact Form: Secure contact system with CAPTCHA verification to prevent spam while maintaining accessibility, featuring email integration for direct communication.",
-      "Comprehensive Menu System: Complete menu with categorized sections including appetizers, sandwiches, dinners, combos, and by-the-pound options, all managed through structured JSON data."
+      "Comprehensive Menu System: Complete menu with categorized sections including appetizers, sandwiches, dinners, combos, and by-the-pound options, all managed through structured JSON data.",
+      "Interactive Contact Form: Secure contact system with CAPTCHA verification to prevent spam while maintaining accessibility, featuring email integration for direct communication."
     ],
     "technologyStack": [
       "Local Storage API: Client-side data persistence for user preferences and theme settings without server dependencies.",
       "CSS Modules: Scoped styling system preventing style conflicts while maintaining modular, maintainable CSS architecture.",
-      "React 19: Modern component-based UI library for building interactive user interfaces with hooks and functional components.",
       "CSS Custom Properties: Dynamic theming system enabling real-time theme switching and consistent design token management.",
       "Vite: Lightning-fast build tool and development server providing instant hot module replacement and optimized production builds.",
+      "React 19: Modern component-based UI library for building interactive user interfaces with hooks and functional components.",
       "JavaScript ES6+: Modern JavaScript features including destructuring, arrow functions, and template literals for clean, readable code.",
-      "Responsive Design: Mobile-first approach using CSS Grid, Flexbox, and media queries for optimal viewing across all devices and screen sizes.",
       "React Router DOM: Client-side routing solution enabling single-page application navigation with dynamic page titles and URL management.",
+      "Responsive Design: Mobile-first approach using CSS Grid, Flexbox, and media queries for optimal viewing across all devices and screen sizes.",
       "JSON Data Management: Structured data storage for menu items, party packs, and restaurant information enabling easy content updates and maintenance."
     ],
     "screenshots": [
@@ -49,16 +49,16 @@
       "Theme Toggle: Seamless dark/light mode switching for enhanced user experience and accessibility.",
       "Responsive Design: Mobile-first approach ensuring optimal viewing across all devices and screen sizes.",
       "Interactive Class Schedule: Day-by-day schedule navigation with real-time class information and activity types.",
-      "Comprehensive Nutrition Menu: Categorized nutrition offerings with filtering capabilities and detailed product information.",
       "Community-Focused Content: Brand messaging that emphasizes transformation, community, and purpose-driven fitness.",
+      "Dynamic Membership Tiers: Interactive membership cards showcasing different pricing plans with detailed benefits and features.",
       "Modern UI/UX: Clean, energetic design with smooth transitions and interactive elements reflecting the gym's bold brand identity.",
-      "Dynamic Membership Tiers: Interactive membership cards showcasing different pricing plans with detailed benefits and features."
+      "Comprehensive Nutrition Menu: Categorized nutrition offerings with filtering capabilities and detailed product information."
     ],
     "technologyStack": [
       "HTML5: Semantic markup for accessibility and SEO optimization.",
       "Vite: Fast build tool and development server for modern web projects.",
-      "React: Component-based UI library for building interactive user interfaces.",
       "JavaScript (ES6+): Modern language features for robust, maintainable code.",
+      "React: Component-based UI library for building interactive user interfaces.",
       "JSON: Structured data storage for memberships, schedules, and nutrition items.",
       "CSS Custom Properties: Dynamic theming system for dark/light mode functionality.",
       "CSS Modules: Scoped, maintainable styles with CSS Grid and Flexbox for responsive layouts."
@@ -91,8 +91,8 @@
       "JSON: Structured data storage for services and reviews.",
       "CSS Modules: Scoped, maintainable styles for each component.",
       "Vite: Fast build tool and development server for modern web projects.",
-      "React: Component-based UI library for building interactive user interfaces.",
-      "JavaScript (ES6+): Modern language features for robust, maintainable code."
+      "JavaScript (ES6+): Modern language features for robust, maintainable code.",
+      "React: Component-based UI library for building interactive user interfaces."
     ],
     "screenshots": [
       "/projects/moonstar-esthetics/screenshots/homePage.png",
@@ -111,23 +111,23 @@
     "logo": "/projects/reelix/logo.png",
     "keyFeatures": [
       "Responsive Filters: Users can filter content by genre, year, and country.",
-      "Vite-Powered Performance: The application boasts a fast development server, optimized build processes, and efficient preview commands.",
       "Pagination Support: It includes custom-styled pagination to help users navigate through extensive result sets.",
-      "Detailed Media Pages: Each movie or show has a dedicated page featuring a poster, trailer, cast, crew, genres, and additional information.",
-      "Multilingual Auto-Translation: The application supports automatic translation into German, Spanish, Portuguese, and French, based on region settings.",
       "Dynamic Movie & TV Data: It fetches and renders media information, including metadata and trailers, using the TMDB API.",
+      "Vite-Powered Performance: The application boasts a fast development server, optimized build processes, and efficient preview commands.",
+      "Detailed Media Pages: Each movie or show has a dedicated page featuring a poster, trailer, cast, crew, genres, and additional information.",
       "Modular Architecture: The codebase is designed with reusable components such as MediaDetail, MediaBanner, and Filter to ensure maintainability.",
+      "Multilingual Auto-Translation: The application supports automatic translation into German, Spanish, Portuguese, and French, based on region settings.",
       "Dark UI with Red Accents: The user interface features a consistent, cinematic dark theme with red accents, styled using CSS Modules and a clean component architecture."
     ],
     "technologyStack": [
       "Node.js + npm: Utilized for dependency and script management.",
       "React: The core library for building the user interface with components.",
       "dotenv: Used to load environment variables, such as API keys and port numbers.",
-      "React Router DOM: Handles dynamic routing for detail pages and filters within the application.",
       "CSS Modules: Provides scoped and maintainable styling for individual components.",
       "Vite: A fast bundler and development server optimized for modern JavaScript projects.",
-      "TMDB API: Serves as the source for real-time media data, including metadata, images, and videos.",
-      "Render: Employed for deploying the application as a web service with dynamic port configuration."
+      "React Router DOM: Handles dynamic routing for detail pages and filters within the application.",
+      "Render: Employed for deploying the application as a web service with dynamic port configuration.",
+      "TMDB API: Serves as the source for real-time media data, including metadata, images, and videos."
     ],
     "screenshots": [
       "/projects/reelix/screenshots/homePage.png",
