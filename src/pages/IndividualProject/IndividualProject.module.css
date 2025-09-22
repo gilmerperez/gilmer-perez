@@ -79,6 +79,7 @@
 /* Key features */
 .keyFeatures {
   margin-bottom: 2rem;
+  align-self: flex-start;
   transition: 0.3s ease-in;
 }
 
@@ -88,6 +89,7 @@
   position: relative;
   padding-left: 3rem;
   margin-bottom: 0.75rem;
+  transition: 0.3s ease-in;
   color: var(--text-secondary);
   counter-increment: feature-counter;
 }
@@ -100,12 +102,15 @@
   font-size: 1.25rem;
   text-align: center;
   color: var(--primary);
+  transition: 0.3s ease-in;
   content: counter(feature-counter);
 }
 
 /* Technology stack */
 .technologyStack {
   margin-bottom: 2rem;
+  align-self: flex-start;
+  transition: 0.3s ease-in;
 }
 
 .techItem {
@@ -116,6 +121,7 @@
   position: relative;
   align-items: center;
   margin-bottom: 0.75rem;
+  transition: 0.3s ease-in;
   color: var(--text-secondary);
 }
 
@@ -125,7 +131,8 @@
 }
 
 /* Project screenshots */
-.projectScreenshots {
+.projectScreenshots .sectionTitle {
+  text-align: center;
 }
 
 .screenshotsGrid {
