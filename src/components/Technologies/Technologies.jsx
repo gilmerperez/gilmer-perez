@@ -49,7 +49,7 @@ function Technologies() {
             <span>{categoryMap[selectedCategory]}</span>
             {/* Arrow icon */}
             <span className={`${styles.dropdownArrow} ${isDropdownOpen ? styles.arrowUp : styles.arrowDown}`}>
-              <i class="fa-solid fa-angle-up"></i>
+              <i className="fa-solid fa-angle-up"></i>
             </span>
           </button>
           {/* Dropdown menu */}
