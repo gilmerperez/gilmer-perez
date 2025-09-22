@@ -73,16 +73,6 @@ function About() {
             </div>
           </section>
 
-          {/* Divider */}
-          <div className={styles.divider}></div>
-
-          {/* Technologies */}
-          <section className={styles.technologiesSection}>
-            <h2 className={styles.technologiesTitle}>TECHNOLOGIES</h2>
-            {/* Technologies component */}
-            <Technologies />
-          </section>
-
           {/* Image */}
           <section className={styles.imageContainer}>
             <img
@@ -94,6 +84,16 @@ function About() {
               className={styles.profileImage}
               onMouseLeave={handleMouseLeave}
             />
+          </section>
+
+          {/* Divider */}
+          <div className={styles.divider}></div>
+
+          {/* Technologies */}
+          <section className={styles.technologiesSection}>
+            <h2 className={styles.technologiesTitle}>TECHNOLOGIES</h2>
+            {/* Technologies component */}
+            <Technologies />
           </section>
         </div>
       </main>
