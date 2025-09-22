@@ -5,15 +5,6 @@
     "description": "Savor the digital flavor of Orlando's premier BBQ experience! This mouth-watering website brings the smoky goodness of Bubbalous Bodacious BBQ directly to your screen. Customers can browse our signature menu, order party packs for special occasions, and place online orders with just a few clicks. Built with cutting-edge web technology that works seamlessly on phones, tablets, and computers, ensuring every customer gets the full BBQ experience whether they're dining in or ordering from home.",
     "deployedLink": "https://bubbalous-bodacious-bbq.onrender.com/",
     "logo": "/projects/bubbalous-bodacious-bbq/logo.jpg",
-    "screenshots": [
-      "/projects/bubbalous-bodacious-bbq/screenshots/homePage.jpg",
-      "/projects/bubbalous-bodacious-bbq/screenshots/menuPage.jpg",
-      "/projects/bubbalous-bodacious-bbq/screenshots/PartyPacksPage.png",
-      "/projects/bubbalous-bodacious-bbq/screenshots/orderOnlinePage.jpg",
-      "/projects/bubbalous-bodacious-bbq/screenshots/checkoutPage.png",
-      "/projects/bubbalous-bodacious-bbq/screenshots/darkThemeMode.jpg",
-      "/projects/bubbalous-bodacious-bbq/screenshots/footer.jpg"
-    ],
     "keyFeatures": [
       "Dynamic Image Carousel: Auto-rotating banner images showcasing delicious BBQ dishes with manual navigation controls and smooth transitions.",
       "Legal Compliance Pages: Complete Privacy Policy and Terms of Service pages ensuring regulatory compliance and transparency for business operations.",
@@ -35,6 +26,15 @@
       "Responsive Design: Mobile-first approach using CSS Grid, Flexbox, and media queries for optimal viewing across all devices and screen sizes.",
       "React Router DOM: Client-side routing solution enabling single-page application navigation with dynamic page titles and URL management.",
       "JSON Data Management: Structured data storage for menu items, party packs, and restaurant information enabling easy content updates and maintenance."
+    ],
+    "screenshots": [
+      "/projects/bubbalous-bodacious-bbq/screenshots/homePage.jpg",
+      "/projects/bubbalous-bodacious-bbq/screenshots/menuPage.jpg",
+      "/projects/bubbalous-bodacious-bbq/screenshots/PartyPacksPage.png",
+      "/projects/bubbalous-bodacious-bbq/screenshots/orderOnlinePage.jpg",
+      "/projects/bubbalous-bodacious-bbq/screenshots/checkoutPage.png",
+      "/projects/bubbalous-bodacious-bbq/screenshots/darkThemeMode.jpg",
+      "/projects/bubbalous-bodacious-bbq/screenshots/footer.jpg"
     ]
   },
   {
@@ -43,14 +43,6 @@
     "description": "Transform your fitness journey with Kingdom Movement's powerful digital platform! This dynamic website empowers fitness enthusiasts to discover their strength through interactive class schedules, personalized nutrition guidance, and flexible membership options. Whether you're a CrossFit beginner or seasoned athlete, the platform adapts to your device and fitness goals. The smart technology behind the scenes ensures smooth navigation and real-time updates, making it easier than ever to join the Kingdom Movement community and achieve your wellness aspirations.",
     "deployedLink": "https://kingdom-movement.onrender.com/",
     "logo": "/projects/kingdom-movement/logo.jpg",
-    "screenshots": [
-      "/projects/kingdom-movement/screenshots/homePage.png",
-      "/projects/kingdom-movement/screenshots/nutritionPage.png",
-      "/projects/kingdom-movement/screenshots/schedulePage.png",
-      "/projects/kingdom-movement/screenshots/membershipPage.png",
-      "/projects/kingdom-movement/screenshots/lightThemeMode.jpg",
-      "/projects/kingdom-movement/screenshots/footer.png"
-    ],
     "keyFeatures": [
       "Legal Pages: Includes Privacy Policy and Terms of Service for compliance and transparency.",
       "Contact & Inquiry: Easy-to-use contact form for membership inquiries and general questions.",
@@ -70,6 +62,14 @@
       "JSON: Structured data storage for memberships, schedules, and nutrition items.",
       "CSS Custom Properties: Dynamic theming system for dark/light mode functionality.",
       "CSS Modules: Scoped, maintainable styles with CSS Grid and Flexbox for responsive layouts."
+    ],
+    "screenshots": [
+      "/projects/kingdom-movement/screenshots/homePage.png",
+      "/projects/kingdom-movement/screenshots/nutritionPage.png",
+      "/projects/kingdom-movement/screenshots/schedulePage.png",
+      "/projects/kingdom-movement/screenshots/membershipPage.png",
+      "/projects/kingdom-movement/screenshots/lightThemeMode.jpg",
+      "/projects/kingdom-movement/screenshots/footer.png"
     ]
   },
   {
@@ -78,14 +78,6 @@
     "description": "Discover your natural radiance with Moonstar Esthetics' luxurious digital sanctuary! This elegant website invites clients into a world of professional skincare excellence, showcasing advanced facial treatments, precision laser services, and comprehensive body care solutions. The sophisticated design mirrors the premium quality of services offered, while intelligent web technology ensures effortless booking and seamless user experience across all devices. Every pixel reflects the confidence, care, and clarity that defines the Moonstar Esthetics brand.",
     "deployedLink": "https://moonstar-esthetics.onrender.com/",
     "logo": "/projects/moonstar-esthetics/logo.jpg",
-    "screenshots": [
-      "/projects/moonstar-esthetics/screenshots/homePage.png",
-      "/projects/moonstar-esthetics/screenshots/servicesPage.png",
-      "/projects/moonstar-esthetics/screenshots/reviewsPage.png",
-      "/projects/moonstar-esthetics/screenshots/informationPage.png",
-      "/projects/moonstar-esthetics/screenshots/contactPage.png",
-      "/projects/moonstar-esthetics/screenshots/darkThemeMode.png"
-    ],
     "keyFeatures": [
       "Client Reviews: Real client testimonials build trust and credibility.",
       "Modern UI: Clean, elegant design with smooth transitions and interactive elements.",
@@ -101,6 +93,14 @@
       "Vite: Fast build tool and development server for modern web projects.",
       "React: Component-based UI library for building interactive user interfaces.",
       "JavaScript (ES6+): Modern language features for robust, maintainable code."
+    ],
+    "screenshots": [
+      "/projects/moonstar-esthetics/screenshots/homePage.png",
+      "/projects/moonstar-esthetics/screenshots/servicesPage.png",
+      "/projects/moonstar-esthetics/screenshots/reviewsPage.png",
+      "/projects/moonstar-esthetics/screenshots/informationPage.png",
+      "/projects/moonstar-esthetics/screenshots/contactPage.png",
+      "/projects/moonstar-esthetics/screenshots/darkThemeMode.png"
     ]
   },
   {
@@ -109,15 +109,6 @@
     "description": "Dive into the ultimate entertainment universe with Reelix! This cinematic discovery platform transforms how you explore movies and TV shows, featuring real-time data from the world's largest entertainment database. Navigate effortlessly through trending films, top-rated series, and personalized recommendations with lightning-fast performance. The sleek dark interface creates the perfect movie theater ambiance, while smart technology automatically adapts to your region and language preferences. Whether you're a casual viewer or film enthusiast, Reelix delivers an immersive entertainment experience that brings the magic of cinema to your fingertips.",
     "deployedLink": "https://reelix.onrender.com/",
     "logo": "/projects/reelix/logo.png",
-    "screenshots": [
-      "/projects/reelix/screenshots/homePage.png",
-      "/projects/reelix/screenshots/moviesPage.png",
-      "/projects/reelix/screenshots/tvShowsPage.png",
-      "/projects/reelix/screenshots/topIMDBPage.png",
-      "/projects/reelix/screenshots/contactPage.png",
-      "/projects/reelix/screenshots/privacyPolicyPage.png",
-      "/projects/reelix/screenshots/termsOfServicePage.png"
-    ],
     "keyFeatures": [
       "Responsive Filters: Users can filter content by genre, year, and country.",
       "Vite-Powered Performance: The application boasts a fast development server, optimized build processes, and efficient preview commands.",
@@ -137,6 +128,15 @@
       "Vite: A fast bundler and development server optimized for modern JavaScript projects.",
       "TMDB API: Serves as the source for real-time media data, including metadata, images, and videos.",
       "Render: Employed for deploying the application as a web service with dynamic port configuration."
+    ],
+    "screenshots": [
+      "/projects/reelix/screenshots/homePage.png",
+      "/projects/reelix/screenshots/moviesPage.png",
+      "/projects/reelix/screenshots/tvShowsPage.png",
+      "/projects/reelix/screenshots/topIMDBPage.png",
+      "/projects/reelix/screenshots/contactPage.png",
+      "/projects/reelix/screenshots/privacyPolicyPage.png",
+      "/projects/reelix/screenshots/termsOfServicePage.png"
     ]
   }
 ]
