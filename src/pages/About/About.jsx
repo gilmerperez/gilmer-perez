@@ -50,7 +50,7 @@ function About() {
           {/* Title */}
           <h1 className={styles.pageTitle}>ABOUT ME</h1>
           {/* Description */}
-          <section className={styles.description}>
+          <div className={styles.pageDescription}>
             <p>
               I'm Gilmer, a <strong>Front-End Developer and UI/UX enthusiast</strong> crafting intuitive, user-friendly
               experiences. My days consist of many cups of coffee and long hours on the computer trying to master
@@ -68,10 +68,10 @@ function About() {
               scalability. Proficient in Back-End technologies, including Node.js, Express, and database management with
               both PERN and MERN stacks, ensuring a comprehensive understanding of Full-Stack Development.
             </p>
-          </section>
+          </div>
 
           {/* Image */}
-          <div className={styles.imageContainer}>
+          <section className={styles.imageContainer}>
             <img
               ref={imageRef}
               src={currentImage}
@@ -81,7 +81,7 @@ function About() {
               className={styles.profileImage}
               onMouseLeave={handleMouseLeave}
             />
-          </div>
+          </section>
 
           {/* Divider */}
           <div className={styles.divider}></div>

@@ -12,7 +12,6 @@
 .pageTitle {
   line-height: 1;
   font-size: 3.5rem;
-  font-style: italic;
   transition: 0.3s ease;
   align-self: flex-start;
   margin-bottom: 0.75rem;
@@ -20,7 +19,7 @@
 }
 
 /* Description */
-.description {
+.pageDescription {
   gap: 1rem;
   display: flex;
   margin-bottom: 2rem;
@@ -79,7 +78,6 @@
 .technologiesTitle {
   line-height: 1;
   font-size: 3.5rem;
-  font-style: italic;
   transition: 0.3s ease;
   align-self: flex-start;
   margin-bottom: 0.75rem;
@@ -93,11 +91,11 @@
     margin-bottom: 0.5rem;
   }
 
-  .description {
+  .pageDescription {
     margin-bottom: 1.5rem;
   }
 
-  .description p {
+  .pageDescription p {
     font-size: 1rem;
   }
 
@@ -112,11 +110,11 @@
     font-size: 2.5rem;
   }
 
-  .description {
+  .pageDescription {
     margin-bottom: 1.25rem;
   }
 
-  .description p {
+  .pageDescription p {
     font-size: 0.95rem;
   }
 
