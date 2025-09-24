@@ -8,20 +8,15 @@
   justify-content: center;
 }
 
-/* Text content */
-.textContent {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
 /* Title */
-.title {
+.pageTitle {
   line-height: 1;
-  font-size: 4rem;
+  font-size: 3.5rem;
   font-style: italic;
+  transition: 0.3s ease;
+  align-self: flex-start;
   margin-bottom: 0.75rem;
-  transition: 0.3s ease-in;
+  font-family: "Kode Mono", monospace;
 }
 
 /* Description */
@@ -29,50 +24,49 @@
   gap: 1rem;
   display: flex;
   margin-bottom: 2rem;
+  transition: 0.3s ease;
   flex-direction: column;
-  transition: 0.3s ease-in;
 }
 
 .description p {
-  line-height: 1.5;
+  line-height: 1.35;
   font-size: 1.15rem;
-  text-align: justify;
-  transition: 0.3s ease-in;
+  transition: 0.3s ease;
 }
 
 .description p strong {
-  font-weight: 700;
   color: var(--primary);
   text-transform: uppercase;
-  text-shadow: 0px 0px 10px hsl(204, 100%, 50%, 0.75);
+  font-family: "Kode Mono", monospace;
+  text-shadow: 0px 0px 15px hsl(204, 100%, 50%);
 }
 
 /* Image */
 .imageContainer {
   width: 100%;
-  display: flex;
-  margin-bottom: 1rem;
-  justify-content: center;
+  margin-bottom: 2rem;
+  transition: 0.3s ease;
 }
 
 .profileImage {
-  width: 100%;
-  height: auto;
   cursor: pointer;
-  object-fit: cover;
   border-radius: 0.5rem;
+  transition: 0.3s ease-out;
   transform-style: preserve-3d;
-  transition: transform 0.1s ease-out;
   box-shadow: 10px 10px 10px hsla(0, 0%, 0%, 0.25);
+}
+
+.profileImage:hover {
+  box-shadow: 10px 10px 10px hsla(0, 0%, 0%, 0.5);
 }
 
 /* Divider */
 .divider {
   width: 100%;
-  height: 2px;
-  margin: 1rem 0;
+  height: 3px;
+  margin-bottom: 1rem;
   background-color: var(--primary);
-  box-shadow: 0px 0px 10px hsl(204, 100%, 50%);
+  box-shadow: 0px 0px 15px hsl(204, 100%, 50%);
 }
 
 /* Technologies */
@@ -83,16 +77,24 @@
 }
 
 .technologiesTitle {
-  font-size: 4rem;
+  line-height: 1;
+  font-size: 3.5rem;
   font-style: italic;
-  margin-bottom: 0.5rem;
-  transition: 0.3s ease-in;
+  transition: 0.3s ease;
+  align-self: flex-start;
+  margin-bottom: 0.75rem;
+  font-family: "Kode Mono", monospace;
 }
 
 /* Tablet responsiveness */
 @media (max-width: 768px) {
-  .title {
+  .pageTitle {
     font-size: 3rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .description {
+    margin-bottom: 1.5rem;
   }
 
   .description p {
@@ -102,36 +104,16 @@
   .technologiesTitle {
     font-size: 3rem;
   }
-
-  .technologiesList {
-    gap: 2rem;
-  }
-
-  .techSubheading {
-    font-size: 1.15rem;
-  }
-
-  .techItem {
-    font-size: 1rem;
-  }
-}
-
-/* Make technologies list go on top of each other */
-@media (max-width: 550px) {
-  .technologiesList {
-    gap: 1rem;
-    flex-direction: column;
-  }
 }
 
 /* Mobile responsiveness */
 @media (max-width: 480px) {
-  .title {
-    font-size: 2.25rem;
+  .pageTitle {
+    font-size: 2.5rem;
   }
 
   .description {
-    margin-bottom: 1rem;
+    margin-bottom: 1.25rem;
   }
 
   .description p {
@@ -139,18 +121,10 @@
   }
 
   .imageContainer {
-    margin-bottom: 0.75rem;
+    margin-bottom: 1.5rem;
   }
 
   .technologiesTitle {
-    font-size: 2.25rem;
-  }
-
-  .techSubheading {
-    font-size: 1.25rem;
-  }
-
-  .techItem {
-    font-size: 1.15rem;
+    font-size: 2.5rem;
   }
 }
