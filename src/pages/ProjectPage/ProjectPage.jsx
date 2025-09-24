@@ -1,9 +1,9 @@
-import styles from "./IndividualProject.module.css";
+import styles from "./ProjectPage.module.css";
 import projectsData from "../../data/projects.json";
 import { useState, useEffect, useRef } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
-function IndividualProject() {
+function ProjectPage() {
   // * Get project ID from URL parameter
   const { id } = useParams();
   const navigate = useNavigate();
@@ -93,7 +93,7 @@ function IndividualProject() {
     return (
       <>
         <main>
-          <div className={styles.individualProjectContainer}>
+          <div className={styles.projectPageContainer}>
             <h1>Loading...</h1>
           </div>
         </main>
@@ -104,7 +104,7 @@ function IndividualProject() {
   return (
     <>
       <main>
-        <div className={styles.individualProjectContainer}>
+        <div className={styles.projectPageContainer}>
           {/* Project header */}
           <div className={styles.projectHeader}>
             <h1 className={styles.projectTitle}>{project.title}</h1>
@@ -199,4 +199,4 @@ function IndividualProject() {
   );
 }
 
-export default IndividualProject;
+export default ProjectPage;
