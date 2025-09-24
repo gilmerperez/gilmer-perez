@@ -24,9 +24,9 @@ function Contact() {
           {/* Contact section */}
           <section className={styles.contactSection}>
             {/* Heading */}
-            <h1 className={styles.contactHeading}>CONTACT ME</h1>
-            {/* Description` */}
-            <p className={styles.contactDescription}>
+            <h1 className={styles.pageTitle}>CONTACT ME</h1>
+            {/* Description */}
+            <p className={styles.description}>
               Whether you are starting a project, have business inquiries or just want to say hi, I'm always open so
               feel free to reach out and I will get back to you as soon as possible.
             </p>
