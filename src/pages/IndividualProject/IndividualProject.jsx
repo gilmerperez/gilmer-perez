@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import styles from "./IndividualProject.module.css";
 import projectsData from "../../data/projects.json";
-import { useEffect, useState, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 
 function IndividualProject() {
   // * Get project ID from URL parameter
@@ -50,7 +50,7 @@ function IndividualProject() {
     }
   };
 
-  // * State for lightbox modal
+  // * State for modal overlay
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedScreenshot, setSelectedScreenshot] = useState(null);
 
