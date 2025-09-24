@@ -9,7 +9,7 @@ html[data-theme="light"] {
   --text-secondary: hsl(0, 0%, 20%);
   --primary: hsl(204, 100%, 50%);
   --footer-bg-color: hsl(0, 0%, 100%);
-  --shadow: 0 0 10px hsla(0, 0%, 0%, 0.5);
+  --shadow: 0px 0px 10px hsla(0, 0%, 0%, 0.5);
 }
 
 /* Dark mode */

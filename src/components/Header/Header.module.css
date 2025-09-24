@@ -368,13 +368,17 @@ header {
 
 /* Active link */
 .sidebarNavItems a.activeLink {
-  color: var(--primary);
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  color: hsl(0, 0%, 100%);
+  box-shadow: var(--shadow);
+  background-color: var(--primary);
 }
 
 .sidebarSeparator {
-  height: 2px;
+  height: 3px;
   border: none;
-  background-color: var(--text-secondary);
+  background-color: var(--text-primary);
 }
 
 /* Sidebar resume button */
