@@ -3,25 +3,23 @@
 
 /* Light mode */
 html[data-theme="light"] {
-  --header-bg-color: hsl(0, 0%, 95%);
+  --header-bg-color: hsl(0, 0%, 100%);
   --bg-color: hsl(0, 0%, 95%);
   --text-primary: hsl(0, 0%, 10%);
   --text-secondary: hsl(0, 0%, 20%);
   --primary: hsl(204, 100%, 50%);
-  --primary-dark: hsl(204, 100%, 40%);
-  --footer-bg-color: hsl(0, 0%, 95%);
+  --footer-bg-color: hsl(0, 0%, 100%);
   --shadow: 0 0 10px hsla(0, 0%, 0%, 0.5);
 }
 
 /* Dark mode */
 html[data-theme="dark"] {
-  --header-bg-color: hsl(0, 0%, 5%);
+  --header-bg-color: hsl(0, 0%, 2.5%);
   --bg-color: hsl(0, 0%, 5%);
   --text-primary: hsl(0, 0%, 90%);
   --text-secondary: hsl(0, 0%, 80%);
   --primary: hsl(204, 100%, 50%);
-  --primary-dark: hsl(204, 100%, 40%);
-  --footer-bg-color: hsl(0, 0%, 5%);
+  --footer-bg-color: hsl(0, 0%, 2.5%);
   --shadow: 0 0 10px hsla(204, 100%, 50%, 0.5);
 }
 
