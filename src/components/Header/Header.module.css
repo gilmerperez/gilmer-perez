@@ -45,7 +45,8 @@ header {
   font-weight: 500;
   font-size: 1.5rem;
   font-style: italic;
-  transition: 0.3s ease-in;
+  transition: 0.3s ease;
+  font-family: "Kode Mono", monospace;
 }
 
 /* Site navigation */
@@ -53,8 +54,8 @@ header {
   gap: 1rem;
   display: flex;
   align-items: center;
+  transition: 0.3s ease;
   justify-content: center;
-  transition: 0.3s ease-in;
 }
 
 .navItems {
@@ -62,14 +63,15 @@ header {
   display: flex;
   font-size: 1.25rem;
   align-items: center;
+  transition: 0.3s ease;
   justify-content: center;
-  transition: 0.3s ease-in;
 }
 
 .navItems a {
   padding: 0.25rem 0;
   position: relative;
-  transition: 0.3s ease-in;
+  transition: 0.3s ease;
+  font-family: "Kode Mono", monospace;
 }
 
 /* Hover underline effect */
@@ -103,16 +105,16 @@ header {
 /* Separator */
 .separator {
   font-size: 1.25rem;
-  transition: 0.3s ease-in;
+  transition: 0.3s ease;
 }
 
 /* Theme button */
 .themeButton {
   font-size: 1.15rem;
+  transition: 0.3s ease;
   color: var(--text-primary);
   backdrop-filter: blur(100px);
   background-color: transparent;
-  transition: transform 0.2s ease-in, color 0.3s ease-in;
 }
 
 .themeButton:hover {
@@ -130,6 +132,7 @@ header {
   color: var(--text-primary);
   background-color: transparent;
   border: 2px solid var(--primary);
+  font-family: "Kode Mono", monospace;
   box-shadow: 0px 0px 10px hsl(204, 100%, 50%);
 }
 
@@ -239,7 +242,7 @@ header {
   display: none;
   background: none;
   font-size: 1.15rem;
-  transition: 0.3s ease-in;
+  transition: 0.3s ease;
   color: var(--text-primary);
 }
 
@@ -251,9 +254,9 @@ header {
 /* Logo */
 .mobileLogo {
   font-weight: 500;
-  font-size: 1.15rem;
+  font-size: 1.25rem;
   font-style: italic;
-  transition: 0.3s ease-in;
+  font-family: "Kode Mono", monospace;
 }
 
 /* Hamburger menu button */
@@ -261,7 +264,7 @@ header {
   display: none;
   background: none;
   font-size: 1.15rem;
-  transition: 0.3s ease-in;
+  transition: 0.3s ease;
   color: var(--text-primary);
 }
 
@@ -336,12 +339,12 @@ header {
   background: none;
   position: absolute;
   font-size: 1.15rem;
-  transition: 0.3s ease-in;
+  transition: 0.3s ease;
   color: var(--text-primary);
 }
 
 .sidebarClose:hover {
-  transform: scale(1.15);
+  transform: scale(1.25);
   color: var(--text-secondary);
 }
 
@@ -357,7 +360,8 @@ header {
 .sidebarNavItems a {
   display: flex;
   align-items: center;
-  transition: transform 0.2s ease-in, color 0.3s ease-in-out;
+  transition: 0.3s ease;
+  font-family: "Kode Mono", monospace;
 }
 
 /* On hover, prevent hover effect on active link */
@@ -373,10 +377,11 @@ header {
   color: hsl(0, 0%, 100%);
   box-shadow: var(--shadow);
   background-color: var(--primary);
+  box-shadow: 0px 0px 15px hsl(204, 100%, 50%);
 }
 
 .sidebarSeparator {
-  height: 3px;
+  height: 2px;
   border: none;
   background-color: var(--text-primary);
 }
@@ -394,7 +399,8 @@ header {
   justify-content: center;
   color: hsl(0, 0%, 100%);
   background-color: var(--primary);
-  box-shadow: 0px 0px 10px hsl(204, 100%, 50%);
+  font-family: "Kode Mono", monospace;
+  box-shadow: 0px 0px 15px hsl(204, 100%, 50%);
 }
 
 .sidebarResumeButton:hover:not(:disabled) {
@@ -403,6 +409,7 @@ header {
 
 .sidebarResumeButton:disabled {
   opacity: 0.75;
+  transform: none;
   cursor: not-allowed;
 }
 
@@ -415,22 +422,7 @@ header {
   margin-top: auto;
   flex-direction: column;
   align-items: flex-start;
-  transition: 0.3s ease-in;
   color: var(--text-secondary);
-}
-
-.sidebarFooter a {
-  gap: 0.75rem;
-  display: flex;
-  font-size: 1.15rem;
-  align-items: center;
-  color: var(--text-secondary);
-  transition: color 0.3s ease-in-out, transform 0.2s ease-in;
-}
-
-.sidebarFooter a:hover {
-  color: var(--text-primary);
-  transform: translateX(5px);
 }
 
 .sidebarThemeButton {
@@ -438,11 +430,27 @@ header {
   display: flex;
   font-size: 1.15rem;
   align-items: center;
+  transition: 0.3s ease;
   color: var(--text-secondary);
-  transition: color 0.3s ease-in-out, transform 0.2s ease-in;
+  font-family: "Kode Mono", monospace;
 }
 
 .sidebarThemeButton:hover {
+  color: var(--text-primary);
+  transform: translateX(5px);
+}
+
+.sidebarFooter a {
+  gap: 0.75rem;
+  display: flex;
+  font-size: 1.15rem;
+  align-items: center;
+  transition: 0.3s ease;
+  color: var(--text-secondary);
+  font-family: "Kode Mono", monospace;
+}
+
+.sidebarFooter a:hover {
   color: var(--text-primary);
   transform: translateX(5px);
 }
