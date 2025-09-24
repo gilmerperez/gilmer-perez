@@ -1,7 +1,7 @@
-import { useEffect, useState, useRef } from "react";
 import { useParams } from "react-router-dom";
 import styles from "./IndividualProject.module.css";
 import projectsData from "../../data/projects.json";
+import { useEffect, useState, useRef } from "react";
 
 function IndividualProject() {
   // * Get project ID from URL parameter
@@ -49,6 +49,43 @@ function IndividualProject() {
       screenshotRefs.current[index].style.transform = "perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)";
     }
   };
+
+  // * State for lightbox modal
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedScreenshot, setSelectedScreenshot] = useState(null);
+
+  // * Handle screenshot click to open modal
+  const handleScreenshotClick = (screenshot, index) => {
+    setSelectedScreenshot({ src: screenshot, index });
+    setIsModalOpen(true);
+  };
+
+  // * Handle modal close
+  const handleModalClose = () => {
+    setIsModalOpen(false);
+    setSelectedScreenshot(null);
+  };
+
+  // * Handle escape key to close modal
+  useEffect(() => {
+    const handleEscapeKey = (event) => {
+      if (event.key === "Escape" && isModalOpen) {
+        handleModalClose();
+      }
+    };
+
+    if (isModalOpen) {
+      document.addEventListener("keydown", handleEscapeKey);
+      document.body.style.overflow = "hidden"; // Prevent background scrolling
+    } else {
+      document.body.style.overflow = "unset";
+    }
+
+    return () => {
+      document.removeEventListener("keydown", handleEscapeKey);
+      document.body.style.overflow = "unset";
+    };
+  }, [isModalOpen]);
 
   // * Show loading or not found state if project is not found
   if (!project) {
@@ -128,6 +165,7 @@ function IndividualProject() {
                     ref={(el) => (screenshotRefs.current[index] = el)}
                     onMouseLeave={() => handleScreenshotMouseLeave(index)}
                     onMouseMove={(e) => handleScreenshotMouseMove(e, index)}
+                    onClick={() => handleScreenshotClick(screenshot, index)}
                   >
                     <img
                       src={screenshot}
@@ -141,6 +179,22 @@ function IndividualProject() {
           )}
         </div>
       </main>
+
+      {/* Modal overlay */}
+      {isModalOpen && selectedScreenshot && (
+        <div className={styles.modalOverlay} onClick={handleModalClose}>
+          <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
+            <button className={styles.closeButton} onClick={handleModalClose} aria-label="Close modal">
+              <i className="fa-solid fa-xmark"></i>
+            </button>
+            <img
+              src={selectedScreenshot.src}
+              className={styles.modalImage}
+              alt={`${project.title} screenshot ${selectedScreenshot.index + 1}`}
+            />
+          </div>
+        </div>
+      )}
     </>
   );
 }
