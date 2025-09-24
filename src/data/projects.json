@@ -28,11 +28,11 @@
       "JSON Data Management: Structured data storage for menu items, party packs, and restaurant information enabling easy content updates and maintenance."
     ],
     "screenshots": [
+      "/projects/bubbalous-bodacious-bbq/screenshots/PartyPacksPage.png",
       "/projects/bubbalous-bodacious-bbq/screenshots/homePage.jpg",
       "/projects/bubbalous-bodacious-bbq/screenshots/menuPage.jpg",
-      "/projects/bubbalous-bodacious-bbq/screenshots/PartyPacksPage.png",
-      "/projects/bubbalous-bodacious-bbq/screenshots/orderOnlinePage.jpg",
       "/projects/bubbalous-bodacious-bbq/screenshots/checkoutPage.png",
+      "/projects/bubbalous-bodacious-bbq/screenshots/orderOnlinePage.jpg",
       "/projects/bubbalous-bodacious-bbq/screenshots/darkThemeMode.jpg",
       "/projects/bubbalous-bodacious-bbq/screenshots/footer.jpg"
     ]
@@ -98,9 +98,9 @@
       "/projects/moonstar-esthetics/screenshots/homePage.png",
       "/projects/moonstar-esthetics/screenshots/servicesPage.png",
       "/projects/moonstar-esthetics/screenshots/reviewsPage.png",
+      "/projects/moonstar-esthetics/screenshots/darkThemeMode.png",
       "/projects/moonstar-esthetics/screenshots/informationPage.png",
-      "/projects/moonstar-esthetics/screenshots/contactPage.png",
-      "/projects/moonstar-esthetics/screenshots/darkThemeMode.png"
+      "/projects/moonstar-esthetics/screenshots/contactPage.png"
     ]
   },
   {
@@ -130,13 +130,13 @@
       "TMDB API: Serves as the source for real-time media data, including metadata, images, and videos."
     ],
     "screenshots": [
-      "/projects/reelix/screenshots/homePage.png",
       "/projects/reelix/screenshots/moviesPage.png",
-      "/projects/reelix/screenshots/tvShowsPage.png",
       "/projects/reelix/screenshots/topIMDBPage.png",
-      "/projects/reelix/screenshots/contactPage.png",
+      "/projects/reelix/screenshots/tvShowsPage.png",
+      "/projects/reelix/screenshots/homePage.png",
       "/projects/reelix/screenshots/privacyPolicyPage.png",
-      "/projects/reelix/screenshots/termsOfServicePage.png"
+      "/projects/reelix/screenshots/termsOfServicePage.png",
+      "/projects/reelix/screenshots/contactPage.png"
     ]
   }
 ]
