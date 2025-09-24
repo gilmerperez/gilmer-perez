@@ -137,10 +137,6 @@
 }
 
 /* Project screenshots */
-.projectScreenshots .sectionTitle {
-  text-align: center;
-}
-
 .screenshotsGrid {
   gap: 1rem;
   display: grid;
@@ -150,18 +146,18 @@
   grid-template-columns: repeat(3, 1fr);
 }
 
+.screenshotsGrid:hover {
+  gap: 2rem;
+}
+
 .screenshotContainer {
   width: 100%;
   overflow: hidden;
-  max-width: 400px;
-  transition: 0.3s ease;
   border-radius: 0.5rem;
+  transform-style: preserve-3d;
   border: 1px solid var(--primary);
+  transition: transform 0.1s ease-out;
   box-shadow: 0px 0px 10px hsl(204, 100%, 50%);
-}
-
-.screenshotContainer:hover {
-  transform: translateY(-3px);
 }
 
 .screenshot {

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useParams } from "react-router-dom";
 import styles from "./IndividualProject.module.css";
 import projectsData from "../../data/projects.json";
@@ -21,7 +21,36 @@ function IndividualProject() {
     }
   }, [id]);
 
-  // * Show loading or not found state
+  // * Refs for screenshot containers to apply 3D tilt effect
+  const screenshotRefs = useRef([]);
+
+  // * Handle mouse move for 3D tilt effect on screenshots
+  const handleScreenshotMouseMove = (e, index) => {
+    if (!screenshotRefs.current[index]) return;
+    // Get container dimensions
+    const rect = screenshotRefs.current[index].getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+    // Calculate mouse position
+    const mouseX = e.clientX - centerX;
+    const mouseY = e.clientY - centerY;
+    // Calculate rotation angles
+    const rotateX = (mouseY / rect.height) * -20; // Tilt up/down
+    const rotateY = (mouseX / rect.width) * 20; // Tilt left/right
+    // Set transform
+    screenshotRefs.current[
+      index
+    ].style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.10)`;
+  };
+
+  // * Reset transform when mouse leaves screenshot
+  const handleScreenshotMouseLeave = (index) => {
+    if (screenshotRefs.current[index]) {
+      screenshotRefs.current[index].style.transform = "perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)";
+    }
+  };
+
+  // * Show loading or not found state if project is not found
   if (!project) {
     return (
       <>
@@ -93,7 +122,13 @@ function IndividualProject() {
               <h2 className={styles.sectionTitle}>PROJECT SCREENSHOTS</h2>
               <div className={styles.screenshotsGrid}>
                 {project.screenshots.map((screenshot, index) => (
-                  <div key={index} className={styles.screenshotContainer}>
+                  <div
+                    key={index}
+                    className={styles.screenshotContainer}
+                    ref={(el) => (screenshotRefs.current[index] = el)}
+                    onMouseLeave={() => handleScreenshotMouseLeave(index)}
+                    onMouseMove={(e) => handleScreenshotMouseMove(e, index)}
+                  >
                     <img
                       src={screenshot}
                       className={styles.screenshot}
