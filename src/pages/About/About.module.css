@@ -122,6 +122,10 @@
     margin-bottom: 1.5rem;
   }
 
+  .divider {
+    height: 2px;
+  }
+
   .technologiesTitle {
     font-size: 2.5rem;
   }
