@@ -1,25 +1,26 @@
-import { useParams } from "react-router-dom";
 import styles from "./IndividualProject.module.css";
 import projectsData from "../../data/projects.json";
 import { useState, useEffect, useRef } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 
 function IndividualProject() {
   // * Get project ID from URL parameter
   const { id } = useParams();
+  const navigate = useNavigate();
   const [project, setProject] = useState(null);
 
   // * Find project data based on URL parameter
   useEffect(() => {
     const foundProject = projectsData.find((p) => p.id === parseInt(id));
-    setProject(foundProject);
 
-    // * Set page title
     if (foundProject) {
+      setProject(foundProject);
       document.title = `Gilmer Perez | ${foundProject.title}`;
     } else {
-      document.title = "Gilmer Perez | Project Not Found";
+      // * Redirect to PageNotFound if project doesn't exist
+      navigate("/404");
     }
-  }, [id]);
+  }, [id, navigate]);
 
   // * Refs for screenshot containers to apply 3D tilt effect
   const screenshotRefs = useRef([]);
@@ -87,14 +88,13 @@ function IndividualProject() {
     };
   }, [isModalOpen]);
 
-  // * Show loading or not found state if project is not found
+  // * Show loading state while project is being loaded
   if (!project) {
     return (
       <>
         <main>
           <div className={styles.individualProjectContainer}>
-            <h1 className={styles.projectNotFoundTitle}>PROJECT NOT FOUND</h1>
-            <p className={styles.projectNotFoundDescription}>The project you're looking for doesn't exist.</p>
+            <h1>Loading...</h1>
           </div>
         </main>
       </>
