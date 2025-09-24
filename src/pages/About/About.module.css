@@ -27,13 +27,13 @@
   flex-direction: column;
 }
 
-.description p {
+.pageDescription p {
   line-height: 1.35;
   font-size: 1.15rem;
   transition: 0.3s ease;
 }
 
-.description p strong {
+.pageDescription p strong {
   color: var(--primary);
   text-transform: uppercase;
   font-family: "Kode Mono", monospace;
