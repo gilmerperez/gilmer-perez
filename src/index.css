@@ -60,7 +60,7 @@ body {
 main {
   width: 100%;
   padding: 2rem;
-  transition: 0.3s ease-in;
+  transition: 0.3s ease;
 }
 
 /* Links */
