@@ -326,7 +326,7 @@ header {
   position: relative;
   flex-direction: column;
   box-shadow: var(--shadow);
-  background-color: var(--header-bg-color);
+  background-color: var(--footer-bg-color);
 }
 
 /* Sidebar close button */
