@@ -1,22 +1,13 @@
+import { useRef } from "react";
 import { Link } from "react-router-dom";
-import { useState, useRef } from "react";
 import styles from "./Project.module.css";
 
 function Project({ isReversed = false, logo, title, description, id, deployedLink }) {
-  // * State for hover effect
-  const [isHovered, setIsHovered] = useState(false);
-
-  // * Handle mouse enter
-  const handleMouseEnter = () => {
-    setIsHovered(true);
-  };
-
   // * Reset transform when mouse leaves
   const handleMouseLeave = () => {
     if (imageRef.current) {
       imageRef.current.style.transform = "perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)";
     }
-    setIsHovered(false);
   };
 
   // * Ref for image element
@@ -44,15 +35,9 @@ function Project({ isReversed = false, logo, title, description, id, deployedLin
       <section className={`${styles.projectContainer} ${isReversed ? styles.reversed : ""}`}>
         {/* Image container */}
         <div className={styles.imageContainer}>
-          <div
-            onMouseMove={handleMouseMove}
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-            className={styles.imageWrapper}
-          >
+          <div onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave} className={styles.imageWrapper}>
             {/* Project image */}
             <img src={logo} ref={imageRef} className={styles.projectImage} alt={title} />
-            <div className={`${styles.gradientOverlay} ${isHovered ? styles.gradientHidden : ""}`}></div>
           </div>
         </div>
 
