@@ -24,7 +24,7 @@ The following images show the web application's appearance and functionality:
 
 ![Contact Page](./src/assets/screenshots/contactPage.png)
 
-![Projects Page](./src/assets/screenshots/ProjectPage.png)
+![Projects Page](./src/assets/screenshots/ProjectsPage.png)
 
 ![Individual Project Page](./src/assets/screenshots/individualProjectPage.png)
 
