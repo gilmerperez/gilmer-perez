@@ -47,7 +47,7 @@ function About() {
     <>
       <main>
         <div className={styles.aboutContainer}>
-          {/* About section */}
+          {/* About me */}
           <section className={styles.aboutSection}>
             {/* Title */}
             <h1 className={styles.aboutTitle}>ABOUT ME</h1>

@@ -21,20 +21,22 @@ function Contact() {
     <>
       <main>
         <div className={styles.contactContainer}>
-          {/* Contact section */}
+          {/* Contact me */}
           <section className={styles.contactSection}>
-            {/* Heading */}
-            <h1 className={styles.pageTitle}>CONTACT ME</h1>
+            {/* Title */}
+            <h1 className={styles.contactTitle}>CONTACT ME</h1>
             {/* Description */}
-            <p className={styles.description}>
+            <p className={styles.contactDescription}>
               Whether you are starting a project, have business inquiries or just want to say hi, I'm always open so
               feel free to reach out and I will get back to you as soon as possible.
             </p>
             {/* CTA buttons */}
             <div className={styles.buttonContainer}>
+              {/* Email button */}
               <button onClick={handleEmailClick} className={styles.contactButton} aria-label="Email me">
                 EMAIL ME
               </button>
+              {/* Call button */}
               <button onClick={handlePhoneClick} className={styles.contactButton} aria-label="Call me">
                 CALL ME
               </button>

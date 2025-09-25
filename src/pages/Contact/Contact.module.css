@@ -8,7 +8,7 @@
   justify-content: center;
 }
 
-/* Contact section */
+/* Contact me */
 .contactSection {
   width: 100%;
   display: flex;
@@ -19,22 +19,20 @@
   justify-content: center;
 }
 
-/* Heading */
-.pageTitle {
-  line-height: 1;
+/* Title */
+.contactTitle {
   font-size: 5rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
   transition: 0.3s ease;
 }
 
 /* Description */
-.description {
+.contactDescription {
   max-width: 800px;
   line-height: 1.35;
   font-size: 1.25rem;
   transition: 0.3s ease;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
   color: var(--text-secondary);
 }
 
@@ -58,6 +56,7 @@
   color: hsl(0, 0%, 100%);
   box-shadow: var(--shadow-small);
   background-color: var(--primary);
+  font-family: "Kode Mono", monospace;
 }
 
 /* Call button */
@@ -74,18 +73,12 @@
 
 /* Tablet responsiveness */
 @media (max-width: 768px) {
-  .pageTitle {
+  .contactTitle {
     font-size: 4rem;
-    margin-bottom: 0.25rem;
   }
 
-  .description {
+  .contactDescription {
     font-size: 1.15rem;
-    margin-bottom: 1rem;
-  }
-
-  .buttonContainer {
-    gap: 1.5rem;
   }
 
   .contactButton {
@@ -95,16 +88,12 @@
 
 /* Mobile responsiveness */
 @media (max-width: 480px) {
-  .pageTitle {
-    font-size: 2.75rem;
+  .contactTitle {
+    font-size: 2.5rem;
   }
 
-  .description {
-    font-size: 1rem;
-  }
-
-  .buttonContainer {
-    gap: 1rem;
+  .contactDescription {
+    font-size: 0.95rem;
   }
 
   .contactButton {
