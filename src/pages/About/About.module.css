@@ -8,42 +8,37 @@
   justify-content: center;
 }
 
+.aboutSection {
+  text-align: left;
+}
+
 /* Title */
-.pageTitle {
-  line-height: 1;
+.aboutTitle {
   font-size: 3.5rem;
   transition: 0.3s ease;
-  align-self: flex-start;
   margin-bottom: 0.75rem;
 }
 
 /* Description */
-.pageDescription {
+.aboutDescription {
   gap: 1rem;
   display: flex;
-  margin-bottom: 2rem;
   transition: 0.3s ease;
+  margin-bottom: 1.5rem;
   flex-direction: column;
 }
 
-.pageDescription p {
+.aboutDescription p {
   line-height: 1.35;
   font-size: 1.15rem;
   transition: 0.3s ease;
 }
 
-.pageDescription p strong {
-  color: var(--primary);
-  text-transform: uppercase;
-  text-shadow: var(--shadow-small);
-  font-family: "Kode Mono", monospace;
-}
-
 /* Image */
-.imageContainer {
+.imageSection {
   width: 100%;
-  margin-bottom: 2rem;
   transition: 0.3s ease;
+  margin-bottom: 1.5rem;
 }
 
 .profileImage {
@@ -75,25 +70,18 @@
 }
 
 .technologiesTitle {
-  line-height: 1;
   font-size: 3.5rem;
   transition: 0.3s ease;
-  align-self: flex-start;
   margin-bottom: 0.75rem;
 }
 
 /* Tablet responsiveness */
 @media (max-width: 768px) {
-  .pageTitle {
+  .aboutTitle {
     font-size: 3rem;
-    margin-bottom: 0.5rem;
   }
 
-  .pageDescription {
-    margin-bottom: 1.5rem;
-  }
-
-  .pageDescription p {
+  .aboutDescription p {
     font-size: 1rem;
   }
 
@@ -104,20 +92,12 @@
 
 /* Mobile responsiveness */
 @media (max-width: 480px) {
-  .pageTitle {
+  .aboutTitle {
     font-size: 2.5rem;
   }
 
-  .pageDescription {
-    margin-bottom: 1.25rem;
-  }
-
-  .pageDescription p {
+  .aboutDescription p {
     font-size: 0.95rem;
-  }
-
-  .imageContainer {
-    margin-bottom: 1.5rem;
   }
 
   .divider {

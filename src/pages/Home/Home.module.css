@@ -27,15 +27,15 @@
   color: var(--text-secondary);
 }
 
-/* Main title */
-.mainTitle {
+/* Title */
+.homeTitle {
   font-size: 5rem;
   margin-bottom: 1rem;
   transition: 0.3s ease;
 }
 
 /* Description */
-.description {
+.homeDescription {
   max-width: 1000px;
   line-height: 1.35;
   font-size: 1.25rem;
@@ -68,11 +68,11 @@
     font-size: 1.5rem;
   }
 
-  .mainTitle {
+  .homeTitle {
     font-size: 4rem;
   }
 
-  .description {
+  .homeDescription {
     font-size: 1.15rem;
   }
 
@@ -87,11 +87,11 @@
     font-size: 1.25rem;
   }
 
-  .mainTitle {
+  .homeTitle {
     font-size: 2.5rem;
   }
 
-  .description {
+  .homeDescription {
     font-size: 0.95rem;
   }
 

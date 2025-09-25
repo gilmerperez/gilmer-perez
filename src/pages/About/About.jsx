@@ -12,13 +12,6 @@ function About() {
   const imageRef = useRef(null);
   const [currentImage, setCurrentImage] = useState("/images/gilmer-perez-1.jpg");
 
-  // * Handle image click to switch images
-  const handleImageClick = () => {
-    setCurrentImage((prev) =>
-      prev === "/images/gilmer-perez-1.jpg" ? "/images/gilmer-perez-2.jpg" : "/images/gilmer-perez-1.jpg"
-    );
-  };
-
   // * Handle mouse move for 3D tilt effect
   const handleMouseMove = (e) => {
     if (!imageRef.current) return;
@@ -43,35 +36,45 @@ function About() {
     }
   };
 
+  // * Handle image click to switch images
+  const handleImageClick = () => {
+    setCurrentImage((prev) =>
+      prev === "/images/gilmer-perez-1.jpg" ? "/images/gilmer-perez-2.jpg" : "/images/gilmer-perez-1.jpg"
+    );
+  };
+
   return (
     <>
       <main>
         <div className={styles.aboutContainer}>
-          {/* Title */}
-          <h1 className={styles.pageTitle}>ABOUT ME</h1>
-          {/* Description */}
-          <div className={styles.pageDescription}>
-            <p>
-              I'm Gilmer Perez, a <strong>Front-End Developer and UI/UX enthusiast</strong> crafting intuitive, user-friendly
-              experiences. My days consist of many cups of coffee and long hours on the computer trying to master
-              anything and everything that I put my mind to.
-            </p>
-            <p>
-              People who know me would describe me as an <strong>obsessed perfectionist</strong>, since I am a very
-              driven person and love learning new things that make me think critically and challenge me daily, but that
-              is fine since I am very driven to always be proud of my work. I'm skilled in crafting responsive,
-              pixel-perfect, stunning interfaces with a focus on delivering seamless user experiences.
-            </p>
-            <p>
-              I'm extending my skills to <strong>build solutions that inspire and connect people</strong>. Versed in
-              integrating dynamic content through RESTful APIs and optimizing applications for performance and
-              scalability. Proficient in Back-End technologies, including Node.js, Express, and database management with
-              both PERN and MERN stacks, ensuring a comprehensive understanding of Full-Stack Development.
-            </p>
-          </div>
+          {/* About section */}
+          <section className={styles.aboutSection}>
+            {/* Title */}
+            <h1 className={styles.aboutTitle}>ABOUT ME</h1>
+            {/* Description */}
+            <div className={styles.aboutDescription}>
+              <p>
+                I'm Gilmer Perez, a <strong>FRONT-END DEVELOPER AND UI/UX ENTHUSIAST</strong> crafting intuitive,
+                user-friendly experiences. My days consist of many cups of coffee and long hours on the computer trying
+                to master anything and everything that I put my mind to.
+              </p>
+              <p>
+                People who know me would describe me as an <strong>OBSESSED PERFECTIONIST</strong>, since I am a very
+                driven person and love learning new things that make me think critically and challenge me daily, but
+                that is fine since I am very driven to always be proud of my work. I'm skilled in crafting responsive,
+                pixel-perfect, stunning interfaces with a focus on delivering seamless user experiences.
+              </p>
+              <p>
+                I'm extending my skills to <strong>BUILD SOLUTIONS THAT INSPIRE AND CONNECT PEOPLE</strong>. Versed in
+                integrating dynamic content through RESTful APIs and optimizing applications for performance and
+                scalability. Proficient in Back-End technologies, including Node.js, Express, and database management
+                with both PERN and MERN stacks, ensuring a comprehensive understanding of Full-Stack Development.
+              </p>
+            </div>
+          </section>
 
           {/* Image */}
-          <section className={styles.imageContainer}>
+          <section className={styles.imageSection}>
             <img
               ref={imageRef}
               src={currentImage}

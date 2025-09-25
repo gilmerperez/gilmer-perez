@@ -18,14 +18,14 @@ function Home() {
             <span className={styles.greeting}>
               Hi, I'm <strong>Gilmer</strong>
             </span>
-            {/* Main title */}
-            <h1 className={styles.mainTitle}>
+            {/* Title */}
+            <h1 className={styles.homeTitle}>
               FRONT-END
               <br />
               WEB DEVELOPER.
             </h1>
             {/* Description */}
-            <p className={styles.description}>
+            <p className={styles.homeDescription}>
               A passionate <strong>FRONT-END WEB DEVELOPER</strong> and <strong>UI/UX ENTHUSIAST</strong> with{" "}
               <strong>FULL-STACK KNOWLEDGE</strong>, specialized in building stunning pixel-perfect interactive websites
               and applications. Passionate about creating engaging & dynamic web experiences.
