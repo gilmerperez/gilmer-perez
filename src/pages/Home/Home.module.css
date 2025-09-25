@@ -22,22 +22,14 @@
 /* Greeting */
 .greeting {
   font-size: 2rem;
-  font-weight: 400;
   transition: 0.3s ease;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
   color: var(--text-secondary);
-}
-
-.greetingName {
-  font-weight: 700;
-  color: var(--text-primary);
 }
 
 /* Main title */
 .mainTitle {
-  line-height: 1;
   font-size: 5rem;
-  font-weight: 700;
   margin-bottom: 1rem;
   transition: 0.3s ease;
 }
@@ -52,14 +44,6 @@
   color: var(--text-secondary);
 }
 
-.description strong {
-  font-weight: 700;
-  color: var(--primary);
-  text-transform: uppercase;
-  text-shadow: var(--shadow-small);
-  font-family: "Kode Mono", monospace;
-}
-
 /* CTA button */
 .ctaButton {
   font-weight: 500;
@@ -70,6 +54,7 @@
   color: hsl(0, 0%, 100%);
   box-shadow: var(--shadow-small);
   background-color: var(--primary);
+  font-family: "Kode Mono", monospace;
 }
 
 .ctaButton:hover {
@@ -85,12 +70,10 @@
 
   .mainTitle {
     font-size: 4rem;
-    margin-bottom: 0.75rem;
   }
 
   .description {
     font-size: 1.15rem;
-    margin-bottom: 1rem;
   }
 
   .ctaButton {
@@ -106,7 +89,6 @@
 
   .mainTitle {
     font-size: 2.5rem;
-    margin-bottom: 0.5rem;
   }
 
   .description {

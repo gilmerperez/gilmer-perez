@@ -74,7 +74,15 @@ a {
 /* Buttons */
 button {
   cursor: pointer;
-  font-family: "Kode Mono", monospace !important;
+  font-family: "Kode Mono", monospace;
+}
+
+/* Strong text */
+strong {
+  font-weight: 700;
+  color: var(--primary);
+  text-shadow: var(--shadow-small);
+  font-family: "Kode Mono", monospace;
 }
 
 /* Lists */
@@ -111,6 +119,7 @@ h3,
 h4,
 h5,
 h6 {
+  line-height: 1;
   font-weight: 700;
   font-family: "Kode Mono", monospace;
 }

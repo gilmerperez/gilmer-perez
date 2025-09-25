@@ -2,7 +2,7 @@ footer {
   width: 100%;
   padding: 2rem;
   transition: 0.3s ease;
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadow-small);
   background-color: var(--footer-bg-color);
 }
 

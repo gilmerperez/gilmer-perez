@@ -15,9 +15,9 @@ function Home() {
           {/* Hero section */}
           <section className={styles.heroSection}>
             {/* Greeting */}
-            <h2 className={styles.greeting}>
-              Hi, I'm <span className={styles.greetingName}>Gilmer</span>{" "}
-            </h2>
+            <span className={styles.greeting}>
+              Hi, I'm <strong>Gilmer</strong>
+            </span>
             {/* Main title */}
             <h1 className={styles.mainTitle}>
               FRONT-END
@@ -26,8 +26,8 @@ function Home() {
             </h1>
             {/* Description */}
             <p className={styles.description}>
-              A passionate <strong>Front-End Web Developer</strong> and <strong>UI/UX Enthusiast</strong> with{" "}
-              <strong>Full-Stack Knowledge</strong>, specialized in building stunning pixel-perfect interactive websites
+              A passionate <strong>FRONT-END WEB DEVELOPER</strong> and <strong>UI/UX ENTHUSIAST</strong> with{" "}
+              <strong>FULL-STACK KNOWLEDGE</strong>, specialized in building stunning pixel-perfect interactive websites
               and applications. Passionate about creating engaging & dynamic web experiences.
             </p>
             {/* CTA button */}
