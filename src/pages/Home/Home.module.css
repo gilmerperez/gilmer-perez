@@ -69,14 +69,14 @@
   transition: 0.3s ease;
   border-radius: 0.5rem;
   color: hsl(0, 0%, 100%);
+  box-shadow: var(--shadow-small);
   background-color: var(--primary);
   font-family: "Kode Mono", monospace;
-  box-shadow: 0px 0px 10px hsl(204, 100%, 50%);
 }
 
 .ctaButton:hover {
   transform: scale(1.15);
-  box-shadow: 0px 0px 30px hsl(204, 100%, 50%);
+  box-shadow: var(--shadow-large);
 }
 
 /* Tablet responsiveness */

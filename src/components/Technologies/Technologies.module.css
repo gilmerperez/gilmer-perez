@@ -33,7 +33,7 @@
 }
 
 .dropdownButton:hover {
-  box-shadow: 0px 0px 10px hsl(204, 100%, 50%);
+  box-shadow: var(--shadow-small);
 }
 
 /* Arrow icon */
@@ -103,7 +103,7 @@
 
 .techCapsule:hover {
   transform: translateY(-3px);
-  box-shadow: 0px 0px 15px hsl(204, 100%, 50%);
+  box-shadow: var(--shadow-small);
   background-color: hsla(204, 100%, 50%, 0.15);
 }
 

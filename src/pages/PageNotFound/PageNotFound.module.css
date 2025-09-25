@@ -33,12 +33,12 @@
   padding: 0.75rem 1.25rem;
   color: hsl(0, 0%, 100%);
   background-color: var(--primary);
-  box-shadow: 0px 0px 10px hsl(204, 100%, 50%);
+  box-shadow: var(--shadow-small);
 }
 
 .backButton:hover {
   transform: translateY(-5px);
-  box-shadow: 0px 0px 30px hsl(204, 100%, 50%);
+  box-shadow: var(--shadow-large);
 }
 
 /* Tablet responsiveness */
