@@ -15,19 +15,17 @@
 }
 
 /* Title */
-.pageTitle {
-  line-height: 1;
-  font-size: 4rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
+.projectsTitle {
+  font-size: 3.5rem;
   transition: 0.3s ease;
+  margin-bottom: 0.75rem;
 }
 
 /* Description */
-.pageDescription {
+.projectsDescription {
   max-width: 800px;
   line-height: 1.35;
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   transition: 0.3s ease;
   color: var(--text-secondary);
 }
@@ -46,12 +44,12 @@
     margin-bottom: 1.5rem;
   }
 
-  .pageTitle {
+  .projectsTitle {
     font-size: 3rem;
   }
 
-  .pageDescription {
-    font-size: 1.15rem;
+  .projectsDescription {
+    font-size: 1rem;
   }
 
   .projectsList {
@@ -65,13 +63,12 @@
     margin-bottom: 1.25rem;
   }
 
-  .pageTitle {
-    font-size: 2.25rem;
-    margin-bottom: 0.25rem;
+  .projectsTitle {
+    font-size: 2.5rem;
   }
 
-  .pageDescription {
-    font-size: 1rem;
+  .projectsDescription {
+    font-size: 0.95rem;
   }
 
   .projectsList {

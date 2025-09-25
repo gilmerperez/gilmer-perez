@@ -15,9 +15,9 @@ function Projects() {
         <div className={styles.projectsContainer}>
           <section className={styles.headerSection}>
             {/* Title */}
-            <h1 className={styles.pageTitle}>PROJECTS</h1>
+            <h1 className={styles.projectsTitle}>PROJECTS</h1>
             {/* Description */}
-            <p className={styles.pageDescription}>
+            <p className={styles.projectsDescription}>
               Explore my portfolio of web development projects, showcasing modern technologies, responsive design, and
               innovative solutions for various industries.
             </p>
