@@ -120,6 +120,7 @@ h5,
 h6 {
   line-height: 1;
   font-weight: 700;
+  font-style: italic;
   font-family: "Kode Mono", monospace;
 }
 
@@ -131,7 +132,7 @@ h6 {
 
 /* Scrollbar */
 body::-webkit-scrollbar {
-  width: 6px;
+  width: 5px;
 }
 
 body::-webkit-scrollbar-thumb {
