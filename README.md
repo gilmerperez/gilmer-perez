@@ -1,8 +1,8 @@
-# Gilmer Perez Portfolio
+# Portfolio Website
 
 ## Project Summary
 
-Welcome to my personal portfolio website! I've built this modern, responsive web application to showcase my work as a passionate Front-End Web Developer and UI/UX enthusiast. This site serves as my digital gateway where potential clients, employers, and collaborators can discover my diverse range of projects, technical skills, and professional journey in web development.
+Welcome to my portfolio website! I've built this modern, responsive web application to showcase my work as a passionate Front-End Web Developer and UI/UX enthusiast. This site serves as my digital gateway where potential clients, employers, and collaborators can discover my diverse range of projects, technical skills, and professional journey in web development.
 
 As a developer, I understand the importance of having a strong professional online presence in today's competitive tech landscape. That's why I've created a website that not only demonstrates my technical capabilities but also reflects my design sensibilities, attention to detail, and commitment to user experience excellence. My portfolio provides a professional, accessible, and engaging platform that effectively communicates my technical expertise while maintaining modern web standards.
 
