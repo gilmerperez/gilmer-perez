@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useState, useRef } from "react";
 import styles from "./Project.module.css";
 
-function Project({ id, logo, title, description, deployedLink, isReversed = false }) {
+function Project({ isReversed = false, logo, title, description, id, deployedLink }) {
   // * State for hover effect
   const [isHovered, setIsHovered] = useState(false);
 
@@ -41,9 +41,8 @@ function Project({ id, logo, title, description, deployedLink, isReversed = fals
 
   return (
     <>
-      {/* Project container */}
-      <div className={`${styles.projectContainer} ${isReversed ? styles.reversed : ""}`}>
-        {/* Image content */}
+      <section className={`${styles.projectContainer} ${isReversed ? styles.reversed : ""}`}>
+        {/* Image container */}
         <div className={styles.imageContainer}>
           <div
             onMouseMove={handleMouseMove}
@@ -57,7 +56,7 @@ function Project({ id, logo, title, description, deployedLink, isReversed = fals
           </div>
         </div>
 
-        {/* Project content */}
+        {/* Content container */}
         <div className={styles.contentContainer}>
           {/* Project title */}
           <h2 className={styles.projectTitle}>{title}</h2>
@@ -75,7 +74,7 @@ function Project({ id, logo, title, description, deployedLink, isReversed = fals
             </a>
           </div>
         </div>
-      </div>
+      </section>
     </>
   );
 }

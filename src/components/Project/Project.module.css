@@ -1,84 +1,62 @@
-/* Project container */
 .projectContainer {
   width: 100%;
   display: flex;
   align-items: center;
-  transition: 0.3s ease;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .reversed {
-  transition: 0.3s ease;
   flex-direction: row-reverse;
 }
 
-/* Image content */
+/* Image container */
 .imageContainer {
   flex: 1;
-  transition: 0.3s ease;
 }
 
 .imageWrapper {
   width: 100%;
-  cursor: pointer;
   overflow: hidden;
   position: relative;
+  transition: 0.3s ease;
   border-radius: 0.5rem;
   box-shadow: var(--shadow-small);
-  transition: transform 0.3s ease;
   border: 2px solid var(--primary);
 }
 
 /* Project image */
 .projectImage {
   width: 100%;
-  height: 100%;
   object-fit: cover;
   border-radius: 0.5rem;
+  transition: 0.3s ease-out;
   transform-style: preserve-3d;
-  transition: transform 0.1s ease-out;
 }
 
-.gradientOverlay {
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  position: absolute;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-}
-
-.gradientHidden {
-  opacity: 0;
-}
-
-/* Project content */
+/* Content container */
 .contentContainer {
   flex: 1;
   padding: 1rem;
   display: flex;
   text-align: center;
   align-items: center;
-  transition: 0.3s ease;
   flex-direction: column;
   justify-content: center;
 }
 
 /* Project title */
 .projectTitle {
-  line-height: 1;
   font-size: 2.5rem;
-  margin-bottom: 1rem;
   transition: 0.3s ease;
+  margin-bottom: 0.75rem;
 }
 
 /* Project description */
 .projectDescription {
-  line-height: 1.5;
+  line-height: 1.35;
   font-size: 1.15rem;
+  margin-bottom: 1rem;
   transition: 0.3s ease;
-  margin-bottom: 1.25rem;
   color: var(--text-secondary);
 }
 
@@ -96,66 +74,55 @@
 .viewButton {
   font-weight: 500;
   font-size: 1.25rem;
+  padding: 0.75rem 1rem;
   transition: 0.3s ease;
   border-radius: 0.5rem;
-  padding: 0.75rem 1.25rem;
   color: hsl(0, 0%, 100%);
   box-shadow: var(--shadow-small);
-  border: 2px solid var(--primary);
   background-color: var(--primary);
   font-family: "Kode Mono", monospace;
 }
 
 .viewButton:hover {
   transform: scale(1.05);
-  background-color: transparent;
   box-shadow: var(--shadow-large);
-  border: 2px solid var(--primary);
 }
 
 /* Visit website button */
 .visitButton {
   font-weight: 500;
   font-size: 1.25rem;
+  padding: 0.75rem 1rem;
   transition: 0.3s ease;
   border-radius: 0.5rem;
-  padding: 0.75rem 1.25rem;
   color: var(--text-primary);
-  background-color: transparent;
   box-shadow: var(--shadow-small);
   border: 2px solid var(--primary);
   font-family: "Kode Mono", monospace;
+  background-color: var(--footer-bg-color);
 }
 
 .visitButton:hover {
   transform: scale(1.05);
-  color: hsl(0, 0%, 100%);
   box-shadow: var(--shadow-large);
-  background-color: var(--primary);
+}
+
+/* Make projects display as column */
+@media (max-width: 875px) {
+  .projectContainer {
+    gap: 2rem;
+    flex-direction: column;
+  }
+
+  .contentContainer {
+    padding: 0;
+  }
 }
 
 /* Tablet responsiveness */
 @media (max-width: 768px) {
-  .projectContainer {
-    gap: 1.5rem;
-    flex-direction: column;
-  }
-
-  .reversed {
-    flex-direction: column;
-  }
-
-  .imageContainer,
-  .contentContainer {
-    max-width: 100%;
-  }
-
-  .contentContainer {
-    padding: 0rem;
-  }
-
-  .projectTitle {
-    font-size: 2.25rem;
+  .projectDescription {
+    font-size: 1rem;
   }
 
   .viewButton,
@@ -167,20 +134,15 @@
 /* Mobile responsiveness */
 @media (max-width: 480px) {
   .projectContainer {
-    gap: 1rem;
+    gap: 1.5rem;
   }
 
   .projectTitle {
-    font-size: 1.75rem;
-    margin-bottom: 0.5rem;
+    font-size: 2rem;
   }
 
   .projectDescription {
-    font-size: 1rem;
-  }
-
-  .viewButton {
-    font-size: 1.25rem;
+    font-size: 0.95rem;
   }
 
   .viewButton,
