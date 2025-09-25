@@ -3,9 +3,9 @@ header {
   z-index: 999;
   position: sticky;
   padding: 1.25rem 2rem;
+  transition: 0.3s ease;
   border-radius: 0.5rem;
   width: calc(100% - 2rem);
-  transition: 0.3s ease-in;
   margin: 1rem auto 0rem auto;
   backdrop-filter: blur(100px);
   background-color: transparent;

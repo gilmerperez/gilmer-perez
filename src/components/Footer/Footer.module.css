@@ -1,7 +1,7 @@
 footer {
   width: 100%;
   padding: 2rem;
-  transition: 0.3s ease-in;
+  transition: 0.3s ease;
   box-shadow: var(--shadow);
   background-color: var(--footer-bg-color);
 }
@@ -25,8 +25,8 @@ footer {
 .legalDisclaimer {
   font-size: 1rem;
   max-width: 1000px;
+  transition: 0.3s ease;
   margin-bottom: 0.5rem;
-  transition: 0.3s ease-in;
   color: var(--text-secondary);
 }
 
@@ -35,7 +35,7 @@ footer {
   margin: 0 auto;
   font-size: 1rem;
   font-weight: 500;
-  transition: 0.3s ease-in;
+  transition: 0.3s ease;
 }
 
 /* Separator */
@@ -51,8 +51,8 @@ footer {
   gap: 1rem;
   width: 100%;
   display: flex;
+  transition: 0.3s ease;
   align-items: flex-start;
-  transition: 0.3s ease-in;
   justify-content: space-between;
 }
 
@@ -61,16 +61,16 @@ footer {
 .legalPages,
 .contactInfo {
   display: flex;
+  transition: 0.3s ease;
   flex-direction: column;
-  transition: 0.3s ease-in;
 }
 
 /* Nav headers */
 .navHeader {
   font-weight: 500;
   font-size: 1.25rem;
+  transition: 0.3s ease;
   margin-bottom: 0.25rem;
-  transition: 0.3s ease-in;
 }
 
 /* Nav items */
@@ -83,12 +83,11 @@ footer {
 .navItems a {
   position: relative;
   font-size: 1.15rem;
-  transition: 0.3s ease-in;
+  transition: 0.3s ease;
   color: var(--text-secondary);
 }
 
 .navItems a:hover {
-  transition: 0.3s ease-in;
   color: var(--text-primary);
   transform: translateX(5px);
 }
