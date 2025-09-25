@@ -5,6 +5,7 @@ import About from "./pages/About/About";
 import Contact from "./pages/Contact/Contact";
 import Projects from "./pages/Projects/Projects";
 import ProjectPage from "./pages/ProjectPage/ProjectPage";
+import PrivacyPolicy from "./pages/PrivacyPolicy/PrivacyPolicy";
 import PageNotFound from "./pages/PageNotFound/PageNotFound";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -19,6 +20,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/projects/:id" element={<ProjectPage />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/404" element={<PageNotFound />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
