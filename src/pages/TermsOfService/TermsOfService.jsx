@@ -46,30 +46,48 @@ function TermsOfService() {
 
           {/* Terms of service */}
           <section className={styles.terms}>
-            {/* First term */}
+            {/* Site usage */}
             <p className={styles.termsHeading}>SITE USAGE</p>
             <p className={styles.termsText}>
-              This website serves as an informational platform for Bubbalous Bodacious BBQ. All content is subject to
-              change without notice. Unauthorized use of this site may give rise to a claim for damages.
+              This website serves as my personal portfolio to showcase my web development projects, skills, and
+              professional experience. All content is subject to change without notice. You may view and browse the
+              content for personal and professional purposes, but unauthorized reproduction or distribution of my work
+              is prohibited.
             </p>
-            {/* Second term */}
+            {/* No liability */}
             <p className={styles.termsHeading}>NO LIABILITY</p>
             <p className={styles.termsText}>
-              We are not responsible for any loss or damage that may occur from using this website. All information is
-              provided "as is" without any warranties of any kind.
+              I am not responsible for any loss or damage that may occur from using this website. All information is
+              provided "as is" without any warranties of any kind. While I strive to keep my portfolio accurate and
+              up-to-date, I cannot guarantee the completeness or accuracy of all information presented.
             </p>
-            {/* Third term */}
+            {/* Modifications */}
             <p className={styles.termsHeading}>MODIFICATIONS</p>
             <p className={styles.termsText}>
-              We may revise these terms at any time. By using this website, you agree to be bound by the current version
+              I may revise these terms at any time. By using this website, you agree to be bound by the current version
               of these terms. Last updated: {month} {year}.
             </p>
-            {/* Fourth term */}
-            <p className={styles.termsHeading}>MENU AND SERVICE DISCLAIMER</p>
+            {/* Third-party content */}
+            <p className={styles.termsHeading}>THIRD-PARTY CONTENT</p>
             <p className={styles.termsText}>
-              Our menu items and service offerings are subject to change without prior notice. While we strive to keep
-              all information up-to-date, availability and offerings may vary. Please contact our team directly for the
-              most current details.
+              This portfolio may contain links to external websites, project repositories, or third-party services. I am
+              not responsible for the content, privacy practices, or availability of these external sites. Use of
+              third-party services is at your own risk and subject to their respective terms.
+            </p>
+            {/* Contact and inquiries */}
+            <p className={styles.termsHeading}>CONTACT AND INQUIRIES</p>
+            <p className={styles.termsText}>
+              If you have any questions about these terms or would like to discuss potential collaboration
+              opportunities, please contact me through the information provided on this website. I welcome professional
+              inquiries and networking opportunities.
+            </p>
+            {/* Intellectual property */}
+            <p className={styles.termsHeading}>INTELLECTUAL PROPERTY</p>
+            <p className={styles.termsText}>
+              All content on this website, including but not limited to text, graphics, logos, images, and software, is
+              the property of Gilmer Perez and is protected by copyright laws. You may not reproduce, distribute, or use
+              any content without explicit written permission. Project screenshots and descriptions are provided for
+              portfolio demonstration purposes only.
             </p>
           </section>
         </div>
