@@ -12,12 +12,12 @@ function ProjectPage() {
   // * Find project data based on URL parameter
   useEffect(() => {
     const foundProject = projectsData.find((p) => p.id === parseInt(id));
-
+    // Set project title as page title
     if (foundProject) {
       setProject(foundProject);
       document.title = `Gilmer Perez | ${foundProject.title}`;
     } else {
-      // * Redirect to PageNotFound if project doesn't exist
+      // Redirect to PageNotFound if project doesn't exist
       navigate("/404");
     }
   }, [id, navigate]);
@@ -41,7 +41,7 @@ function ProjectPage() {
     // Set transform
     screenshotRefs.current[
       index
-    ].style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.10)`;
+    ].style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.1)`;
   };
 
   // * Reset transform when mouse leaves screenshot
@@ -55,10 +55,10 @@ function ProjectPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedScreenshot, setSelectedScreenshot] = useState(null);
 
-  // * Handle screenshot click to open modal
+  // * Handle project screenshot click to open modal
   const handleScreenshotClick = (screenshot, index) => {
-    setSelectedScreenshot({ src: screenshot, index });
     setIsModalOpen(true);
+    setSelectedScreenshot({ src: screenshot, index });
   };
 
   // * Handle modal close
@@ -74,14 +74,14 @@ function ProjectPage() {
         handleModalClose();
       }
     };
-
+    // Prevent background scrolling when modal is open
     if (isModalOpen) {
       document.addEventListener("keydown", handleEscapeKey);
-      document.body.style.overflow = "hidden"; // Prevent background scrolling
+      document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "unset";
     }
-
+    // Remove event listener and reset body overflow
     return () => {
       document.removeEventListener("keydown", handleEscapeKey);
       document.body.style.overflow = "unset";
@@ -94,7 +94,8 @@ function ProjectPage() {
       <>
         <main>
           <div className={styles.projectPageContainer}>
-            <h1>Loading...</h1>
+            {/* Loading title */}
+            <h1 className={styles.loadingTitle}>Loading...</h1>
           </div>
         </main>
       </>
@@ -107,7 +108,9 @@ function ProjectPage() {
         <div className={styles.projectPageContainer}>
           {/* Project header */}
           <div className={styles.projectHeader}>
+            {/* Project title */}
             <h1 className={styles.projectTitle}>{project.title}</h1>
+            {/* Project link */}
             <a
               target="_blank"
               rel="noopener noreferrer"
@@ -131,6 +134,7 @@ function ProjectPage() {
               <ol className={styles.featuresList}>
                 {project.keyFeatures.map((feature, index) => (
                   <li key={index} className={styles.featureItem}>
+                    <i className="fa-solid fa-key"></i>
                     {feature}
                   </li>
                 ))}
