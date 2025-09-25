@@ -19,16 +19,17 @@
   gap: 1rem;
   padding: 1rem;
   display: flex;
-  min-width: 250px;
+  min-width: 200px;
   font-weight: 500;
   font-size: 1.25rem;
   align-items: center;
   transition: 0.3s ease;
   border-radius: 0.5rem;
   color: var(--text-primary);
-  background-color: transparent;
   justify-content: space-between;
   border: 2px solid var(--primary);
+  background-color: var(--bg-color);
+  font-family: "Kode Mono", monospace;
 }
 
 .dropdownButton:hover {
@@ -59,7 +60,7 @@
   margin-top: 0.5rem;
   border-radius: 0.5rem;
   border: 2px solid var(--primary);
-  background-color: var(--bg-color);
+  background-color: var(--footer-bg-color);
 }
 
 .dropdownItem {
@@ -67,14 +68,16 @@
   padding: 1rem;
   display: block;
   text-align: left;
+  font-weight: 500;
   font-size: 1.15rem;
   transition: 0.3s ease;
   color: var(--text-primary);
-  background-color: transparent;
+  font-family: "Kode Mono", monospace;
+  background-color: var(--footer-bg-color);
 }
 
 .dropdownItem:hover {
-  background-color: hsla(204, 100%, 50%, 0.15);
+  background-color: hsla(204, 100%, 50%, 0.25);
 }
 
 .dropdownItem.selected {
@@ -87,29 +90,30 @@
   gap: 0.75rem;
   display: flex;
   flex-wrap: wrap;
+  transition: 0.3s ease;
   align-self: flex-start;
 }
 
 .techCapsule {
-  padding: 0.5rem;
-  font-weight: 500;
+  padding: 0.75rem;
   font-size: 1.15rem;
   transition: 0.3s ease;
   border-radius: 0.5rem;
-  background: transparent;
+  background: var(--bg-color);
   border: 1px solid var(--primary);
+  font-family: "Kode Mono", monospace;
 }
 
 .techCapsule:hover {
   transform: translateY(-3px);
   box-shadow: var(--shadow-small);
-  background-color: hsla(204, 100%, 50%, 0.15);
+  background-color: hsla(204, 100%, 50%, 0.25);
 }
 
 /* Tablet responsiveness */
 @media (max-width: 768px) {
   .dropdownButton {
-    padding: 0.75rem;
+    padding: 0.85rem;
     min-width: 175px;
     font-size: 1.15rem;
   }
@@ -120,7 +124,7 @@
 
   .dropdownItem {
     font-size: 1rem;
-    padding: 0.75rem;
+    padding: 0.85rem;
   }
 
   .techCapsule {
@@ -131,10 +135,15 @@
 /* Mobile responsiveness */
 @media (max-width: 480px) {
   .dropdownButton {
-    min-width: 150px;
+    padding: 0.75rem;
+  }
+
+  .technologiesDisplay {
+    gap: 0.65rem;
   }
 
   .techCapsule {
+    padding: 0.65rem;
     font-size: 0.95rem;
   }
 }

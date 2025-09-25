@@ -32,7 +32,6 @@ function Technologies() {
       }
     };
 
-    // * Close dropdown when clicking outside
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
@@ -72,7 +71,7 @@ function Technologies() {
         <div className={styles.technologiesDisplay}>
           {currentTechnologies.map((tech, index) => (
             <div key={index} className={styles.techCapsule}>
-              <span className={styles.techName}>{tech.name}</span>
+              <span>{tech.name}</span>
             </div>
           ))}
         </div>
