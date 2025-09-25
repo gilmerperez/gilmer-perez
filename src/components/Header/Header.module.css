@@ -130,9 +130,10 @@ header {
   border-radius: 0.5rem;
   padding: 0.35rem 0.65rem;
   color: var(--text-primary);
-  background-color: transparent;
   box-shadow: var(--shadow-small);
   border: 2px solid var(--primary);
+  font-family: "Kode Mono", monospace;
+  background-color: var(--footer-bg-color);
 }
 
 .resumeButton:hover:not(:disabled) {

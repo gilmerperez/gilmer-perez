@@ -28,8 +28,8 @@
   color: var(--text-primary);
   justify-content: space-between;
   border: 2px solid var(--primary);
-  background-color: var(--bg-color);
   font-family: "Kode Mono", monospace;
+  background-color: var(--footer-bg-color);
 }
 
 .dropdownButton:hover {
@@ -99,9 +99,9 @@
   font-size: 1.15rem;
   transition: 0.3s ease;
   border-radius: 0.5rem;
-  background: var(--bg-color);
   border: 1px solid var(--primary);
   font-family: "Kode Mono", monospace;
+  background-color: var(--footer-bg-color);
 }
 
 .techCapsule:hover {

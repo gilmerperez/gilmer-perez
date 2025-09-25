@@ -62,8 +62,8 @@
 /* Call button */
 .contactButton:last-child {
   color: var(--text-primary);
-  background-color: transparent;
   border: 2px solid var(--primary);
+  background-color: var(--footer-bg-color);
 }
 
 .contactButton:hover {
