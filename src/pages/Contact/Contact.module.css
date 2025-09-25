@@ -26,7 +26,6 @@
   font-weight: 700;
   margin-bottom: 0.5rem;
   transition: 0.3s ease;
-  font-family: "Kode Mono", monospace;
 }
 
 /* Description */
@@ -59,7 +58,6 @@
   color: hsl(0, 0%, 100%);
   box-shadow: var(--shadow-small);
   background-color: var(--primary);
-  font-family: "Kode Mono", monospace;
 }
 
 /* Call button */

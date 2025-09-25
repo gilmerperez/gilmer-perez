@@ -74,7 +74,7 @@ a {
 /* Buttons */
 button {
   cursor: pointer;
-  font-family: "Kode Mono", monospace;
+  font-family: "Kode Mono", monospace !important;
 }
 
 /* Lists */

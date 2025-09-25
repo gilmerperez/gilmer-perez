@@ -23,7 +23,6 @@
   text-align: center;
   margin-right: 1.5rem;
   transition: 0.3s ease;
-  font-family: "Kode Mono", monospace;
 }
 
 .projectLink {
@@ -37,7 +36,7 @@
 
 .projectLink:hover {
   transform: scale(1.15);
-  text-shadow: 0px 0px 30px hsl(204, 100%, 50%);
+  text-shadow: var(--shadow-large);
 }
 
 /* Project description */
@@ -62,7 +61,6 @@
   transition: 0.3s ease;
   margin-bottom: 0.75rem;
   color: var(--text-primary);
-  font-family: "Kode Mono", monospace;
   border-bottom: 2px solid var(--primary);
 }
 

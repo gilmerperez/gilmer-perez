@@ -133,7 +133,6 @@ header {
   background-color: transparent;
   box-shadow: var(--shadow-small);
   border: 2px solid var(--primary);
-  font-family: "Kode Mono", monospace;
 }
 
 .resumeButton:hover:not(:disabled) {
@@ -399,7 +398,6 @@ header {
   color: hsl(0, 0%, 100%);
   box-shadow: var(--shadow-small);
   background-color: var(--primary);
-  font-family: "Kode Mono", monospace;
 }
 
 .sidebarResumeButton:hover:not(:disabled) {
@@ -425,6 +423,7 @@ header {
   color: var(--text-secondary);
 }
 
+/* Sidebar theme button */
 .sidebarThemeButton {
   gap: 0.85rem;
   display: flex;
@@ -432,7 +431,6 @@ header {
   align-items: center;
   transition: 0.3s ease;
   color: var(--text-secondary);
-  font-family: "Kode Mono", monospace;
 }
 
 .sidebarThemeButton:hover {
@@ -440,6 +438,7 @@ header {
   transform: translateX(5px);
 }
 
+/* Legal pages */
 .sidebarFooter a {
   gap: 0.75rem;
   display: flex;

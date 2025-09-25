@@ -15,7 +15,6 @@
   transition: 0.3s ease;
   align-self: flex-start;
   margin-bottom: 0.75rem;
-  font-family: "Kode Mono", monospace;
 }
 
 /* Description */
@@ -36,8 +35,8 @@
 .pageDescription p strong {
   color: var(--primary);
   text-transform: uppercase;
+  text-shadow: var(--shadow-small);
   font-family: "Kode Mono", monospace;
-  text-shadow: 0px 0px 15px hsl(204, 100%, 50%);
 }
 
 /* Image */
@@ -81,7 +80,6 @@
   transition: 0.3s ease;
   align-self: flex-start;
   margin-bottom: 0.75rem;
-  font-family: "Kode Mono", monospace;
 }
 
 /* Tablet responsiveness */

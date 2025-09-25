@@ -29,7 +29,6 @@
   background-color: transparent;
   justify-content: space-between;
   border: 2px solid var(--primary);
-  font-family: "Kode Mono", monospace;
 }
 
 .dropdownButton:hover {
