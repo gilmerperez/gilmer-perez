@@ -52,7 +52,7 @@ function About() {
           {/* Description */}
           <div className={styles.pageDescription}>
             <p>
-              I'm Gilmer, a <strong>Front-End Developer and UI/UX enthusiast</strong> crafting intuitive, user-friendly
+              I'm Gilmer Perez, a <strong>Front-End Developer and UI/UX enthusiast</strong> crafting intuitive, user-friendly
               experiences. My days consist of many cups of coffee and long hours on the computer trying to master
               anything and everything that I put my mind to.
             </p>
