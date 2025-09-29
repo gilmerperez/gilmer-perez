@@ -159,11 +159,11 @@ function Header() {
             >
               <i className="fa-solid fa-phone-volume" aria-hidden="true"></i>
             </button>
-            {/* Logo */}
+            {/* Mobile logo */}
             <NavLink to="/" aria-label="Go to home page">
               <span className={styles.mobileLogo}>GILMERPEREZ</span>
             </NavLink>
-            {/* Hamburger menu button */}
+            {/* Hamburger menu */}
             <button
               type="button"
               aria-expanded={menuOpen}
@@ -231,6 +231,7 @@ function Header() {
                   PROJECTS
                 </NavLink>
                 <hr className={styles.sidebarSeparator} />
+                {/* Sidebar resume button */}
                 <button
                   disabled={isLoading}
                   aria-label={isLoading ? "Opening resume" : "View my resume"}
@@ -246,7 +247,7 @@ function Header() {
               </nav>
               {/* Sidebar footer */}
               <footer className={styles.sidebarFooter}>
-                {/* Theme button */}
+                {/* Sidebar theme button */}
                 <button
                   onClick={toggleTheme}
                   className={`${styles.themeButton} ${styles.sidebarThemeButton}`}
@@ -255,7 +256,7 @@ function Header() {
                   <i className={`fa-regular ${theme === "dark" ? "fa-moon" : "fa-sun"}`} aria-hidden="true"></i>
                   <p>{theme === "dark" ? "DARK" : "LIGHT"}</p>
                 </button>
-                {/* Legal pages */}
+                {/* Sidebar legal pages */}
                 <NavLink
                   to="/privacy-policy"
                   className={navLinkClass}
