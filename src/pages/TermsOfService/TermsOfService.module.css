@@ -30,12 +30,12 @@
   transition: 0.3s ease;
 }
 
-/* Privacy policy */
+/* Terms of service */
 .terms {
   text-align: left;
 }
 
-/* Policy heading */
+/* Terms heading */
 .termsHeading {
   font-weight: 500;
   font-size: 1.5rem;
@@ -47,7 +47,7 @@
   border-bottom: 2px solid var(--primary);
 }
 
-/* Policy text */
+/* Terms text */
 .termsText {
   font-size: 1.15rem;
   transition: 0.3s ease;

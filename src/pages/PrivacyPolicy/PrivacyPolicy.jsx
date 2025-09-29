@@ -23,7 +23,7 @@ function PrivacyPolicy() {
     "December",
   ];
 
-  // * Get current date
+  // * Get current year and month
   const now = new Date();
   const year = now.getFullYear();
   const month = monthNames[now.getMonth()];
