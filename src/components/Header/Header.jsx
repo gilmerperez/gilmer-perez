@@ -102,7 +102,7 @@ function Header() {
     <>
       <header className={`${isScrollingUp ? styles.visible : styles.hidden}`} role="banner" aria-label="Site header">
         <div className={styles.headerContainer}>
-          {/* Desktop Layout */}
+          {/* Desktop layout */}
           <div className={styles.desktopLayout}>
             {/* Logo */}
             <NavLink to="/" aria-label="Go to home page">
