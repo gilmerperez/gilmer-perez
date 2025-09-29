@@ -372,11 +372,12 @@ header {
 
 /* Active link */
 .sidebarNavItems a.activeLink {
+  position: relative;
+  color: var(--primary);
+  margin-left: -1.75rem;
   border-radius: 0.5rem;
-  padding: 0.5rem 0.75rem;
-  color: hsl(0, 0%, 100%);
-  box-shadow: var(--shadow-small);
-  background-color: var(--primary);
+  padding: 0.75rem 1.75rem;
+  background-color: hsla(204, 100%, 50%, 0.25);
 }
 
 .sidebarSeparator {
@@ -399,6 +400,7 @@ header {
   color: hsl(0, 0%, 100%);
   box-shadow: var(--shadow-small);
   background-color: var(--primary);
+  font-family: "Kode Mono", monospace;
 }
 
 .sidebarResumeButton:hover:not(:disabled) {
