@@ -60,15 +60,14 @@ header {
 .navItems {
   gap: 1rem;
   display: flex;
-  font-size: 1.25rem;
   align-items: center;
-  transition: 0.3s ease;
   justify-content: center;
 }
 
 .navItems a {
-  padding: 0.25rem 0;
   position: relative;
+  font-size: 1.25rem;
+  padding: 0.25rem 0rem;
   transition: 0.3s ease;
   font-family: "Kode Mono", monospace;
 }
