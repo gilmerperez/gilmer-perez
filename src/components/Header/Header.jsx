@@ -246,7 +246,7 @@ function Header() {
                 </button>
               </nav>
               {/* Sidebar footer */}
-              <footer className={styles.sidebarFooter}>
+              <div className={styles.sidebarFooter}>
                 {/* Sidebar theme button */}
                 <button
                   onClick={toggleTheme}
@@ -275,7 +275,7 @@ function Header() {
                   <i className="fa-solid fa-asterisk" aria-hidden="true"></i>
                   TERMS OF SERVICE
                 </NavLink>
-              </footer>
+              </div>
             </div>
           </div>,
           document.body
