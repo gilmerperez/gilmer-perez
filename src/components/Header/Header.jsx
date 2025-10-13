@@ -73,7 +73,7 @@ function Header() {
 
   // * Phone call handler
   const handlePhoneClick = () => {
-    window.location.href = "tel:(407) 295-1212";
+    window.location.href = "tel:(407) 350-1805";
   };
 
   // * Resume link handler

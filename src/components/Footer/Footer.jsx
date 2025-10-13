@@ -1,5 +1,5 @@
 import styles from "./Footer.module.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 function Footer() {
   return (
@@ -22,9 +22,9 @@ function Footer() {
           <div className={styles.bottomContainer}>
             {/* Site navigation */}
             <section className={styles.siteNavigation} aria-labelledby="pages-heading">
-              <h5 id="pages-heading" className={styles.navHeader}>
+              <h6 id="pages-heading" className={styles.navHeader}>
                 PAGES
-              </h5>
+              </h6>
               <nav className={styles.navItems} aria-label="Main site navigation">
                 <NavLink to="/" aria-label="Go to home page">
                   Home
@@ -42,37 +42,37 @@ function Footer() {
             </section>
             {/* Social links */}
             <section className={styles.socialLinks} aria-labelledby="connect-heading">
-              <h5 id="connect-heading" className={styles.navHeader}>
+              <h6 id="connect-heading" className={styles.navHeader}>
                 CONNECT
-              </h5>
+              </h6>
               <nav className={styles.navItems} aria-label="Professional networking sites">
                 {/* GitHub */}
-                <a
+                <Link
                   target="_blank"
                   rel="noopener noreferrer"
                   className={styles.socialLink}
                   aria-label="Check out my GitHub"
-                  href="https://github.com/gilmerperez"
+                  to="https://github.com/gilmerperez"
                 >
                   GitHub
-                </a>
+                </Link>
                 {/* LinkedIn */}
-                <a
+                <Link
                   target="_blank"
                   rel="noopener noreferrer"
                   className={styles.socialLink}
                   aria-label="Check out my LinkedIn"
-                  href="https://www.linkedin.com/in/gilmer-perez-a35ba0354/"
+                  to="https://www.linkedin.com/in/gilmer-perez-a35ba0354/"
                 >
                   LinkedIn
-                </a>
+                </Link>
               </nav>
             </section>
             {/* Legal pages */}
             <section className={styles.legalPages} aria-labelledby="legal-heading">
-              <h5 id="legal-heading" className={styles.navHeader}>
+              <h6 id="legal-heading" className={styles.navHeader}>
                 LEGAL
-              </h5>
+              </h6>
               <nav className={styles.navItems} aria-label="Legal pages">
                 <NavLink to="/privacy-policy" aria-label="Read my privacy policy">
                   Privacy Policy
@@ -84,9 +84,9 @@ function Footer() {
             </section>
             {/* Contact info */}
             <section className={styles.contactInfo} aria-labelledby="contact-heading">
-              <h5 id="contact-heading" className={styles.navHeader}>
+              <h6 id="contact-heading" className={styles.navHeader}>
                 CONTACT
-              </h5>
+              </h6>
               <nav className={styles.navItems} aria-label="Contact information">
                 {/* Phone number */}
                 <a href="tel:+14073501805" aria-label="Call me at (407) 350-1805" className={styles.contactLink}>

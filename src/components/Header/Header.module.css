@@ -370,11 +370,11 @@ header {
 /* Active link */
 .sidebarNavItems a.activeLink {
   position: relative;
-  color: var(--primary);
+  color: white;
   margin-left: -1.75rem;
   border-radius: 0.5rem;
   padding: 0.5rem 1.75rem;
-  background-color: hsla(204, 100%, 50%, 0.25);
+  background-color: hsla(204, 100%, 50%);
 }
 
 .sidebarSeparator {
@@ -413,7 +413,6 @@ header {
 
 /* Sidebar footer */
 .sidebarFooter {
-  padding: 0;
   gap: 0.75rem;
   display: flex;
   box-shadow: none;
