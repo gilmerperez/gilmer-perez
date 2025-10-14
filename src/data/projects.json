@@ -20,21 +20,20 @@
       "Local Storage API: Client-side data persistence for user preferences and theme settings without server dependencies.",
       "CSS Modules: Scoped styling system preventing style conflicts while maintaining modular, maintainable CSS architecture.",
       "CSS Custom Properties: Dynamic theming system enabling real-time theme switching and consistent design token management.",
-      "Vite: Lightning-fast build tool and development server providing instant hot module replacement and optimized production builds.",
       "React 19: Modern component-based UI library for building interactive user interfaces with hooks and functional components.",
+      "Vite: Lightning-fast build tool and development server providing instant hot module replacement and optimized production builds.",
       "JavaScript ES6+: Modern JavaScript features including destructuring, arrow functions, and template literals for clean, readable code.",
       "React Router DOM: Client-side routing solution enabling single-page application navigation with dynamic page titles and URL management.",
       "Responsive Design: Mobile-first approach using CSS Grid, Flexbox, and media queries for optimal viewing across all devices and screen sizes.",
       "JSON Data Management: Structured data storage for menu items, party packs, and restaurant information enabling easy content updates and maintenance."
     ],
     "screenshots": [
-      "/projects/bubbalous-bodacious-bbq/screenshots/PartyPacksPage.png",
-      "/projects/bubbalous-bodacious-bbq/screenshots/homePage.jpg",
-      "/projects/bubbalous-bodacious-bbq/screenshots/menuPage.jpg",
-      "/projects/bubbalous-bodacious-bbq/screenshots/checkoutPage.png",
-      "/projects/bubbalous-bodacious-bbq/screenshots/orderOnlinePage.jpg",
-      "/projects/bubbalous-bodacious-bbq/screenshots/darkThemeMode.jpg",
-      "/projects/bubbalous-bodacious-bbq/screenshots/footer.jpg"
+      "/projects/bubbalous-bodacious-bbq/screenshots/checkout.png",
+      "/projects/bubbalous-bodacious-bbq/screenshots/menuPage.png",
+      "/projects/bubbalous-bodacious-bbq/screenshots/orderOnlinePage.png",
+      "/projects/bubbalous-bodacious-bbq/screenshots/partyPacksPage.png",
+      "/projects/bubbalous-bodacious-bbq/screenshots/homePage.png",
+      "/projects/bubbalous-bodacious-bbq/screenshots/darkTheme.png"
     ]
   },
   {
@@ -50,9 +49,9 @@
       "Responsive Design: Mobile-first approach ensuring optimal viewing across all devices and screen sizes.",
       "Interactive Class Schedule: Day-by-day schedule navigation with real-time class information and activity types.",
       "Community-Focused Content: Brand messaging that emphasizes transformation, community, and purpose-driven fitness.",
+      "Comprehensive Nutrition Menu: Categorized nutrition offerings with filtering capabilities and detailed product information.",
       "Dynamic Membership Tiers: Interactive membership cards showcasing different pricing plans with detailed benefits and features.",
-      "Modern UI/UX: Clean, energetic design with smooth transitions and interactive elements reflecting the gym's bold brand identity.",
-      "Comprehensive Nutrition Menu: Categorized nutrition offerings with filtering capabilities and detailed product information."
+      "Modern UI/UX: Clean, energetic design with smooth transitions and interactive elements reflecting the gym's bold brand identity."
     ],
     "technologyStack": [
       "HTML5: Semantic markup for accessibility and SEO optimization.",
@@ -68,8 +67,7 @@
       "/projects/kingdom-movement/screenshots/nutritionPage.png",
       "/projects/kingdom-movement/screenshots/schedulePage.png",
       "/projects/kingdom-movement/screenshots/membershipPage.png",
-      "/projects/kingdom-movement/screenshots/lightThemeMode.jpg",
-      "/projects/kingdom-movement/screenshots/footer.png"
+      "/projects/kingdom-movement/screenshots/lightTheme.png"
     ]
   },
   {
@@ -98,9 +96,8 @@
       "/projects/moonstar-esthetics/screenshots/homePage.png",
       "/projects/moonstar-esthetics/screenshots/servicesPage.png",
       "/projects/moonstar-esthetics/screenshots/reviewsPage.png",
-      "/projects/moonstar-esthetics/screenshots/darkThemeMode.png",
-      "/projects/moonstar-esthetics/screenshots/informationPage.png",
-      "/projects/moonstar-esthetics/screenshots/contactPage.png"
+      "/projects/moonstar-esthetics/screenshots/darkTheme.png",
+      "/projects/moonstar-esthetics/screenshots/informationPage.png"
     ]
   },
   {
@@ -130,13 +127,10 @@
       "TMDB API: Serves as the source for real-time media data, including metadata, images, and videos."
     ],
     "screenshots": [
+      "/projects/reelix/screenshots/tvShowsPage.png",
       "/projects/reelix/screenshots/moviesPage.png",
       "/projects/reelix/screenshots/topIMDBPage.png",
-      "/projects/reelix/screenshots/tvShowsPage.png",
-      "/projects/reelix/screenshots/homePage.png",
-      "/projects/reelix/screenshots/privacyPolicyPage.png",
-      "/projects/reelix/screenshots/termsOfServicePage.png",
-      "/projects/reelix/screenshots/contactPage.png"
+      "/projects/reelix/screenshots/homePage.png"
     ]
   }
 ]
