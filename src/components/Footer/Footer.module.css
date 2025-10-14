@@ -24,7 +24,7 @@ footer {
 /* Legal disclaimer */
 .legalDisclaimer {
   font-size: 1rem;
-  max-width: 1000px;
+  max-width: 900px;
   transition: 0.3s ease;
   margin-bottom: 0.5rem;
   color: var(--text-secondary);
