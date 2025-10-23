@@ -26,7 +26,7 @@ The following images show the web application's appearance and functionality:
 
 ![Projects Page](./src/assets/screenshots/ProjectsPage.png)
 
-![Individual Project Page](./src/assets/screenshots/projectPage.png)
+![Project Page](./src/assets/screenshots/projectPage.png)
 
 ![Light Theme](./src/assets/screenshots/lightTheme.png)
 
