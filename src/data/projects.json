@@ -28,11 +28,11 @@
       "JSON Data Management: Structured data storage for menu items, party packs, and restaurant information enabling easy content updates and maintenance."
     ],
     "screenshots": [
-      "/projects/bubbalous-bodacious-bbq/screenshots/checkout.png",
-      "/projects/bubbalous-bodacious-bbq/screenshots/menuPage.png",
-      "/projects/bubbalous-bodacious-bbq/screenshots/orderOnlinePage.png",
-      "/projects/bubbalous-bodacious-bbq/screenshots/partyPacksPage.png",
       "/projects/bubbalous-bodacious-bbq/screenshots/homePage.png",
+      "/projects/bubbalous-bodacious-bbq/screenshots/menuPage.png",
+      "/projects/bubbalous-bodacious-bbq/screenshots/partyPacksPage.png",
+      "/projects/bubbalous-bodacious-bbq/screenshots/orderOnlinePage.png",
+      "/projects/bubbalous-bodacious-bbq/screenshots/checkout.png",
       "/projects/bubbalous-bodacious-bbq/screenshots/darkTheme.png"
     ]
   },
@@ -96,8 +96,8 @@
       "/projects/moonstar-esthetics/screenshots/homePage.png",
       "/projects/moonstar-esthetics/screenshots/servicesPage.png",
       "/projects/moonstar-esthetics/screenshots/reviewsPage.png",
-      "/projects/moonstar-esthetics/screenshots/darkTheme.png",
-      "/projects/moonstar-esthetics/screenshots/informationPage.png"
+      "/projects/moonstar-esthetics/screenshots/informationPage.png",
+      "/projects/moonstar-esthetics/screenshots/darkTheme.png"
     ]
   },
   {
@@ -127,10 +127,10 @@
       "TMDB API: Serves as the source for real-time media data, including metadata, images, and videos."
     ],
     "screenshots": [
-      "/projects/reelix/screenshots/tvShowsPage.png",
+      "/projects/reelix/screenshots/homePage.png",
       "/projects/reelix/screenshots/moviesPage.png",
-      "/projects/reelix/screenshots/topIMDBPage.png",
-      "/projects/reelix/screenshots/homePage.png"
+      "/projects/reelix/screenshots/tvShowsPage.png",
+      "/projects/reelix/screenshots/topIMDBPage.png"
     ]
   }
 ]
