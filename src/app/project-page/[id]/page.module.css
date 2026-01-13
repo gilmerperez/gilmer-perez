@@ -74,7 +74,8 @@
 
 /* Key features and technology stack */
 .keyFeatures,
-.technologyStack {
+.technologyStack,
+.projectScreenshots {
   margin-bottom: 1.5rem;
   transition: 0.3s ease;
   align-self: flex-start;
@@ -100,22 +101,19 @@
   text-shadow: var(--shadow-small);
 }
 
-/* Project screenshots */
 .screenshotsGrid {
   gap: 1rem;
   display: grid;
   transition: 0.3s ease;
-  justify-items: center;
-  align-items: flex-start;
   grid-template-columns: repeat(3, 1fr);
 }
 
 .screenshotContainer {
-  position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9;
   cursor: pointer;
   overflow: hidden;
+  position: relative;
+  aspect-ratio: 16 / 9;
   border-radius: 0.5rem;
   transform-style: preserve-3d;
   border: 2px solid var(--primary);
@@ -145,14 +143,14 @@
 }
 
 .modalContent {
+  width: 100%;
+  height: 100%;
   display: flex;
   max-width: 95vw;
   max-height: 95vh;
   position: relative;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  height: 100%;
 }
 
 .closeButton {
