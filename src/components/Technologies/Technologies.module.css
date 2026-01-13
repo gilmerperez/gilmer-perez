@@ -1,0 +1,149 @@
+.technologiesContainer {
+  gap: 1rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Dropdown container */
+.dropdownContainer {
+  display: flex;
+  position: relative;
+  align-self: flex-start;
+  flex-direction: column;
+}
+
+.dropdownButton {
+  gap: 1rem;
+  padding: 1rem;
+  display: flex;
+  min-width: 200px;
+  font-weight: 500;
+  font-size: 1.25rem;
+  align-items: center;
+  transition: 0.3s ease;
+  border-radius: 0.5rem;
+  color: var(--text-primary);
+  justify-content: space-between;
+  border: 2px solid var(--primary);
+  font-family: "Kode Mono", monospace;
+  background-color: var(--footer-bg-color);
+}
+
+.dropdownButton:hover {
+  box-shadow: var(--shadow-small);
+}
+
+/* Arrow icon */
+.dropdownArrow {
+  font-size: 1.15rem;
+  transition: 0.3s ease;
+}
+
+.arrowUp {
+  transform: rotate(0deg);
+}
+
+.arrowDown {
+  transform: rotate(180deg);
+}
+
+/* Dropdown menu */
+.dropdownMenu {
+  left: 0;
+  right: 0;
+  top: 100%;
+  z-index: 1000;
+  position: absolute;
+  margin-top: 0.5rem;
+  border-radius: 0.5rem;
+  border: 2px solid var(--primary);
+  background-color: var(--footer-bg-color);
+}
+
+.dropdownItem {
+  width: 100%;
+  padding: 1rem;
+  display: block;
+  text-align: left;
+  font-weight: 500;
+  font-size: 1.15rem;
+  transition: 0.3s ease;
+  color: var(--text-primary);
+  font-family: "Kode Mono", monospace;
+  background-color: var(--footer-bg-color);
+}
+
+.dropdownItem:hover {
+  background-color: hsla(204, 100%, 50%, 0.25);
+}
+
+.dropdownItem.selected {
+  color: hsl(0, 0%, 100%);
+  background-color: var(--primary);
+}
+
+/* Technologies display */
+.technologiesDisplay {
+  gap: 0.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  transition: 0.3s ease;
+  align-self: flex-start;
+}
+
+.techCapsule {
+  padding: 0.75rem;
+  font-size: 1.15rem;
+  transition: 0.3s ease;
+  border-radius: 0.5rem;
+  border: 1px solid var(--primary);
+  font-family: "Kode Mono", monospace;
+  background-color: var(--footer-bg-color);
+}
+
+.techCapsule:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-small);
+  background-color: hsla(204, 100%, 50%, 0.25);
+}
+
+/* Tablet responsiveness */
+@media (max-width: 768px) {
+  .dropdownButton {
+    padding: 0.85rem;
+    min-width: 175px;
+    font-size: 1.15rem;
+  }
+
+  .dropdownArrow {
+    font-size: 1rem;
+  }
+
+  .dropdownItem {
+    font-size: 1rem;
+    padding: 0.85rem;
+  }
+
+  .techCapsule {
+    font-size: 1rem;
+  }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 480px) {
+  .dropdownButton {
+    padding: 0.75rem;
+  }
+
+  .technologiesDisplay {
+    gap: 0.65rem;
+  }
+
+  .techCapsule {
+    padding: 0.65rem;
+    font-size: 0.95rem;
+  }
+}

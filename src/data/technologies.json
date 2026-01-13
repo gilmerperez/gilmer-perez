@@ -1,0 +1,72 @@
+{
+  "technologies": {
+    "frontend": [
+      {
+        "name": "CSS"
+      },
+      {
+        "name": "HTML"
+      },
+      {
+        "name": "React"
+      },
+      {
+        "name": "Bootstrap"
+      },
+      {
+        "name": "JavaScript"
+      },
+      {
+        "name": "TypeScript"
+      }
+    ],
+    "backend": [
+      {
+        "name": "Node.js"
+      },
+      {
+        "name": "Express"
+      },
+      {
+        "name": "RESTful APIs"
+      },
+      {
+        "name": "Authentication"
+      }
+    ],
+    "databases": [
+      {
+        "name": "JSON"
+      },
+      {
+        "name": "MongoDB"
+      },
+      {
+        "name": "PostgreSQL"
+      }
+    ],
+    "tools": [
+      {
+        "name": "Git"
+      },
+      {
+        "name": "Vite"
+      },
+      {
+        "name": "GitHub"
+      },
+      {
+        "name": "Render"
+      },
+      {
+        "name": "Vercel"
+      },
+      {
+        "name": "Netlify"
+      },
+      {
+        "name": "Insomnia"
+      }
+    ]
+  }
+}
