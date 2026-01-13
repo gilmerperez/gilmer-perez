@@ -26,20 +26,21 @@ function Header() {
   // * Check if path is active
   const isActive = (path) => pathname === path;
 
-  // * Theme switch
-  const [theme, setTheme] = useState("dark");
+  // * Theme switch - Initialize with lazy function to avoid SSR issues
+  const [theme, setTheme] = useState(() => {
+    // Only run on client side
+    if (typeof window !== "undefined") {
+      const storedTheme = localStorage.getItem("theme");
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      const initialTheme = storedTheme || (prefersDark ? "dark" : "light");
+      // Set initial theme in DOM immediately
+      document.documentElement.setAttribute("data-theme", initialTheme);
+      return initialTheme;
+    }
+    return "dark"; // Default for SSR
+  });
 
-  // Make theme be set in DOM
-  useEffect(() => {
-    const storedTheme = localStorage.getItem("theme");
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-
-    const initialTheme = storedTheme || (prefersDark ? "dark" : "light");
-    setTheme(initialTheme);
-    document.documentElement.setAttribute("data-theme", initialTheme);
-  }, []);
-
-  // Save theme to localStorage
+  // Save theme to localStorage and update DOM when theme changes
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
     localStorage.setItem("theme", theme);

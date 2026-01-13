@@ -7,7 +7,7 @@ export const metadata = {
 };
 
 export default function TermsOfService() {
-  // Month names array
+  // * Month names array
   const monthNames = [
     "January",
     "February",
@@ -29,8 +29,9 @@ export default function TermsOfService() {
   const month = monthNames[now.getMonth()];
 
   return (
-    <main>
-      <div className={styles.termsOfServiceContainer}>
+    <>
+      <main>
+        <div className={styles.termsOfServiceContainer}>
           {/* Introduction */}
           <section className={styles.termsOfServiceIntroduction}>
             {/* Title */}
@@ -57,7 +58,7 @@ export default function TermsOfService() {
             <p className={styles.termsHeading}>NO LIABILITY</p>
             <p className={styles.termsText}>
               I am not responsible for any loss or damage that may occur from using this website. All information is
-              provided "as is" without any warranties of any kind. While I strive to keep my portfolio accurate and
+              provided &quot;as is&quot; without any warranties of any kind. While I strive to keep my portfolio accurate and
               up-to-date, I cannot guarantee the completeness or accuracy of all information presented.
             </p>
             {/* Modifications */}

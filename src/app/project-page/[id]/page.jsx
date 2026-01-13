@@ -1,28 +1,22 @@
 "use client";
-
-import styles from "./page.module.css";
 import Image from "next/image";
-import projectsData from "../../../data/projects.json";
+import styles from "./page.module.css";
+import { notFound } from "next/navigation";
+import { useParams } from "next/navigation";
 import { useState, useEffect, useRef } from "react";
-import { useParams, useRouter } from "next/navigation";
+import projectsData from "../../../data/projects.json";
 
 export default function ProjectPage() {
   // * Get project ID from URL parameter
   const { id } = useParams();
-  const router = useRouter();
-  const [project, setProject] = useState(null);
 
-  // * Find project data based on URL parameter
-  useEffect(() => {
-    const foundProject = projectsData.find((p) => p.id === parseInt(id));
-    // Set project
-    if (foundProject) {
-      setProject(foundProject);
-    } else {
-      // Redirect to PageNotFound if project doesn't exist
-      router.push("/page-not-found");
-    }
-  }, [id, router]);
+  // * Find project data based on URL parameter (synchronous check)
+  const project = projectsData.find((p) => p.id === parseInt(id));
+
+  // * Trigger Next.js 404 if project doesn't exist
+  if (!project) {
+    notFound();
+  }
 
   // * Refs for screenshot containers to apply 3D tilt effect
   const screenshotRefs = useRef([]);
@@ -89,18 +83,6 @@ export default function ProjectPage() {
       document.body.style.overflow = "unset";
     };
   }, [isModalOpen]);
-
-  // * Show loading state while project is being loaded
-  if (!project) {
-    return (
-      <main>
-        <div className={styles.projectPageContainer}>
-          {/* Loading title */}
-          <h1 className={styles.loadingTitle}>Loading...</h1>
-        </div>
-      </main>
-    );
-  }
 
   return (
     <>

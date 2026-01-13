@@ -29,8 +29,9 @@ export default function PrivacyPolicy() {
   const month = monthNames[now.getMonth()];
 
   return (
-    <main>
-      <div className={styles.privacyPolicyContainer}>
+    <>
+      <main>
+        <div className={styles.privacyPolicyContainer}>
           {/* Introduction */}
           <section className={styles.privacyPolicyIntroduction}>
             {/* Title */}
