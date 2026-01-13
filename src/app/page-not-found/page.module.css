@@ -1,0 +1,75 @@
+.pageNotFoundContainer {
+  width: 100%;
+  display: flex;
+  margin: 0 auto;
+  min-height: 55vh;
+  max-width: 1200px;
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Title */
+.pageNotFoundTitle {
+  font-size: 5rem;
+  margin-bottom: 1rem;
+  transition: 0.3s ease;
+}
+
+/* Description */
+.pageNotFoundDescription {
+  line-height: 1.35;
+  font-size: 1.25rem;
+  transition: 0.3s ease;
+  margin-bottom: 1.5rem;
+  color: var(--text-secondary);
+}
+
+/* Back button */
+.backButton {
+  font-weight: 500;
+  font-size: 1.5rem;
+  padding: 0.75rem 1rem;
+  transition: 0.3s ease;
+  border-radius: 0.5rem;
+  color: hsl(0, 0%, 100%);
+  box-shadow: var(--shadow-small);
+  background-color: var(--primary);
+  font-family: var(--font-kode-mono), monospace;
+}
+
+.backButton:hover {
+  transform: scale(1.15);
+  box-shadow: var(--shadow-large);
+}
+
+/* Tablet responsiveness */
+@media (max-width: 768px) {
+  .pageNotFoundTitle {
+    font-size: 4rem;
+  }
+
+  .pageNotFoundDescription {
+    font-size: 1.15rem;
+  }
+
+  .backButton {
+    font-size: 1.25rem;
+  }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 480px) {
+  .pageNotFoundTitle {
+    font-size: 2.5rem;
+  }
+
+  .pageNotFoundDescription {
+    font-size: 0.95rem;
+  }
+
+  .backButton {
+    font-size: 1.15rem;
+  }
+}

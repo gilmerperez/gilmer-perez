@@ -1,0 +1,263 @@
+.projectPageContainer {
+  width: 100%;
+  display: flex;
+  margin: 0 auto;
+  max-width: 1200px;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Loading title */
+.loadingTitle {
+  font-size: 5rem;
+  margin-bottom: 1rem;
+  transition: 0.3s ease;
+}
+
+/* Project header */
+.projectHeader {
+  display: flex;
+  align-items: center;
+  transition: 0.3s ease;
+  margin-bottom: 0.5rem;
+  justify-content: center;
+}
+
+/* Project title */
+.projectTitle {
+  font-size: 3.5rem;
+  text-align: center;
+  margin-right: 1rem;
+  transition: 0.3s ease;
+}
+
+/* Project link */
+.projectLink {
+  display: flex;
+  font-size: 2.5rem;
+  align-items: center;
+  color: var(--primary);
+  transition: 0.3s ease;
+  justify-content: center;
+}
+
+.projectLink:hover {
+  transform: scale(1.15);
+  text-shadow: var(--shadow-large);
+}
+
+/* Project description */
+.projectDescription {
+  transition: 0.3s ease;
+  margin-bottom: 1.5rem;
+}
+
+.projectDescription p {
+  line-height: 1.35;
+  font-size: 1.15rem;
+  text-align: center;
+  transition: 0.3s ease;
+  color: var(--text-secondary);
+}
+
+/* Section titles */
+.sectionTitle {
+  font-size: 2rem;
+  font-weight: 500;
+  display: inline-block;
+  transition: 0.3s ease;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--primary);
+}
+
+/* Key features and technology stack */
+.keyFeatures,
+.technologyStack {
+  margin-bottom: 1.5rem;
+  transition: 0.3s ease;
+  align-self: flex-start;
+}
+
+.featureItem,
+.techItem {
+  gap: 1.25rem;
+  display: flex;
+  font-size: 1rem;
+  line-height: 1.35;
+  position: relative;
+  align-items: center;
+  transition: 0.3s ease;
+  margin-bottom: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.featureItem i,
+.techItem i {
+  font-size: 1rem;
+  color: var(--primary);
+  text-shadow: var(--shadow-small);
+}
+
+/* Project screenshots */
+.screenshotsGrid {
+  gap: 1rem;
+  display: grid;
+  transition: 0.3s ease;
+  justify-items: center;
+  align-items: flex-start;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.screenshotContainer {
+  width: 100%;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  transform-style: preserve-3d;
+  border: 2px solid var(--primary);
+  transition: transform 0.1s ease-out, box-shadow 0.3s ease-in;
+}
+
+.screenshotContainer:hover {
+  box-shadow: var(--shadow-small);
+}
+
+.screenshot {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* Modal overlay*/
+.modalOverlay {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  display: flex;
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+  background-color: hsla(0, 0%, 0%, 0.75);
+}
+
+.modalContent {
+  display: flex;
+  max-width: 95vw;
+  max-height: 95vh;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+
+.closeButton {
+  left: 0;
+  top: -50px;
+  z-index: 999;
+  padding: 0.5rem;
+  font-size: 2rem;
+  background: none;
+  position: absolute;
+  transition: 0.3s ease;
+  color: hsl(0, 0%, 100%);
+}
+
+.closeButton:hover {
+  color: var(--primary);
+  transform: scale(1.15);
+}
+
+.modalImage {
+  max-width: 100%;
+  max-height: 95vh;
+  object-fit: contain;
+  border-radius: 0.5rem;
+  box-shadow: 0px 0px 30px hsla(0, 0%, 0%);
+}
+
+/* Tablet responsiveness */
+@media (max-width: 768px) {
+  .loadingTitle {
+    font-size: 4rem;
+  }
+
+  .projectTitle {
+    font-size: 2.5rem;
+  }
+
+  .projectLink {
+    font-size: 1.5rem;
+  }
+
+  .projectDescription p {
+    font-size: 1rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.75rem;
+  }
+
+  .keyFeatures,
+  .technologyStack {
+    margin-bottom: 1rem;
+  }
+
+  .screenshotsGrid {
+    gap: 0.75rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 480px) {
+  .loadingTitle {
+    font-size: 2.5rem;
+  }
+
+  .projectTitle {
+    font-size: 2rem;
+  }
+
+  .projectDescription p {
+    font-size: 0.95rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.25rem;
+  }
+
+  .keyFeatures {
+    margin-bottom: 0.75rem;
+  }
+
+  .featureItem,
+  .techItem {
+    gap: 1.15rem;
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .featureItem i,
+  .techItem i {
+    font-size: 0.95rem;
+  }
+
+  .screenshotsGrid {
+    gap: 0.5rem;
+    grid-template-columns: 1fr;
+  }
+
+  .closeButton {
+    top: -40px;
+    font-size: 1.5rem;
+  }
+
+  .modalImage {
+    max-height: 85vh;
+  }
+}

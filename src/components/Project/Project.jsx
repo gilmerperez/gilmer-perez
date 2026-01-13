@@ -1,5 +1,7 @@
+"use client";
+
 import { useRef } from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import styles from "./Project.module.css";
 
 function Project({ isReversed = false, logo, title, description, id, deployedLink }) {
@@ -50,7 +52,7 @@ function Project({ isReversed = false, logo, title, description, id, deployedLin
           {/* Button container */}
           <div className={styles.buttonContainer}>
             {/* View project button */}
-            <Link to={`/projects/${id}`} className={styles.viewButton}>
+            <Link href={`/project-page/${id}`} className={styles.viewButton}>
               VIEW PROJECT
             </Link>
             {/* Visit website button */}

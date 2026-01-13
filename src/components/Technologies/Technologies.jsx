@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, useEffect } from "react";
 import styles from "./Technologies.module.css";
 import technologiesData from "../../data/technologies.json";

@@ -1,0 +1,111 @@
+.aboutContainer {
+  width: 100%;
+  display: flex;
+  margin: 0 auto;
+  max-width: 1200px;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* About me */
+.aboutSection {
+  text-align: left;
+}
+
+/* Title */
+.aboutTitle {
+  font-size: 3.5rem;
+  transition: 0.3s ease;
+  margin-bottom: 0.75rem;
+}
+
+/* Description */
+.aboutDescription {
+  gap: 1rem;
+  display: flex;
+  transition: 0.3s ease;
+  margin-bottom: 1.5rem;
+  flex-direction: column;
+}
+
+.aboutDescription p {
+  line-height: 1.35;
+  font-size: 1.15rem;
+  transition: 0.3s ease;
+}
+
+/* Image */
+.imageSection {
+  width: 100%;
+  transition: 0.3s ease;
+  margin-bottom: 1.5rem;
+}
+
+.profileImage {
+  cursor: pointer;
+  border-radius: 0.5rem;
+  transition: 0.3s ease-out;
+  transform-style: preserve-3d;
+  box-shadow: 10px 10px 10px hsla(0, 0%, 0%, 0.25);
+}
+
+.profileImage:hover {
+  box-shadow: 10px 10px 10px hsla(0, 0%, 0%, 0.5);
+}
+
+/* Divider */
+.divider {
+  width: 100%;
+  height: 3px;
+  margin-bottom: 1rem;
+  box-shadow: var(--shadow-small);
+  background-color: var(--primary);
+}
+
+/* Technologies */
+.technologiesSection {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.technologiesTitle {
+  font-size: 3.5rem;
+  transition: 0.3s ease;
+  margin-bottom: 0.75rem;
+}
+
+/* Tablet responsiveness */
+@media (max-width: 768px) {
+  .aboutTitle {
+    font-size: 3rem;
+  }
+
+  .aboutDescription p {
+    font-size: 1rem;
+  }
+
+  .technologiesTitle {
+    font-size: 3rem;
+  }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 480px) {
+  .aboutTitle {
+    font-size: 2.5rem;
+  }
+
+  .aboutDescription p {
+    font-size: 0.95rem;
+  }
+
+  .divider {
+    height: 2px;
+  }
+
+  .technologiesTitle {
+    font-size: 2.5rem;
+  }
+}

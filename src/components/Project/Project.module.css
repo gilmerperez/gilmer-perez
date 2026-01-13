@@ -80,7 +80,7 @@
   color: hsl(0, 0%, 100%);
   box-shadow: var(--shadow-small);
   background-color: var(--primary);
-  font-family: "Kode Mono", monospace;
+  font-family: var(--font-kode-mono), monospace;
 }
 
 .viewButton:hover {
@@ -98,7 +98,7 @@
   color: var(--text-primary);
   box-shadow: var(--shadow-small);
   border: 2px solid var(--primary);
-  font-family: "Kode Mono", monospace;
+  font-family: var(--font-kode-mono), monospace;
   background-color: var(--footer-bg-color);
 }
 

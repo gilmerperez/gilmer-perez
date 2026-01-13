@@ -1,7 +1,8 @@
 import styles from "./Footer.module.css";
-import { NavLink, Link } from "react-router-dom";
+import Link from "next/link";
 
 function Footer() {
+
   return (
     <>
       <footer>
@@ -26,18 +27,18 @@ function Footer() {
                 PAGES
               </h6>
               <nav className={styles.navItems} aria-label="Main site navigation">
-                <NavLink to="/" aria-label="Go to home page">
+                <Link href="/" aria-label="Go to home page">
                   Home
-                </NavLink>
-                <NavLink to="/about" aria-label="View my about page">
+                </Link>
+                <Link href="/about" aria-label="View my about page">
                   About
-                </NavLink>
-                <NavLink to="/contact" aria-label="Contact me">
+                </Link>
+                <Link href="/contact" aria-label="Contact me">
                   Contact
-                </NavLink>
-                <NavLink to="/projects" aria-label="Browse my projects">
+                </Link>
+                <Link href="/projects" aria-label="Browse my projects">
                   Projects
-                </NavLink>
+                </Link>
               </nav>
             </section>
             {/* Social links */}
@@ -52,7 +53,7 @@ function Footer() {
                   rel="noopener noreferrer"
                   className={styles.socialLink}
                   aria-label="Check out my GitHub"
-                  to="https://github.com/gilmerperez"
+                  href="https://github.com/gilmerperez"
                 >
                   GitHub
                 </Link>
@@ -62,7 +63,7 @@ function Footer() {
                   rel="noopener noreferrer"
                   className={styles.socialLink}
                   aria-label="Check out my LinkedIn"
-                  to="https://www.linkedin.com/in/gilmer-perez-a35ba0354/"
+                  href="https://www.linkedin.com/in/gilmer-perez-a35ba0354/"
                 >
                   LinkedIn
                 </Link>
@@ -74,12 +75,12 @@ function Footer() {
                 LEGAL
               </h6>
               <nav className={styles.navItems} aria-label="Legal pages">
-                <NavLink to="/privacy-policy" aria-label="Read my privacy policy">
+                <Link href="/privacy-policy" aria-label="Read my privacy policy">
                   Privacy Policy
-                </NavLink>
-                <NavLink to="/terms-of-service" aria-label="Read my terms of service">
+                </Link>
+                <Link href="/terms-of-service" aria-label="Read my terms of service">
                   Terms of Service
-                </NavLink>
+                </Link>
               </nav>
             </section>
             {/* Contact info */}

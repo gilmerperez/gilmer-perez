@@ -1,0 +1,102 @@
+.contactContainer {
+  width: 100%;
+  display: flex;
+  margin: 0 auto;
+  min-height: 55vh;
+  max-width: 1200px;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Contact me */
+.contactSection {
+  width: 100%;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Title */
+.contactTitle {
+  font-size: 5rem;
+  margin-bottom: 1rem;
+  transition: 0.3s ease;
+}
+
+/* Description */
+.contactDescription {
+  max-width: 800px;
+  line-height: 1.35;
+  font-size: 1.25rem;
+  transition: 0.3s ease;
+  margin-bottom: 1.5rem;
+  color: var(--text-secondary);
+}
+
+/* CTA buttons */
+.buttonContainer {
+  gap: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  transition: 0.3s ease;
+  justify-content: center;
+}
+
+/* Email button */
+.contactButton {
+  font-weight: 500;
+  font-size: 1.5rem;
+  padding: 0.75rem 1rem;
+  transition: 0.3s ease;
+  border-radius: 0.5rem;
+  color: hsl(0, 0%, 100%);
+  box-shadow: var(--shadow-small);
+  background-color: var(--primary);
+  font-family: var(--font-kode-mono), monospace;
+}
+
+/* Call button */
+.contactButton:last-child {
+  color: var(--text-primary);
+  border: 2px solid var(--primary);
+  background-color: var(--footer-bg-color);
+}
+
+.contactButton:hover {
+  transform: scale(1.15);
+  box-shadow: var(--shadow-large);
+}
+
+/* Tablet responsiveness */
+@media (max-width: 768px) {
+  .contactTitle {
+    font-size: 4rem;
+  }
+
+  .contactDescription {
+    font-size: 1.15rem;
+  }
+
+  .contactButton {
+    font-size: 1.25rem;
+  }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 480px) {
+  .contactTitle {
+    font-size: 2.5rem;
+  }
+
+  .contactDescription {
+    font-size: 0.95rem;
+  }
+
+  .contactButton {
+    font-size: 1.15rem;
+  }
+}

@@ -1,0 +1,101 @@
+.homeContainer {
+  width: 100%;
+  display: flex;
+  margin: 0 auto;
+  min-height: 55vh;
+  max-width: 1200px;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Hero section */
+.heroSection {
+  width: 100%;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Greeting */
+.greeting {
+  font-size: 2rem;
+  transition: 0.3s ease;
+  margin-bottom: 0.75rem;
+  color: var(--text-secondary);
+}
+
+/* Title */
+.homeTitle {
+  font-size: 5rem;
+  margin-bottom: 1rem;
+  transition: 0.3s ease;
+}
+
+/* Description */
+.homeDescription {
+  max-width: 1000px;
+  line-height: 1.35;
+  font-size: 1.25rem;
+  transition: 0.3s ease;
+  margin-bottom: 1.5rem;
+  color: var(--text-secondary);
+}
+
+/* CTA button */
+.ctaButton {
+  font-weight: 500;
+  font-size: 1.5rem;
+  padding: 0.75rem 1rem;
+  transition: 0.3s ease;
+  border-radius: 0.5rem;
+  color: hsl(0, 0%, 100%);
+  box-shadow: var(--shadow-small);
+  background-color: var(--primary);
+  font-family: var(--font-kode-mono), monospace;
+}
+
+.ctaButton:hover {
+  transform: scale(1.15);
+  box-shadow: var(--shadow-large);
+}
+
+/* Tablet responsiveness */
+@media (max-width: 768px) {
+  .greeting {
+    font-size: 1.5rem;
+  }
+
+  .homeTitle {
+    font-size: 4rem;
+  }
+
+  .homeDescription {
+    font-size: 1.15rem;
+  }
+
+  .ctaButton {
+    font-size: 1.25rem;
+  }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 480px) {
+  .greeting {
+    font-size: 1.25rem;
+  }
+
+  .homeTitle {
+    font-size: 2.5rem;
+  }
+
+  .homeDescription {
+    font-size: 0.95rem;
+  }
+
+  .ctaButton {
+    font-size: 1.15rem;
+  }
+}

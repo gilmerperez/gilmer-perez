@@ -1,9 +1,14 @@
+"use client";
+
 import styles from "./Header.module.css";
 import { createPortal } from "react-dom";
-import { NavLink } from "react-router-dom";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 
 function Header() {
+  const pathname = usePathname();
+
   // * Sticky header logic
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isScrollingUp, setIsScrollingUp] = useState(true);
@@ -19,8 +24,8 @@ function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
-  // * Custom styles for active page
-  const navLinkClass = ({ isActive }) => (isActive ? styles.activeLink : undefined);
+  // * Check if path is active
+  const isActive = (path) => pathname === path;
 
   // * Theme switch
   const [theme, setTheme] = useState("dark");
@@ -105,24 +110,36 @@ function Header() {
           {/* Desktop layout */}
           <div className={styles.desktopLayout}>
             {/* Logo */}
-            <NavLink to="/" aria-label="Go to home page">
+            <Link href="/" aria-label="Go to home page">
               <span className={styles.logo}>GILMERPEREZ</span>
-            </NavLink>
+            </Link>
             {/* Site navigation */}
             <div className={styles.navContainer}>
               <nav className={styles.navItems} aria-label="Main site navigation">
-                <NavLink to="/" className={navLinkClass} aria-label="Go to home page">
+                <Link href="/" className={isActive("/") ? styles.activeLink : undefined} aria-label="Go to home page">
                   HOME
-                </NavLink>
-                <NavLink to="/about" className={navLinkClass} aria-label="Go to about page">
+                </Link>
+                <Link
+                  href="/about"
+                  className={isActive("/about") ? styles.activeLink : undefined}
+                  aria-label="Go to about page"
+                >
                   ABOUT
-                </NavLink>
-                <NavLink to="/contact" className={navLinkClass} aria-label="Go to contact page">
+                </Link>
+                <Link
+                  href="/contact"
+                  className={isActive("/contact") ? styles.activeLink : undefined}
+                  aria-label="Go to contact page"
+                >
                   CONTACT
-                </NavLink>
-                <NavLink to="/projects" className={navLinkClass} aria-label="Go to projects page">
+                </Link>
+                <Link
+                  href="/projects"
+                  className={isActive("/projects") ? styles.activeLink : undefined}
+                  aria-label="Go to projects page"
+                >
                   PROJECTS
-                </NavLink>
+                </Link>
               </nav>
               {/* Separator */}
               <span className={styles.separator} aria-hidden="true">
@@ -160,9 +177,9 @@ function Header() {
               <i className="fa-solid fa-phone-volume" aria-hidden="true"></i>
             </button>
             {/* Mobile logo */}
-            <NavLink to="/" aria-label="Go to home page">
+            <Link href="/" aria-label="Go to home page">
               <span className={styles.mobileLogo}>GILMERPEREZ</span>
-            </NavLink>
+            </Link>
             {/* Hamburger menu */}
             <button
               type="button"
@@ -198,44 +215,44 @@ function Header() {
               </button>
               {/* Sidebar site navigation */}
               <nav className={styles.sidebarNavItems} aria-label="Mobile site navigation">
-                <NavLink
-                  to="/"
-                  className={navLinkClass}
+                <Link
+                  href="/"
+                  className={isActive("/") ? styles.activeLink : undefined}
                   aria-label="Go to home page"
                   onClick={() => setMenuOpen(false)}
                 >
                   HOME
-                </NavLink>
-                <NavLink
-                  to="/about"
-                  className={navLinkClass}
+                </Link>
+                <Link
+                  href="/about"
+                  className={isActive("/about") ? styles.activeLink : undefined}
                   aria-label="Go to about page"
                   onClick={() => setMenuOpen(false)}
                 >
                   ABOUT
-                </NavLink>
-                <NavLink
-                  to="/contact"
-                  className={navLinkClass}
+                </Link>
+                <Link
+                  href="/contact"
+                  className={isActive("/contact") ? styles.activeLink : undefined}
                   aria-label="Go to contact page"
                   onClick={() => setMenuOpen(false)}
                 >
                   CONTACT
-                </NavLink>
-                <NavLink
-                  to="/projects"
-                  className={navLinkClass}
-                  aria-label="Order online"
+                </Link>
+                <Link
+                  href="/projects"
+                  className={isActive("/projects") ? styles.activeLink : undefined}
+                  aria-label="Go to projects page"
                   onClick={() => setMenuOpen(false)}
                 >
                   PROJECTS
-                </NavLink>
+                </Link>
                 <hr className={styles.sidebarSeparator} />
                 {/* Sidebar resume button */}
                 <button
                   disabled={isLoading}
                   aria-label={isLoading ? "Opening resume" : "View my resume"}
-                  className={`${styles.sidebarResumeButton} ${navLinkClass({ isActive: false })}`}
+                  className={`${styles.sidebarResumeButton} ${isActive("/") ? "" : ""}`}
                   onClick={() => {
                     setMenuOpen(false);
                     handleResumeClick();
@@ -257,24 +274,24 @@ function Header() {
                   <p>{theme === "dark" ? "DARK" : "LIGHT"}</p>
                 </button>
                 {/* Sidebar legal pages */}
-                <NavLink
-                  to="/privacy-policy"
-                  className={navLinkClass}
+                <Link
+                  href="/privacy-policy"
+                  className={isActive("/privacy-policy") ? styles.activeLink : undefined}
                   onClick={() => setMenuOpen(false)}
                   aria-label="Read my privacy policy"
                 >
                   <i className="fa-solid fa-shield-halved" aria-hidden="true"></i>
                   PRIVACY POLICY
-                </NavLink>
-                <NavLink
-                  to="/terms-of-service"
-                  className={navLinkClass}
+                </Link>
+                <Link
+                  href="/terms-of-service"
+                  className={isActive("/terms-of-service") ? styles.activeLink : undefined}
                   onClick={() => setMenuOpen(false)}
                   aria-label="Read our terms of service"
                 >
                   <i className="fa-solid fa-asterisk" aria-hidden="true"></i>
                   TERMS OF SERVICE
-                </NavLink>
+                </Link>
               </div>
             </div>
           </div>,

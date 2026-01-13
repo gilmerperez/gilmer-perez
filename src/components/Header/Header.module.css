@@ -45,7 +45,7 @@ header {
   font-size: 1.5rem;
   font-style: italic;
   transition: 0.3s ease;
-  font-family: "Kode Mono", monospace;
+  font-family: var(--font-kode-mono), monospace;
 }
 
 /* Site navigation */
@@ -69,7 +69,7 @@ header {
   font-size: 1.25rem;
   padding: 0.25rem 0rem;
   transition: 0.3s ease;
-  font-family: "Kode Mono", monospace;
+  font-family: var(--font-kode-mono), monospace;
 }
 
 /* Hover underline effect */
@@ -130,7 +130,7 @@ header {
   color: var(--text-primary);
   box-shadow: var(--shadow-small);
   border: 2px solid var(--primary);
-  font-family: "Kode Mono", monospace;
+  font-family: var(--font-kode-mono), monospace;
   background-color: var(--footer-bg-color);
 }
 
@@ -254,7 +254,7 @@ header {
   font-weight: 500;
   font-size: 1.25rem;
   font-style: italic;
-  font-family: "Kode Mono", monospace;
+  font-family: var(--font-kode-mono), monospace;
 }
 
 /* Hamburger menu */
@@ -358,7 +358,7 @@ header {
   transition: 0.3s ease;
   margin-left: -1.75rem;
   padding: 0.5rem 1.75rem;
-  font-family: "Kode Mono", monospace;
+  font-family: var(--font-kode-mono), monospace;
 }
 
 /* On hover, prevent hover effect on active link */
@@ -397,7 +397,7 @@ header {
   color: hsl(0, 0%, 100%);
   box-shadow: var(--shadow-small);
   background-color: var(--primary);
-  font-family: "Kode Mono", monospace;
+  font-family: var(--font-kode-mono), monospace;
 }
 
 .sidebarResumeButton:hover:not(:disabled) {
@@ -437,7 +437,7 @@ header {
   align-items: center;
   transition: 0.3s ease;
   color: var(--text-secondary);
-  font-family: "Kode Mono", monospace;
+  font-family: var(--font-kode-mono), monospace;
 }
 
 .sidebarThemeButton:hover {
@@ -453,7 +453,7 @@ header {
   align-items: center;
   transition: 0.3s ease;
   color: var(--text-secondary);
-  font-family: "Kode Mono", monospace;
+  font-family: var(--font-kode-mono), monospace;
 }
 
 .sidebarFooter a:hover {
