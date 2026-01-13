@@ -42,16 +42,24 @@
   margin-bottom: 1.5rem;
 }
 
-.profileImage {
+.profileImageWrapper {
+  position: relative;
+  width: 100%;
   cursor: pointer;
   border-radius: 0.5rem;
   transition: 0.3s ease-out;
   transform-style: preserve-3d;
   box-shadow: 10px 10px 10px hsla(0, 0%, 0%, 0.25);
+  aspect-ratio: 1;
 }
 
-.profileImage:hover {
+.profileImageWrapper:hover {
   box-shadow: 10px 10px 10px hsla(0, 0%, 0%, 0.5);
+}
+
+.profileImage {
+  object-fit: cover;
+  border-radius: 0.5rem;
 }
 
 /* Divider */

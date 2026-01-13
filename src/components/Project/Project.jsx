@@ -1,7 +1,7 @@
 "use client";
-
-import { useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
+import { useRef } from "react";
 import styles from "./Project.module.css";
 
 function Project({ isReversed = false, logo, title, description, id, deployedLink }) {
@@ -37,9 +37,14 @@ function Project({ isReversed = false, logo, title, description, id, deployedLin
       <section className={`${styles.projectContainer} ${isReversed ? styles.reversed : ""}`}>
         {/* Image container */}
         <div className={styles.imageContainer}>
-          <div onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave} className={styles.imageWrapper}>
+          <div
+            ref={imageRef}
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
+            className={styles.imageWrapper}
+          >
             {/* Project image */}
-            <img src={logo} ref={imageRef} className={styles.projectImage} alt={title} />
+            <Image src={logo} fill className={styles.projectImage} alt={title} sizes="(max-width: 768px) 100vw, 50vw" />
           </div>
         </div>
 

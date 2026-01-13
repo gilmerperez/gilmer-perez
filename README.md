@@ -7,6 +7,7 @@ A modern, responsive portfolio website showcasing my work as a Front-End Web Dev
 - **Problem:** The need for a professional online presence that effectively demonstrates technical capabilities, design sensibilities, and commitment to user experience excellence in today's competitive tech landscape.
 
 - **Solution:** A production-ready portfolio website built with Next.js that combines server-side rendering for optimal SEO performance, client-side interactivity for engaging user experiences, and modern web standards for accessibility and responsiveness.
+
 - **Methodology:** Component-based architecture using Next.js App Router for file-based routing, CSS Modules for scoped styling, and structured JSON data management for maintainable and scalable codebase.
 
 **Live Demo:** [Link to Deployed Application]([Link])
@@ -21,9 +22,9 @@ A modern, responsive portfolio website showcasing my work as a Front-End Web Dev
 
 - **Intelligent Navigation System:** Advanced sticky header with scroll-based visibility detection, smooth transitions, and mobile-optimized hamburger menu with portal-based sidebar overlay.
 
-- **SEO-Optimized Architecture:** Server-side rendering with Next.js App Router, dynamic metadata generation, and optimized image loading for superior search engine visibility and performance.
-
 - **Performance-Optimized Delivery:** Next.js automatic code splitting, image optimization, font optimization, and static generation for fast loading times and optimal Core Web Vitals scores.
+
+- **SEO-Optimized Architecture:** Server-side rendering with Next.js App Router, dynamic metadata generation, and optimized image loading for superior search engine visibility and performance.
 
 - **Interactive Profile Experience:** Dynamic profile image switching with click functionality and sophisticated 3D tilt effects using mouse tracking for enhanced user engagement and visual appeal.
 
@@ -55,11 +56,11 @@ The following images demonstrate the web application's appearance and functional
 
 **Frontend:**
 
+- **JavaScript ES6+:** Modern JavaScript features including destructuring, arrow functions, and template literals.
 - **Next.js 16:** React framework with App Router for server-side rendering, static generation, and optimized performance.
-- **React 19:** Modern component-based UI library for building interactive user interfaces with hooks and functional components.
 - **CSS Modules:** Scoped styling system preventing style conflicts while maintaining modular, maintainable CSS architecture.
 - **CSS Custom Properties:** Dynamic theming system enabling real-time theme switching and consistent design token management.
-- **JavaScript ES6+:** Modern JavaScript features including destructuring, arrow functions, and template literals.
+- **React 19:** Modern component-based UI library for building interactive user interfaces with hooks and functional components.
 
 **Backend:**
 
@@ -67,13 +68,11 @@ The following images demonstrate the web application's appearance and functional
 
 **Other Technologies:**
 
-- **Next.js Font Optimization:** Automatic font loading optimization for Kode Mono and Source Code Pro fonts.
-- **Next.js Image Optimization:** Automatic image optimization and lazy loading for improved performance.
 - **Local Storage API:** Client-side data persistence for user preferences and theme settings.
-- **JSON Data Management:** Structured data storage for projects and technologies enabling easy content updates.
 - **Vercel Analytics:** Performance monitoring and analytics integration for production deployments.
+- **Next.js Image Optimization:** Automatic image optimization and lazy loading for improved performance.
+- **Next.js Font Optimization:** Automatic font loading optimization for Kode Mono and Source Code Pro fonts.
+- **JSON Data Management:** Structured data storage for projects and technologies enabling easy content updates.
 - **Responsive Design:** Mobile-first approach using CSS Grid, Flexbox, and media queries for optimal viewing across all devices.
 
 ---
-
-**GitHub Repository Description:** A modern, SEO-optimized portfolio website built with Next.js showcasing professional web development projects, technical skills, and interactive user experiences with dark/light theme support and mobile-responsive design.

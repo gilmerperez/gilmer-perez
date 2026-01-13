@@ -1,6 +1,7 @@
 "use client";
 
 import styles from "./page.module.css";
+import Image from "next/image";
 import { useState, useRef } from "react";
 import Technologies from "../../components/Technologies/Technologies";
 import Header from "../../components/Header/Header";
@@ -75,15 +76,22 @@ export default function About() {
 
           {/* Image */}
           <section className={styles.imageSection}>
-            <img
+            <div
               ref={imageRef}
-              src={currentImage}
-              alt="Gilmer Perez"
               onClick={handleImageClick}
               onMouseMove={handleMouseMove}
-              className={styles.profileImage}
               onMouseLeave={handleMouseLeave}
-            />
+              className={styles.profileImageWrapper}
+            >
+              <Image
+                src={currentImage}
+                alt="Gilmer Perez"
+                fill
+                className={styles.profileImage}
+                sizes="(max-width: 768px) 100vw, 800px"
+                priority
+              />
+            </div>
           </section>
 
           {/* Divider */}

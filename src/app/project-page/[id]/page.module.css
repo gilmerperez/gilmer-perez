@@ -111,7 +111,9 @@
 }
 
 .screenshotContainer {
+  position: relative;
   width: 100%;
+  aspect-ratio: 16 / 9;
   cursor: pointer;
   overflow: hidden;
   border-radius: 0.5rem;
@@ -125,8 +127,6 @@
 }
 
 .screenshot {
-  width: 100%;
-  display: block;
   object-fit: cover;
 }
 
@@ -151,6 +151,8 @@
   position: relative;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  height: 100%;
 }
 
 .closeButton {
@@ -171,8 +173,6 @@
 }
 
 .modalImage {
-  max-width: 100%;
-  max-height: 95vh;
   object-fit: contain;
   border-radius: 0.5rem;
   box-shadow: 0px 0px 30px hsla(0, 0%, 0%);

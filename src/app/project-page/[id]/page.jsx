@@ -1,6 +1,7 @@
 "use client";
 
 import styles from "./page.module.css";
+import Image from "next/image";
 import projectsData from "../../../data/projects.json";
 import { useState, useEffect, useRef } from "react";
 import { useParams, useRouter } from "next/navigation";
@@ -171,16 +172,18 @@ export default function ProjectPage() {
                 {project.screenshots.map((screenshot, index) => (
                   <div
                     key={index}
-                    className={styles.screenshotContainer}
                     ref={(el) => (screenshotRefs.current[index] = el)}
                     onMouseLeave={() => handleScreenshotMouseLeave(index)}
                     onMouseMove={(e) => handleScreenshotMouseMove(e, index)}
                     onClick={() => handleScreenshotClick(screenshot, index)}
+                    className={styles.screenshotContainer}
                   >
-                    <img
+                    <Image
                       src={screenshot}
+                      fill
                       className={styles.screenshot}
                       alt={`${project.title} screenshot ${index + 1}`}
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px"
                     />
                   </div>
                 ))}
@@ -198,10 +201,13 @@ export default function ProjectPage() {
             <button className={styles.closeButton} onClick={handleModalClose} aria-label="Close modal">
               <i className="fa-solid fa-xmark"></i>
             </button>
-            <img
+            <Image
               src={selectedScreenshot.src}
+              fill
               className={styles.modalImage}
               alt={`${project.title} screenshot ${selectedScreenshot.index + 1}`}
+              sizes="95vw"
+              quality={90}
             />
           </div>
         </div>

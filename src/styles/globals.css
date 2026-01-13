@@ -1,4 +1,5 @@
-/* Fonts are now loaded via Next.js font optimization in layout.jsx */
+/* Font Awesome */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css");
 
 /* Dark theme */
 html[data-theme="dark"] {

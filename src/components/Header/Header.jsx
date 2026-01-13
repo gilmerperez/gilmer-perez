@@ -1,10 +1,9 @@
 "use client";
-
+import Link from "next/link";
 import styles from "./Header.module.css";
 import { createPortal } from "react-dom";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 function Header() {
   const pathname = usePathname();
@@ -105,7 +104,11 @@ function Header() {
 
   return (
     <>
-      <header className={`${styles.header} ${isScrollingUp ? styles.visible : styles.hidden}`} role="banner" aria-label="Site header">
+      <header
+        className={`${styles.header} ${isScrollingUp ? styles.visible : styles.hidden}`}
+        role="banner"
+        aria-label="Site header"
+      >
         <div className={styles.headerContainer}>
           {/* Desktop layout */}
           <div className={styles.desktopLayout}>

@@ -16,6 +16,7 @@
 
 .imageWrapper {
   width: 100%;
+  aspect-ratio: 1 / 1;
   overflow: hidden;
   position: relative;
   transition: 0.3s ease;
@@ -26,11 +27,8 @@
 
 /* Project image */
 .projectImage {
-  width: 100%;
   object-fit: cover;
   border-radius: 0.5rem;
-  transition: 0.3s ease-out;
-  transform-style: preserve-3d;
 }
 
 /* Content container */
