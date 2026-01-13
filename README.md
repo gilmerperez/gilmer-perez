@@ -10,7 +10,7 @@ A modern, responsive portfolio website showcasing my work as a Front-End Web Dev
 
 - **Methodology:** Component-based architecture using Next.js App Router for file-based routing, CSS Modules for scoped styling, and structured JSON data management for maintainable and scalable codebase.
 
-**Live Demo:** [Link to Deployed Application]([Link])
+**Live Demo:** [Link to Deployed Application](https://gilmer-perez.vercel.app/)
 
 ## Table of Contents
 
