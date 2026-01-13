@@ -105,7 +105,7 @@ function Header() {
 
   return (
     <>
-      <header className={`${isScrollingUp ? styles.visible : styles.hidden}`} role="banner" aria-label="Site header">
+      <header className={`${styles.header} ${isScrollingUp ? styles.visible : styles.hidden}`} role="banner" aria-label="Site header">
         <div className={styles.headerContainer}>
           {/* Desktop layout */}
           <div className={styles.desktopLayout}>

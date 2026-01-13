@@ -1,4 +1,4 @@
-header {
+.header {
   top: 1rem;
   z-index: 999;
   position: sticky;
@@ -148,7 +148,7 @@ header {
 }
 
 @media (max-width: 800px) {
-  header {
+  .header {
     padding: 0.95rem 1.15rem;
   }
 
@@ -291,7 +291,7 @@ header {
 
 /* Hide desktop layout and show mobile layout */
 @media (max-width: 495px) {
-  header {
+  .header {
     padding: 0.85rem 1rem;
   }
 

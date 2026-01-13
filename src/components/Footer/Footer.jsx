@@ -5,7 +5,7 @@ function Footer() {
 
   return (
     <>
-      <footer>
+      <footer className={styles.footer}>
         <div className={styles.footerContainer}>
           <div className={styles.topContainer}>
             {/* Legal disclaimer */}
