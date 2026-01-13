@@ -1,6 +1,8 @@
 import "../styles/globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import { Kode_Mono, Source_Code_Pro } from "next/font/google";
+import Header from "../components/Header/Header";
+import Footer from "../components/Footer/Footer";
 
 const kodeMono = Kode_Mono({
   variable: "--font-kode-mono",
@@ -25,7 +27,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${kodeMono.variable} ${sourceCodePro.variable}`}>
+        <Header />
         {children}
+        <Footer />
         <Analytics />
       </body>
     </html>

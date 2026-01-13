@@ -1,6 +1,4 @@
 import styles from "./page.module.css";
-import Header from "../../components/Header/Header";
-import Footer from "../../components/Footer/Footer";
 
 export const metadata = {
   title: "Gilmer Perez | Terms of Service",
@@ -31,10 +29,8 @@ export default function TermsOfService() {
   const month = monthNames[now.getMonth()];
 
   return (
-    <>
-      <Header />
-      <main>
-        <div className={styles.termsOfServiceContainer}>
+    <main>
+      <div className={styles.termsOfServiceContainer}>
           {/* Introduction */}
           <section className={styles.termsOfServiceIntroduction}>
             {/* Title */}
@@ -95,7 +91,6 @@ export default function TermsOfService() {
           </section>
         </div>
       </main>
-      <Footer />
     </>
   );
 }

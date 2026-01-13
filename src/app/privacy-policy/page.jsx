@@ -1,6 +1,4 @@
 import styles from "./page.module.css";
-import Header from "../../components/Header/Header";
-import Footer from "../../components/Footer/Footer";
 
 export const metadata = {
   title: "Gilmer Perez | Privacy Policy",
@@ -31,10 +29,8 @@ export default function PrivacyPolicy() {
   const month = monthNames[now.getMonth()];
 
   return (
-    <>
-      <Header />
-      <main>
-        <div className={styles.privacyPolicyContainer}>
+    <main>
+      <div className={styles.privacyPolicyContainer}>
           {/* Introduction */}
           <section className={styles.privacyPolicyIntroduction}>
             {/* Title */}
@@ -92,7 +88,6 @@ export default function PrivacyPolicy() {
           </section>
         </div>
       </main>
-      <Footer />
     </>
   );
 }

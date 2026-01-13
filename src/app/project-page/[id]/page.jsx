@@ -5,8 +5,6 @@ import Image from "next/image";
 import projectsData from "../../../data/projects.json";
 import { useState, useEffect, useRef } from "react";
 import { useParams, useRouter } from "next/navigation";
-import Header from "../../../components/Header/Header";
-import Footer from "../../../components/Footer/Footer";
 
 export default function ProjectPage() {
   // * Get project ID from URL parameter
@@ -95,22 +93,17 @@ export default function ProjectPage() {
   // * Show loading state while project is being loaded
   if (!project) {
     return (
-      <>
-        <Header />
-        <main>
-          <div className={styles.projectPageContainer}>
-            {/* Loading title */}
-            <h1 className={styles.loadingTitle}>Loading...</h1>
-          </div>
-        </main>
-        <Footer />
-      </>
+      <main>
+        <div className={styles.projectPageContainer}>
+          {/* Loading title */}
+          <h1 className={styles.loadingTitle}>Loading...</h1>
+        </div>
+      </main>
     );
   }
 
   return (
     <>
-      <Header />
       <main>
         <div className={styles.projectPageContainer}>
           {/* Project header */}
@@ -192,7 +185,6 @@ export default function ProjectPage() {
           )}
         </div>
       </main>
-      <Footer />
 
       {/* Modal overlay */}
       {isModalOpen && selectedScreenshot && (
