@@ -196,12 +196,8 @@
     font-size: 1rem;
   }
 
-  .themeButton {
-    font-size: 0.95rem;
-  }
-
-  .themeButton:hover {
-    transform: scale(1.15);
+  .themeButton:not(.sidebarThemeButton) {
+    display: none;
   }
 
   .resumeButton {
@@ -209,19 +205,14 @@
   }
 }
 
-@media (max-width: 635px) {
-  .themeButton:not(.sidebarThemeButton) {
-    display: none;
-  }
+@media (max-width: 605px) {
 }
 
-@media (max-width: 605px) {
+@media (max-width: 650px) {
   .separator {
     display: none;
   }
-}
 
-@media (max-width: 585px) {
   .resumeButton:not(.sidebarResumeButton) {
     display: none;
   }
@@ -290,7 +281,7 @@
 }
 
 /* Hide desktop layout and show mobile layout */
-@media (max-width: 495px) {
+@media (max-width: 550px) {
   .header {
     padding: 0.85rem 1rem;
   }

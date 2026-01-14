@@ -125,22 +125,22 @@ function Header() {
                 </Link>
                 <Link
                   href="/about"
-                  className={isActive("/about") ? styles.activeLink : undefined}
                   aria-label="Go to about page"
+                  className={isActive("/about") ? styles.activeLink : undefined}
                 >
                   ABOUT
                 </Link>
                 <Link
                   href="/contact"
-                  className={isActive("/contact") ? styles.activeLink : undefined}
                   aria-label="Go to contact page"
+                  className={isActive("/contact") ? styles.activeLink : undefined}
                 >
                   CONTACT
                 </Link>
                 <Link
                   href="/projects"
-                  className={isActive("/projects") ? styles.activeLink : undefined}
                   aria-label="Go to projects page"
+                  className={isActive("/projects") ? styles.activeLink : undefined}
                 >
                   PROJECTS
                 </Link>
@@ -221,33 +221,33 @@ function Header() {
               <nav className={styles.sidebarNavItems} aria-label="Mobile site navigation">
                 <Link
                   href="/"
-                  className={isActive("/") ? styles.activeLink : undefined}
                   aria-label="Go to home page"
                   onClick={() => setMenuOpen(false)}
+                  className={isActive("/") ? styles.activeLink : undefined}
                 >
                   HOME
                 </Link>
                 <Link
                   href="/about"
-                  className={isActive("/about") ? styles.activeLink : undefined}
                   aria-label="Go to about page"
                   onClick={() => setMenuOpen(false)}
+                  className={isActive("/about") ? styles.activeLink : undefined}
                 >
                   ABOUT
                 </Link>
                 <Link
                   href="/contact"
-                  className={isActive("/contact") ? styles.activeLink : undefined}
                   aria-label="Go to contact page"
                   onClick={() => setMenuOpen(false)}
+                  className={isActive("/contact") ? styles.activeLink : undefined}
                 >
                   CONTACT
                 </Link>
                 <Link
                   href="/projects"
-                  className={isActive("/projects") ? styles.activeLink : undefined}
                   aria-label="Go to projects page"
                   onClick={() => setMenuOpen(false)}
+                  className={isActive("/projects") ? styles.activeLink : undefined}
                 >
                   PROJECTS
                 </Link>
@@ -280,18 +280,18 @@ function Header() {
                 {/* Sidebar legal pages */}
                 <Link
                   href="/privacy-policy"
-                  className={isActive("/privacy-policy") ? styles.activeLink : undefined}
                   onClick={() => setMenuOpen(false)}
                   aria-label="Read my privacy policy"
+                  className={isActive("/privacy-policy") ? styles.activeLink : undefined}
                 >
                   <i className="fa-solid fa-shield-halved" aria-hidden="true"></i>
                   PRIVACY POLICY
                 </Link>
                 <Link
                   href="/terms-of-service"
-                  className={isActive("/terms-of-service") ? styles.activeLink : undefined}
                   onClick={() => setMenuOpen(false)}
                   aria-label="Read our terms of service"
+                  className={isActive("/terms-of-service") ? styles.activeLink : undefined}
                 >
                   <i className="fa-solid fa-asterisk" aria-hidden="true"></i>
                   TERMS OF SERVICE
