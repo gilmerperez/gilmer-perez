@@ -3,7 +3,7 @@
     "id": 1,
     "title": "Bubbalous Bodacious BBQ",
     "description": "Savor the digital flavor of Orlando's premier BBQ experience! This mouth-watering website brings the smoky goodness of Bubbalous Bodacious BBQ directly to your screen. Customers can browse our signature menu, order party packs for special occasions, and place online orders with just a few clicks. Built with cutting-edge web technology that works seamlessly on phones, tablets, and computers, ensuring every customer gets the full BBQ experience whether they're dining in or ordering from home.",
-    "deployedLink": "https://bubbalous-bodacious-bbq.onrender.com/",
+    "deployedLink": "https://bubbalous-bodacious.vercel.app/",
     "logo": "/projects/bubbalous-bodacious-bbq/logo.jpg",
     "keyFeatures": [
       "Dynamic Image Carousel: Auto-rotating banner images showcasing delicious BBQ dishes with manual navigation controls and smooth transitions.",
@@ -40,7 +40,7 @@
     "id": 2,
     "title": "Kingdom Movement",
     "description": "Transform your fitness journey with Kingdom Movement's powerful digital platform! This dynamic website empowers fitness enthusiasts to discover their strength through interactive class schedules, personalized nutrition guidance, and flexible membership options. Whether you're a CrossFit beginner or seasoned athlete, the platform adapts to your device and fitness goals. The smart technology behind the scenes ensures smooth navigation and real-time updates, making it easier than ever to join the Kingdom Movement community and achieve your wellness aspirations.",
-    "deployedLink": "https://kingdom-movement.onrender.com/",
+    "deployedLink": "https://kingdom-movement.vercel.app/",
     "logo": "/projects/kingdom-movement/logo.jpg",
     "keyFeatures": [
       "Legal Pages: Includes Privacy Policy and Terms of Service for compliance and transparency.",
@@ -74,7 +74,7 @@
     "id": 3,
     "title": "Moonstar Esthetics",
     "description": "Discover your natural radiance with Moonstar Esthetics' luxurious digital sanctuary! This elegant website invites clients into a world of professional skincare excellence, showcasing advanced facial treatments, precision laser services, and comprehensive body care solutions. The sophisticated design mirrors the premium quality of services offered, while intelligent web technology ensures effortless booking and seamless user experience across all devices. Every pixel reflects the confidence, care, and clarity that defines the Moonstar Esthetics brand.",
-    "deployedLink": "https://moonstar-esthetics.onrender.com/",
+    "deployedLink": "https://moonstar-esthetics.vercel.app/",
     "logo": "/projects/moonstar-esthetics/logo.jpg",
     "keyFeatures": [
       "Client Reviews: Real client testimonials build trust and credibility.",
@@ -104,7 +104,7 @@
     "id": 4,
     "title": "Reelix",
     "description": "Dive into the ultimate entertainment universe with Reelix! This cinematic discovery platform transforms how you explore movies and TV shows, featuring real-time data from the world's largest entertainment database. Navigate effortlessly through trending films, top-rated series, and personalized recommendations with lightning-fast performance. The sleek dark interface creates the perfect movie theater ambiance, while smart technology automatically adapts to your region and language preferences. Whether you're a casual viewer or film enthusiast, Reelix delivers an immersive entertainment experience that brings the magic of cinema to your fingertips.",
-    "deployedLink": "https://reelix.onrender.com/",
+    "deployedLink": "https://reelix-2.vercel.app/",
     "logo": "/projects/reelix/logo.png",
     "keyFeatures": [
       "Responsive Filters: Users can filter content by genre, year, and country.",
