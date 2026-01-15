@@ -67,6 +67,14 @@ export default function About() {
                 scalability. Proficient in Back-End technologies, including Node.js, Express, and database management
                 with both PERN and MERN stacks, ensuring a comprehensive understanding of Full-Stack Development.
               </p>
+              <p>
+                Beyond writing clean code, I view web development through a strategic lens. My experience running
+                full-service digital projects has taught me that a website is a business&apos;s most critical asset. I
+                don&apos;t just hand off code; I manage the entire digital lifecycle—from pixel-perfect UI/UX design and
+                semantic architecture to <strong>Technical SEO</strong> and secure deployment. My goal is to bridge the
+                gap between creative vision and technical reality, delivering applications that load instantly and convert
+                visitors into users.
+              </p>
             </div>
           </section>
 

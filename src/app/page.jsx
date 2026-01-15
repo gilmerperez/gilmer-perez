@@ -4,7 +4,7 @@ import styles from "./page.module.css";
 export const metadata = {
   title: "Gilmer Perez | Home",
   description:
-    "A passionate Front-End Web Developer and UI/UX enthusiast with Full-Stack knowledge, specialized in building stunning pixel-perfect interactive websites and applications.",
+    "A Front-End Developer specialized in building high-performance, SEO-optimized applications using Next.js. I blend creative UI/UX design with a strong full-stack foundation to create digital products that are not only visually stunning but also discoverable, fast, and built for business growth.",
 };
 
 export default function Home() {
@@ -26,9 +26,11 @@ export default function Home() {
             </h1>
             {/* Description */}
             <p className={styles.homeDescription}>
-              A passionate <strong>FRONT-END WEB DEVELOPER</strong> and <strong>UI/UX ENTHUSIAST</strong> with{" "}
-              <strong>FULL-STACK KNOWLEDGE</strong>, specialized in building stunning pixel-perfect interactive websites
-              and applications. Passionate about creating engaging & dynamic web experiences.
+              A <strong>Front-End Developer</strong> specialized in building{" "}
+              <strong>high-performance, SEO-optimized</strong> applications using <strong>Next.js</strong>. I blend
+              creative <strong>UI/UX design</strong> with a strong <strong>full-stack foundation</strong> to create
+              digital products that are not only visually stunning but also discoverable, fast, and built for{" "}
+              <strong>business growth</strong>.
             </p>
             {/* CTA button */}
             <Link href="/about" className={styles.ctaButton}>
