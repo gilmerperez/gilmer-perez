@@ -172,17 +172,19 @@ export default function ProjectPage() {
       {isModalOpen && selectedScreenshot && (
         <div className={styles.modalOverlay} onClick={handleModalClose}>
           <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
-            <button className={styles.closeButton} onClick={handleModalClose} aria-label="Close modal">
-              <i className="fa-solid fa-xmark"></i>
-            </button>
-            <Image
-              src={selectedScreenshot.src}
-              fill
-              className={styles.modalImage}
-              alt={`${project.title} screenshot ${selectedScreenshot.index + 1}`}
-              sizes="95vw"
-              quality={90}
-            />
+            <div className={styles.imageWrapper}>
+              <button className={styles.closeButton} onClick={handleModalClose} aria-label="Close modal">
+                <i className="fa-solid fa-xmark"></i>
+              </button>
+              <Image
+                fill
+                sizes="95vw"
+                quality={90}
+                src={selectedScreenshot.src}
+                className={styles.modalImage}
+                alt={`${project.title} screenshot ${selectedScreenshot.index + 1}`}
+              />
+            </div>
           </div>
         </div>
       )}
