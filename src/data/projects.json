@@ -6,26 +6,24 @@
     "deployedLink": "https://bubbalous-bodacious.vercel.app/",
     "logo": "/projects/bubbalous-bodacious-bbq/logo.jpg",
     "keyFeatures": [
-      "Dynamic Image Carousel: Auto-rotating banner images showcasing delicious BBQ dishes with manual navigation controls and smooth transitions.",
-      "Legal Compliance Pages: Complete Privacy Policy and Terms of Service pages ensuring regulatory compliance and transparency for business operations.",
-      "Accessibility Features: Semantic HTML structure, ARIA labels, keyboard navigation support, and high contrast theme options for inclusive user experience.",
       "Theme Toggle System: Seamless dark/light mode switching with persistent user preferences stored in localStorage and automatic system preference detection.",
-      "Performance Optimized: Fast loading times through Vite bundling, efficient image formats (AVIF), and optimized component rendering for superior user experience.",
-      "Party Pack Ordering: Specialized section for catering and large group orders with detailed package information, serving sizes, and pricing for events of various scales.",
       "Mobile-First Responsive Design: Optimized layouts for all screen sizes with a collapsible mobile navigation menu featuring smooth animations and intuitive touch interactions.",
-      "Comprehensive Menu System: Complete menu with categorized sections including appetizers, sandwiches, dinners, combos, and by-the-pound options, all managed through structured JSON data.",
-      "Interactive Contact Form: Secure contact system with CAPTCHA verification to prevent spam while maintaining accessibility, featuring email integration for direct communication."
+      "Online Ordering System: Complete e-commerce functionality with shopping cart, item customization, checkout process, and localStorage persistence for cart items across sessions.",
+      "Dynamic Image Carousel: Auto-rotating banner images showcasing delicious BBQ dishes with manual navigation controls and smooth transitions, optimized using Next.js Image component for performance.",
+      "SEO-Optimized Pages: Each page includes comprehensive metadata with titles, descriptions, and keywords optimized for search engines. Next.js server-side rendering ensures content is crawlable and indexable."
     ],
     "technologyStack": [
-      "Local Storage API: Client-side data persistence for user preferences and theme settings without server dependencies.",
-      "CSS Modules: Scoped styling system preventing style conflicts while maintaining modular, maintainable CSS architecture.",
-      "CSS Custom Properties: Dynamic theming system enabling real-time theme switching and consistent design token management.",
-      "React 19: Modern component-based UI library for building interactive user interfaces with hooks and functional components.",
-      "Vite: Lightning-fast build tool and development server providing instant hot module replacement and optimized production builds.",
-      "JavaScript ES6+: Modern JavaScript features including destructuring, arrow functions, and template literals for clean, readable code.",
-      "React Router DOM: Client-side routing solution enabling single-page application navigation with dynamic page titles and URL management.",
-      "Responsive Design: Mobile-first approach using CSS Grid, Flexbox, and media queries for optimal viewing across all devices and screen sizes.",
-      "JSON Data Management: Structured data storage for menu items, party packs, and restaurant information enabling easy content updates and maintenance."
+      "Styling: CSS Modules with CSS Custom Properties for dynamic theming",
+      "Frameworks/Libraries: Next.js 16 (App Router), React 19, Next.js Image optimization",
+      "State Management: React Hooks (useState, useEffect) for component-level state management",
+      "Runtime: Node.js",
+      "Framework: Next.js (full-stack framework with API routes capability)",
+      "Icons: Font Awesome",
+      "Data Management: JSON files for menu and party pack data",
+      "Font Loading: Next.js Google Fonts integration (Oswald, Inter)",
+      "SEO: Next.js Metadata API for comprehensive page metadata and Open Graph tags",
+      "Local Storage: Browser localStorage API for cart persistence and theme preferences",
+      "Responsive Design: Mobile-first approach using CSS Grid, Flexbox, and media queries"
     ],
     "screenshots": [
       "/projects/bubbalous-bodacious-bbq/screenshots/homePage.png",
@@ -43,24 +41,26 @@
     "deployedLink": "https://kingdom-movement.vercel.app/",
     "logo": "/projects/kingdom-movement/logo.jpg",
     "keyFeatures": [
-      "Legal Pages: Includes Privacy Policy and Terms of Service for compliance and transparency.",
-      "Contact & Inquiry: Easy-to-use contact form for membership inquiries and general questions.",
-      "Theme Toggle: Seamless dark/light mode switching for enhanced user experience and accessibility.",
-      "Responsive Design: Mobile-first approach ensuring optimal viewing across all devices and screen sizes.",
-      "Interactive Class Schedule: Day-by-day schedule navigation with real-time class information and activity types.",
-      "Community-Focused Content: Brand messaging that emphasizes transformation, community, and purpose-driven fitness.",
-      "Comprehensive Nutrition Menu: Categorized nutrition offerings with filtering capabilities and detailed product information.",
-      "Dynamic Membership Tiers: Interactive membership cards showcasing different pricing plans with detailed benefits and features.",
-      "Modern UI/UX: Clean, energetic design with smooth transitions and interactive elements reflecting the gym's bold brand identity."
+      "Responsive Design: Fully responsive layout optimized for desktop, tablet, and mobile devices. Adaptive navigation with mobile sidebar menu and sticky header functionality.",
+      "Expert Coach Profiles: Interactive carousel showcasing expert trainers with detailed profiles, images, and descriptions. Auto-rotating carousel with manual navigation controls.",
+      "Dark/Light Theme Toggle: Persistent theme switching with system preference detection. Theme preferences are saved to localStorage for consistent user experience across sessions.",
+      "Interactive Class Schedule: View weekly class schedules with day-by-day navigation. The schedule displays activities, times, and handles closed days with user-friendly messaging.",
+      "Comprehensive Nutrition Menu: Browse over 30+ nutrition items with category filtering. Each item includes detailed descriptions, images, and customization options (add-ons, extras, premium flavors).",
+      "Membership Tier Selection: Explore multiple membership options with detailed benefits, pricing, and sign-up links. Features include popular tier highlighting and comprehensive additional information sections."
     ],
     "technologyStack": [
-      "HTML5: Semantic markup for accessibility and SEO optimization.",
-      "Vite: Fast build tool and development server for modern web projects.",
-      "JavaScript (ES6+): Modern language features for robust, maintainable code.",
-      "React: Component-based UI library for building interactive user interfaces.",
-      "JSON: Structured data storage for memberships, schedules, and nutrition items.",
-      "CSS Custom Properties: Dynamic theming system for dark/light mode functionality.",
-      "CSS Modules: Scoped, maintainable styles with CSS Grid and Flexbox for responsive layouts."
+      "UI Library: React 19.2.3",
+      "Framework: Next.js 16.1.1 (App Router)",
+      "Image Optimization: Next.js Image component",
+      "Styling: CSS Modules with CSS Variables for theming",
+      "State Management: React Hooks (useState, useEffect, useRef)",
+      "Font Optimization: Next.js Font Optimization (Anton, Bebas Neue, Roboto Condensed)",
+      "Runtime: Node.js",
+      "Framework: Next.js (Server-Side Rendering & Static Generation)",
+      "Version Control: Git",
+      "Build Tool: Next.js built-in bundler",
+      "Code Quality: ESLint with Next.js configuration",
+      "Data Storage: JSON files for static data (coaches, nutrition, schedule, membership)"
     ],
     "screenshots": [
       "/projects/kingdom-movement/screenshots/homePage.png",
@@ -77,20 +77,22 @@
     "deployedLink": "https://moonstar-esthetics.vercel.app/",
     "logo": "/projects/moonstar-esthetics/logo.jpg",
     "keyFeatures": [
-      "Client Reviews: Real client testimonials build trust and credibility.",
-      "Modern UI: Clean, elegant design with smooth transitions and interactive elements.",
-      "Contact & Inquiry: Easy-to-use contact form for questions and appointment requests.",
-      "Legal Pages: Includes Privacy Policy and Terms of Service for compliance and transparency.",
-      "Responsive Design: Fully mobile-friendly layout ensures a seamless experience on all devices.",
-      "Service Catalog: Browse detailed listings for facial, laser/IPL, body, and waxing treatments, each with images, descriptions, pricing, and duration."
+      "Legal Pages: Includes Privacy Policy and Terms of Service for compliance and transparency, with dynamic date updates.",
+      "Contact & Inquiry: Easy-to-use contact form for questions and appointment requests, with direct integration to email clients.",
+      "Responsive Design: Fully mobile-friendly layout ensures a seamless experience on all devices, with a mobile-optimized navigation sidebar and adaptive layouts.",
+      "Client Reviews: Real client testimonials build trust and credibility. The reviews page features an average rating display, rating distribution, and sortable review cards.",
+      "Modern UI with Theme Toggle: Clean, elegant design with smooth transitions and interactive elements. Includes a light/dark theme toggle that respects user system preferences and persists across sessions.",
+      "Service Catalog: Browse detailed listings for facial, laser/IPL, body, and waxing treatments, each with images, descriptions, pricing, and duration. Services can be sorted by price or duration for easy comparison."
     ],
     "technologyStack": [
-      "HTML5: Semantic markup for accessibility and SEO.",
-      "JSON: Structured data storage for services and reviews.",
-      "CSS Modules: Scoped, maintainable styles for each component.",
-      "Vite: Fast build tool and development server for modern web projects.",
-      "JavaScript (ES6+): Modern language features for robust, maintainable code.",
-      "React: Component-based UI library for building interactive user interfaces."
+      "CSS Modules: Scoped, maintainable styles for each component",
+      "JavaScript (ES6+): Modern language features for robust, maintainable code",
+      "React 19: Component-based UI library for building interactive user interfaces",
+      "Next.js 16: React framework with App Router for server-side rendering, static generation, and optimized performance",
+      "Next.js API Routes: Server-side functionality and routing",
+      "Font Awesome: Icon library for UI elements",
+      "JSON: Structured data storage for services and reviews",
+      "Google Fonts: Montserrat and Libre Baskerville typography"
     ],
     "screenshots": [
       "/projects/moonstar-esthetics/screenshots/homePage.png",
@@ -107,24 +109,24 @@
     "deployedLink": "https://reelix-2.vercel.app/",
     "logo": "/projects/reelix/logo.png",
     "keyFeatures": [
-      "Responsive Filters: Users can filter content by genre, year, and country.",
-      "Pagination Support: It includes custom-styled pagination to help users navigate through extensive result sets.",
-      "Dynamic Movie & TV Data: It fetches and renders media information, including metadata and trailers, using the TMDB API.",
-      "Vite-Powered Performance: The application boasts a fast development server, optimized build processes, and efficient preview commands.",
-      "Detailed Media Pages: Each movie or show has a dedicated page featuring a poster, trailer, cast, crew, genres, and additional information.",
-      "Modular Architecture: The codebase is designed with reusable components such as MediaDetail, MediaBanner, and Filter to ensure maintainability.",
-      "Multilingual Auto-Translation: The application supports automatic translation into German, Spanish, Portuguese, and French, based on region settings.",
-      "Dark UI with Red Accents: The user interface features a consistent, cinematic dark theme with red accents, styled using CSS Modules and a clean component architecture."
+      "Top IMDB Ratings: Dedicated page showcasing the highest-rated movies from TMDB, with detailed metadata and certification information.",
+      "Performance Optimized: Leverages Next.js Image component for optimized image loading, font optimization, and efficient code splitting.",
+      "SEO Optimized: Built with Next.js for optimal search engine optimization, including proper metadata, semantic HTML, and server-side rendering.",
+      "Responsive Design: Fully responsive layout optimized for desktops, tablets, smartphones, and smart TVs, ensuring a consistent experience across all devices.",
+      "Advanced Filtering System: Users can filter movies and TV shows by genre, year, and country with real-time URL parameter updates for shareable filtered views.",
+      "Comprehensive Search: Powerful search functionality that queries both movies and TV shows simultaneously, intelligently selecting the best match based on vote counts.",
+      "Detailed Media Pages: Each movie or TV show features a comprehensive detail page with poster, backdrop banner, trailer links, cast, crew, genres, ratings, and runtime information."
     ],
     "technologyStack": [
-      "Node.js + npm: Utilized for dependency and script management.",
-      "React: The core library for building the user interface with components.",
-      "dotenv: Used to load environment variables, such as API keys and port numbers.",
-      "CSS Modules: Provides scoped and maintainable styling for individual components.",
-      "Vite: A fast bundler and development server optimized for modern JavaScript projects.",
-      "React Router DOM: Handles dynamic routing for detail pages and filters within the application.",
-      "Render: Employed for deploying the application as a web service with dynamic port configuration.",
-      "TMDB API: Serves as the source for real-time media data, including metadata, images, and videos."
+      "Frameworks/Libraries: Next.js 16 (App Router), React 19",
+      "Styling: CSS Modules for scoped, maintainable component styling",
+      "Font Optimization: Next.js Font Optimization (Bebas Neue, Montserrat)",
+      "Runtime: Node.js",
+      "Framework: Next.js (Server-Side Rendering, API Routes)",
+      "API Integration: The Movie Database (TMDB) API for real-time media data",
+      "Image Optimization: Next.js Image component for optimized image loading",
+      "Environment Variables: Next.js environment variable management",
+      "Deployment: Optimized for Vercel, Netlify, or similar Next.js-compatible platforms"
     ],
     "screenshots": [
       "/projects/reelix/screenshots/homePage.png",
