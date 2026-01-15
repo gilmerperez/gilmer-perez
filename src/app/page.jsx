@@ -26,16 +26,21 @@ export default function Home() {
             </h1>
             {/* Description */}
             <p className={styles.homeDescription}>
-              A <strong>Front-End Developer</strong> specialized in building{" "}
-              <strong>high-performance, SEO-optimized</strong> applications using <strong>Next.js</strong>. I blend
-              creative <strong>UI/UX design</strong> with a strong <strong>full-stack foundation</strong> to create
+              A <strong>FRONT-END DEVELOPER</strong> specialized in building{" "}
+              <strong>HIGH-PERFORMANCE, SEO-OPTIMIZED</strong> applications using <strong>NEXT.JS</strong>. I blend
+              creative <strong>UI/UX DESIGN</strong> with a strong <strong>FULL-STACK FOUNDATION</strong> to create
               digital products that are not only visually stunning but also discoverable, fast, and built for{" "}
-              <strong>business growth</strong>.
+              <strong>BUSINESS GROWTH</strong>.
             </p>
-            {/* CTA button */}
-            <Link href="/about" className={styles.ctaButton}>
-              LEARN MORE
-            </Link>
+            {/* CTA buttons */}
+            <div className={styles.buttonContainer}>
+              <Link href="/about" className={styles.ctaButton}>
+                LEARN MORE
+              </Link>
+              <Link href="/projects" className={styles.ctaButton}>
+                VIEW PROJECTS
+              </Link>
+            </div>
           </section>
         </div>
       </main>

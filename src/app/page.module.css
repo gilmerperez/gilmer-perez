@@ -44,6 +44,16 @@
   color: var(--text-secondary);
 }
 
+/* CTA buttons */
+.buttonContainer {
+  gap: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  transition: 0.3s ease;
+  justify-content: center;
+}
+
 /* CTA button */
 .ctaButton {
   font-weight: 500;
@@ -55,6 +65,15 @@
   box-shadow: var(--shadow-small);
   background-color: var(--primary);
   font-family: var(--font-kode-mono), monospace;
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* Second button with contrasting style */
+.ctaButton:last-child {
+  color: var(--text-primary);
+  border: 2px solid var(--primary);
+  background-color: var(--footer-bg-color);
 }
 
 .ctaButton:hover {
