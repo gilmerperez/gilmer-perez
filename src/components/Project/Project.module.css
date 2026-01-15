@@ -112,6 +112,12 @@
     flex-direction: column;
   }
 
+  .imageContainer {
+    width: 100%;
+    margin: 0 auto;
+    max-width: 500px;
+  }
+
   .contentContainer {
     padding: 0;
   }
