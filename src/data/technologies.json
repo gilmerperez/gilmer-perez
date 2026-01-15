@@ -2,31 +2,31 @@
   "technologies": {
     "frontend": [
       {
-        "name": "Next.js (App Router, SSR)"
+        "name": "CSS"
+      },
+      {
+        "name": "HTML"
       },
       {
         "name": "React"
       },
       {
-        "name": "TypeScript"
-      },
-      {
-        "name": "Tailwind CSS"
-      },
-      {
-        "name": "Semantic HTML5"
+        "name": "Schema Markup"
       },
       {
         "name": "Technical SEO"
       },
       {
-        "name": "Schema Markup"
+        "name": "Core Web Vitals"
+      },
+      {
+        "name": "JavaScript/TypeScript"
       },
       {
         "name": "Google Analytics (GA4)"
       },
       {
-        "name": "Core Web Vitals"
+        "name": "Next.js (App Router, SSR)"
       }
     ],
     "backend": [
@@ -45,13 +45,13 @@
     ],
     "databases": [
       {
-        "name": "PostgreSQL"
+        "name": "JSON"
       },
       {
         "name": "MongoDB"
       },
       {
-        "name": "JSON"
+        "name": "PostgreSQL"
       }
     ],
     "tools": [
@@ -62,16 +62,16 @@
         "name": "GitHub"
       },
       {
-        "name": "Postman"
-      },
-      {
         "name": "Chrome DevTools"
       },
       {
-        "name": "Vercel Deployment"
+        "name": "CI/CD Pipelines"
       },
       {
-        "name": "CI/CD Pipelines"
+        "name": "Postman/Insomnia"
+      },
+      {
+        "name": "Vercel/Netlify Deployment"
       }
     ]
   }
