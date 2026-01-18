@@ -1,5 +1,8 @@
 "use client";
 import styles from "./page.module.css";
+import StructuredData from "../../components/StructuredData/StructuredData";
+
+const BASE_URL = "https://gilmer-perez.vercel.app";
 
 export default function Contact() {
   // * Email handler
@@ -12,8 +15,46 @@ export default function Contact() {
     window.location.href = "tel:4073501805";
   };
 
+  // JSON-LD Structured Data for Contact Page
+  const contactStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    name: "Contact Gilmer Perez",
+    description:
+      "Get in touch with Gilmer Perez for web development projects, business inquiries, or collaboration opportunities.",
+    url: `${BASE_URL}/contact`,
+    mainEntity: {
+      "@type": "Person",
+      name: "Gilmer Perez",
+      email: "gilmer2002@outlook.com",
+      telephone: "+1-407-350-1805",
+      jobTitle: "Front-End Web Developer",
+    },
+  };
+
+  const breadcrumbStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: BASE_URL,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Contact",
+        item: `${BASE_URL}/contact`,
+      },
+    ],
+  };
+
   return (
     <>
+      <StructuredData data={contactStructuredData} />
+      <StructuredData data={breadcrumbStructuredData} />
       <main>
         <div className={styles.contactContainer}>
           {/* Contact me */}

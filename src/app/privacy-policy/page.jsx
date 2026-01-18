@@ -1,9 +1,19 @@
 import styles from "./page.module.css";
+import StructuredData from "../../components/StructuredData/StructuredData";
+
+const BASE_URL = "https://gilmer-perez.vercel.app";
 
 export const metadata = {
   title: "Gilmer Perez | Privacy Policy",
   description:
     "Your privacy matters. This privacy policy outlines how we manage your information when visiting our website.",
+  alternates: {
+    canonical: `${BASE_URL}/privacy-policy`,
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function PrivacyPolicy() {
@@ -28,8 +38,29 @@ export default function PrivacyPolicy() {
   const year = now.getFullYear();
   const month = monthNames[now.getMonth()];
 
+  // JSON-LD Structured Data for Privacy Policy Page
+  const breadcrumbStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: BASE_URL,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Privacy Policy",
+        item: `${BASE_URL}/privacy-policy`,
+      },
+    ],
+  };
+
   return (
     <>
+      <StructuredData data={breadcrumbStructuredData} />
       <main>
         <div className={styles.privacyPolicyContainer}>
           {/* Introduction */}

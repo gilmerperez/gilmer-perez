@@ -52,6 +52,9 @@ export const metadata = {
   authors: [{ name: "Gilmer Perez" }],
   creator: "Gilmer Perez",
   publisher: "Gilmer Perez",
+  alternates: {
+    canonical: "https://gilmer-perez.vercel.app",
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -62,7 +65,7 @@ export const metadata = {
       "A passionate Front-End Web Developer and UI/UX enthusiast with Full-Stack knowledge, specialized in building stunning pixel-perfect interactive websites and applications.",
     images: [
       {
-        url: "/images/gilmer-perez-1.jpg",
+        url: "https://gilmer-perez.vercel.app/images/gilmer-perez-1.jpg",
         width: 1200,
         height: 630,
         alt: "Gilmer Perez - Front-End Web Developer",
@@ -74,7 +77,7 @@ export const metadata = {
     title: "Gilmer Perez | Front-End Web Developer",
     description:
       "A passionate Front-End Web Developer and UI/UX enthusiast with Full-Stack knowledge, specialized in building stunning pixel-perfect interactive websites and applications.",
-    images: ["/images/gilmer-perez-1.jpg"],
+    images: ["https://gilmer-perez.vercel.app/images/gilmer-perez-1.jpg"],
   },
   robots: {
     index: true,
@@ -88,8 +91,7 @@ export const metadata = {
     },
   },
   verification: {
-    // Add Google Search Console verification code if available
-    // google: "your-verification-code",
+    google: "3FTfHaZrjPjKogJbOTyhOila5U11Fj2l512M51iBOH0",
   },
   icons: {
     icon: "/favicon.png",
@@ -97,6 +99,7 @@ export const metadata = {
     apple: "/favicon.png",
   },
 };
+
 
 export default function RootLayout({ children }) {
   return (

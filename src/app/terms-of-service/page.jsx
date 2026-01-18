@@ -1,9 +1,19 @@
 import styles from "./page.module.css";
+import StructuredData from "../../components/StructuredData/StructuredData";
+
+const BASE_URL = "https://gilmer-perez.vercel.app";
 
 export const metadata = {
   title: "Gilmer Perez | Terms of Service",
   description:
     "By accessing this website, you agree to comply with the following terms and conditions. It is important to thoroughly read and understand these terms as they govern your use of our services and website.",
+  alternates: {
+    canonical: `${BASE_URL}/terms-of-service`,
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function TermsOfService() {
@@ -28,8 +38,29 @@ export default function TermsOfService() {
   const year = now.getFullYear();
   const month = monthNames[now.getMonth()];
 
+  // JSON-LD Structured Data for Terms of Service Page
+  const breadcrumbStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: BASE_URL,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Terms of Service",
+        item: `${BASE_URL}/terms-of-service`,
+      },
+    ],
+  };
+
   return (
     <>
+      <StructuredData data={breadcrumbStructuredData} />
       <main>
         <div className={styles.termsOfServiceContainer}>
           {/* Introduction */}

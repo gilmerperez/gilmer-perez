@@ -5,6 +5,9 @@ import { notFound } from "next/navigation";
 import { useParams } from "next/navigation";
 import { useState, useEffect, useRef } from "react";
 import projectsData from "../../../data/projects.json";
+import StructuredData from "../../../components/StructuredData/StructuredData";
+
+const BASE_URL = "https://gilmer-perez.vercel.app";
 
 export default function ProjectPage() {
   // * Get project ID from URL parameter
@@ -84,8 +87,59 @@ export default function ProjectPage() {
     };
   }, [isModalOpen]);
 
+  // JSON-LD Structured Data for Project Page
+  const creativeWorkStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    name: project.title,
+    description: project.description,
+    url: `${BASE_URL}/project-page/${id}`,
+    creator: {
+      "@type": "Person",
+      name: "Gilmer Perez",
+      jobTitle: "Front-End Web Developer",
+    },
+    ...(project.deployedLink && {
+      mainEntity: {
+        "@type": "WebApplication",
+        name: project.title,
+        url: project.deployedLink,
+      },
+    }),
+    ...(project.screenshots && project.screenshots.length > 0 && {
+      image: project.screenshots.map((screenshot) => `${BASE_URL}${screenshot}`),
+    }),
+  };
+
+  const breadcrumbStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: BASE_URL,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Projects",
+        item: `${BASE_URL}/projects`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: project.title,
+        item: `${BASE_URL}/project-page/${id}`,
+      },
+    ],
+  };
+
   return (
     <>
+      <StructuredData data={creativeWorkStructuredData} />
+      <StructuredData data={breadcrumbStructuredData} />
       <main>
         <div className={styles.projectPageContainer}>
           {/* Project header */}

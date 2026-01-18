@@ -3,6 +3,9 @@ import Image from "next/image";
 import styles from "./page.module.css";
 import { useState, useRef } from "react";
 import Technologies from "../../components/Technologies/Technologies";
+import StructuredData from "../../components/StructuredData/StructuredData";
+
+const BASE_URL = "https://gilmer-perez.vercel.app";
 
 export default function About() {
   // * State for profile picture images
@@ -40,8 +43,66 @@ export default function About() {
     );
   };
 
+  // JSON-LD Structured Data for About Page
+  const personStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Gilmer Perez",
+    jobTitle: "Front-End Web Developer",
+    description:
+      "A Front-End Developer and UI/UX enthusiast crafting intuitive, user-friendly experiences. Skilled in building responsive, pixel-perfect interfaces with a focus on delivering seamless user experiences.",
+    url: `${BASE_URL}/about`,
+    image: `${BASE_URL}/images/gilmer-perez-1.jpg`,
+    alumniOf: {
+      "@type": "EducationalOrganization",
+      name: "University of Central Florida",
+    },
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Orlando",
+      addressRegion: "FL",
+      addressCountry: "US",
+    },
+    knowsAbout: [
+      "Front-End Development",
+      "React",
+      "Next.js",
+      "JavaScript",
+      "TypeScript",
+      "UI/UX Design",
+      "Node.js",
+      "Express.js",
+      "PostgreSQL",
+      "MongoDB",
+      "RESTful API",
+      "GraphQL",
+      "Full-Stack Development",
+    ],
+  };
+
+  const breadcrumbStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: BASE_URL,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "About",
+        item: `${BASE_URL}/about`,
+      },
+    ],
+  };
+
   return (
     <>
+      <StructuredData data={personStructuredData} />
+      <StructuredData data={breadcrumbStructuredData} />
       <main>
         <div className={styles.aboutContainer}>
           {/* About me */}
