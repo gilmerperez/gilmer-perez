@@ -1,8 +1,9 @@
+/* Cards scale with the viewport: 4 per row, then 2, then 1 */
 .featuredGrid {
   width: 100%;
   display: grid;
   gap: clamp(1rem, 2.5vw, 2rem);
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
 }
 
 /* Card */
@@ -81,8 +82,15 @@
   font-family: var(--font-kode-mono), monospace;
 }
 
+/* Two cards per row */
+@media (max-width: 1199px) {
+  .featuredGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 /* One card per row, kept to a readable width */
-@media (max-width: 899px) {
+@media (max-width: 599px) {
   .featuredGrid {
     margin: 0 auto;
     max-width: 440px;

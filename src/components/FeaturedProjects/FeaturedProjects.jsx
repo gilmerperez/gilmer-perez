@@ -3,16 +3,11 @@ import Image from "next/image";
 import styles from "./FeaturedProjects.module.css";
 import projectsData from "../../data/projects.json";
 
-// * Showcase the client websites first, leaving the personal project to the projects page
-const FEATURED_COUNT = 3;
-
 function FeaturedProjects() {
-  const featuredProjects = projectsData.slice(0, FEATURED_COUNT);
-
   return (
     <>
       <ul className={styles.featuredGrid}>
-        {featuredProjects.map((project) => (
+        {projectsData.map((project) => (
           <li key={project.id}>
             <Link href={`/project-page/${project.id}`} className={styles.featuredCard}>
               {/* Project image */}
@@ -22,7 +17,7 @@ function FeaturedProjects() {
                   src={project.logo}
                   className={styles.projectImage}
                   alt={`${project.title} project preview`}
-                  sizes="(max-width: 899px) 440px, 360px"
+                  sizes="(max-width: 599px) 440px, (max-width: 1199px) 50vw, 280px"
                 />
               </div>
               {/* Project title */}

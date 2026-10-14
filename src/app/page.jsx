@@ -1,36 +1,17 @@
 import Link from "next/link";
 import styles from "./page.module.css";
 import FullPath from "../components/FullPath/FullPath";
+import CoreSkills from "../components/CoreSkills/CoreSkills";
 import StructuredData from "../components/StructuredData/StructuredData";
 import FeaturedProjects from "../components/FeaturedProjects/FeaturedProjects";
 
 const BASE_URL = "https://gilmer-perez.vercel.app";
 
-// * Tools shown in the tools section
-const TOOLS = [
-  "Google Analytics (GA4)",
-  "Google Tag Manager",
-  "Google Search Console",
-  "Google Ads",
-  "Walmart Ads",
-  "Spotify Ads",
-  "Next.js",
-  "React",
-  "TypeScript",
-  "WordPress",
-  "Squarespace",
-  "Wix",
-  "Vercel",
-  "Netlify",
-  "GitHub",
-  "Lighthouse",
-];
-
 export const metadata = {
   // * Literal, not templated: the root title template only applies to child segments, not the root page itself
   title: "Home | Gilmer Perez",
   description:
-    "Digital Growth Specialist covering the full path from website to customer: web development, SEO, paid media, and analytics. Based in Kissimmee, FL.",
+    "Digital Growth Specialist covering the full path from website to customer: web development, SEO, paid media, and analytics. Based in Central Florida.",
   alternates: {
     canonical: BASE_URL,
   },
@@ -78,7 +59,6 @@ export default function Home() {
     ],
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Kissimmee",
       addressRegion: "FL",
       addressCountry: "US",
     },
@@ -151,7 +131,8 @@ export default function Home() {
               SELECTED WORK
             </h2>
             <p className={styles.sectionIntro}>
-              Websites built to be found, load fast on a phone, and turn visitors into customers.
+              Client websites built to be found, load fast on a phone, and turn visitors into customers, plus one
+              personal project.
             </p>
             <FeaturedProjects />
             <Link href="/projects" className={styles.textLink}>
@@ -159,21 +140,15 @@ export default function Home() {
             </Link>
           </section>
 
-          {/* Tools section */}
-          <section className={styles.contentSection} aria-labelledby="tools-heading">
-            <h2 id="tools-heading" className={styles.sectionTitle}>
-              TOOLS I WORK WITH
+          {/* Core skills section */}
+          <section className={styles.contentSection} aria-labelledby="core-skills-heading">
+            <h2 id="core-skills-heading" className={styles.sectionTitle}>
+              CORE SKILLS
             </h2>
             <p className={styles.sectionIntro}>
               In my current role as a Digital Growth Specialist, I work with all of these.
             </p>
-            <ul className={styles.toolsList}>
-              {TOOLS.map((tool) => (
-                <li key={tool} className={styles.toolCapsule}>
-                  {tool}
-                </li>
-              ))}
-            </ul>
+            <CoreSkills />
           </section>
 
           {/* Closing CTA section */}

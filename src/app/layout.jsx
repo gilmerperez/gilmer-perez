@@ -19,7 +19,7 @@ const sourceCodePro = Source_Code_Pro({
 
 const SITE_TITLE = "Gilmer Perez | Digital Growth Specialist";
 const SITE_DESCRIPTION =
-  "Digital Growth Specialist covering the full path from website to customer: web development, SEO, paid media, and analytics. Based in Kissimmee, FL.";
+  "Digital Growth Specialist covering the full path from website to customer: web development, SEO, paid media, and analytics. Based in Central Florida.";
 
 export const metadata = {
   // * Resolves relative social image URLs (e.g. the generated opengraph-image) to the live domain
@@ -48,8 +48,6 @@ export const metadata = {
     "Next.js Developer",
     "React Developer",
     "Small Business Websites",
-    "Kissimmee Web Developer",
-    "Orlando Web Developer",
     "Central Florida Web Developer",
   ],
   authors: [{ name: "Gilmer Perez" }],

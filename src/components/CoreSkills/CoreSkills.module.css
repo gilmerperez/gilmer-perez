@@ -1,0 +1,87 @@
+/* Cards scale with the viewport: 3 per row, then 2, then 1, shrinking as they go */
+.skillsGrid {
+  width: 100%;
+  display: grid;
+  gap: clamp(0.75rem, 2vw, 1.5rem);
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* Card */
+.skillCard {
+  display: flex;
+  transition: 0.3s ease;
+  flex-direction: column;
+  border-radius: 0.5rem;
+  gap: clamp(0.75rem, 1.5vw, 1rem);
+  border: 2px solid var(--primary);
+  background-color: var(--footer-bg-color);
+  padding: clamp(1rem, 2.2vw, 1.5rem);
+}
+
+.skillCard:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-small);
+}
+
+/* Card header */
+.cardHeader {
+  gap: 0.75rem;
+  display: flex;
+  align-items: center;
+}
+
+.cardIcon {
+  flex-shrink: 0;
+  color: var(--primary);
+  text-shadow: var(--shadow-small);
+  font-size: clamp(1.5rem, 2.6vw, 2rem);
+}
+
+.cardTitle {
+  line-height: 1.15;
+  font-size: clamp(1.1rem, 1.9vw, 1.4rem);
+}
+
+/* Skill list */
+.skillList {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.4rem, 0.8vw, 0.6rem);
+}
+
+.skillItem {
+  gap: 0.75rem;
+  display: flex;
+  line-height: 1.35;
+  align-items: flex-start;
+  color: var(--text-secondary);
+  font-size: clamp(0.9rem, 1.2vw, 1rem);
+}
+
+.skillMarker {
+  flex-shrink: 0;
+  color: var(--primary);
+  font-size: 0.75rem;
+  margin-top: 0.35em;
+  text-shadow: var(--shadow-small);
+}
+
+.skillName {
+  color: var(--text-primary);
+}
+
+/* Two cards per row */
+@media (max-width: 1199px) {
+  .skillsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* One card per row, kept to a readable width */
+@media (max-width: 599px) {
+  .skillsGrid {
+    margin: 0 auto;
+    max-width: 440px;
+    grid-template-columns: 1fr;
+  }
+}

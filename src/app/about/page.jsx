@@ -66,7 +66,6 @@ export default function About() {
     ],
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Kissimmee",
       addressRegion: "FL",
       addressCountry: "US",
     },

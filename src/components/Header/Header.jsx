@@ -86,12 +86,8 @@ function Header() {
   const handleResumeClick = () => {
     try {
       setIsLoading(true);
-      // Open google drive link in new tab
-      window.open(
-        "https://docs.google.com/document/d/1QmNaxVlksOkM19y5q-MwhkdiBU8DjDdTBXb9G2vBHX0/edit?usp=drive_link",
-        "_blank",
-        "noopener noreferrer"
-      );
+      // Open resume PDF (hosted in /public) in new tab
+      window.open("/Gilmer-Perez-Resume.pdf", "_blank", "noopener noreferrer");
       // Reset loading state after a short delay
       setTimeout(() => {
         setIsLoading(false);

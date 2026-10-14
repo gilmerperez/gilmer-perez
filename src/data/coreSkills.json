@@ -1,0 +1,78 @@
+[
+  {
+    "id": 1,
+    "title": "SEO & CONTENT STRATEGY",
+    "icon": "fa-solid fa-magnifying-glass",
+    "skills": [
+      { "name": "Technical SEO", "detail": "Schema Markup, JSON-LD, Meta Tags" },
+      { "name": "On-Page and Off-Page SEO" },
+      { "name": "Local SEO", "detail": "Google Business Profile, Map Pack" },
+      { "name": "AEO & GEO", "detail": "Answer and Generative Engine Optimization" },
+      { "name": "Keyword Research" },
+      { "name": "Core Web Vitals" }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "PAID MEDIA",
+    "icon": "fa-solid fa-bullhorn",
+    "skills": [
+      { "name": "Google Ads" },
+      { "name": "Meta Ads", "detail": "working knowledge" },
+      { "name": "Walmart Ads" },
+      { "name": "Spotify Ads" },
+      { "name": "Other platforms", "detail": "depending on client needs" },
+      { "name": "Campaign setup, optimization, and cost-per-click reduction" }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "ANALYTICS & REPORTING",
+    "icon": "fa-solid fa-chart-line",
+    "skills": [
+      { "name": "Google Analytics (GA4)" },
+      { "name": "Google Search Console" },
+      { "name": "Google Tag Manager" },
+      { "name": "CRM Integration" },
+      { "name": "Monthly Performance Reporting" }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "WEB DEVELOPMENT",
+    "icon": "fa-solid fa-code",
+    "skills": [
+      { "name": "Next.js, React, TypeScript" },
+      { "name": "JavaScript (ES6+)" },
+      { "name": "Semantic HTML5, CSS, Tailwind CSS, Bootstrap" },
+      { "name": "Responsive Design" },
+      { "name": "Accessibility (WCAG)" },
+      { "name": "Node.js and Express", "detail": "fundamentals" },
+      { "name": "CMS experience", "detail": "WordPress, Squarespace, Wix" }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "HOSTING & INFRASTRUCTURE",
+    "icon": "fa-solid fa-server",
+    "skills": [
+      { "name": "DNS Management" },
+      { "name": "SSL/TLS Security" },
+      { "name": "Domain Registration" },
+      { "name": "Managed Hosting", "detail": "Vercel, Netlify, Render" },
+      { "name": "CI/CD Pipelines" },
+      { "name": "Git/GitHub" }
+    ]
+  },
+  {
+    "id": 6,
+    "title": "TOOLS",
+    "icon": "fa-solid fa-screwdriver-wrench",
+    "skills": [
+      { "name": "VS Code" },
+      { "name": "Chrome DevTools" },
+      { "name": "Lighthouse", "detail": "performance auditing" },
+      { "name": "Basecamp" }
+    ]
+  }
+]
