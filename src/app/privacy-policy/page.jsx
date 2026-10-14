@@ -4,7 +4,7 @@ import StructuredData from "../../components/StructuredData/StructuredData";
 const BASE_URL = "https://gilmer-perez.vercel.app";
 
 export const metadata = {
-  title: "Gilmer Perez | Privacy Policy",
+  title: "Privacy Policy",
   description:
     "Your privacy matters. This privacy policy outlines how we manage your information when visiting our website.",
   alternates: {

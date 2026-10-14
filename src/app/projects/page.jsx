@@ -6,9 +6,9 @@ import StructuredData from "../../components/StructuredData/StructuredData";
 const BASE_URL = "https://gilmer-perez.vercel.app";
 
 export const metadata = {
-  title: "Gilmer Perez | Projects",
+  title: "Projects",
   description:
-    "Explore my portfolio of web development projects, showcasing modern technologies, responsive design, and innovative solutions for various industries.",
+    "Websites built to rank and convert: local business sites with technical SEO, schema markup, analytics, and fast mobile performance, plus a personal project.",
   alternates: {
     canonical: `${BASE_URL}/projects`,
   },
@@ -38,9 +38,9 @@ export default function Projects() {
   const collectionStructuredData = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    name: "Gilmer Perez - Web Development Projects",
+    name: "Gilmer Perez - Projects",
     description:
-      "A collection of web development projects showcasing modern technologies, responsive design, and innovative solutions.",
+      "A collection of websites built to rank and convert, with technical SEO, schema markup, analytics, and fast mobile performance.",
     url: `${BASE_URL}/projects`,
     mainEntity: {
       "@type": "ItemList",

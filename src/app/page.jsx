@@ -5,9 +5,10 @@ import StructuredData from "../components/StructuredData/StructuredData";
 const BASE_URL = "https://gilmer-perez.vercel.app";
 
 export const metadata = {
-  title: "Gilmer Perez | Home",
+  // * Absolute so the root title template doesn't append the site name twice
+  title: { absolute: "Gilmer Perez | Digital Growth Specialist" },
   description:
-    "A Front-End Developer specialized in building high-performance, SEO-optimized applications using Next.js. I blend creative UI/UX design with a strong full-stack foundation to create digital products that are not only visually stunning but also discoverable, fast, and built for business growth.",
+    "Digital Growth Specialist covering the full path from website to customer: web development, SEO, paid media, and analytics. Based in Kissimmee, FL.",
   alternates: {
     canonical: BASE_URL,
   },
@@ -19,33 +20,43 @@ export default function Home() {
     "@context": "https://schema.org",
     "@type": "Person",
     name: "Gilmer Perez",
-    jobTitle: "Front-End Web Developer",
+    jobTitle: "Digital Growth Specialist",
     description:
-      "A passionate Front-End Web Developer and UI/UX enthusiast with Full-Stack knowledge, specialized in building stunning pixel-perfect interactive websites and applications.",
+      "Digital Growth Specialist who builds websites, ranks them in search, tracks what they do, and runs paid ads that send qualified traffic.",
     url: BASE_URL,
     image: `${BASE_URL}/images/gilmer-perez-1.jpg`,
-    sameAs: [
-      // Add social media profiles if available
-      // "https://github.com/yourusername",
-      // "https://linkedin.com/in/yourusername",
-    ],
+    sameAs: ["https://github.com/gilmerperez", "https://www.linkedin.com/in/gilmer-perez-a35ba0354/"],
     knowsAbout: [
-      "Front-End Development",
-      "React",
-      "Next.js",
-      "JavaScript",
-      "TypeScript",
-      "UI/UX Design",
-      "Node.js",
+      "Digital Marketing",
+      "Technical SEO",
+      "Local SEO",
+      "Answer Engine Optimization",
+      "Generative Engine Optimization",
+      "Schema Markup",
+      "Core Web Vitals",
+      "Paid Media",
+      "Google Ads",
+      "Google Analytics 4",
+      "Google Tag Manager",
+      "Google Search Console",
       "Web Development",
+      "Next.js",
+      "React",
+      "TypeScript",
     ],
-    alumniOf: {
-      "@type": "EducationalOrganization",
-      name: "University of Central Florida",
-    },
+    alumniOf: [
+      {
+        "@type": "EducationalOrganization",
+        name: "University of Central Florida",
+      },
+      {
+        "@type": "EducationalOrganization",
+        name: "Valencia College",
+      },
+    ],
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Orlando",
+      addressLocality: "Kissimmee",
       addressRegion: "FL",
       addressCountry: "US",
     },
@@ -57,7 +68,7 @@ export default function Home() {
     name: "Gilmer Perez Portfolio",
     url: BASE_URL,
     description:
-      "Portfolio website of Gilmer Perez, a Front-End Web Developer specializing in React, Next.js, and modern web development.",
+      "Portfolio website of Gilmer Perez, a Digital Growth Specialist covering web development, SEO, paid media, and analytics.",
     author: {
       "@type": "Person",
       name: "Gilmer Perez",

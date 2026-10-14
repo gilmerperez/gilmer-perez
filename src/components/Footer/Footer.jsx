@@ -9,8 +9,9 @@ function Footer() {
           <div className={styles.topContainer}>
             {/* Legal disclaimer */}
             <p className={styles.legalDisclaimer}>
-              This portfolio showcases my work and capabilities as a website developer. All work displayed is my own
-              creation. This site is for professional demonstration purposes.
+              This portfolio showcases my work as a digital growth specialist across web development, SEO, paid media,
+              and analytics. All work displayed is my own creation. This site is for professional demonstration
+              purposes.
             </p>
             {/* Copyright */}
             <p className={styles.copyright}>&copy; {new Date().getFullYear()} Gilmer Perez. All rights reserved.</p>

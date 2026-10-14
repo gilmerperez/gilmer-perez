@@ -8,13 +8,13 @@ export async function generateMetadata({ params }) {
 
   if (!project) {
     return {
-      title: "Project Not Found | Gilmer Perez",
+      title: "Project Not Found",
       description: "The requested project could not be found.",
     };
   }
 
   return {
-    title: `${project.title} | Gilmer Perez`,
+    title: project.title,
     description: project.description,
     alternates: {
       canonical: `${BASE_URL}/project-page/${id}`,

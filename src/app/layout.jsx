@@ -17,37 +17,40 @@ const sourceCodePro = Source_Code_Pro({
   style: ["normal", "italic"],
 });
 
+const SITE_TITLE = "Gilmer Perez | Digital Growth Specialist";
+const SITE_DESCRIPTION =
+  "Digital Growth Specialist covering the full path from website to customer: web development, SEO, paid media, and analytics. Based in Kissimmee, FL.";
+
 export const metadata = {
+  // * Resolves relative social image URLs (e.g. the generated opengraph-image) to the live domain
+  metadataBase: new URL("https://gilmer-perez.vercel.app"),
   title: {
-    default: "Gilmer Perez | Front-End Web Developer",
+    default: SITE_TITLE,
     template: "%s | Gilmer Perez",
   },
-  description:
-    "A passionate Front-End Web Developer and UI/UX enthusiast with Full-Stack knowledge, specialized in building stunning pixel-perfect interactive websites and applications. Explore my portfolio showcasing React, Next.js, Node.js, and modern web development projects.",
+  description: SITE_DESCRIPTION,
   keywords: [
-    "Front-End Developer",
+    "Digital Growth Specialist",
     "Web Developer",
-    "React Developer",
+    "SEO Specialist",
+    "Technical SEO",
+    "Local SEO",
+    "AEO",
+    "GEO",
+    "Paid Media",
+    "Google Ads",
+    "PPC",
+    "Google Analytics 4",
+    "Google Tag Manager",
+    "Google Search Console",
+    "Schema Markup",
+    "Core Web Vitals",
     "Next.js Developer",
-    "UI/UX Designer",
-    "Full-Stack Developer",
-    "JavaScript Developer",
-    "TypeScript Developer",
-    "Portfolio",
-    "Web Development",
-    "Responsive Design",
-    "Modern Web Applications",
-    "React Portfolio",
-    "Next.js Portfolio",
-    "Node.js Developer",
-    "Express.js",
-    "PostgreSQL",
-    "MongoDB",
-    "RESTful API",
-    "GraphQL",
-    "GitHub Portfolio",
+    "React Developer",
+    "Small Business Websites",
+    "Kissimmee Web Developer",
     "Orlando Web Developer",
-    "Florida Web Developer",
+    "Central Florida Web Developer",
   ],
   authors: [{ name: "Gilmer Perez" }],
   creator: "Gilmer Perez",
@@ -60,24 +63,13 @@ export const metadata = {
     locale: "en_US",
     url: "https://gilmer-perez.vercel.app/",
     siteName: "Gilmer Perez Portfolio",
-    title: "Gilmer Perez | Front-End Web Developer",
-    description:
-      "A passionate Front-End Web Developer and UI/UX enthusiast with Full-Stack knowledge, specialized in building stunning pixel-perfect interactive websites and applications.",
-    images: [
-      {
-        url: "https://gilmer-perez.vercel.app/images/gilmer-perez-1.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Gilmer Perez - Front-End Web Developer",
-      },
-    ],
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
   },
   twitter: {
     card: "summary_large_image",
-    title: "Gilmer Perez | Front-End Web Developer",
-    description:
-      "A passionate Front-End Web Developer and UI/UX enthusiast with Full-Stack knowledge, specialized in building stunning pixel-perfect interactive websites and applications.",
-    images: ["https://gilmer-perez.vercel.app/images/gilmer-perez-1.jpg"],
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
   },
   robots: {
     index: true,

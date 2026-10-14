@@ -4,7 +4,7 @@ import StructuredData from "../../components/StructuredData/StructuredData";
 const BASE_URL = "https://gilmer-perez.vercel.app";
 
 export const metadata = {
-  title: "Gilmer Perez | Terms of Service",
+  title: "Terms of Service",
   description:
     "By accessing this website, you agree to comply with the following terms and conditions. It is important to thoroughly read and understand these terms as they govern your use of our services and website.",
   alternates: {

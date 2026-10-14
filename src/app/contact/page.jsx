@@ -21,14 +21,14 @@ export default function Contact() {
     "@type": "ContactPage",
     name: "Contact Gilmer Perez",
     description:
-      "Get in touch with Gilmer Perez for web development projects, business inquiries, or collaboration opportunities.",
+      "Get in touch with Gilmer Perez about a website, SEO, paid media, or analytics project.",
     url: `${BASE_URL}/contact`,
     mainEntity: {
       "@type": "Person",
       name: "Gilmer Perez",
       email: "gilmer2002@outlook.com",
       telephone: "+1-407-350-1805",
-      jobTitle: "Front-End Web Developer",
+      jobTitle: "Digital Growth Specialist",
     },
   };
 
