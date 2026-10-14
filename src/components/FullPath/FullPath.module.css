@@ -1,0 +1,89 @@
+/* Cards scale with the viewport: 4 per row, then 2, then 1, shrinking as they go */
+.pathGrid {
+  width: 100%;
+  display: grid;
+  gap: clamp(0.75rem, 2vw, 1.5rem);
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* Card */
+.pathCard {
+  display: flex;
+  transition: 0.3s ease;
+  flex-direction: column;
+  border-radius: 0.5rem;
+  gap: clamp(0.5rem, 1vw, 0.75rem);
+  border: 2px solid var(--primary);
+  background-color: var(--footer-bg-color);
+  padding: clamp(1rem, 2.2vw, 1.5rem);
+}
+
+.pathCard:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-small);
+}
+
+/* Step number and icon */
+.cardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.stepNumber {
+  font-weight: 500;
+  color: var(--text-secondary);
+  font-size: clamp(1rem, 1.6vw, 1.25rem);
+  font-family: var(--font-kode-mono), monospace;
+}
+
+.cardIcon {
+  color: var(--primary);
+  text-shadow: var(--shadow-small);
+  font-size: clamp(1.75rem, 3.2vw, 2.5rem);
+}
+
+/* Step title */
+.cardTitle {
+  font-size: clamp(1.4rem, 2.4vw, 1.85rem);
+}
+
+/* Step description */
+.cardDescription {
+  line-height: 1.4;
+  color: var(--text-secondary);
+  font-size: clamp(0.9rem, 1.3vw, 1rem);
+}
+
+/* Tool capsules pinned to the bottom so cards line up */
+.toolList {
+  gap: 0.4rem;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: auto;
+  padding-top: 0.25rem;
+}
+
+.toolItem {
+  font-size: 0.8rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.35rem;
+  border: 1px solid var(--primary);
+  font-family: var(--font-kode-mono), monospace;
+}
+
+/* Two cards per row */
+@media (max-width: 1199px) {
+  .pathGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* One card per row, kept to a readable width */
+@media (max-width: 599px) {
+  .pathGrid {
+    margin: 0 auto;
+    max-width: 440px;
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,12 +1,34 @@
 import Link from "next/link";
 import styles from "./page.module.css";
+import FullPath from "../components/FullPath/FullPath";
 import StructuredData from "../components/StructuredData/StructuredData";
+import FeaturedProjects from "../components/FeaturedProjects/FeaturedProjects";
 
 const BASE_URL = "https://gilmer-perez.vercel.app";
 
+// * Tools shown in the tools section
+const TOOLS = [
+  "Google Analytics (GA4)",
+  "Google Tag Manager",
+  "Google Search Console",
+  "Google Ads",
+  "Walmart Ads",
+  "Spotify Ads",
+  "Next.js",
+  "React",
+  "TypeScript",
+  "WordPress",
+  "Squarespace",
+  "Wix",
+  "Vercel",
+  "Netlify",
+  "GitHub",
+  "Lighthouse",
+];
+
 export const metadata = {
-  // * Absolute so the root title template doesn't append the site name twice
-  title: { absolute: "Gilmer Perez | Digital Growth Specialist" },
+  // * Literal, not templated: the root title template only applies to child segments, not the root page itself
+  title: "Home | Gilmer Perez",
   description:
     "Digital Growth Specialist covering the full path from website to customer: web development, SEO, paid media, and analytics. Based in Kissimmee, FL.",
   alternates: {
@@ -89,27 +111,83 @@ export default function Home() {
             </span>
             {/* Title */}
             <h1 className={styles.homeTitle}>
-              FRONT-END
+              DIGITAL GROWTH
               <br />
-              WEB DEVELOPER.
+              SPECIALIST.
             </h1>
             {/* Description */}
             <p className={styles.homeDescription}>
-              A <strong>FRONT-END DEVELOPER</strong> specialized in building{" "}
-              <strong>HIGH-PERFORMANCE, SEO-OPTIMIZED</strong> applications using <strong>NEXT.JS</strong>. I blend
-              creative <strong>UI/UX DESIGN</strong> with a strong <strong>FULL-STACK FOUNDATION</strong> to create
-              digital products that are not only visually stunning but also discoverable, fast, and built for{" "}
-              <strong>BUSINESS GROWTH</strong>.
+              I cover the <strong>FULL PATH FROM WEBSITE TO CUSTOMER</strong>. I <strong>BUILD AND HOST</strong> the
+              site, make it <strong>RANK IN SEARCH</strong>, <strong>TRACK</strong> what it does, and run{" "}
+              <strong>PAID ADS</strong> that send it qualified traffic. Because I also write the code, I fix technical
+              problems directly and turn the data into clear recommendations business owners can act on.
             </p>
             {/* CTA buttons */}
             <div className={styles.buttonContainer}>
-              <Link href="/about" className={styles.ctaButton}>
-                LEARN MORE
-              </Link>
               <Link href="/projects" className={styles.ctaButton}>
-                VIEW PROJECTS
+                VIEW MY WORK
+              </Link>
+              <Link href="/about" className={styles.ctaButton}>
+                ABOUT ME
               </Link>
             </div>
+          </section>
+
+          {/* Full path section */}
+          <section className={styles.contentSection} aria-labelledby="full-path-heading">
+            <h2 id="full-path-heading" className={styles.sectionTitle}>
+              THE FULL PATH
+            </h2>
+            <p className={styles.sectionIntro}>
+              One person carrying a goal from the website to the customer, so nothing gets lost between the people who
+              build it, rank it, measure it, and promote it.
+            </p>
+            <FullPath />
+          </section>
+
+          {/* Featured work section */}
+          <section className={styles.contentSection} aria-labelledby="featured-work-heading">
+            <h2 id="featured-work-heading" className={styles.sectionTitle}>
+              SELECTED WORK
+            </h2>
+            <p className={styles.sectionIntro}>
+              Websites built to be found, load fast on a phone, and turn visitors into customers.
+            </p>
+            <FeaturedProjects />
+            <Link href="/projects" className={styles.textLink}>
+              SEE ALL PROJECTS <i className="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </Link>
+          </section>
+
+          {/* Tools section */}
+          <section className={styles.contentSection} aria-labelledby="tools-heading">
+            <h2 id="tools-heading" className={styles.sectionTitle}>
+              TOOLS I WORK WITH
+            </h2>
+            <p className={styles.sectionIntro}>
+              In my current role as a Digital Growth Specialist, I work with all of these.
+            </p>
+            <ul className={styles.toolsList}>
+              {TOOLS.map((tool) => (
+                <li key={tool} className={styles.toolCapsule}>
+                  {tool}
+                </li>
+              ))}
+            </ul>
+          </section>
+
+          {/* Closing CTA section */}
+          <section className={`${styles.contentSection} ${styles.ctaSection}`} aria-labelledby="cta-heading">
+            <h2 id="cta-heading" className={styles.sectionTitle}>
+              HAVE A GOAL IN MIND?
+            </h2>
+            <p className={styles.sectionIntro}>
+              Tell me what you are trying to achieve and I will help carry it through the site, search, ads, and
+              reporting.
+            </p>
+            <Link href="/contact" className={`${styles.ctaButton} ${styles.primaryCta}`}>
+              LET&apos;S TALK
+            </Link>
           </section>
         </div>
       </main>

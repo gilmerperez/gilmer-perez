@@ -29,6 +29,7 @@
 /* Back button */
 .backButton {
   font-weight: 500;
+  display: inline-block;
   font-size: 1.5rem;
   padding: 0.75rem 1rem;
   transition: 0.3s ease;

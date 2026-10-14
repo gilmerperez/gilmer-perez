@@ -1,18 +1,18 @@
 .homeContainer {
   width: 100%;
+  gap: 6rem;
   display: flex;
   margin: 0 auto;
-  min-height: 55vh;
   max-width: 1200px;
   align-items: center;
   flex-direction: column;
-  justify-content: center;
 }
 
 /* Hero section */
 .heroSection {
   width: 100%;
   display: flex;
+  min-height: 55vh;
   text-align: center;
   align-items: center;
   flex-direction: column;
@@ -70,7 +70,7 @@
 }
 
 /* Second button with contrasting style */
-.ctaButton:last-child {
+.buttonContainer .ctaButton:last-child {
   color: var(--text-primary);
   border: 2px solid var(--primary);
   background-color: var(--footer-bg-color);
@@ -79,6 +79,86 @@
 .ctaButton:hover {
   transform: scale(1.15);
   box-shadow: var(--shadow-large);
+}
+
+/* Content sections below the hero */
+.contentSection {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Section title */
+.sectionTitle {
+  font-size: 2.5rem;
+  text-align: center;
+  display: inline-block;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--primary);
+}
+
+/* Section intro */
+.sectionIntro {
+  max-width: 800px;
+  line-height: 1.35;
+  font-size: 1.15rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--text-secondary);
+}
+
+/* Text link */
+.textLink {
+  gap: 0.5rem;
+  display: flex;
+  margin-top: 2rem;
+  font-weight: 500;
+  align-items: center;
+  transition: 0.3s ease;
+  color: var(--primary);
+  text-shadow: var(--shadow-small);
+  font-family: var(--font-kode-mono), monospace;
+}
+
+.textLink:hover {
+  gap: 0.85rem;
+}
+
+/* Tools list */
+.toolsList {
+  gap: 0.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  justify-content: center;
+}
+
+.toolCapsule {
+  padding: 0.75rem;
+  font-size: 1.15rem;
+  transition: 0.3s ease;
+  border-radius: 0.5rem;
+  border: 1px solid var(--primary);
+  font-family: var(--font-kode-mono), monospace;
+  background-color: var(--footer-bg-color);
+}
+
+.toolCapsule:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-small);
+  background-color: hsla(204, 100%, 50%, 0.25);
+}
+
+/* Closing CTA */
+.ctaSection {
+  margin-bottom: 2rem;
+}
+
+.primaryCta {
+  color: hsl(0, 0%, 100%);
+  background-color: var(--primary);
 }
 
 /* Tablet responsiveness */
@@ -97,6 +177,23 @@
 
   .ctaButton {
     font-size: 1.25rem;
+  }
+
+  .homeContainer {
+    gap: 4.5rem;
+  }
+
+  .sectionTitle {
+    font-size: 2rem;
+  }
+
+  .sectionIntro {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .toolCapsule {
+    font-size: 1rem;
   }
 }
 
@@ -122,5 +219,26 @@
   .ctaButton {
     font-size: 1rem;
     padding: 0.625rem 0.875rem;
+  }
+
+  .homeContainer {
+    gap: 3.5rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.5rem;
+  }
+
+  .sectionIntro {
+    font-size: 0.95rem;
+  }
+
+  .toolsList {
+    gap: 0.5rem;
+  }
+
+  .toolCapsule {
+    padding: 0.5rem 0.65rem;
+    font-size: 0.85rem;
   }
 }

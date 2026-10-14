@@ -8,7 +8,7 @@ export const metadata = {
     canonical: `${BASE_URL}/about`,
   },
   openGraph: {
-    title: "Gilmer Perez | About",
+    title: "About | Gilmer Perez",
     description:
       "Learn about Gilmer Perez, a Digital Growth Specialist covering web development, SEO, paid media, and analytics.",
     url: `${BASE_URL}/about`,

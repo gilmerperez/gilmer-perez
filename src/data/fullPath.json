@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "title": "BUILD",
+    "icon": "fa-solid fa-code",
+    "description": "Fast, accessible, mobile-friendly websites built with Next.js, React, and TypeScript, plus WordPress, Squarespace, and Wix. Hosting, domains, and DNS included.",
+    "tools": ["Next.js", "React", "WordPress", "Vercel"]
+  },
+  {
+    "id": 2,
+    "title": "RANK",
+    "icon": "fa-solid fa-magnifying-glass",
+    "description": "Technical and local SEO, schema markup, and Core Web Vitals so the right customers find the business, including in AI-driven results.",
+    "tools": ["Technical SEO", "Local SEO", "AEO & GEO", "Schema"]
+  },
+  {
+    "id": 3,
+    "title": "TRACK",
+    "icon": "fa-solid fa-chart-line",
+    "description": "Tracking set up so every visit and lead is measured, then turned into clear recommendations a business owner can act on.",
+    "tools": ["GA4", "Tag Manager", "Search Console", "Reporting"]
+  },
+  {
+    "id": 4,
+    "title": "ADVERTISE",
+    "icon": "fa-solid fa-bullhorn",
+    "description": "Paid campaigns built to send qualified traffic to the site and keep spend efficient, on the platforms where customers actually are.",
+    "tools": ["Google Ads", "Walmart Ads", "Spotify Ads"]
+  }
+]

@@ -1,14 +1,11 @@
-"use client";
+import Link from "next/link";
 import styles from "./not-found.module.css";
-import { useRouter } from "next/navigation";
+
+export const metadata = {
+  title: "Page Not Found",
+};
 
 export default function NotFound() {
-  // * Handle back to home page
-  const router = useRouter();
-  const handleBackToHome = () => {
-    router.push("/");
-  };
-
   return (
     <>
       <main>
@@ -18,9 +15,9 @@ export default function NotFound() {
           {/* Description */}
           <p className={styles.pageNotFoundDescription}>Sorry, the page you are looking for does not exist</p>
           {/* Back button */}
-          <button className={styles.backButton} onClick={handleBackToHome}>
+          <Link href="/" className={styles.backButton}>
             BACK TO HOME PAGE
-          </button>
+          </Link>
         </div>
       </main>
     </>

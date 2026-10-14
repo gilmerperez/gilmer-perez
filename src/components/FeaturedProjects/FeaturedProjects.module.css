@@ -1,0 +1,91 @@
+.featuredGrid {
+  width: 100%;
+  display: grid;
+  gap: clamp(1rem, 2.5vw, 2rem);
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* Card */
+.featuredCard {
+  height: 100%;
+  display: flex;
+  transition: 0.3s ease;
+  flex-direction: column;
+  gap: clamp(0.5rem, 1vw, 0.75rem);
+}
+
+.featuredCard:hover .imageWrapper {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-large);
+}
+
+.featuredCard:hover .viewCue {
+  gap: 0.75rem;
+}
+
+/* Project image */
+.imageWrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  aspect-ratio: 1 / 1;
+  transition: 0.3s ease;
+  border-radius: 0.5rem;
+  box-shadow: var(--shadow-small);
+  border: 2px solid var(--primary);
+}
+
+.projectImage {
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+/* Project title */
+.projectTitle {
+  font-size: clamp(1.35rem, 2.2vw, 1.75rem);
+}
+
+/* Project summary */
+.projectSummary {
+  line-height: 1.4;
+  color: var(--text-secondary);
+  font-size: clamp(0.9rem, 1.3vw, 1rem);
+}
+
+/* Project tags */
+.tagList {
+  gap: 0.4rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tagItem {
+  font-size: 0.8rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.35rem;
+  border: 1px solid var(--primary);
+  font-family: var(--font-kode-mono), monospace;
+}
+
+/* View project cue pinned to the bottom so cards line up */
+.viewCue {
+  gap: 0.5rem;
+  display: flex;
+  margin-top: auto;
+  font-weight: 500;
+  padding-top: 0.25rem;
+  align-items: center;
+  transition: 0.3s ease;
+  color: var(--primary);
+  text-shadow: var(--shadow-small);
+  font-family: var(--font-kode-mono), monospace;
+}
+
+/* One card per row, kept to a readable width */
+@media (max-width: 899px) {
+  .featuredGrid {
+    margin: 0 auto;
+    max-width: 440px;
+    grid-template-columns: 1fr;
+  }
+}
