@@ -1,0 +1,10 @@
+{
+  "measuredAt": "2026-11-11",
+  "preset": "mobile",
+  "scores": {
+    "performance": 92,
+    "accessibility": 100,
+    "bestPractices": 96,
+    "seo": 100
+  }
+}

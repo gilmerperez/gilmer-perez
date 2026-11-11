@@ -1,0 +1,350 @@
+.section {
+  gap: 24px;
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+  padding: 56px var(--gutter);
+  max-width: var(--content-width);
+}
+
+/* ==========================================================================
+   Cards
+   ========================================================================== */
+.grid {
+  gap: 16px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+/* The whole card is one button and lifts 5px on hover */
+.card {
+  padding: 0;
+  display: flex;
+  overflow: hidden;
+  text-align: left;
+  flex-direction: column;
+  background: var(--surface);
+  color: var(--text-primary);
+  box-shadow: var(--glow-card);
+  border-radius: var(--radius);
+  transition: transform 0.3s ease;
+  border: 1px solid var(--primary);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Background comes from logoBg in projects.json */
+.logoTile {
+  width: 100%;
+  height: 170px;
+  display: block;
+  position: relative;
+}
+
+.logo {
+  object-fit: contain;
+}
+
+.cardBody {
+  gap: 10px;
+  flex-grow: 1;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+.cardKind {
+  font-size: 13px;
+  color: var(--primary);
+  font-family: var(--font-heading);
+}
+
+.cardTitle {
+  font-size: 22px;
+  line-height: 1.1;
+  font-weight: 700;
+  font-style: italic;
+  font-family: var(--font-heading);
+}
+
+.cardSummary {
+  flex-grow: 1;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+.cardMore {
+  font-size: 15px;
+  color: var(--primary);
+  font-family: var(--font-heading);
+}
+
+/* ==========================================================================
+   Modal
+   ========================================================================== */
+.dialog {
+  padding: 0;
+  margin: auto;
+  max-width: 1120px;
+  max-height: 92vh;
+  overflow-y: auto;
+  border-radius: 10px;
+  width: calc(100% - 32px);
+  color: var(--text-primary);
+  background: var(--bg-color);
+  border: 1px solid var(--primary);
+  box-shadow: var(--glow-pulse-rest);
+  animation: var(--pulse-glow) 5s var(--pulse-timing);
+}
+
+.dialog[open] {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Literal values: ::backdrop does not inherit custom properties in every browser */
+.dialog::backdrop {
+  background: rgba(0, 0, 0, 0.84);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+
+/* Sticky header */
+.modalHeader {
+  top: 0;
+  gap: 16px;
+  z-index: 2;
+  display: flex;
+  position: sticky;
+  padding: 16px 22px;
+  align-items: center;
+  background: var(--bg-color);
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.modalHeading {
+  gap: 6px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.modalKind {
+  font-size: 13px;
+  color: var(--primary);
+  font-family: var(--font-heading);
+}
+
+.modalTitle {
+  font-size: clamp(22px, 3vw, 34px);
+}
+
+.closeButton {
+  width: 46px;
+  height: 46px;
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface);
+  color: var(--text-primary);
+  border-radius: var(--radius);
+  box-shadow: var(--glow-button);
+  border: 2px solid var(--primary);
+}
+
+.modalBody {
+  gap: 26px;
+  padding: 22px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Left column */
+.modalMain {
+  gap: 12px;
+  min-width: 0;
+  display: flex;
+  flex: 3 1 440px;
+  flex-direction: column;
+}
+
+.viewer {
+  overflow: hidden;
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius);
+  background: var(--surface-raised);
+  border: 1px solid var(--border-faint);
+}
+
+.screenshot {
+  object-fit: cover;
+  object-position: top;
+}
+
+.toggleRow {
+  gap: 8px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Screenshot and detail toggles share the same on/off look */
+.shotButton,
+.detailTab {
+  min-height: 44px;
+  font-weight: 600;
+  background: var(--surface);
+  color: var(--text-primary);
+  border-radius: var(--radius);
+  font-family: var(--font-heading);
+  border: 2px solid var(--border-muted);
+}
+
+.shotButton {
+  font-size: 14px;
+  padding: 6px 14px;
+}
+
+.detailTab {
+  flex: 1 1 0;
+  font-size: 15px;
+  padding: 6px 10px;
+}
+
+.toggleActive {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: var(--text-on-primary-dark);
+}
+
+.description {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+/* Right column */
+.modalSide {
+  gap: 16px;
+  min-width: 0;
+  display: flex;
+  flex: 2 1 320px;
+  flex-direction: column;
+}
+
+.detailTabs {
+  gap: 8px;
+  display: flex;
+}
+
+/* Key features */
+.features {
+  gap: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.feature {
+  gap: 14px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.featureNum {
+  flex: 0 0 auto;
+  line-height: 1;
+  font-size: 24px;
+  font-weight: 700;
+  font-style: italic;
+  color: var(--primary);
+  font-family: var(--font-heading);
+  text-shadow: 0 0 12px var(--primary);
+}
+
+.featureText {
+  gap: 4px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.featureName {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.featureBody {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+/* Built with */
+.stack {
+  display: flex;
+  flex-direction: column;
+}
+
+.stackRow {
+  gap: 3px;
+  display: flex;
+  padding: 10px 0;
+  flex-direction: column;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.stackName {
+  font-size: 13px;
+  color: var(--primary);
+  text-transform: uppercase;
+  font-family: var(--font-heading);
+}
+
+.stackText {
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--text-primary);
+}
+
+/* Sticky footer */
+.modalFooter {
+  gap: 12px;
+  bottom: 0;
+  display: flex;
+  flex-wrap: wrap;
+  position: sticky;
+  padding: 14px 22px;
+  align-items: center;
+  background: var(--bg-color);
+  justify-content: space-between;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.navButton {
+  font-size: 15px;
+  min-height: 44px;
+  padding: 8px 14px;
+  background: var(--surface);
+  color: var(--text-primary);
+  border-radius: var(--radius);
+  font-family: var(--font-heading);
+  border: 2px solid var(--border-muted);
+}
+
+.visitButton,
+.visitButton:hover {
+  font-size: 18px;
+  font-weight: 600;
+  padding: 10px 18px;
+  background: var(--primary-solid);
+  border-radius: var(--radius);
+  box-shadow: var(--glow-small);
+  color: var(--text-on-primary);
+  font-family: var(--font-heading);
+}

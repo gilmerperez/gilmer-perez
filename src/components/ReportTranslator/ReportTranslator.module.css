@@ -1,0 +1,223 @@
+.section {
+  gap: 24px;
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+  padding: 56px var(--gutter);
+  max-width: var(--content-width);
+}
+
+/* Switch row */
+.switchRow {
+  gap: 12px 16px;
+  display: flex;
+  font-size: 17px;
+  flex-wrap: wrap;
+  font-weight: 600;
+  align-items: center;
+  font-family: var(--font-heading);
+}
+
+.switchLabel {
+  color: var(--text-muted);
+}
+
+.switchLabelActive {
+  color: var(--primary);
+}
+
+.switch {
+  width: 80px;
+  height: 44px;
+  position: relative;
+  border-radius: 999px;
+  background: var(--surface);
+  border: 2px solid var(--primary);
+  box-shadow: var(--glow-pulse-rest);
+  animation: var(--pulse-glow) 4s var(--pulse-timing);
+}
+
+.knob {
+  top: 5px;
+  left: 5px;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  border-radius: 50%;
+  transition: left 0.3s ease;
+  background: var(--primary);
+  box-shadow: 0 0 14px var(--primary), 0 0 30px rgba(var(--primary-rgb), 0.7);
+}
+
+.knobOn {
+  left: 41px;
+}
+
+/* Report panel */
+.panel {
+  gap: 22px;
+  padding: 28px;
+  display: flex;
+  overflow: hidden;
+  min-height: 340px;
+  position: relative;
+  flex-direction: column;
+  background: var(--surface);
+  border-radius: var(--radius);
+  border: 1px solid var(--primary);
+}
+
+.haze {
+  left: 50%;
+  width: 80%;
+  height: 240px;
+  bottom: -120px;
+  position: absolute;
+  filter: blur(30px);
+  pointer-events: none;
+  transform: translateX(-50%);
+  background: radial-gradient(ellipse at center, rgba(var(--primary-rgb), 0.32), rgba(var(--primary-rgb), 0) 70%);
+  animation: var(--pulse-haze) 6s var(--pulse-timing);
+}
+
+/* Stays visible in both views */
+.caption {
+  font-size: 13px;
+  position: relative;
+  color: var(--text-muted);
+}
+
+/* Analyst view */
+.analyst {
+  gap: 28px;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.chart {
+  gap: 10px;
+  min-width: 0;
+  display: flex;
+  flex: 3 1 360px;
+  flex-direction: column;
+}
+
+.chartLabel {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.bars {
+  gap: 12px;
+  display: flex;
+  height: 180px;
+  align-items: flex-end;
+  border-bottom: 1px solid var(--border-faint);
+}
+
+.bar {
+  flex: 1 1 0;
+  opacity: 0.38;
+  background: var(--primary);
+  border-radius: 4px 4px 0 0;
+}
+
+/* Latest month: bright and glowing */
+.barLatest {
+  opacity: 1;
+  box-shadow: var(--glow-bar);
+}
+
+.months {
+  gap: 12px;
+  display: flex;
+  font-size: 12px;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.months span {
+  flex: 1 1 0;
+}
+
+.metrics {
+  min-width: 0;
+  display: flex;
+  font-size: 14px;
+  flex: 2 1 280px;
+  flex-direction: column;
+}
+
+.metric {
+  gap: 16px;
+  display: flex;
+  padding: 9px 0;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.metricKey {
+  color: var(--text-muted);
+}
+
+.metricValue {
+  color: var(--text-primary);
+}
+
+/* Owner view */
+.ownerGrid {
+  gap: 18px;
+  display: grid;
+  position: relative;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.ownerCard {
+  gap: 8px;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius);
+  border: 1px solid var(--primary);
+  background: rgba(var(--primary-rgb), 0.06);
+  box-shadow: 0 0 24px rgba(var(--primary-rgb), 0.35);
+}
+
+.ownerNum {
+  line-height: 1;
+  font-size: 64px;
+  font-weight: 700;
+  font-style: italic;
+  color: var(--primary);
+  font-family: var(--font-heading);
+  text-shadow: var(--glow-text-pulse-rest);
+  animation: var(--pulse-text) 4s var(--pulse-timing);
+}
+
+.ownerText {
+  font-size: 17px;
+  line-height: 1.45;
+  color: var(--text-primary);
+}
+
+.nextMonth {
+  gap: 12px;
+  display: flex;
+  font-size: 16px;
+  line-height: 1.5;
+  position: relative;
+  align-items: flex-start;
+  color: var(--text-secondary);
+}
+
+.nextDot {
+  width: 10px;
+  height: 10px;
+  flex: 0 0 auto;
+  margin-top: 7px;
+  border-radius: 50%;
+  background: var(--primary);
+  box-shadow: var(--glow-pulse-rest);
+  animation: var(--pulse-glow) 3s var(--pulse-timing);
+}

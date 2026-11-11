@@ -1,0 +1,57 @@
+.section {
+  gap: 24px;
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+  padding: 40px var(--gutter);
+  max-width: var(--content-width);
+}
+
+.grid {
+  gap: 16px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+/* Card lifts 5px on hover */
+.card {
+  gap: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius);
+  transition: transform 0.3s ease;
+  border: 1px solid var(--border-muted);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Custom Code: blue border and pulse */
+.featured {
+  background: var(--surface);
+  border: 2px solid var(--primary);
+  box-shadow: var(--glow-pulse-rest);
+  animation: var(--pulse-glow) 5s var(--pulse-timing);
+}
+
+.label {
+  font-size: 13px;
+  color: var(--text-muted);
+  font-family: var(--font-heading);
+}
+
+.featured .label {
+  color: var(--primary);
+}
+
+.name {
+  font-size: 24px;
+}
+
+.text {
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}

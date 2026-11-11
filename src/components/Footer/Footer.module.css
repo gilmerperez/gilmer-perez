@@ -1,135 +1,156 @@
 .footer {
-  width: 100%;
-  padding: 2rem;
-  transition: 0.3s ease;
-  box-shadow: var(--shadow-small);
-  background-color: var(--footer-bg-color);
-}
-
-.footerContainer {
-  width: 100%;
-  display: flex;
-  margin: 0 auto;
-  max-width: 1200px;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.topContainer {
-  text-align: center;
-  margin-bottom: 0.75rem;
-}
-
-/* Legal disclaimer */
-.legalDisclaimer {
-  font-size: 1rem;
-  max-width: 900px;
-  transition: 0.3s ease;
-  margin-bottom: 0.5rem;
-  color: var(--text-secondary);
-}
-
-/* Copyright */
-.copyright {
-  margin: 0 auto;
-  font-size: 1rem;
-  font-weight: 500;
-  transition: 0.3s ease;
-}
-
-/* Separator */
-.separator {
-  width: 100%;
-  height: 2px;
-  border: none;
-  margin-bottom: 0.75rem;
-  background-color: var(--primary);
-}
-
-.bottomContainer {
-  gap: 1rem;
-  width: 100%;
-  display: flex;
-  transition: 0.3s ease;
-  align-items: flex-start;
-  justify-content: space-between;
-}
-
-.siteNavigation,
-.socialLinks,
-.legalPages,
-.contactInfo {
-  display: flex;
-  transition: 0.3s ease;
-  flex-direction: column;
-}
-
-/* Nav headers */
-.navHeader {
-  font-weight: 500;
-  font-size: 1.25rem;
-  transition: 0.3s ease;
-  margin-bottom: 0.25rem;
-}
-
-/* Nav items */
-.navItems {
-  gap: 0.25rem;
-  display: flex;
-  flex-direction: column;
-}
-
-.navItems a {
+  overflow: hidden;
   position: relative;
-  font-size: 1.15rem;
-  transition: 0.3s ease;
+  background: var(--surface);
+  border-top: 1px solid var(--primary);
+}
+
+/* Four columns that wrap */
+.columns {
+  gap: 40px 72px;
+  display: flex;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  max-width: var(--content-width);
+  padding: 56px var(--gutter) 0;
+}
+
+/* Brand block */
+.brand {
+  gap: 16px;
+  min-width: 0;
+  display: flex;
+  flex: 2 1 300px;
+  flex-direction: column;
+}
+
+.logo {
+  font-size: 30px;
+  font-weight: 700;
+  font-style: italic;
+  font-family: var(--font-heading);
+}
+
+.tagline {
+  font-size: 15px;
+  max-width: 340px;
+  line-height: 1.55;
+  font-style: italic;
   color: var(--text-secondary);
 }
 
-.navItems a:hover {
-  color: var(--text-primary);
-  transform: translateX(5px);
+.contactList {
+  gap: 4px;
+  display: flex;
+  font-size: 15px;
+  margin-top: 4px;
+  flex-direction: column;
 }
 
-/* Tablet responsiveness */
-@media (max-width: 768px) {
-  .footer {
-    padding: 1.75rem;
-  }
-
-  .bottomContainer {
-    gap: 0.25rem;
-    flex-direction: column;
-  }
-
-  .siteNavigation:not(:last-child),
-  .socialLinks:not(:last-child),
-  .legalPages:not(:last-child),
-  .contactInfo:not(:last-child) {
-    margin-bottom: 1rem;
-  }
+.contactItem {
+  gap: 12px;
+  display: flex;
+  min-height: 36px;
+  align-items: center;
 }
 
-/* Mobile responsiveness */
-@media (max-width: 480px) {
-  .footer {
-    padding: 1.5rem;
-  }
+/* Link columns */
+.linkColumn {
+  gap: 10px;
+  display: flex;
+  font-size: 15px;
+  flex: 1 1 140px;
+  flex-direction: column;
+}
 
-  .legalDisclaimer {
-    font-size: 0.95rem;
-  }
+.columnHeading {
+  font-size: 14px;
+  letter-spacing: 2px;
+  padding-bottom: 8px;
+  color: var(--primary);
+  font-family: var(--font-heading);
+  border-bottom: 1px solid var(--border-faint);
+}
 
-  .copyright {
-    font-size: 0.95rem;
-  }
+/* Start something */
+.startColumn {
+  gap: 12px;
+  display: flex;
+  font-size: 15px;
+  flex: 1.4 1 220px;
+  flex-direction: column;
+}
 
-  .navHeader {
-    font-size: 1.15rem;
-  }
+.startText {
+  line-height: 1.55;
+  font-style: italic;
+  color: var(--text-secondary);
+}
 
-  .navItems a {
-    font-size: 1rem;
-  }
+.startButton {
+  margin-top: 14px;
+  font-weight: 600;
+  padding: 10px 14px;
+  align-self: flex-start;
+  border-radius: var(--radius);
+  font-family: var(--font-heading);
+  box-shadow: var(--glow-button);
+  border: 2px solid var(--primary);
+}
+
+/* Copyright and legal links */
+.legalRow {
+  gap: 8px 24px;
+  display: flex;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  font-size: 13px;
+  font-style: italic;
+  color: var(--text-muted);
+  justify-content: space-between;
+  max-width: var(--content-width);
+  padding: 36px var(--gutter) 0;
+}
+
+.legalLinks {
+  gap: 14px;
+  display: flex;
+}
+
+.legalLink,
+.legalLink:hover {
+  color: var(--text-muted);
+}
+
+/* Night scene */
+.scene {
+  margin-top: 24px;
+  position: relative;
+  height: clamp(200px, 24vw, 340px);
+}
+
+.sceneHaze {
+  top: 22%;
+  left: 50%;
+  width: 90%;
+  height: 60%;
+  position: absolute;
+  filter: blur(36px);
+  transform: translateX(-50%);
+  background: radial-gradient(ellipse at center, rgba(var(--primary-rgb), 0.55), rgba(var(--primary-rgb), 0) 68%);
+  animation: var(--pulse-haze) 7s var(--pulse-timing);
+}
+
+.sceneSvg {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  max-width: none;
+  position: absolute;
+}
+
+/* Taillights and their reflection on the road */
+.taillightPulse {
+  animation: var(--pulse-haze) 3.5s var(--pulse-timing);
 }

@@ -1,27 +1,107 @@
-/* Font Awesome */
-@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css");
+/* ==========================================================================
+   Design tokens
+   The site is dark only. Every color, font, and glow value lives here so a
+   future restyle only has to touch this block and the keyframes below.
+   ========================================================================== */
+:root {
+  /* Colors */
+  --bg-color: #0d0d0d;
+  --bg-rgb: 13, 13, 13;
+  --surface: #060606;
+  --surface-rgb: 6, 6, 6;
+  --surface-raised: #1a1a1a;
+  --primary: #0099ff;
+  --primary-rgb: 0, 153, 255;
+  --primary-light: #4dbbff;
+  /* Fill for solid buttons with white text. About 1% darker than --primary so white text
+     reaches the 3:1 contrast minimum (white on --primary is 2.99:1). */
+  --primary-solid: #0091f2;
+  --text-primary: #e6e6e6;
+  --text-primary-rgb: 230, 230, 230;
+  --text-secondary: #cccccc;
+  --text-muted: #b3b3b3;
+  --text-on-primary: #ffffff;
+  --text-on-primary-dark: #000000;
+  --border-muted: #4d4d4d;
+  --border-faint: #333333;
+  --border-subtle: #262626;
+  --focus-ring: #ffffff;
 
-/* Dark theme */
-html[data-theme="dark"] {
-  --bg-color: hsl(0, 0%, 5%);
-  --primary: hsl(204, 100%, 50%);
-  --text-primary: hsl(0, 0%, 90%);
-  --text-secondary: hsl(0, 0%, 80%);
-  --footer-bg-color: hsl(0, 0%, 2.5%);
-  --shadow-small: 0px 0px 15px hsla(204, 100%, 50%);
-  --shadow-large: 0px 0px 15px hsla(204, 100%, 50%);
+  /* Fonts (the next/font variables are set on <html> in layout.jsx) */
+  --font-heading: var(--font-kode-mono), monospace;
+  --font-body: var(--font-source-code-pro), monospace;
+
+  /* Static glows */
+  --glow-small: 0 0 15px var(--primary);
+  --glow-button: 0 0 12px var(--primary);
+  --glow-card: 0 0 14px rgba(var(--primary-rgb), 0.45);
+  --glow-text: 0 0 15px var(--primary);
+  --glow-dot: 0 0 10px var(--primary);
+  --glow-ring: 0 0 26px rgba(var(--primary-rgb), 0.55);
+  --glow-bar: 0 0 14px var(--primary), 0 0 38px rgba(var(--primary-rgb), 0.7);
+  /* First frame of glowPulse, used as the resting shadow when motion is reduced */
+  --glow-pulse-rest: 0 0 5px var(--primary), 0 0 16px rgba(var(--primary-rgb), 0.5),
+    0 0 40px rgba(var(--primary-rgb), 0.2);
+  /* First frame of textPulse, same idea */
+  --glow-text-pulse-rest: 0 0 8px var(--primary), 0 0 22px rgba(var(--primary-rgb), 0.45);
+
+  /* Pulse animations. Modules use these as
+     `animation: var(--pulse-glow) 6s var(--pulse-timing);`
+     so the keyframe names stay global instead of being hashed by CSS Modules. */
+  --pulse-glow: glowPulse;
+  --pulse-text: textPulse;
+  --pulse-haze: hazePulse;
+  --pulse-timing: ease-in-out infinite;
+
+  /* Layout */
+  --content-width: 1200px;
+  --gutter: 24px;
+  --radius: 8px;
 }
 
-/* Light theme */
-html[data-theme="light"] {
-  --bg-color: hsl(0, 0%, 95%);
-  --primary: hsl(204, 100%, 50%);
-  --text-primary: hsl(0, 0%, 10%);
-  --text-secondary: hsl(0, 0%, 20%);
-  --footer-bg-color: hsl(0, 0%, 100%);
-  --shadow-small: 0px 0px 15px hsla(204, 100%, 50%);
-  --shadow-large: 0px 0px 15px hsla(204, 100%, 50%);
+/* ==========================================================================
+   Keyframes (the approved "brake light at night" glow)
+   ========================================================================== */
+
+/* Box glow that breathes in and out */
+@keyframes glowPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 5px var(--primary), 0 0 16px rgba(var(--primary-rgb), 0.5),
+      0 0 40px rgba(var(--primary-rgb), 0.2);
+  }
+  50% {
+    box-shadow: 0 0 9px var(--primary), 0 0 30px rgba(var(--primary-rgb), 0.8),
+      0 0 78px rgba(var(--primary-rgb), 0.42);
+  }
 }
+
+/* Text glow that breathes in and out */
+@keyframes textPulse {
+  0%,
+  100% {
+    text-shadow: 0 0 8px var(--primary), 0 0 22px rgba(var(--primary-rgb), 0.45);
+  }
+  50% {
+    text-shadow: 0 0 12px var(--primary), 0 0 42px rgba(var(--primary-rgb), 0.85),
+      0 0 90px rgba(var(--primary-rgb), 0.4);
+  }
+}
+
+/* Opacity pulse for blurred radial hazes */
+@keyframes hazePulse {
+  0%,
+  100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.95;
+  }
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
 
 /* Universal reset */
 *,
@@ -36,49 +116,61 @@ html[data-theme="light"] {
 html {
   height: 100%;
   font-size: 16px;
-  box-sizing: border-box;
+  color-scheme: dark;
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
-  text-rendering: optimizeLegibility;
+  background-color: var(--bg-color);
 }
 
 /* Body */
 body {
   display: flex;
   min-height: 100vh;
-  overflow-x: hidden;
+  overflow-x: clip;
   flex-direction: column;
   color: var(--text-primary);
+  font-family: var(--font-body);
   background-color: var(--bg-color);
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  font-family: var(--font-source-code-pro), monospace, sans-serif;
 }
 
 /* Main */
 main {
   width: 100%;
-  padding: 2rem;
-  transition: 0.3s ease;
+  flex: 1 0 auto;
 }
 
 /* Links */
 a {
-  color: inherit;
+  color: var(--text-primary);
   text-decoration: none;
+}
+
+a:hover {
+  color: var(--primary);
 }
 
 /* Buttons */
 button {
   cursor: pointer;
+  border: none;
+  font: inherit;
+}
+
+/* Visible focus for keyboard users */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 3px;
 }
 
 /* Strong text */
 strong {
   font-weight: 700;
   color: var(--primary);
-  text-shadow: var(--shadow-small);
-  font-family: var(--font-kode-mono), monospace;
+  text-shadow: var(--glow-text);
+  font-family: var(--font-heading);
 }
 
 /* Lists */
@@ -87,23 +179,12 @@ ol {
   list-style: none;
 }
 
-/* Form elements */
-input,
-select,
-button,
-textarea {
-  border: none;
-  font: inherit;
-  outline: none;
-}
-
 /* Media elements */
 svg,
 img,
 video,
 canvas,
 picture {
-  height: auto;
   display: block;
   max-width: 100%;
 }
@@ -118,12 +199,17 @@ h6 {
   line-height: 1;
   font-weight: 700;
   font-style: italic;
-  font-family: var(--font-kode-mono), monospace;
+  font-family: var(--font-heading);
+}
+
+/* Anchor targets clear the sticky header */
+section {
+  scroll-margin-top: 120px;
 }
 
 /* Highlighted text */
 ::selection {
-  color: hsl(0, 0%, 100%);
+  color: var(--text-on-primary);
   background: var(--primary);
 }
 
@@ -136,16 +222,18 @@ body::-webkit-scrollbar-thumb {
   background-color: var(--primary);
 }
 
-/* Tablet responsiveness */
-@media (max-width: 768px) {
-  main {
-    padding: 1.75rem;
+/* ==========================================================================
+   Reduced motion: stop every pulse, lift, and smooth scroll
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
-}
 
-/* Mobile responsiveness */
-@media (max-width: 480px) {
-  main {
-    padding: 1.5rem;
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
   }
 }
