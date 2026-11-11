@@ -9,10 +9,10 @@ const MOBILE_QUERY = "(max-width: 860px)";
 // * Links point at "/#section" so they scroll in place on the home page and
 // still work from the legal pages
 const NAV_LINKS = [
-  { href: "/#top", label: "HOME" },
-  { href: "/#how", label: "PROCESS" },
-  { href: "/#experience", label: "EXPERIENCE" },
-  { href: "/#projects", label: "PROJECTS" },
+  { href: "/#top", label: "Home" },
+  { href: "/#how", label: "Process" },
+  { href: "/#experience", label: "Experience" },
+  { href: "/#projects", label: "Projects" },
 ];
 
 function Header() {
@@ -45,7 +45,7 @@ function Header() {
       <div className={styles.bar}>
         {/* Logo */}
         <Link href="/#top" className={styles.logo}>
-          GILMERPEREZ
+          Gilmer Perez
         </Link>
 
         {/* Desktop navigation */}
@@ -56,7 +56,7 @@ function Header() {
             </Link>
           ))}
           <Link href="/#contact" className={styles.contactButton}>
-            CONTACT
+            Contact
           </Link>
         </nav>
 
@@ -70,12 +70,12 @@ function Header() {
           aria-label="Toggle navigation menu"
         >
           {menuOpen ? (
-            <svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" strokeWidth="2" strokeLinecap="round">
-              <path d="M5 5l14 14M19 5L5 19" />
+            <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round">
+              <path d="M6 6l12 12M18 6L6 18" />
             </svg>
           ) : (
-            <svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-              <path d="M3 6h18M3 12h18M3 18h18" />
+            <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round">
+              <path d="M4 8h16M4 16h16" />
             </svg>
           )}
         </button>
@@ -90,7 +90,7 @@ function Header() {
             </Link>
           ))}
           <Link href="/#contact" onClick={closeMenu} className={styles.mobileContact}>
-            CONTACT
+            Contact
           </Link>
         </nav>
       )}

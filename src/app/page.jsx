@@ -1,4 +1,5 @@
 import Hero from "../components/Hero/Hero";
+import Divider from "../components/Divider/Divider";
 import Proof from "../components/Proof/Proof";
 import Process from "../components/Process/Process";
 import Contact from "../components/Contact/Contact";
@@ -20,12 +21,19 @@ export default function Home() {
       <main>
         <Hero />
         <Process />
+        <Divider variant={1} />
         <Platforms />
+        <Divider variant={2} />
         <SearchSimulator />
+        <Divider variant={3} />
         <ReportTranslator />
+        <Divider variant={4} />
         <Experience />
+        <Divider variant={5} />
         <Projects />
+        <Divider variant={6} />
         <Proof />
+        <Divider variant={7} />
         <Contact />
       </main>
     </>

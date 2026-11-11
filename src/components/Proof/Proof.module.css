@@ -1,9 +1,9 @@
 .section {
-  gap: 24px;
+  gap: 28px;
   display: flex;
   margin: 0 auto;
   flex-direction: column;
-  padding: 56px var(--gutter);
+  padding: 72px var(--gutter);
   max-width: var(--content-width);
 
   /* Lighthouse report colors */
@@ -30,8 +30,9 @@
   padding: 36px 20px 30px;
   color: #212121;
   background: #ffffff;
-  border-radius: var(--radius);
   border: 1px solid #dadce0;
+  box-shadow: var(--shadow-panel);
+  border-radius: var(--radius-large);
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -137,7 +138,7 @@
    ========================================================================== */
 /* Explanation first, code panel underneath, at every width */
 .schema {
-  gap: 24px;
+  gap: 20px;
   display: flex;
   flex-direction: column;
 }
@@ -151,12 +152,12 @@
 }
 
 .explainerTitle {
-  font-size: 26px;
+  font-size: 32px;
 }
 
 .explainerText {
   font-size: 16px;
-  line-height: 1.6;
+  line-height: 1.7;
   color: var(--text-secondary);
 }
 
@@ -170,7 +171,9 @@
 }
 
 .key {
+  font-size: 14px;
   color: var(--primary);
+  font-family: var(--font-code);
 }
 
 .note {
@@ -184,25 +187,26 @@
   min-width: 0;
   overflow: hidden;
   background: var(--surface);
-  border-radius: var(--radius);
+  border-radius: var(--radius-large);
   border: 1px solid var(--border-faint);
 }
 
 .codeHeader {
   font-size: 13px;
-  padding: 10px 16px;
+  padding: 12px 18px;
   color: var(--text-muted);
+  font-family: var(--font-code);
   border-bottom: 1px solid var(--border-faint);
 }
 
 .code {
   margin: 0;
-  padding: 16px;
+  padding: 18px;
   font-size: 14px;
-  line-height: 1.6;
+  line-height: 1.65;
   overflow-x: auto;
   white-space: pre-wrap;
   overflow-wrap: anywhere;
   color: var(--text-secondary);
-  font-family: var(--font-body);
+  font-family: var(--font-code);
 }

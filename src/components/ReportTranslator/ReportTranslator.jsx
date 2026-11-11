@@ -83,13 +83,13 @@ function ReportTranslator() {
 
   return (
     <section id="reporting" className={styles.section} aria-labelledby="reporting-title">
-      <SectionHeading eyebrow="04 / REPORTING" title="SAME DATA, TWO LANGUAGES" titleId="reporting-title">
+      <SectionHeading eyebrow="04 / REPORTING" title="Same data, two languages" titleId="reporting-title">
         I read the first one so you only ever have to read the second. Flip the switch.
       </SectionHeading>
 
       {/* Switch */}
       <div className={styles.switchRow}>
-        <span className={ownerView ? styles.switchLabel : `${styles.switchLabel} ${styles.switchLabelActive}`}>WHAT I SEE</span>
+        <span className={ownerView ? styles.switchLabel : `${styles.switchLabel} ${styles.switchLabelActive}`}>What I see</span>
         <button
           type="button"
           role="switch"
@@ -100,12 +100,11 @@ function ReportTranslator() {
         >
           <span className={ownerView ? `${styles.knob} ${styles.knobOn}` : styles.knob}></span>
         </button>
-        <span className={ownerView ? `${styles.switchLabel} ${styles.switchLabelActive}` : styles.switchLabel}>WHAT YOU GET</span>
+        <span className={ownerView ? `${styles.switchLabel} ${styles.switchLabelActive}` : styles.switchLabel}>What you get</span>
       </div>
 
       {/* Report panel */}
       <div className={styles.panel}>
-        <div aria-hidden="true" className={styles.haze}></div>
         <span className={styles.caption}>SAMPLE MONTHLY REPORT. ILLUSTRATIVE NUMBERS, NOT A REAL CLIENT.</span>
         {ownerView ? <OwnerView /> : <AnalystView />}
       </div>

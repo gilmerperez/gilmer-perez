@@ -1,32 +1,15 @@
 .hero {
   display: flex;
-  margin: 0 auto;
-  position: relative;
   text-align: center;
   align-items: center;
   flex-direction: column;
-  padding: 80px var(--gutter) 56px;
-  max-width: var(--content-width);
-}
-
-/* Pulsing haze behind the heading */
-.haze {
-  top: 60px;
-  left: 50%;
-  width: 86%;
-  height: 340px;
-  max-width: 900px;
-  position: absolute;
-  filter: blur(34px);
-  pointer-events: none;
-  transform: translateX(-50%);
-  background: radial-gradient(ellipse at center, rgba(var(--primary-rgb), 0.3), rgba(var(--primary-rgb), 0) 68%);
-  animation: var(--pulse-haze) 7s var(--pulse-timing);
+  padding: 84px var(--gutter) 0;
 }
 
 /* Shrinks to the heading width (see Hero.jsx) */
 .content {
-  gap: 22px;
+  gap: 24px;
+  z-index: 1;
   display: flex;
   max-width: 100%;
   position: relative;
@@ -38,80 +21,143 @@
 .intro {
   width: 0;
   min-width: 100%;
-  line-height: 1.45;
+  line-height: 1.55;
   color: var(--text-secondary);
-  font-size: clamp(16px, 1.6vw, 22px);
+  font-size: clamp(16px, 1.5vw, 20px);
 }
 
 .title {
+  line-height: 0.98;
   white-space: nowrap;
-  font-size: clamp(32px, 6.4vw, 84px);
+  font-size: clamp(44px, 7.4vw, 108px);
 }
 
-/* Thin glowing bar the width of the heading */
-.bar {
+/* Italic is for headings only */
+.titleAccent {
+  font-style: italic;
+  color: var(--primary);
+  text-shadow: var(--glow-text);
+}
+
+/* Hairline the width of the heading */
+.rule {
   width: 100%;
-  height: 2px;
-  border-radius: 999px;
-  background: var(--primary);
-  box-shadow: var(--glow-pulse-rest);
-  animation: var(--pulse-glow) 4s var(--pulse-timing);
+  height: 1px;
+  background: var(--border-muted);
 }
 
 .body {
   width: 0;
-  line-height: 1.55;
+  line-height: 1.7;
   color: var(--text-secondary);
-  font-size: clamp(15px, 1.4vw, 19px);
+  font-size: clamp(15px, 1.3vw, 18px);
   min-width: min(calc(100% + 72px), 88vw);
 }
 
 /* Call-to-action buttons */
 .buttons {
-  gap: 20px;
+  gap: 14px;
   display: flex;
   flex-wrap: wrap;
-  margin-top: 4px;
+  margin-top: 6px;
   justify-content: center;
 }
 
 .primaryButton,
-.primaryButton:hover {
-  font-size: 24px;
-  font-weight: 500;
-  padding: 12px 18px;
-  background: var(--primary-solid);
-  border-radius: var(--radius);
-  color: var(--text-on-primary);
+.secondaryButton {
+  display: inline-flex;
+  min-height: 52px;
+  font-size: 20px;
+  padding: 0 28px;
+  line-height: 1;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
   font-family: var(--font-heading);
-  box-shadow: var(--glow-pulse-rest);
-  animation: var(--pulse-glow) 4s var(--pulse-timing);
+  border-radius: var(--radius-pill);
+  transition: box-shadow 0.3s ease, transform 0.3s var(--ease), color 0.3s ease;
+}
+
+.primaryButton,
+.primaryButton:hover {
+  background: var(--primary);
+  color: var(--text-on-primary);
 }
 
 .secondaryButton {
-  font-size: 24px;
-  font-weight: 500;
-  padding: 10px 18px;
-  background: var(--surface);
-  border-radius: var(--radius);
-  box-shadow: var(--glow-small);
-  font-family: var(--font-heading);
-  border: 2px solid var(--primary);
+  border: 1px solid var(--border-muted);
 }
 
-/* BUILD > RANK > ... strip */
+.primaryButton:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--glow-accent);
+}
+
+.secondaryButton:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--glow-neutral);
+}
+
+/* BUILD · RANK · ... strip. Blue at rest in dark mode; each word in turn
+   brightens and glows for 2.5s, one after another, on a 15s loop. */
 .steps {
-  gap: 10px 14px;
+  gap: 8px 16px;
   display: flex;
-  font-size: 16px;
   flex-wrap: wrap;
-  margin-top: 44px;
-  position: relative;
-  color: var(--text-muted);
+  font-size: 12px;
+  font-weight: 400;
+  margin-top: 22px;
+  letter-spacing: 0.22em;
   justify-content: center;
-  font-family: var(--font-heading);
 }
 
-.arrow {
-  color: var(--primary);
+.step {
+  --step-rest: rgba(var(--primary-rgb), 0.55);
+  color: var(--step-rest);
+  animation: stepLight 15s ease-in-out infinite;
+  animation-delay: calc(var(--i) * 2.5s);
+}
+
+:global(html[data-theme="light"]) .step {
+  --step-rest: var(--text-muted);
+}
+
+.dot {
+  color: var(--text-muted);
+}
+
+@keyframes stepLight {
+  0%,
+  17%,
+  100% {
+    color: var(--step-rest);
+    text-shadow: none;
+  }
+  2%,
+  14% {
+    color: var(--primary);
+    text-shadow: 0 0 10px rgba(var(--primary-rgb), 0.7), 0 0 26px rgba(var(--primary-rgb), 0.35);
+  }
+}
+
+/* Dither scene: one 2x mask image tinted with the theme's dither color.
+   The image is 1000px tall, shown at 500px, so every dot stays crisp. */
+.scene {
+  width: 100vw;
+  height: 500px;
+  opacity: 0.9;
+  margin-top: 56px;
+  pointer-events: none;
+  background-color: var(--dither);
+  -webkit-mask: url("/dither/hero.png") center bottom / auto 500px no-repeat;
+  mask: url("/dither/hero.png") center bottom / auto 500px no-repeat;
+}
+
+/* Phones: keep the art at full size (scaling it makes the dots shimmer) and
+   crop the top of the halo instead */
+@media (max-width: 640px) {
+  .scene {
+    height: 420px;
+    margin-top: 40px;
+  }
 }

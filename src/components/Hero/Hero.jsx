@@ -6,9 +6,6 @@ const STEPS = ["BUILD", "RANK", "TRACK", "ADVERTISE", "REPORT", "MAINTAIN"];
 function Hero() {
   return (
     <section id="top" className={styles.hero}>
-      {/* Blurred blue haze behind the heading */}
-      <div aria-hidden="true" className={styles.haze}></div>
-
       {/* The wrapper shrinks to the heading's width. The paragraphs are given
           width: 0 so they add nothing to that measurement, then stretch with
           min-width: the intro to exactly the heading width, the body to the
@@ -19,40 +16,44 @@ function Hero() {
           then I make sure people find them.
         </p>
         <h1 className={styles.title}>
-          DIGITAL GROWTH
+          Digital Growth
           <br />
-          SPECIALIST.
+          <span className={styles.titleAccent}>Specialist.</span>
         </h1>
-        <div aria-hidden="true" className={styles.bar}></div>
+        <div aria-hidden="true" className={styles.rule}></div>
         <p className={styles.body}>
-          I cover the full path from <strong>WEBSITE</strong> to <strong>CUSTOMER</strong>. I build and host the site,
-          make it <strong>RANK IN SEARCH</strong>, <strong>TRACK</strong> what it does, and run{" "}
-          <strong>PAID ADS</strong> that send it qualified traffic. One partner for the whole digital side of your
-          business.
+          I cover the full path from <strong>website</strong> to <strong>customer</strong>. I build and host the site,
+          make it <strong>rank in search</strong>, <strong>track</strong> what it does, and run <strong>paid ads</strong>{" "}
+          that send it qualified traffic. One partner for the whole digital side of your business.
         </p>
         <div className={styles.buttons}>
           <a href="#how" className={styles.primaryButton}>
-            SEE THE PROCESS
+            See the process
           </a>
           <a href="#projects" className={styles.secondaryButton}>
-            VIEW PROJECTS
+            View projects
           </a>
         </div>
+
+        {/* BUILD · RANK · ... strip. Each word lights up in turn (see .step in the CSS). */}
+        <p className={styles.steps}>
+          {STEPS.map((step, i) => (
+            <Fragment key={step}>
+              <span className={styles.step} style={{ "--i": i }}>
+                {step}
+              </span>
+              {i < STEPS.length - 1 && (
+                <span aria-hidden="true" className={styles.dot}>
+                  ·
+                </span>
+              )}
+            </Fragment>
+          ))}
+        </p>
       </div>
 
-      {/* BUILD > RANK > ... strip */}
-      <div className={styles.steps}>
-        {STEPS.map((step, i) => (
-          <Fragment key={step}>
-            <span>{step}</span>
-            {i < STEPS.length - 1 && (
-              <span aria-hidden="true" className={styles.arrow}>
-                &gt;
-              </span>
-            )}
-          </Fragment>
-        ))}
-      </div>
+      {/* Dithered sphere rising over rolling hills */}
+      <div aria-hidden="true" className={styles.scene}></div>
     </section>
   );
 }

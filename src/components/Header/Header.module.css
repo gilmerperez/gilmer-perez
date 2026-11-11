@@ -1,20 +1,18 @@
-/* Header box: sticky, translucent, always visible, slow glow pulse */
+/* Header box: sticky, translucent, hairline border */
 .header {
-  top: 16px;
-  gap: 0;
+  top: 14px;
   z-index: 50;
-  margin: 16px;
+  margin: 14px;
   display: flex;
   position: sticky;
-  padding: 12px 20px;
+  padding: 10px 20px;
   flex-direction: column;
   border-radius: var(--radius);
-  border: 1px solid var(--primary);
-  -webkit-backdrop-filter: blur(14px);
-  backdrop-filter: blur(14px);
-  box-shadow: var(--glow-pulse-rest);
-  background: rgba(var(--bg-rgb), 0.84);
-  animation: var(--pulse-glow) 6s var(--pulse-timing);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  background: rgba(var(--bg-rgb), 0.78);
+  border: 1px solid var(--border-faint);
+  transition: background-color 0.4s ease, border-color 0.4s ease;
 }
 
 /* Top row: logo, links, hamburger */
@@ -29,36 +27,48 @@
 /* Logo */
 .logo {
   font-size: 24px;
-  font-weight: 500;
-  font-style: italic;
+  letter-spacing: -0.01em;
   font-family: var(--font-heading);
 }
 
 /* Desktop navigation */
 .desktopNav {
-  gap: 8px 18px;
+  gap: 8px 26px;
   display: flex;
-  font-size: 19px;
+  font-size: 15px;
   align-items: center;
-  font-family: var(--font-heading);
+  letter-spacing: 0.02em;
 }
 
 .navLink {
-  padding: 4px 0;
+  padding: 6px 0;
+  color: var(--text-secondary);
 }
 
 /* HOME stays underlined, as in the approved mockup */
 .activeLink {
-  border-bottom: 2px solid var(--primary);
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--primary);
 }
 
 .contactButton {
-  font-weight: 500;
-  padding: 6px 12px;
-  border-radius: var(--radius);
-  background: var(--surface);
-  box-shadow: var(--glow-small);
-  border: 2px solid var(--primary);
+  display: inline-flex;
+  min-height: 40px;
+  font-size: 17px;
+  padding: 0 18px;
+  line-height: 1;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-primary);
+  font-family: var(--font-heading);
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--primary);
+  transition: box-shadow 0.3s ease, color 0.3s ease;
+}
+
+.contactButton:hover {
+  box-shadow: var(--glow-accent);
 }
 
 /* Hamburger button (mobile only) */
@@ -68,37 +78,38 @@
   display: none;
   align-items: center;
   justify-content: center;
-  background: transparent;
   color: var(--text-primary);
-  border-radius: var(--radius);
+  border-radius: 10px;
 }
 
 /* Mobile dropdown */
 .mobileNav {
-  gap: 4px;
   display: flex;
-  font-size: 22px;
+  font-size: 26px;
   margin-top: 10px;
-  padding: 12px 0 8px;
+  padding: 10px 0 8px;
   flex-direction: column;
   font-family: var(--font-heading);
-  border-top: 1px solid var(--primary);
+  border-top: 1px solid var(--border-faint);
 }
 
 .mobileLink {
-  padding: 12px 4px;
+  padding: 10px 4px;
 }
 
 .mobileContact,
 .mobileContact:hover {
-  margin-top: 8px;
-  font-weight: 700;
+  display: flex;
+  font-size: 20px;
+  margin-top: 10px;
+  min-height: 52px;
+  line-height: 1;
   text-align: center;
-  padding: 12px 16px;
-  border-radius: var(--radius);
+  align-items: center;
+  justify-content: center;
   background: var(--primary);
-  box-shadow: var(--glow-small);
-  color: var(--text-on-primary-dark);
+  color: var(--text-on-primary);
+  border-radius: var(--radius-pill);
 }
 
 /* Collapse into the hamburger at 860px and below */

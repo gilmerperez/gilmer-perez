@@ -1,0 +1,117 @@
+/* The moon. In the dark theme it is a crescent; in the light theme the shadow
+   slides away and it becomes a full sun. It floats gently and its halo breathes,
+   so it looks alive enough that people want to click it. */
+.orb {
+  width: 56px;
+  height: 56px;
+  display: block;
+  position: relative;
+  border-radius: 50%;
+  animation: float 6s ease-in-out infinite;
+}
+
+.orb:focus-visible {
+  outline-offset: 6px;
+  outline: 2px solid var(--footer-text);
+}
+
+/* Soft halo that breathes */
+.halo {
+  inset: -14px;
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(255, 246, 224, 0.32), rgba(255, 246, 224, 0) 68%);
+  animation: breathe 4s ease-in-out infinite;
+}
+
+.disc {
+  inset: 0;
+  overflow: hidden;
+  position: absolute;
+  border-radius: 50%;
+  background: var(--orb-light);
+  box-shadow: 0 0 18px rgba(255, 246, 224, 0.45);
+  transition: box-shadow 0.4s ease, transform 0.5s var(--ease);
+}
+
+/* The shadow that carves the crescent. It is the sky color, so it reads as a bite. */
+.shade {
+  top: -6px;
+  left: -20px;
+  width: 58px;
+  height: 58px;
+  position: absolute;
+  border-radius: 50%;
+  background: var(--footer-bg);
+  transition: transform 0.9s var(--ease), background-color 0.4s ease;
+}
+
+/* A tiny star that twinkles beside the moon */
+.sparkle {
+  top: -10px;
+  right: -12px;
+  width: 4px;
+  height: 4px;
+  position: absolute;
+  border-radius: 50%;
+  background: var(--orb-light);
+  animation: twinkle 3.2s ease-in-out infinite;
+}
+
+/* Hover: the moon swells a little and the shadow slips back, as if it is about to change */
+.orb:hover .disc {
+  transform: scale(1.08);
+  box-shadow: 0 0 30px rgba(255, 246, 224, 0.7);
+}
+
+.orb:hover .shade {
+  transform: translate(-8px, -3px);
+}
+
+/* Light theme: full sun, no shadow */
+:global(html[data-theme="light"]) .shade {
+  transform: translate(-62px, -20px);
+}
+
+:global(html[data-theme="light"]) .disc {
+  box-shadow: 0 0 26px rgba(255, 246, 224, 0.75);
+}
+
+:global(html[data-theme="light"]) .orb:hover .shade {
+  transform: translate(-50px, -16px);
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes breathe {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: scale(0.94);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.2;
+    transform: scale(0.6);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}

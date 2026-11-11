@@ -20,27 +20,27 @@ function Footer() {
         {/* Brand block */}
         <div className={styles.brand}>
           <Link href="/#top" className={styles.logo}>
-            GILMERPEREZ
+            Gilmer Perez
           </Link>
           <p className={styles.tagline}>
             Websites, search, ads, and analytics. One partner for the whole digital side of your business.
           </p>
           <div className={styles.contactList}>
             <a href={`mailto:${EMAIL}`} className={styles.contactItem}>
-              <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                 <rect x="3" y="5" width="18" height="14" rx="2" />
                 <path d="M3 7l9 6 9-6" />
               </svg>
               {EMAIL}
             </a>
             <a href={PHONE_HREF} className={styles.contactItem}>
-              <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z" />
               </svg>
               {PHONE_DISPLAY}
             </a>
             <span className={styles.contactItem}>
-              <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z" />
                 <circle cx="12" cy="9.5" r="2.5" />
               </svg>
@@ -81,7 +81,7 @@ function Footer() {
             Have a goal for your business? Tell me what it is and I will map out how to get there.
           </p>
           <Link href="/#contact" className={styles.startButton}>
-            GET IN TOUCH &gt;
+            Get in touch
           </Link>
         </div>
       </div>

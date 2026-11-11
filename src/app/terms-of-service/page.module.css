@@ -1,5 +1,5 @@
 .termsOfServiceContainer {
-  padding: 2rem;
+  padding: 4rem 2rem 5rem;
   width: 100%;
   display: flex;
   margin: 0 auto;
@@ -38,19 +38,20 @@
 
 /* Terms heading */
 .termsHeading {
-  font-weight: 500;
-  font-size: 1.5rem;
+  font-weight: 400;
+  font-size: 1.6rem;
   display: inline-block;
   transition: 0.3s ease;
   margin-bottom: 0.25rem;
   padding-bottom: 0.15rem;
   font-family: var(--font-heading);
-  border-bottom: 2px solid var(--primary);
+  border-bottom: 1px solid var(--primary);
 }
 
 /* Terms text */
 .termsText {
-  font-size: 1.15rem;
+  font-size: 1.1rem;
+  line-height: 1.7;
   transition: 0.3s ease;
   color: var(--text-secondary);
 }

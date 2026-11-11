@@ -1,3 +1,5 @@
+> **Superseded for visuals on 2026-11-11.** The site has since been restyled: Newsreader and Outfit fonts, sentence-case headings, a softer glow, dithered art, and a dark (Graphite and Blue) / light (Cream and Cobalt) theme switch in the footer. Where this plan says "dark only", "no theme toggle", or names the old fonts and glow, the current code wins. The architecture, copy rules, and the no-resume rule below still apply.
+
 # Portfolio redesign plan for Claude Code
 
 Repo: `gilmerperez/gilmer-perez` (live at https://gilmer-perez.vercel.app)

@@ -1,13 +1,13 @@
 .section {
-  gap: 24px;
+  gap: 28px;
   display: flex;
   margin: 0 auto;
   flex-direction: column;
-  padding: 56px var(--gutter);
+  padding: 72px var(--gutter);
   max-width: var(--content-width);
 }
 
-/* Tabs */
+/* Tabs: pills, accent tint and a soft halo when active */
 .tabs {
   gap: 10px;
   display: flex;
@@ -15,23 +15,33 @@
 }
 
 .tab {
-  font-size: 17px;
+  display: inline-flex;
   min-height: 44px;
-  font-weight: 600;
-  padding: 8px 16px;
-  background: var(--surface);
-  color: var(--text-primary);
-  border-radius: var(--radius);
+  font-size: 18px;
+  padding: 0 20px;
+  line-height: 1;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
   font-family: var(--font-heading);
-  border: 2px solid var(--border-muted);
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-faint);
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
 }
 
-.tabActive {
-  background: var(--primary);
+.tab:hover {
+  color: var(--text-primary);
+  box-shadow: var(--glow-neutral);
+  border-color: var(--border-muted);
+}
+
+.tabActive,
+.tabActive:hover {
+  color: var(--text-primary);
   border-color: var(--primary);
-  color: var(--text-on-primary-dark);
-  box-shadow: var(--glow-pulse-rest);
-  animation: var(--pulse-glow) 4s var(--pulse-timing);
+  background: rgba(var(--primary-rgb), 0.1);
+  animation: var(--pulse-soft) 4s var(--pulse-timing);
 }
 
 .columns {
@@ -59,11 +69,12 @@
   min-width: 0;
   overflow: hidden;
   flex: 3 1 520px;
-  border-radius: 12px;
+  border-radius: 16px;
   background: #ffffff;
   color: var(--serp-text);
+  box-shadow: var(--shadow-panel);
+  border: 1px solid var(--border-faint);
   font-family: Arial, Helvetica, sans-serif;
-  box-shadow: 0 0 40px rgba(var(--primary-rgb), 0.25);
 }
 
 /* Search bar and tab row */
@@ -414,7 +425,7 @@
   padding: 1px 6px;
   border-radius: 6px;
   outline: 2px solid var(--primary);
-  box-shadow: 0 0 18px rgba(var(--primary-rgb), 0.6);
+  box-shadow: var(--glow-ring);
 }
 
 .aiList {
@@ -471,29 +482,29 @@
    ========================================================================== */
 .takes {
   gap: 14px;
-  padding: 24px;
+  padding: 28px;
   min-width: 0;
   display: flex;
   flex: 2 1 320px;
   flex-direction: column;
   background: var(--surface);
-  border-radius: var(--radius);
-  border: 1px solid var(--primary);
+  border-radius: var(--radius-large);
+  border: 1px solid var(--border-faint);
 }
 
 .takesLabel {
-  font-size: 14px;
+  font-size: 12px;
+  letter-spacing: 0.18em;
   color: var(--text-muted);
-  font-family: var(--font-heading);
 }
 
 .takesTitle {
-  font-size: 26px;
+  font-size: 32px;
 }
 
 .takesBody {
   font-size: 16px;
-  line-height: 1.6;
+  line-height: 1.7;
   color: var(--text-secondary);
 }
 
@@ -505,29 +516,30 @@
 
 .chip {
   font-size: 14px;
-  padding: 6px 10px;
-  border-radius: 6px;
-  border: 1px solid var(--border-muted);
+  padding: 6px 14px;
+  color: var(--text-secondary);
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-faint);
 }
 
 .stat {
   gap: 4px;
   display: flex;
   margin-top: 8px;
+  padding-top: 18px;
   flex-direction: column;
+  border-top: 1px solid var(--border-faint);
 }
 
 .statNum {
-  font-size: 40px;
-  font-weight: 700;
-  font-style: italic;
+  font-size: 48px;
+  line-height: 1;
   color: var(--primary);
+  text-shadow: var(--glow-text);
   font-family: var(--font-heading);
-  text-shadow: var(--glow-text-pulse-rest);
-  animation: var(--pulse-text) 4s var(--pulse-timing);
 }
 
 .statLabel {
   font-size: 15px;
-  color: var(--text-primary);
+  color: var(--text-secondary);
 }

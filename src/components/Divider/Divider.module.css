@@ -1,0 +1,55 @@
+/* One 2x mask image per variant (160px tall, shown at 80px), tinted with the theme's dither color */
+.divider {
+  height: 80px;
+  opacity: 0.75;
+  pointer-events: none;
+  background-color: var(--dither);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: auto 80px;
+  mask-size: auto 80px;
+}
+
+/* 1: a glowing horizon line */
+.v1 {
+  -webkit-mask-image: url("/dither/divider-1.png");
+  mask-image: url("/dither/divider-1.png");
+}
+
+/* 2: a dotted wave */
+.v2 {
+  -webkit-mask-image: url("/dither/divider-2.png");
+  mask-image: url("/dither/divider-2.png");
+}
+
+/* 3: an ordered halftone band */
+.v3 {
+  -webkit-mask-image: url("/dither/divider-3.png");
+  mask-image: url("/dither/divider-3.png");
+}
+
+/* 4: scattered stardust */
+.v4 {
+  -webkit-mask-image: url("/dither/divider-4.png");
+  mask-image: url("/dither/divider-4.png");
+}
+
+/* 5: twin hairlines */
+.v5 {
+  -webkit-mask-image: url("/dither/divider-5.png");
+  mask-image: url("/dither/divider-5.png");
+}
+
+/* 6: ripples rising from the center */
+.v6 {
+  -webkit-mask-image: url("/dither/divider-6.png");
+  mask-image: url("/dither/divider-6.png");
+}
+
+/* 7: a fading dot grid */
+.v7 {
+  -webkit-mask-image: url("/dither/divider-7.png");
+  mask-image: url("/dither/divider-7.png");
+}

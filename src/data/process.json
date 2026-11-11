@@ -1,7 +1,7 @@
 [
   {
     "num": "01",
-    "label": "BUILD",
+    "label": "Build",
     "title": "The website",
     "body": "Custom-coded sites in Next.js and React, or builds on WordPress, Squarespace, and Wix. Fast, accessible, mobile-friendly, and structured so search engines can read it from day one.",
     "outcome": "A site that looks right on every screen and is ready to be found.",
@@ -10,7 +10,7 @@
   },
   {
     "num": "02",
-    "label": "RANK",
+    "label": "Rank",
     "title": "Search visibility",
     "body": "Technical, on-page, off-page, and local SEO. Schema markup, Google Business Profile, citations, and content built to show up in Google, the Map Pack, and AI answers.",
     "outcome": "Your business showing up where your customers are already searching.",
@@ -19,7 +19,7 @@
   },
   {
     "num": "03",
-    "label": "TRACK",
+    "label": "Track",
     "title": "Analytics",
     "body": "GA4, Search Console, and Tag Manager set up properly, so every call, form, and sale is counted and tied back to where it came from. Connected to your CRM when you have one.",
     "outcome": "Knowing what is working instead of guessing.",
@@ -28,7 +28,7 @@
   },
   {
     "num": "04",
-    "label": "ADVERTISE",
+    "label": "Advertise",
     "title": "Paid media",
     "body": "Campaign setup, audience targeting, budget pacing, and ongoing optimization on Google Ads and Meta Ads, plus Walmart Ads, Spotify Ads, and other platforms when the business needs them.",
     "outcome": "Qualified traffic and a lower cost per click.",
@@ -37,7 +37,7 @@
   },
   {
     "num": "05",
-    "label": "REPORT",
+    "label": "Report",
     "title": "Reporting",
     "body": "Monthly reports and regular calls that turn GA4 and Search Console data into plain recommendations a business owner can act on.",
     "outcome": "You always know what is being done and why.",
@@ -46,7 +46,7 @@
   },
   {
     "num": "06",
-    "label": "MAINTAIN",
+    "label": "Maintain",
     "title": "Hosting and infrastructure",
     "body": "Domains, DNS, SSL, hosting, deployments, email delivery, and ongoing maintenance. The technical headache, handled.",
     "outcome": "A site that stays online, secure, and up to date without you thinking about it.",

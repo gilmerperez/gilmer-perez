@@ -1,18 +1,24 @@
+/* Footer: a night scene in both themes (near black in dark, cobalt in light) */
 .footer {
   overflow: hidden;
   position: relative;
-  background: var(--surface);
-  border-top: 1px solid var(--primary);
+  color: var(--footer-text);
+  background: var(--footer-bg);
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
-/* Four columns that wrap */
+.footer a:hover {
+  color: var(--footer-text);
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.45);
+}
+
 .columns {
   gap: 40px 72px;
   display: flex;
   margin: 0 auto;
   flex-wrap: wrap;
+  padding: 64px var(--gutter) 0;
   max-width: var(--content-width);
-  padding: 56px var(--gutter) 0;
 }
 
 /* Brand block */
@@ -25,18 +31,16 @@
 }
 
 .logo {
-  font-size: 30px;
-  font-weight: 700;
-  font-style: italic;
+  font-size: 34px;
+  letter-spacing: -0.01em;
   font-family: var(--font-heading);
 }
 
 .tagline {
-  font-size: 15px;
+  font-size: 16px;
   max-width: 340px;
-  line-height: 1.55;
-  font-style: italic;
-  color: var(--text-secondary);
+  line-height: 1.6;
+  color: var(--footer-text);
 }
 
 .contactList {
@@ -55,47 +59,56 @@
 }
 
 /* Link columns */
-.linkColumn {
-  gap: 10px;
+.linkColumn,
+.startColumn {
+  gap: 11px;
   display: flex;
   font-size: 15px;
-  flex: 1 1 140px;
   flex-direction: column;
+}
+
+.linkColumn {
+  flex: 1 1 140px;
+}
+
+.startColumn {
+  flex: 1.4 1 220px;
 }
 
 .columnHeading {
-  font-size: 14px;
-  letter-spacing: 2px;
-  padding-bottom: 8px;
-  color: var(--primary);
-  font-family: var(--font-heading);
-  border-bottom: 1px solid var(--border-faint);
-}
-
-/* Start something */
-.startColumn {
-  gap: 12px;
-  display: flex;
-  font-size: 15px;
-  flex: 1.4 1 220px;
-  flex-direction: column;
+  font-size: 12px;
+  padding-bottom: 10px;
+  letter-spacing: 0.22em;
+  color: var(--footer-muted);
+  border-bottom: 1px solid var(--footer-border);
 }
 
 .startText {
-  line-height: 1.55;
-  font-style: italic;
-  color: var(--text-secondary);
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--footer-text);
 }
 
 .startButton {
+  display: inline-flex;
+  min-height: 44px;
+  font-size: 17px;
+  padding: 0 22px;
   margin-top: 14px;
-  font-weight: 600;
-  padding: 10px 14px;
+  line-height: 1;
+  text-align: center;
+  align-items: center;
   align-self: flex-start;
-  border-radius: var(--radius);
+  justify-content: center;
   font-family: var(--font-heading);
-  box-shadow: var(--glow-button);
-  border: 2px solid var(--primary);
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--footer-text);
+  transition: box-shadow 0.3s ease;
+}
+
+.footer .startButton:hover {
+  text-shadow: none;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.25);
 }
 
 /* Copyright and legal links */
@@ -105,11 +118,10 @@
   margin: 0 auto;
   flex-wrap: wrap;
   font-size: 13px;
-  font-style: italic;
-  color: var(--text-muted);
+  color: var(--footer-muted);
   justify-content: space-between;
   max-width: var(--content-width);
-  padding: 36px var(--gutter) 0;
+  padding: 40px var(--gutter) 0;
 }
 
 .legalLinks {
@@ -117,40 +129,100 @@
   display: flex;
 }
 
-.legalLink,
-.legalLink:hover {
-  color: var(--text-muted);
+.legalLink {
+  color: var(--footer-muted);
 }
 
-/* Night scene */
+/* ==========================================================================
+   Night scene
+   ========================================================================== */
 .scene {
-  margin-top: 24px;
+  height: 400px;
+  margin-top: 8px;
   position: relative;
-  height: clamp(200px, 24vw, 340px);
 }
 
-.sceneHaze {
-  top: 22%;
-  left: 50%;
-  width: 90%;
-  height: 60%;
-  position: absolute;
-  filter: blur(36px);
-  transform: translateX(-50%);
-  background: radial-gradient(ellipse at center, rgba(var(--primary-rgb), 0.55), rgba(var(--primary-rgb), 0) 68%);
-  animation: var(--pulse-haze) 7s var(--pulse-timing);
-}
-
-.sceneSvg {
+/* 2x mask (800px tall, shown at 400px) so every dot stays crisp */
+.sceneArt {
   inset: 0;
-  width: 100%;
-  height: 100%;
-  display: block;
-  max-width: none;
+  position: absolute;
+  pointer-events: none;
+  background-color: var(--footer-dither);
+  -webkit-mask: url("/dither/footer.png") center bottom / auto 400px no-repeat;
+  mask: url("/dither/footer.png") center bottom / auto 400px no-repeat;
+}
+
+/* A streak that crosses the sky once every 11 seconds */
+.shootingStar {
+  top: 40px;
+  left: 62%;
+  width: 140px;
+  height: 1px;
+  opacity: 0;
+  position: absolute;
+  pointer-events: none;
+  border-radius: 999px;
+  transform: rotate(-20deg);
+  background: linear-gradient(90deg, var(--footer-dither), rgba(255, 255, 255, 0));
+  animation: shoot 11s linear infinite;
+  animation-delay: 3s;
+}
+
+@keyframes shoot {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0) rotate(-20deg);
+  }
+  1.5% {
+    opacity: 1;
+  }
+  8% {
+    opacity: 0;
+    transform: translate(-340px, 124px) rotate(-20deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-340px, 124px) rotate(-20deg);
+  }
+}
+
+/* The moon sits high in the sky, right of center */
+.moon {
+  top: 46px;
+  z-index: 1;
+  right: max(8%, calc(50% - 560px));
   position: absolute;
 }
 
-/* Taillights and their reflection on the road */
-.taillightPulse {
-  animation: var(--pulse-haze) 3.5s var(--pulse-timing);
+.car {
+  left: 50%;
+  bottom: 56px;
+  width: 96px;
+  height: 56px;
+  position: absolute;
+  transform: translateX(-50%);
+}
+
+.taillight {
+  animation: var(--pulse-tail) 3.5s var(--pulse-timing);
+}
+
+/* Taillight reflection on the road */
+.carGlow {
+  left: 50%;
+  bottom: 40px;
+  width: 140px;
+  height: 18px;
+  position: absolute;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  animation: var(--pulse-tail) 3.5s var(--pulse-timing);
+  background: radial-gradient(ellipse at center, rgba(255, 77, 61, 0.45), rgba(255, 77, 61, 0) 70%);
+}
+
+/* Phones: the art stays at full size (scaling it makes the dots shimmer) and is cropped at the sides */
+@media (max-width: 640px) {
+  .moon {
+    top: 28px;
+  }
 }

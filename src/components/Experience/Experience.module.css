@@ -1,9 +1,9 @@
 .section {
-  gap: 28px;
+  gap: 36px;
   display: flex;
   margin: 0 auto;
   flex-direction: column;
-  padding: 56px var(--gutter);
+  padding: 72px var(--gutter);
   max-width: var(--content-width);
 }
 
@@ -14,61 +14,66 @@
   flex-direction: column;
 }
 
-/* Timeline */
+/* Timeline (no box-shadow on this container, on purpose) */
 .timeline {
   min-width: 0;
   display: flex;
   margin-left: 6px;
   flex-direction: column;
-  border-left: 2px solid var(--primary);
+  border-left: 1px solid var(--border-muted);
 }
 
 .entry {
   gap: 8px;
   display: flex;
   position: relative;
+  padding: 0 0 40px 30px;
   flex-direction: column;
-  padding: 0 0 36px 28px;
 }
 
 .entry:last-child {
   padding-bottom: 0;
 }
 
+/* Older entries get a hollow ring */
 .dot {
-  top: 2px;
-  left: -7px;
-  width: 12px;
-  height: 12px;
+  top: 4px;
+  left: -5px;
+  width: 9px;
+  height: 9px;
   position: absolute;
   border-radius: 50%;
-  background: var(--primary);
-  box-shadow: var(--glow-dot);
+  background: var(--bg-color);
+  border: 1px solid var(--primary);
 }
 
+/* The current role gets a solid, softly pulsing dot */
 .dotPulse {
-  box-shadow: var(--glow-pulse-rest);
-  animation: var(--pulse-glow) 3s var(--pulse-timing);
+  top: 3px;
+  left: -6px;
+  width: 11px;
+  height: 11px;
+  background: var(--primary);
+  animation: var(--pulse-soft) 3s var(--pulse-timing);
 }
 
 .when {
-  font-size: 14px;
+  font-size: 12px;
+  letter-spacing: 0.18em;
   color: var(--primary);
-  font-family: var(--font-heading);
 }
 
 .role {
-  font-size: 26px;
+  font-size: 30px;
 }
 
 .text {
   font-size: 16px;
   max-width: 880px;
-  line-height: 1.65;
+  line-height: 1.75;
   color: var(--text-secondary);
 }
 
-/* Photo column */
 .photoColumn {
   gap: 10px;
   min-width: 0;
@@ -76,22 +81,25 @@
   flex-direction: column;
 }
 
-/* Photo switcher button: 3:2 frame with both photos stacked */
+/* Photo frame. PhotoSwitcher sets the tilt inline on pointer move. */
 .photoButton {
   padding: 0;
   width: 100%;
+  display: block;
   overflow: hidden;
   position: relative;
   aspect-ratio: 3 / 2;
-  background: var(--surface);
-  border-radius: var(--radius);
-  border: 1px solid var(--primary);
-  box-shadow: var(--glow-pulse-rest);
-  animation: var(--pulse-glow) 6s var(--pulse-timing);
-  /* Tilt set inline by PhotoSwitcher on pointer move; eases back to flat on leave */
   will-change: transform;
+  background: var(--surface);
   transform-style: preserve-3d;
-  transition: transform 0.25s ease-out;
+  box-shadow: var(--shadow-panel);
+  border-radius: var(--radius-large);
+  border: 1px solid var(--border-muted);
+  transition: transform 0.25s ease-out, box-shadow 0.3s ease;
+}
+
+.photoButton:hover {
+  box-shadow: var(--shadow-panel), var(--glow-neutral);
 }
 
 .photo {
@@ -108,15 +116,16 @@
 }
 
 .photoCaption {
-  right: 10px;
-  bottom: 10px;
-  font-size: 13px;
-  padding: 6px 10px;
+  right: 12px;
+  bottom: 12px;
+  z-index: 1;
+  color: #ececea;
+  font-size: 12px;
+  padding: 6px 12px;
   position: absolute;
-  border-radius: 6px;
-  color: var(--text-primary);
-  font-family: var(--font-heading);
-  background: rgba(var(--surface-rgb), 0.82);
+  letter-spacing: 0.12em;
+  border-radius: var(--radius-pill);
+  background: rgba(15, 15, 14, 0.72);
 }
 
 /* Wide screens: the photo becomes a tall portrait beside the timeline and stays
@@ -130,7 +139,7 @@
   }
 
   .photoColumn {
-    top: 120px;
+    top: 110px;
     position: sticky;
   }
 

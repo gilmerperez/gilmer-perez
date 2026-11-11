@@ -1,9 +1,9 @@
 .section {
-  gap: 24px;
+  gap: 28px;
   display: flex;
   margin: 0 auto;
   flex-direction: column;
-  padding: 56px var(--gutter);
+  padding: 72px var(--gutter);
   max-width: var(--content-width);
 }
 
@@ -11,99 +11,71 @@
 .switchRow {
   gap: 12px 16px;
   display: flex;
-  font-size: 17px;
   flex-wrap: wrap;
-  font-weight: 600;
+  font-size: 20px;
   align-items: center;
   font-family: var(--font-heading);
 }
 
 .switchLabel {
   color: var(--text-muted);
+  transition: color 0.3s ease;
 }
 
 .switchLabelActive {
-  color: var(--primary);
+  color: var(--text-primary);
 }
 
 .switch {
   width: 80px;
   height: 44px;
   position: relative;
-  border-radius: 999px;
-  background: var(--surface);
-  border: 2px solid var(--primary);
-  /* Softer than the other pulsing elements, on purpose */
-  box-shadow: 0 0 6px rgba(var(--primary-rgb), 0.35);
-  animation: softGlowPulse 4s var(--pulse-timing);
+  border-radius: var(--radius-pill);
+  background: var(--surface-raised);
+  border: 1px solid var(--primary);
+  animation: var(--pulse-soft) 4s var(--pulse-timing);
 }
 
-@keyframes softGlowPulse {
-  0%,
-  100% {
-    box-shadow: 0 0 6px rgba(var(--primary-rgb), 0.35);
-  }
-  50% {
-    box-shadow: 0 0 12px rgba(var(--primary-rgb), 0.55);
-  }
-}
-
+/* White knob with a small drop shadow */
 .knob {
-  top: 5px;
-  left: 5px;
+  top: 6px;
+  left: 6px;
   width: 30px;
   height: 30px;
   position: absolute;
   border-radius: 50%;
-  transition: left 0.3s ease;
   background: #ffffff;
-  box-shadow: 0 0 6px rgba(255, 255, 255, 0.35);
+  transition: left 0.3s var(--ease);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
 }
 
 .knobOn {
-  left: 41px;
+  left: 42px;
 }
 
 /* Report panel */
 .panel {
   gap: 22px;
-  padding: 28px;
   display: flex;
-  overflow: hidden;
+  padding: 32px;
   min-height: 340px;
-  position: relative;
   flex-direction: column;
   background: var(--surface);
-  border-radius: var(--radius);
-  border: 1px solid var(--primary);
+  border-radius: var(--radius-large);
+  border: 1px solid var(--border-faint);
 }
 
-.haze {
-  left: 50%;
-  width: 80%;
-  height: 240px;
-  bottom: -120px;
-  position: absolute;
-  filter: blur(30px);
-  pointer-events: none;
-  transform: translateX(-50%);
-  background: radial-gradient(ellipse at center, rgba(var(--primary-rgb), 0.32), rgba(var(--primary-rgb), 0) 70%);
-  animation: var(--pulse-haze) 6s var(--pulse-timing);
-}
-
-/* Stays visible in both views */
 .caption {
-  font-size: 13px;
-  position: relative;
+  font-size: 12px;
+  letter-spacing: 0.14em;
   color: var(--text-muted);
 }
 
 /* Analyst view */
 .analyst {
-  gap: 28px;
+  gap: 32px;
   display: flex;
   flex-wrap: wrap;
-  position: relative;
 }
 
 .chart {
@@ -115,29 +87,29 @@
 }
 
 .chartLabel {
-  font-size: 13px;
+  font-size: 12px;
+  letter-spacing: 0.14em;
   color: var(--text-muted);
 }
 
 .bars {
   gap: 12px;
-  display: flex;
   height: 180px;
+  display: flex;
   align-items: flex-end;
-  border-bottom: 1px solid var(--border-faint);
+  border-bottom: 1px solid var(--border-muted);
 }
 
 .bar {
   flex: 1 1 0;
-  opacity: 0.38;
+  opacity: 0.3;
   background: var(--primary);
-  border-radius: 4px 4px 0 0;
+  border-radius: 6px 6px 0 0;
 }
 
-/* Latest month: bright and glowing */
 .barLatest {
   opacity: 1;
-  box-shadow: var(--glow-bar);
+  box-shadow: var(--glow-accent);
 }
 
 .months {
@@ -145,6 +117,7 @@
   display: flex;
   font-size: 12px;
   text-align: center;
+  letter-spacing: 0.1em;
   color: var(--text-muted);
 }
 
@@ -155,7 +128,7 @@
 .metrics {
   min-width: 0;
   display: flex;
-  font-size: 14px;
+  font-size: 15px;
   flex: 2 1 280px;
   flex-direction: column;
 }
@@ -163,9 +136,9 @@
 .metric {
   gap: 16px;
   display: flex;
-  padding: 9px 0;
+  padding: 10px 0;
   justify-content: space-between;
-  border-bottom: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-faint);
 }
 
 .metricKey {
@@ -178,57 +151,56 @@
 
 /* Owner view */
 .ownerGrid {
-  gap: 18px;
+  gap: 16px;
   display: grid;
-  position: relative;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 
 .ownerCard {
-  gap: 8px;
-  padding: 22px;
+  gap: 10px;
+  padding: 24px;
   display: flex;
   flex-direction: column;
   border-radius: var(--radius);
-  border: 1px solid var(--primary);
-  background: rgba(var(--primary-rgb), 0.06);
-  box-shadow: 0 0 24px rgba(var(--primary-rgb), 0.35);
+  background: var(--surface-raised);
+  border: 1px solid var(--border-faint);
+  transition: box-shadow 0.3s ease, transform 0.3s var(--ease);
+}
+
+.ownerCard:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--glow-neutral);
 }
 
 .ownerNum {
-  line-height: 1;
-  font-size: 64px;
-  font-weight: 700;
-  font-style: italic;
+  font-size: 72px;
+  line-height: 0.9;
   color: var(--primary);
+  text-shadow: var(--glow-text);
   font-family: var(--font-heading);
-  text-shadow: var(--glow-text-pulse-rest);
-  animation: var(--pulse-text) 4s var(--pulse-timing);
 }
 
 .ownerText {
   font-size: 17px;
-  line-height: 1.45;
-  color: var(--text-primary);
+  line-height: 1.5;
+  color: var(--text-secondary);
 }
 
 .nextMonth {
   gap: 12px;
   display: flex;
-  font-size: 16px;
-  line-height: 1.5;
-  position: relative;
+  font-size: 17px;
+  line-height: 1.6;
   align-items: flex-start;
   color: var(--text-secondary);
 }
 
 .nextDot {
-  width: 10px;
-  height: 10px;
+  width: 9px;
+  height: 9px;
   flex: 0 0 auto;
-  margin-top: 7px;
+  margin-top: 8px;
   border-radius: 50%;
   background: var(--primary);
-  box-shadow: var(--glow-pulse-rest);
-  animation: var(--pulse-glow) 3s var(--pulse-timing);
+  animation: var(--pulse-soft) 3s var(--pulse-timing);
 }

@@ -24,7 +24,7 @@ function Projects() {
 
   return (
     <section id="projects" className={styles.section} aria-labelledby="projects-title">
-      <SectionHeading eyebrow="06 / PROJECTS" title="CUSTOM CODE IS STILL MY FAVORITE PART" titleId="projects-title">
+      <SectionHeading eyebrow="06 / PROJECTS" title="Custom code is still my favorite part" titleId="projects-title">
         Front-end development and UI/UX design is where I started and what I enjoy most. Every site below is custom
         built, responsive, and structured for search. Click one to look inside.
       </SectionHeading>

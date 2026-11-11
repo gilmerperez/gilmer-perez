@@ -1,60 +1,68 @@
 .section {
-  gap: 24px;
+  gap: 28px;
   display: flex;
   margin: 0 auto;
   flex-direction: column;
-  padding: 56px var(--gutter);
   max-width: var(--content-width);
+  padding: 96px var(--gutter) 64px;
 }
 
 /* Stage buttons */
 .stages {
-  gap: 12px;
+  gap: 10px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
 }
 
 .stage {
   gap: 6px;
   display: flex;
-  min-height: 76px;
+  min-height: 84px;
   text-align: left;
-  padding: 14px 16px;
+  padding: 14px 18px;
   flex-direction: column;
-  background: var(--surface);
-  color: var(--text-primary);
+  justify-content: center;
+  color: var(--text-secondary);
   border-radius: var(--radius);
-  font-family: var(--font-heading);
-  border: 2px solid var(--border-muted);
+  border: 1px solid var(--border-faint);
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
 }
 
-/* Active stage: solid blue with black text, pulsing */
-.stageActive {
-  background: var(--primary);
+.stage:hover {
+  color: var(--text-primary);
+  box-shadow: var(--glow-neutral);
+  border-color: var(--border-muted);
+}
+
+.stageActive,
+.stageActive:hover {
+  color: var(--text-primary);
   border-color: var(--primary);
-  color: var(--text-on-primary-dark);
-  box-shadow: var(--glow-pulse-rest);
-  animation: var(--pulse-glow) 4s var(--pulse-timing);
+  background: rgba(var(--primary-rgb), 0.1);
+  animation: var(--pulse-soft) 4s var(--pulse-timing);
 }
 
 .stageNum {
-  font-size: 13px;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  color: var(--text-muted);
 }
 
 .stageLabel {
-  font-size: 20px;
-  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.1;
+  font-family: var(--font-heading);
 }
 
-/* Panel */
+/* Active stage panel */
 .panel {
-  gap: 28px;
-  padding: 28px;
+  gap: 32px;
   display: flex;
+  padding: 32px;
   flex-wrap: wrap;
   background: var(--surface);
-  border-radius: var(--radius);
-  border: 1px solid var(--primary);
+  border-radius: var(--radius-large);
+  border: 1px solid var(--border-faint);
 }
 
 .panelMain {
@@ -66,63 +74,61 @@
 }
 
 .panelTitle {
-  font-size: 30px;
+  font-size: 34px;
 }
 
 .panelBody {
   font-size: 17px;
-  line-height: 1.6;
+  line-height: 1.7;
   color: var(--text-secondary);
 }
 
 .outcome {
   font-size: 15px;
-  line-height: 1.5;
-  color: var(--text-primary);
+  line-height: 1.6;
 }
 
 .outcomeLabel {
+  font-size: 12px;
   color: var(--primary);
-  font-family: var(--font-heading);
+  letter-spacing: 0.18em;
 }
 
-/* Stat (BUILD and ADVERTISE only) */
 .stat {
   gap: 6px 14px;
   display: flex;
   flex-wrap: wrap;
-  margin-top: 6px;
+  margin-top: 8px;
+  padding-top: 18px;
   align-items: baseline;
+  border-top: 1px solid var(--border-faint);
 }
 
 .statNum {
-  font-size: 44px;
-  font-weight: 700;
-  font-style: italic;
+  font-size: 52px;
+  line-height: 1;
   color: var(--primary);
+  text-shadow: var(--glow-text);
   font-family: var(--font-heading);
-  text-shadow: var(--glow-text-pulse-rest);
-  animation: var(--pulse-text) 4s var(--pulse-timing);
 }
 
 .statLabel {
   font-size: 16px;
-  color: var(--text-primary);
+  color: var(--text-secondary);
 }
 
-/* Tools */
 .panelTools {
   gap: 12px;
   min-width: 0;
   display: flex;
-  flex: 1 1 320px;
+  flex: 1 1 300px;
   flex-direction: column;
 }
 
 .toolsLabel {
-  font-size: 14px;
+  font-size: 12px;
+  letter-spacing: 0.18em;
   color: var(--text-muted);
-  font-family: var(--font-heading);
 }
 
 .chips {
@@ -133,8 +139,8 @@
 
 .chip {
   font-size: 14px;
-  padding: 6px 10px;
-  border-radius: 6px;
-  color: var(--text-primary);
-  border: 1px solid var(--border-muted);
+  padding: 6px 14px;
+  color: var(--text-secondary);
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-faint);
 }

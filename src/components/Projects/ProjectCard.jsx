@@ -21,7 +21,7 @@ function ProjectCard({ project, onOpen, buttonRef }) {
         <span className={styles.cardKind}>{project.kind}</span>
         <span className={styles.cardTitle}>{project.title}</span>
         <span className={styles.cardSummary}>{project.summary}</span>
-        <span className={styles.cardMore}>LOOK INSIDE +</span>
+        <span className={styles.cardMore}>Look inside +</span>
       </span>
     </button>
   );

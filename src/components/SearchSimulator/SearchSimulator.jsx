@@ -228,7 +228,7 @@ function SearchSimulator() {
 
   return (
     <section id="search" className={styles.section} aria-labelledby="search-title">
-      <SectionHeading eyebrow="03 / SEARCH" title="FOUR WAYS A CUSTOMER FINDS YOU" titleId="search-title">
+      <SectionHeading eyebrow="03 / SEARCH" title="Four ways a customer finds you" titleId="search-title">
         One search, four places your business can show up. I work on all of them. Tap each one to see what it looks
         like and what it takes.
       </SectionHeading>

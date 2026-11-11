@@ -10,9 +10,23 @@ export function splitEntry(entry) {
   return { name: entry.slice(0, at), text: entry.slice(at + 2) };
 }
 
+// Short acronyms that camelCase file names write in lowercase (tvShowsPage)
+const ACRONYMS = ["tv", "ai", "faq", "bbq"];
+
+// ["order", "Online"] -> "Order online". Acronyms (IMDB, TV) keep their capitals.
+function toSentenceCase(words) {
+  const text = words
+    .map((w) => {
+      if (ACRONYMS.includes(w.toLowerCase())) return w.toUpperCase();
+      return w.length > 1 && w === w.toUpperCase() ? w : w.toLowerCase();
+    })
+    .join(" ");
+  return text.charAt(0).toUpperCase() + text.slice(1);
+}
+
 // Screenshot path -> button label and alt text, derived from the file name.
-// homePage -> HOME, orderOnlinePage -> ORDER ONLINE, darkTheme -> DARK THEME,
-// topIMDBPage -> TOP IMDB
+// homePage -> Home, orderOnlinePage -> Order online, darkTheme -> Dark theme,
+// topIMDBPage -> Top IMDB (acronyms keep their capitals)
 export function describeScreenshot(src, projectTitle) {
   const fileName = src.split("/").pop().replace(/\.[a-z0-9]+$/i, "");
   const words = fileName
@@ -25,7 +39,7 @@ export function describeScreenshot(src, projectTitle) {
 
   return {
     src,
-    label: name.toUpperCase(),
+    label: toSentenceCase(nameWords),
     alt: `${projectTitle} ${name.toLowerCase()} ${isPage ? "page" : "screenshot"}`,
   };
 }

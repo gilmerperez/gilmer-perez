@@ -24,7 +24,7 @@ function Proof() {
 
   return (
     <section id="proof" className={styles.section} aria-labelledby="proof-title">
-      <SectionHeading eyebrow="07 / PROOF" title="THIS SITE DOES WHAT I SELL" titleId="proof-title">
+      <SectionHeading eyebrow="07 / PROOF" title="This site does what I sell" titleId="proof-title">
         The page you are reading is built the way I build for clients. These are its real Lighthouse scores and the
         structured data it sends to search engines.
       </SectionHeading>
@@ -65,9 +65,9 @@ function Proof() {
       {/* Schema explainer */}
       <div className={styles.schema}>
         <div className={styles.explainer}>
-          <h3 className={styles.explainerTitle}>WHAT SEARCH ENGINES READ</h3>
+          <h3 className={styles.explainerTitle}>What search engines read</h3>
           <p className={styles.explainerText}>
-            This is <strong>STRUCTURED DATA</strong>, also called schema markup. Visitors never see it. Search engines
+            This is <strong>structured data</strong>, also called schema markup. Visitors never see it. Search engines
             and AI assistants read it to understand who a page is about and what they do. It is how a business gets its
             star ratings, hours, and prices to show up right in the search results.
           </p>

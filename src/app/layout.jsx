@@ -3,19 +3,25 @@ import { SITE_URL } from "../data/schema";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import { Analytics } from "@vercel/analytics/next";
-import { Kode_Mono, Source_Code_Pro } from "next/font/google";
+import { Newsreader, Outfit } from "next/font/google";
 
-// Both are variable fonts, so leaving out `weight` loads one file per style
-const kodeMono = Kode_Mono({
-  variable: "--font-kode-mono",
-  subsets: ["latin"],
-});
-
-const sourceCodePro = Source_Code_Pro({
-  variable: "--font-source-code-pro",
+// Both are variable fonts, so leaving out `weight` loads one file per style.
+// Newsreader also has an optical size axis: large headings get the display cut.
+const newsreader = Newsreader({
+  variable: "--font-newsreader",
   subsets: ["latin"],
   style: ["normal", "italic"],
+  axes: ["opsz"],
 });
+
+const outfit = Outfit({
+  variable: "--font-outfit",
+  subsets: ["latin"],
+});
+
+// * Runs before first paint so the page never flashes the wrong theme.
+// Uses the visitor's saved choice, otherwise their system setting, otherwise dark.
+const THEME_SCRIPT = `(function(){try{var t=localStorage.getItem("theme");if(t!=="light"&&t!=="dark"){t=window.matchMedia("(prefers-color-scheme: light)").matches?"light":"dark"}document.documentElement.setAttribute("data-theme",t)}catch(e){document.documentElement.setAttribute("data-theme","dark")}})();`;
 
 const TITLE = "Gilmer Perez | Digital Growth Specialist";
 const DESCRIPTION =
@@ -97,13 +103,20 @@ export const metadata = {
 };
 
 export const viewport = {
-  themeColor: "#0d0d0d",
-  colorScheme: "dark",
+  themeColor: [
+    { media: "(prefers-color-scheme: dark)", color: "#111111" },
+    { media: "(prefers-color-scheme: light)", color: "#f3ecdc" },
+  ],
+  colorScheme: "dark light",
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${kodeMono.variable} ${sourceCodePro.variable}`}>
+    // data-theme is set by THEME_SCRIPT before React hydrates, hence suppressHydrationWarning
+    <html lang="en" data-theme="dark" className={`${newsreader.variable} ${outfit.variable}`} suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />
+      </head>
       <body>
         <Header />
         {children}

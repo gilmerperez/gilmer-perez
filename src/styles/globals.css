@@ -1,101 +1,145 @@
 /* ==========================================================================
    Design tokens
-   The site is dark only. Every color, font, and glow value lives here so a
-   future restyle only has to touch this block and the keyframes below.
+   Two themes: Graphite and Blue (dark, the default) and Cream and Cobalt
+   (light). The theme lives on <html data-theme="dark|light">, set before
+   first paint by the script in layout.jsx and switched by ThemeToggle.
+   Every color, font, glow, and radius value lives here.
    ========================================================================== */
+:root,
+html[data-theme="dark"] {
+  /* Surfaces */
+  --bg-color: #111111;
+  --bg-rgb: 17, 17, 17;
+  --surface: #181818;
+  --surface-raised: #212121;
+
+  /* Text */
+  --text-primary: #ececea;
+  --text-secondary: #c4c4c0;
+  --text-muted: #9a9a96;
+
+  /* Lines */
+  --border-faint: #2b2b2b;
+  --border-muted: #474747;
+
+  /* Accent */
+  --primary: #4d94ff;
+  --primary-rgb: 77, 148, 255;
+  --text-on-primary: #0b0b0b;
+  --focus-ring: #4d94ff;
+
+  /* Dither art color */
+  --dither: #bcd5ff;
+
+  /* Footer (stays a night scene in both themes) */
+  --footer-bg: #0b0b0b;
+  --footer-rgb: 11, 11, 11;
+  --footer-text: #ececea;
+  --footer-muted: #9a9a96;
+  --footer-border: #2b2b2b;
+  --footer-dither: #7fb0ff;
+  --footer-accent: #ff4d3d;
+  --orb-light: #f3ecdc;
+
+  /* Glows: soft and rare. Accent glow on accent things, white glow on neutral things */
+  --glow-text: 0 0 14px rgba(var(--primary-rgb), 0.38);
+  --glow-accent: 0 0 22px rgba(var(--primary-rgb), 0.35);
+  --glow-neutral: 0 0 24px rgba(255, 255, 255, 0.09);
+  --glow-ring: 0 0 22px rgba(var(--primary-rgb), 0.35);
+
+  /* Shadows */
+  --shadow-panel: 0 24px 60px -30px rgba(0, 0, 0, 0.6);
+
+  color-scheme: dark;
+}
+
+html[data-theme="light"] {
+  --bg-color: #f3ecdc;
+  --bg-rgb: 243, 236, 220;
+  --surface: #ece4d1;
+  --surface-raised: #e4dac4;
+
+  --text-primary: #141626;
+  --text-secondary: #383b52;
+  --text-muted: #5d5f72;
+
+  --border-faint: #dacfb8;
+  --border-muted: #b2a88e;
+
+  --primary: #1f3fbf;
+  --primary-rgb: 31, 63, 191;
+  --text-on-primary: #f3ecdc;
+  --focus-ring: #1f3fbf;
+
+  --dither: #1f3fbf;
+
+  --footer-bg: #1f3fbf;
+  --footer-rgb: 31, 63, 191;
+  --footer-text: #f3ecdc;
+  --footer-muted: #c8cdee;
+  --footer-border: #3a57cc;
+  --footer-dither: #f3ecdc;
+  --footer-accent: #ff6a4d;
+  --orb-light: #fff6e0;
+
+  /* On cream a white glow disappears, so neutral things glow cobalt instead */
+  --glow-text: 0 0 12px rgba(var(--primary-rgb), 0.2);
+  --glow-accent: 0 0 22px rgba(var(--primary-rgb), 0.28);
+  --glow-neutral: 0 10px 30px -12px rgba(var(--primary-rgb), 0.3);
+  --glow-ring: 0 0 20px rgba(var(--primary-rgb), 0.28);
+
+  --shadow-panel: 0 24px 60px -34px rgba(20, 22, 38, 0.35);
+
+  color-scheme: light;
+}
+
 :root {
-  /* Colors */
-  --bg-color: #0d0d0d;
-  --bg-rgb: 13, 13, 13;
-  --surface: #060606;
-  --surface-rgb: 6, 6, 6;
-  --surface-raised: #1a1a1a;
-  --primary: #0099ff;
-  --primary-rgb: 0, 153, 255;
-  --primary-light: #4dbbff;
-  /* Fill for solid buttons with white text. About 1% darker than --primary so white text
-     reaches the 3:1 contrast minimum (white on --primary is 2.99:1). */
-  --primary-solid: #0091f2;
-  --text-primary: #e6e6e6;
-  --text-primary-rgb: 230, 230, 230;
-  --text-secondary: #cccccc;
-  --text-muted: #b3b3b3;
-  --text-on-primary: #ffffff;
-  --text-on-primary-dark: #000000;
-  --border-muted: #4d4d4d;
-  --border-faint: #333333;
-  --border-subtle: #262626;
-  --focus-ring: #ffffff;
-
   /* Fonts (the next/font variables are set on <html> in layout.jsx) */
-  --font-heading: var(--font-kode-mono), monospace;
-  --font-body: var(--font-source-code-pro), monospace;
-
-  /* Static glows */
-  --glow-small: 0 0 15px var(--primary);
-  --glow-button: 0 0 12px var(--primary);
-  --glow-card: 0 0 14px rgba(var(--primary-rgb), 0.45);
-  --glow-text: 0 0 15px var(--primary);
-  --glow-dot: 0 0 10px var(--primary);
-  --glow-ring: 0 0 26px rgba(var(--primary-rgb), 0.55);
-  --glow-bar: 0 0 14px var(--primary), 0 0 38px rgba(var(--primary-rgb), 0.7);
-  /* First frame of glowPulse, used as the resting shadow when motion is reduced */
-  --glow-pulse-rest: 0 0 5px var(--primary), 0 0 16px rgba(var(--primary-rgb), 0.5),
-    0 0 40px rgba(var(--primary-rgb), 0.2);
-  /* First frame of textPulse, same idea */
-  --glow-text-pulse-rest: 0 0 8px var(--primary), 0 0 22px rgba(var(--primary-rgb), 0.45);
+  --font-heading: var(--font-newsreader), Georgia, "Times New Roman", serif;
+  --font-body: var(--font-outfit), system-ui, sans-serif;
+  --font-code: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 
   /* Pulse animations. Modules use these as
-     `animation: var(--pulse-glow) 6s var(--pulse-timing);`
+     `animation: var(--pulse-soft) 4s var(--pulse-timing);`
      so the keyframe names stay global instead of being hashed by CSS Modules. */
-  --pulse-glow: glowPulse;
-  --pulse-text: textPulse;
-  --pulse-haze: hazePulse;
+  --pulse-soft: softGlow;
+  --pulse-tail: tailPulse;
   --pulse-timing: ease-in-out infinite;
 
   /* Layout */
   --content-width: 1200px;
   --gutter: 24px;
-  --radius: 8px;
+  --radius: 14px;
+  --radius-large: 18px;
+  --radius-pill: 999px;
+
+  /* Motion */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 /* ==========================================================================
-   Keyframes (the approved "brake light at night" glow)
+   Keyframes
    ========================================================================== */
 
-/* Box glow that breathes in and out */
-@keyframes glowPulse {
+/* A soft accent halo that breathes in and out */
+@keyframes softGlow {
   0%,
   100% {
-    box-shadow: 0 0 5px var(--primary), 0 0 16px rgba(var(--primary-rgb), 0.5),
-      0 0 40px rgba(var(--primary-rgb), 0.2);
+    box-shadow: 0 0 0 0 rgba(var(--primary-rgb), 0);
   }
   50% {
-    box-shadow: 0 0 9px var(--primary), 0 0 30px rgba(var(--primary-rgb), 0.8),
-      0 0 78px rgba(var(--primary-rgb), 0.42);
+    box-shadow: 0 0 18px 0 rgba(var(--primary-rgb), 0.32);
   }
 }
 
-/* Text glow that breathes in and out */
-@keyframes textPulse {
+/* Taillights and other small lights */
+@keyframes tailPulse {
   0%,
   100% {
-    text-shadow: 0 0 8px var(--primary), 0 0 22px rgba(var(--primary-rgb), 0.45);
+    opacity: 0.45;
   }
   50% {
-    text-shadow: 0 0 12px var(--primary), 0 0 42px rgba(var(--primary-rgb), 0.85),
-      0 0 90px rgba(var(--primary-rgb), 0.4);
-  }
-}
-
-/* Opacity pulse for blurred radial hazes */
-@keyframes hazePulse {
-  0%,
-  100% {
-    opacity: 0.4;
-  }
-  50% {
-    opacity: 0.95;
+    opacity: 1;
   }
 }
 
@@ -116,7 +160,6 @@
 html {
   height: 100%;
   font-size: 16px;
-  color-scheme: dark;
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
   background-color: var(--bg-color);
@@ -127,6 +170,7 @@ body {
   display: flex;
   min-height: 100vh;
   overflow-x: clip;
+  font-weight: 300;
   flex-direction: column;
   color: var(--text-primary);
   font-family: var(--font-body);
@@ -143,8 +187,9 @@ main {
 
 /* Links */
 a {
-  color: var(--text-primary);
+  color: inherit;
   text-decoration: none;
+  transition: color 0.25s ease;
 }
 
 a:hover {
@@ -153,24 +198,26 @@ a:hover {
 
 /* Buttons */
 button {
-  cursor: pointer;
   border: none;
+  color: inherit;
   font: inherit;
+  cursor: pointer;
+  background: none;
 }
 
 /* Visible focus for keyboard users */
 a:focus-visible,
 button:focus-visible {
-  outline: 2px solid var(--focus-ring);
   outline-offset: 3px;
+  outline: 2px solid var(--focus-ring);
 }
 
-/* Strong text */
+/* Highlighted words in body copy: accent color and a faint glow, never italic */
 strong {
-  font-weight: 700;
+  font-weight: 500;
+  font-style: normal;
   color: var(--primary);
   text-shadow: var(--glow-text);
-  font-family: var(--font-heading);
 }
 
 /* Lists */
@@ -189,22 +236,22 @@ picture {
   max-width: 100%;
 }
 
-/* Headings */
+/* Headings: Newsreader, regular weight, sentence case in the copy */
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  line-height: 1;
-  font-weight: 700;
-  font-style: italic;
+  font-weight: 400;
+  line-height: 1.04;
+  letter-spacing: -0.02em;
   font-family: var(--font-heading);
 }
 
 /* Anchor targets clear the sticky header */
 section {
-  scroll-margin-top: 120px;
+  scroll-margin-top: 110px;
 }
 
 /* Highlighted text */
@@ -215,15 +262,41 @@ section {
 
 /* Scrollbar */
 body::-webkit-scrollbar {
-  width: 5px;
+  width: 6px;
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: var(--primary);
+  border-radius: 999px;
+  background-color: var(--border-muted);
+}
+
+/* Hidden from sight, still read by screen readers */
+.visually-hidden {
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
 }
 
 /* ==========================================================================
-   Reduced motion: stop every pulse, lift, and smooth scroll
+   Theme switch: the new theme is revealed as a growing circle from the
+   footer orb (ThemeToggle runs the animation with the View Transitions API)
+   ========================================================================== */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+::view-transition-new(root) {
+  z-index: 2;
+}
+
+/* ==========================================================================
+   Reduced motion: stop every pulse, lift, reveal, and smooth scroll
    ========================================================================== */
 @media (prefers-reduced-motion: reduce) {
   html {
