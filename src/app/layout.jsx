@@ -1,51 +1,56 @@
 import "../styles/globals.css";
+import { SITE_URL } from "../data/schema";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import { Analytics } from "@vercel/analytics/next";
 import { Kode_Mono, Source_Code_Pro } from "next/font/google";
 
+// Both are variable fonts, so leaving out `weight` loads one file per style
 const kodeMono = Kode_Mono({
   variable: "--font-kode-mono",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
 });
 
 const sourceCodePro = Source_Code_Pro({
   variable: "--font-source-code-pro",
   subsets: ["latin"],
-  weight: ["200", "300", "400", "500", "600", "700", "800", "900"],
   style: ["normal", "italic"],
 });
 
+const TITLE = "Gilmer Perez | Digital Growth Specialist";
+const DESCRIPTION =
+  "Gilmer Perez is a Digital Growth Specialist covering web development, SEO, paid media, and analytics. One partner for the whole digital side of your business.";
+const SHARE_IMAGE = {
+  url: `${SITE_URL}/images/gilmer-perez-1.jpg`,
+  width: 1367,
+  height: 911,
+  alt: "Gilmer Perez, Digital Growth Specialist",
+};
+
 export const metadata = {
+  metadataBase: new URL(SITE_URL),
   title: {
-    default: "Gilmer Perez | Front-End Web Developer",
+    default: TITLE,
     template: "%s | Gilmer Perez",
   },
-  description:
-    "A passionate Front-End Web Developer and UI/UX enthusiast with Full-Stack knowledge, specialized in building stunning pixel-perfect interactive websites and applications. Explore my portfolio showcasing React, Next.js, Node.js, and modern web development projects.",
+  description: DESCRIPTION,
   keywords: [
-    "Front-End Developer",
+    "Digital Growth Specialist",
+    "SEO Specialist",
+    "Technical SEO",
+    "Local SEO",
+    "Google Ads",
+    "Meta Ads",
+    "PPC",
+    "GA4",
     "Web Developer",
-    "React Developer",
     "Next.js Developer",
-    "UI/UX Designer",
-    "Full-Stack Developer",
-    "JavaScript Developer",
-    "TypeScript Developer",
-    "Portfolio",
+    "React Developer",
+    "Front-End Developer",
+    "UI/UX Design",
     "Web Development",
-    "Responsive Design",
-    "Modern Web Applications",
-    "React Portfolio",
-    "Next.js Portfolio",
-    "Node.js Developer",
-    "Express.js",
-    "PostgreSQL",
-    "MongoDB",
-    "RESTful API",
-    "GraphQL",
-    "GitHub Portfolio",
+    "Orlando",
+    "Florida",
     "Orlando Web Developer",
     "Florida Web Developer",
   ],
@@ -53,31 +58,22 @@ export const metadata = {
   creator: "Gilmer Perez",
   publisher: "Gilmer Perez",
   alternates: {
-    canonical: "https://gilmer-perez.vercel.app",
+    canonical: SITE_URL,
   },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://gilmer-perez.vercel.app/",
+    url: `${SITE_URL}/`,
     siteName: "Gilmer Perez Portfolio",
-    title: "Gilmer Perez | Front-End Web Developer",
-    description:
-      "A passionate Front-End Web Developer and UI/UX enthusiast with Full-Stack knowledge, specialized in building stunning pixel-perfect interactive websites and applications.",
-    images: [
-      {
-        url: "https://gilmer-perez.vercel.app/images/gilmer-perez-1.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Gilmer Perez - Front-End Web Developer",
-      },
-    ],
+    title: TITLE,
+    description: DESCRIPTION,
+    images: [SHARE_IMAGE],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Gilmer Perez | Front-End Web Developer",
-    description:
-      "A passionate Front-End Web Developer and UI/UX enthusiast with Full-Stack knowledge, specialized in building stunning pixel-perfect interactive websites and applications.",
-    images: ["https://gilmer-perez.vercel.app/images/gilmer-perez-1.jpg"],
+    title: TITLE,
+    description: DESCRIPTION,
+    images: [{ url: SHARE_IMAGE.url, alt: SHARE_IMAGE.alt }],
   },
   robots: {
     index: true,
@@ -100,18 +96,20 @@ export const metadata = {
   },
 };
 
+export const viewport = {
+  themeColor: "#0d0d0d",
+  colorScheme: "dark",
+};
 
 export default function RootLayout({ children }) {
   return (
-    <>
-      <html lang="en">
-        <body className={`${kodeMono.variable} ${sourceCodePro.variable}`}>
-          <Header />
-          {children}
-          <Footer />
-          <Analytics />
-        </body>
-      </html>
-    </>
+    <html lang="en" className={`${kodeMono.variable} ${sourceCodePro.variable}`}>
+      <body>
+        <Header />
+        {children}
+        <Footer />
+        <Analytics />
+      </body>
+    </html>
   );
 }

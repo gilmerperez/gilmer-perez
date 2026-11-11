@@ -1,0 +1,22 @@
+.heading {
+  gap: 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+.eyebrow {
+  font-size: 15px;
+  color: var(--primary);
+  font-family: var(--font-heading);
+}
+
+.title {
+  font-size: clamp(30px, 4vw, 52px);
+}
+
+.intro {
+  font-size: 17px;
+  max-width: 820px;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}

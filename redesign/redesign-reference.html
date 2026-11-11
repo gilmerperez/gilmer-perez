@@ -1,0 +1,1159 @@
+<!doctype html>
+<!--
+REFERENCE MOCKUP SOURCE for the gilmer-perez portfolio redesign. Read with REDESIGN_PLAN.md.
+This file is a design-tool template, not a page you can open in a browser. Read it as a spec:
+  - Everything inside <x-dc> is the markup. Every inline style value is exact and approved.
+  - <helmet><style> holds the global rules and the @keyframes (glowPulse, textPulse, hazePulse).
+  - {{ name }} is a value returned by renderVals() in the script at the bottom of this file.
+  - <sc-for list="{{ xs }}" as="x"> repeats its children once per item (a .map()).
+  - <sc-if value="{{ flag }}"> renders its children only when flag is true.
+  - onClick="{{ fn }}" calls a handler returned by renderVals().
+  - The class at the bottom holds all state, data and copy for the interactive sections.
+Image paths have been rewritten to the real files in /public.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Gilmer Perez | Digital Growth Specialist</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400;500;600;700&family=Source+Code+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap">
+<style>
+body{margin:0;background:#0d0d0d}
+a{color:#e6e6e6;text-decoration:none}a:hover{color:#0099ff}
+strong{font-weight:700;color:#0099ff;text-shadow:0 0 15px #0099ff;font-family:'Kode Mono',monospace}
+button{cursor:pointer;font:inherit;border:none}
+button:focus-visible,a:focus-visible{outline:2px solid #ffffff;outline-offset:3px}
+h1,h2,h3{margin:0;line-height:1;font-weight:700;font-style:italic;font-family:'Kode Mono',monospace}
+p{margin:0}
+section{scroll-margin-top:120px}
+.lift{transition:transform .3s ease}.lift:hover{transform:translateY(-5px)}
+.nav-burger{display:none}
+@media (max-width:860px){.nav-desktop{display:none!important}.nav-burger{display:flex!important}}
+@keyframes glowPulse{0%,100%{box-shadow:0 0 5px #0099ff,0 0 16px rgba(0,153,255,.5),0 0 40px rgba(0,153,255,.2)}50%{box-shadow:0 0 9px #0099ff,0 0 30px rgba(0,153,255,.8),0 0 78px rgba(0,153,255,.42)}}
+@keyframes textPulse{0%,100%{text-shadow:0 0 8px #0099ff,0 0 22px rgba(0,153,255,.45)}50%{text-shadow:0 0 12px #0099ff,0 0 42px rgba(0,153,255,.85),0 0 90px rgba(0,153,255,.4)}}
+@keyframes hazePulse{0%,100%{opacity:.4}50%{opacity:.95}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</helmet>
+<div style="background: #0d0d0d; color: #e6e6e6; font-family: 'Source Code Pro', monospace; min-height: 100vh; overflow-x: clip">
+
+<!-- Header -->
+<header style="position: sticky; top: 16px; z-index: 50; margin: 16px; padding: 12px 20px; border: 1px solid #0099ff; border-radius: 8px; background: rgba(13,13,13,0.84); backdrop-filter: blur(14px); animation: glowPulse 6s ease-in-out infinite; display: flex; flex-direction: column; gap: 0">
+<div style="display: flex; gap: 12px 24px; align-items: center; justify-content: space-between; min-height: 48px">
+<a href="#top" style="font-family: 'Kode Mono', monospace; font-style: italic; font-weight: 500; font-size: 24px">GILMERPEREZ</a>
+<nav class="nav-desktop" aria-label="Main site navigation" style="display: flex; gap: 8px 18px; align-items: center; font-family: 'Kode Mono', monospace; font-size: 19px">
+<a href="#top" style="border-bottom: 2px solid #0099ff; padding: 4px 0">HOME</a>
+<a href="#how" style="padding: 4px 0">PROCESS</a>
+<a href="#experience" style="padding: 4px 0">EXPERIENCE</a>
+<a href="#projects" style="padding: 4px 0">PROJECTS</a>
+<a href="#contact" style="border: 2px solid #0099ff; border-radius: 8px; padding: 6px 12px; background: #060606; box-shadow: 0 0 15px #0099ff; font-weight: 500">CONTACT</a>
+</nav>
+<button class="nav-burger" type="button" onClick="{{ toggleMenu }}" aria-expanded="{{ menuExpanded }}" aria-label="Toggle navigation menu" style="width: 48px; height: 48px; align-items: center; justify-content: center; background: transparent; color: #e6e6e6; border-radius: 8px">
+<sc-if value="{{ menuClosed }}" hint-placeholder-val="{{ true }}">
+<svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"></path></svg>
+</sc-if>
+<sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+<svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0099ff" stroke-width="2" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"></path></svg>
+</sc-if>
+</button>
+</div>
+<sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+<nav aria-label="Mobile site navigation" style="display: flex; flex-direction: column; gap: 4px; padding: 12px 0 8px; margin-top: 10px; border-top: 1px solid #0099ff; font-family: 'Kode Mono', monospace; font-size: 22px">
+<a href="#top" onClick="{{ closeMenu }}" style="padding: 12px 4px">HOME</a>
+<a href="#how" onClick="{{ closeMenu }}" style="padding: 12px 4px">PROCESS</a>
+<a href="#experience" onClick="{{ closeMenu }}" style="padding: 12px 4px">EXPERIENCE</a>
+<a href="#projects" onClick="{{ closeMenu }}" style="padding: 12px 4px">PROJECTS</a>
+<a href="#contact" onClick="{{ closeMenu }}" style="margin-top: 8px; padding: 12px 16px; text-align: center; border-radius: 8px; background: #0099ff; color: #000000; font-weight: 700; box-shadow: 0 0 15px #0099ff">CONTACT</a>
+</nav>
+</sc-if>
+</header>
+
+<!-- Hero -->
+<section id="top" style="position: relative; max-width: 1200px; margin: 0 auto; padding: 80px 24px 56px; display: flex; flex-direction: column; align-items: center; text-align: center">
+<div aria-hidden="true" style="position: absolute; top: 60px; left: 50%; transform: translateX(-50%); width: 86%; max-width: 900px; height: 340px; background: radial-gradient(ellipse at center, rgba(0,153,255,0.30), rgba(0,153,255,0) 68%); filter: blur(34px); animation: hazePulse 7s ease-in-out infinite; pointer-events: none"></div>
+<div style="position: relative; width: fit-content; max-width: 100%; display: flex; flex-direction: column; align-items: center; gap: 22px">
+<p style="width: 0; min-width: 100%; font-size: clamp(16px, 1.6vw, 22px); line-height: 1.45; color: #cccccc">Hi, my name is <strong>Gilmer Perez</strong>. I build the parts of the internet you actually enjoy using, then I make sure people find them.</p>
+<h1 style="font-size: clamp(32px, 6.4vw, 84px); white-space: nowrap">DIGITAL GROWTH<br>SPECIALIST.</h1>
+<div aria-hidden="true" style="width: 100%; height: 2px; border-radius: 999px; background: #0099ff; animation: glowPulse 4s ease-in-out infinite"></div>
+<p style="width: 0; min-width: min(calc(100% + 72px), 88vw); font-size: clamp(15px, 1.4vw, 19px); line-height: 1.55; color: #cccccc">I cover the full path from <strong>WEBSITE</strong> to <strong>CUSTOMER</strong>. I build and host the site, make it <strong>RANK IN SEARCH</strong>, <strong>TRACK</strong> what it does, and run <strong>PAID ADS</strong> that send it qualified traffic. One partner for the whole digital side of your business.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 4px">
+<a href="#how" style="font-family: 'Kode Mono', monospace; font-weight: 500; font-size: 24px; padding: 12px 18px; border-radius: 8px; background: #0099ff; color: #ffffff; animation: glowPulse 4s ease-in-out infinite">SEE THE PROCESS</a>
+<a href="#projects" style="font-family: 'Kode Mono', monospace; font-weight: 500; font-size: 24px; padding: 10px 18px; border-radius: 8px; background: #060606; border: 2px solid #0099ff; box-shadow: 0 0 15px #0099ff">VIEW PROJECTS</a>
+</div>
+</div>
+<div style="position: relative; display: flex; flex-wrap: wrap; gap: 10px 14px; justify-content: center; margin-top: 44px; font-family: 'Kode Mono', monospace; font-size: 16px; color: #b3b3b3">
+<span>BUILD</span><span aria-hidden="true" style="color: #0099ff">&gt;</span>
+<span>RANK</span><span aria-hidden="true" style="color: #0099ff">&gt;</span>
+<span>TRACK</span><span aria-hidden="true" style="color: #0099ff">&gt;</span>
+<span>ADVERTISE</span><span aria-hidden="true" style="color: #0099ff">&gt;</span>
+<span>REPORT</span><span aria-hidden="true" style="color: #0099ff">&gt;</span>
+<span>MAINTAIN</span>
+</div>
+</section>
+
+<!-- Pipeline -->
+<section id="how" style="max-width: 1200px; margin: 0 auto; padding: 56px 24px; display: flex; flex-direction: column; gap: 24px">
+<div style="display: flex; flex-direction: column; gap: 12px">
+<span style="font-family: 'Kode Mono', monospace; color: #0099ff; font-size: 15px">01 / THE PROCESS</span>
+<h2 style="font-size: clamp(30px, 4vw, 52px)">ONE GOAL, CARRIED ALL THE WAY THROUGH</h2>
+<p style="max-width: 820px; line-height: 1.5; color: #cccccc; font-size: 17px">Most businesses hire a developer, an SEO, an ads manager, and someone to explain the reports. I do all of it, so nothing gets lost between them. Pick a stage.</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px">
+<sc-for list="{{ stages }}" as="s" hint-placeholder-count="6">
+<button type="button" onClick="{{ s.pick }}" aria-pressed="{{ s.pressed }}" style="text-align: left; padding: 14px 16px; min-height: 76px; border-radius: 8px; font-family: 'Kode Mono', monospace; display: flex; flex-direction: column; gap: 6px; background: {{ s.bg }}; color: {{ s.fg }}; border: 2px solid {{ s.bd }}; animation: {{ s.anim }}">
+<span style="font-size: 13px">{{ s.num }}</span>
+<span style="font-size: 20px; font-weight: 700">{{ s.label }}</span>
+</button>
+</sc-for>
+</div>
+<div style="border: 1px solid #0099ff; border-radius: 8px; padding: 28px; background: #060606; display: flex; flex-wrap: wrap; gap: 28px">
+<div style="flex: 1 1 380px; min-width: 0; display: flex; flex-direction: column; gap: 14px">
+<h3 style="font-size: 30px">{{ active.title }}</h3>
+<p style="line-height: 1.6; color: #cccccc; font-size: 17px">{{ active.body }}</p>
+<p style="line-height: 1.5; font-size: 15px; color: #e6e6e6"><span style="color: #0099ff; font-family: 'Kode Mono', monospace">WHAT YOU GET: </span>{{ active.outcome }}</p>
+<sc-if value="{{ active.hasStat }}" hint-placeholder-val="{{ true }}">
+<div style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; margin-top: 6px">
+<span style="font-family: 'Kode Mono', monospace; font-style: italic; font-weight: 700; font-size: 44px; color: #0099ff; animation: textPulse 4s ease-in-out infinite">{{ active.statNum }}</span>
+<span style="font-size: 16px; color: #e6e6e6">{{ active.statLabel }}</span>
+</div>
+</sc-if>
+</div>
+<div style="flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 12px">
+<span style="font-family: 'Kode Mono', monospace; font-size: 14px; color: #b3b3b3">TOOLS AND SKILLS</span>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<sc-for list="{{ active.tools }}" as="t" hint-placeholder-count="6">
+<span style="border: 1px solid #4d4d4d; border-radius: 6px; padding: 6px 10px; font-size: 14px; color: #e6e6e6">{{ t }}</span>
+</sc-for>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Platforms -->
+<section style="max-width: 1200px; margin: 0 auto; padding: 40px 24px; display: flex; flex-direction: column; gap: 24px">
+<div style="display: flex; flex-direction: column; gap: 12px">
+<span style="font-family: 'Kode Mono', monospace; color: #0099ff; font-size: 15px">02 / ANY PLATFORM</span>
+<h2 style="font-size: clamp(30px, 4vw, 52px)">WHATEVER YOUR SITE IS BUILT ON</h2>
+<p style="max-width: 820px; line-height: 1.5; color: #cccccc; font-size: 17px">I have managed <strong>50+</strong> client websites, from fully custom code to the most popular website builders.</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px">
+<div class="lift" style="border: 2px solid #0099ff; border-radius: 8px; padding: 20px; background: #060606; animation: glowPulse 5s ease-in-out infinite; display: flex; flex-direction: column; gap: 10px">
+<span style="font-family: 'Kode Mono', monospace; font-size: 13px; color: #0099ff">MY FAVORITE</span>
+<h3 style="font-size: 24px">Custom Code</h3>
+<p style="line-height: 1.5; font-size: 15px; color: #cccccc">Next.js, React, and TypeScript. Built from scratch, fast, accessible, and ready to rank from day one.</p>
+</div>
+<div class="lift" style="border: 1px solid #4d4d4d; border-radius: 8px; padding: 20px; display: flex; flex-direction: column; gap: 10px">
+<span style="font-family: 'Kode Mono', monospace; font-size: 13px; color: #b3b3b3">CMS</span>
+<h3 style="font-size: 24px">WordPress</h3>
+<p style="line-height: 1.5; font-size: 15px; color: #cccccc">Themes, plugins, hosting, SMTP, and custom code when the plugin does not exist.</p>
+</div>
+<div class="lift" style="border: 1px solid #4d4d4d; border-radius: 8px; padding: 20px; display: flex; flex-direction: column; gap: 10px">
+<span style="font-family: 'Kode Mono', monospace; font-size: 13px; color: #b3b3b3">BUILDER</span>
+<h3 style="font-size: 24px">Squarespace</h3>
+<p style="line-height: 1.5; font-size: 15px; color: #cccccc">Audits, SEO settings, code injection, and fixes for crawling and indexing issues.</p>
+</div>
+<div class="lift" style="border: 1px solid #4d4d4d; border-radius: 8px; padding: 20px; display: flex; flex-direction: column; gap: 10px">
+<span style="font-family: 'Kode Mono', monospace; font-size: 13px; color: #b3b3b3">BUILDER</span>
+<h3 style="font-size: 24px">Wix</h3>
+<p style="line-height: 1.5; font-size: 15px; color: #cccccc">Technical SEO, Core Web Vitals work, and tracking set up inside the limits of the platform.</p>
+</div>
+</div>
+</section>
+
+<!-- Search simulator -->
+<section id="search" style="max-width: 1200px; margin: 0 auto; padding: 56px 24px; display: flex; flex-direction: column; gap: 24px">
+<div style="display: flex; flex-direction: column; gap: 12px">
+<span style="font-family: 'Kode Mono', monospace; color: #0099ff; font-size: 15px">03 / SEARCH</span>
+<h2 style="font-size: clamp(30px, 4vw, 52px)">FOUR WAYS A CUSTOMER FINDS YOU</h2>
+<p style="max-width: 820px; line-height: 1.5; color: #cccccc; font-size: 17px">One search, four places your business can show up. I work on all of them. Tap each one to see what it looks like and what it takes.</p>
+</div>
+<div role="group" aria-label="Search result type" style="display: flex; flex-wrap: wrap; gap: 10px">
+<sc-for list="{{ serpTabs }}" as="t" hint-placeholder-count="4">
+<button type="button" onClick="{{ t.pick }}" aria-pressed="{{ t.pressed }}" style="min-height: 44px; padding: 8px 16px; border-radius: 8px; font-family: 'Kode Mono', monospace; font-size: 17px; font-weight: 600; background: {{ t.bg }}; color: {{ t.fg }}; border: 2px solid {{ t.bd }}; animation: {{ t.anim }}">{{ t.label }}</button>
+</sc-for>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start">
+
+<!-- The results page -->
+<div style="flex: 3 1 520px; min-width: 0; background: #ffffff; color: #202124; border-radius: 12px; overflow: hidden; font-family: Arial, Helvetica, sans-serif; box-shadow: 0 0 40px rgba(0,153,255,0.25)">
+<div style="padding: 18px 22px 0; border-bottom: 1px solid #dadce0; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; align-items: center; gap: 16px">
+<span style="font-size: 22px; font-weight: 700; color: #5f6368; letter-spacing: -0.5px">search</span>
+<div style="flex: 1 1 auto; min-width: 0; display: flex; align-items: center; gap: 10px; border: 1px solid #dadce0; border-radius: 999px; padding: 10px 16px; box-shadow: 0 1px 6px rgba(32,33,36,0.18)">
+<span style="flex: 1 1 auto; min-width: 0; font-size: 15px; color: #202124; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">[your service] near me</span>
+<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5f6368" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg>
+<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1a73e8" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><path d="M16.5 16.5L21 21"></path></svg>
+</div>
+</div>
+<div style="display: flex; gap: 22px; font-size: 13px; color: #5f6368; overflow-x: auto">
+<span style="padding: 0 2px 10px; color: #1a73e8; border-bottom: 3px solid #1a73e8; font-weight: 700">All</span>
+<span style="padding: 0 2px 10px">Maps</span>
+<span style="padding: 0 2px 10px">Images</span>
+<span style="padding: 0 2px 10px">Videos</span>
+<span style="padding: 0 2px 10px">News</span>
+<span style="padding: 0 2px 10px">More</span>
+</div>
+</div>
+<div style="padding: 20px 22px 26px; display: flex; flex-direction: column; gap: 24px; min-height: 420px">
+
+<sc-if value="{{ isOrganic }}" hint-placeholder-val="{{ true }}">
+<div style="display: flex; flex-direction: column; gap: 6px; padding: 12px; border-radius: 10px; outline: 2px solid #0099ff; box-shadow: 0 0 26px rgba(0,153,255,0.55)">
+<div style="display: flex; align-items: center; gap: 10px">
+<span style="width: 28px; height: 28px; border-radius: 50%; background: #e8f0fe; color: #1a73e8; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700">Y</span>
+<span style="display: flex; flex-direction: column"><span style="font-size: 14px; color: #202124">Your Business</span><span style="font-size: 12px; color: #4d5156">https://yourbusiness.com › services</span></span>
+</div>
+<span style="font-size: 20px; color: #1a0dab; line-height: 1.3">Your Business | [Service] in [Your City]</span>
+<span style="font-size: 13px; color: #4d5156"><span style="color: #b06000; letter-spacing: 1px">★★★★★</span> [your rating] · [your reviews] · [price range]</span>
+<span style="font-size: 14px; line-height: 1.55; color: #4d5156">A clear description written for people, with the service and the city in it. Ratings, hours, and prices show up right here when the page has schema markup.</span>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 24px; margin-top: 8px">
+<span style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 16px; color: #1a0dab">Services</span><span style="font-size: 13px; color: #4d5156">Everything you offer, on one page.</span></span>
+<span style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 16px; color: #1a0dab">Pricing</span><span style="font-size: 13px; color: #4d5156">Clear prices and packages.</span></span>
+<span style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 16px; color: #1a0dab">Reviews</span><span style="font-size: 13px; color: #4d5156">What your customers say.</span></span>
+<span style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 16px; color: #1a0dab">Contact</span><span style="font-size: 13px; color: #4d5156">Call, email, or book online.</span></span>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; opacity: 0.55">
+<span style="font-size: 18px; color: #202124; padding-bottom: 8px">People also ask</span>
+<span style="font-size: 15px; padding: 12px 0; border-top: 1px solid #dadce0; display: flex; justify-content: space-between"><span>How much does [your service] cost?</span><span aria-hidden="true">⌄</span></span>
+<span style="font-size: 15px; padding: 12px 0; border-top: 1px solid #dadce0; border-bottom: 1px solid #dadce0; display: flex; justify-content: space-between"><span>Who is the best [your service] in [your city]?</span><span aria-hidden="true">⌄</span></span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 4px; opacity: 0.45">
+<span style="font-size: 12px; color: #4d5156">https://competitor.com</span>
+<span style="font-size: 20px; color: #1a0dab">A competitor, below you</span>
+<span style="font-size: 14px; color: #4d5156">Their description goes here.</span>
+</div>
+</sc-if>
+
+<sc-if value="{{ isMap }}" hint-placeholder-val="{{ false }}">
+<span style="font-size: 20px; color: #202124">Places</span>
+<svg aria-hidden="true" viewBox="0 0 640 190" preserveAspectRatio="xMidYMid slice" style="width: 100%; height: 190px; border-radius: 12px; display: block; background: #e8eaed">
+<rect x="0" y="0" width="640" height="190" fill="#eef1f4"></rect>
+<path d="M0 150 C120 120 200 175 330 140 S560 110 640 135 L640 190 L0 190 Z" fill="#c6e2f7"></path>
+<rect x="60" y="20" width="110" height="64" rx="8" fill="#cfe8d0"></rect>
+<rect x="430" y="28" width="150" height="50" rx="8" fill="#cfe8d0"></rect>
+<path d="M0 100 L640 62" stroke="#ffffff" stroke-width="12"></path>
+<path d="M210 0 L250 190" stroke="#ffffff" stroke-width="10"></path>
+<path d="M400 0 L372 190" stroke="#ffffff" stroke-width="10"></path>
+<path d="M0 40 L640 118" stroke="#ffffff" stroke-width="6"></path>
+<path d="M0 100 L640 62" stroke="#fde293" stroke-width="4"></path>
+<circle cx="318" cy="80" r="26" fill="#0099ff" opacity="0.28"></circle>
+<path d="M318 44 C303 44 293 55 293 68 C293 86 318 106 318 106 C318 106 343 86 343 68 C343 55 333 44 318 44 Z" fill="#0b57d0"></path>
+<circle cx="318" cy="68" r="8" fill="#ffffff"></circle>
+<path d="M150 108 C142 108 136 114 136 122 C136 132 150 144 150 144 C150 144 164 132 164 122 C164 114 158 108 150 108 Z" fill="#9aa0a6"></path>
+<path d="M505 92 C497 92 491 98 491 106 C491 116 505 128 505 128 C505 128 519 116 519 106 C519 98 513 92 505 92 Z" fill="#9aa0a6"></path>
+</svg>
+<div style="display: flex; flex-direction: column">
+<div style="display: flex; gap: 14px; justify-content: space-between; align-items: center; padding: 12px; border-radius: 10px; outline: 2px solid #0099ff; box-shadow: 0 0 26px rgba(0,153,255,0.55)">
+<span style="display: flex; flex-direction: column; gap: 3px; min-width: 0">
+<span style="font-size: 16px; font-weight: 700; color: #202124">Your Business</span>
+<span style="font-size: 13px; color: #4d5156"><span style="color: #b06000; letter-spacing: 1px">★★★★★</span> [your rating] ([your reviews]) · [Service]</span>
+<span style="font-size: 13px; color: #4d5156">[Your address] · <span style="color: #137333">Open</span> · [your hours]</span>
+</span>
+<span style="display: flex; gap: 12px; font-size: 12px; color: #1a73e8; text-align: center">
+<span style="display: flex; flex-direction: column; align-items: center; gap: 4px"><span style="width: 36px; height: 36px; border-radius: 50%; border: 1px solid #dadce0; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1a73e8" stroke-width="2"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"></path></svg></span>Website</span>
+<span style="display: flex; flex-direction: column; align-items: center; gap: 4px"><span style="width: 36px; height: 36px; border-radius: 50%; border: 1px solid #dadce0; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1a73e8" stroke-width="2" stroke-linejoin="round"><path d="M12 3l9 9-9 9-9-9z"></path><path d="M9 14v-3h5M12 9l2 2-2 2"></path></svg></span>Directions</span>
+</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 3px; padding: 14px 12px; border-bottom: 1px solid #dadce0; opacity: 0.5">
+<span style="font-size: 16px; font-weight: 700">Competitor</span>
+<span style="font-size: 13px; color: #4d5156">★★★★ · [Service] · 2.1 mi</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 3px; padding: 14px 12px; opacity: 0.5">
+<span style="font-size: 16px; font-weight: 700">Competitor</span>
+<span style="font-size: 13px; color: #4d5156">★★★★ · [Service] · 3.4 mi</span>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{ isAi }}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; flex-direction: column; gap: 14px; padding: 18px; border-radius: 16px; background: #f0f4ff">
+<span style="display: flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 700; color: #202124">
+<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="#1a73e8"><path d="M12 2l2.2 6.8L21 11l-6.8 2.2L12 20l-2.2-6.8L3 11l6.8-2.2z"></path></svg>
+AI Answer</span>
+<span style="font-size: 16px; line-height: 1.65; color: #202124">For [service] in [your city], <span style="padding: 1px 6px; border-radius: 6px; outline: 2px solid #0099ff; box-shadow: 0 0 18px rgba(0,153,255,0.6); font-weight: 700">Your Business</span> is a frequently recommended option. Here is why it stands out:</span>
+<span style="display: flex; flex-direction: column; gap: 8px; font-size: 15px; line-height: 1.5; color: #202124; padding-left: 4px">
+<span>• Offers [what you offer], with pricing listed up front.</span>
+<span>• Serves [your area] and is open [your hours].</span>
+<span>• Customers mention [what people like about you].</span>
+</span>
+<span style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 2px">
+<span style="display: flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: 999px; background: #ffffff; font-size: 13px; color: #202124; outline: 2px solid #0099ff"><span style="width: 16px; height: 16px; border-radius: 50%; background: #e8f0fe; color: #1a73e8; font-size: 10px; font-weight: 700; display: flex; align-items: center; justify-content: center">Y</span>yourbusiness.com</span>
+<span style="padding: 6px 12px; border-radius: 999px; background: #ffffff; font-size: 13px; color: #5f6368">directory-site.com</span>
+<span style="padding: 6px 12px; border-radius: 999px; background: #ffffff; font-size: 13px; color: #5f6368">review-site.com</span>
+</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 4px; opacity: 0.45">
+<span style="font-size: 12px; color: #4d5156">https://competitor.com</span>
+<span style="font-size: 20px; color: #1a0dab">The regular results start down here</span>
+<span style="font-size: 14px; color: #4d5156">Most people have their answer before they scroll this far.</span>
+</div>
+</sc-if>
+
+<sc-if value="{{ isAd }}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; flex-direction: column; gap: 6px; padding: 12px; border-radius: 10px; outline: 2px solid #0099ff; box-shadow: 0 0 26px rgba(0,153,255,0.55)">
+<span style="font-size: 14px; font-weight: 700; color: #202124">Sponsored</span>
+<div style="display: flex; align-items: center; gap: 10px">
+<span style="width: 28px; height: 28px; border-radius: 50%; background: #e8f0fe; color: #1a73e8; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700">Y</span>
+<span style="display: flex; flex-direction: column"><span style="font-size: 14px; color: #202124">Your Business</span><span style="font-size: 12px; color: #4d5156">https://yourbusiness.com › book</span></span>
+</div>
+<span style="font-size: 20px; color: #1a0dab; line-height: 1.3">[Service] in [Your City] | Book Today</span>
+<span style="font-size: 14px; line-height: 1.55; color: #4d5156">Ad copy written around what the customer just searched, pointing to a landing page built to turn the click into a call.</span>
+<span style="display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 14px; color: #1a0dab; margin-top: 4px"><span>Get a Quote</span><span>Call Now</span><span>Service Areas</span><span>Reviews</span></span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 4px; opacity: 0.5">
+<span style="font-size: 14px; font-weight: 700; color: #202124">Sponsored</span>
+<span style="font-size: 12px; color: #4d5156">https://competitor.com</span>
+<span style="font-size: 20px; color: #1a0dab">A competitor paying to be here too</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 4px; opacity: 0.4">
+<span style="font-size: 12px; color: #4d5156">https://another-site.com</span>
+<span style="font-size: 20px; color: #1a0dab">The free results start down here</span>
+</div>
+</sc-if>
+
+</div>
+</div>
+
+<!-- What it takes -->
+<div style="flex: 2 1 320px; min-width: 0; border: 1px solid #0099ff; border-radius: 8px; padding: 24px; background: #060606; display: flex; flex-direction: column; gap: 14px">
+<span style="font-family: 'Kode Mono', monospace; font-size: 14px; color: #b3b3b3">WHAT IT TAKES</span>
+<h3 style="font-size: 26px">{{ serp.title }}</h3>
+<p style="line-height: 1.6; color: #cccccc; font-size: 16px">{{ serp.body }}</p>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<sc-for list="{{ serp.tools }}" as="t" hint-placeholder-count="4">
+<span style="border: 1px solid #4d4d4d; border-radius: 6px; padding: 6px 10px; font-size: 14px">{{ t }}</span>
+</sc-for>
+</div>
+<sc-if value="{{ serp.hasStat }}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; flex-direction: column; gap: 4px; margin-top: 8px">
+<span style="font-family: 'Kode Mono', monospace; font-style: italic; font-weight: 700; font-size: 40px; color: #0099ff; animation: textPulse 4s ease-in-out infinite">$500,000</span>
+<span style="font-size: 15px; color: #e6e6e6">in ad spend managed for clients</span>
+</div>
+</sc-if>
+</div>
+</div>
+</section>
+
+<!-- Report translator -->
+<section id="reporting" style="max-width: 1200px; margin: 0 auto; padding: 56px 24px; display: flex; flex-direction: column; gap: 24px">
+<div style="display: flex; flex-direction: column; gap: 12px">
+<span style="font-family: 'Kode Mono', monospace; color: #0099ff; font-size: 15px">04 / REPORTING</span>
+<h2 style="font-size: clamp(30px, 4vw, 52px)">SAME DATA, TWO LANGUAGES</h2>
+<p style="max-width: 820px; line-height: 1.5; color: #cccccc; font-size: 17px">I read the first one so you only ever have to read the second. Flip the switch.</p>
+</div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px; font-family: 'Kode Mono', monospace; font-size: 17px; font-weight: 600">
+<span style="color: {{ lblAnalyst }}">WHAT I SEE</span>
+<button type="button" role="switch" aria-checked="{{ ownerChecked }}" aria-label="Show the plain English version of the report" onClick="{{ toggleView }}" style="position: relative; width: 80px; height: 44px; border-radius: 999px; background: #060606; border: 2px solid #0099ff; animation: glowPulse 4s ease-in-out infinite">
+<span style="position: absolute; top: 5px; left: {{ knobLeft }}; width: 30px; height: 30px; border-radius: 50%; background: #0099ff; box-shadow: 0 0 14px #0099ff, 0 0 30px rgba(0,153,255,0.7); transition: left 0.3s ease"></span>
+</button>
+<span style="color: {{ lblOwner }}">WHAT YOU GET</span>
+</div>
+<div style="position: relative; border: 1px solid #0099ff; border-radius: 8px; padding: 28px; background: #060606; display: flex; flex-direction: column; gap: 22px; min-height: 340px; overflow: hidden">
+<div aria-hidden="true" style="position: absolute; left: 50%; bottom: -120px; transform: translateX(-50%); width: 80%; height: 240px; background: radial-gradient(ellipse at center, rgba(0,153,255,0.32), rgba(0,153,255,0) 70%); filter: blur(30px); animation: hazePulse 6s ease-in-out infinite; pointer-events: none"></div>
+<span style="position: relative; font-size: 13px; color: #b3b3b3">SAMPLE MONTHLY REPORT. ILLUSTRATIVE NUMBERS, NOT A REAL CLIENT.</span>
+
+<sc-if value="{{ isAnalyst }}" hint-placeholder-val="{{ true }}">
+<div style="position: relative; display: flex; flex-wrap: wrap; gap: 28px">
+<div style="flex: 3 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 13px; color: #b3b3b3">GA4 SESSIONS, LAST 6 MONTHS</span>
+<div style="display: flex; align-items: flex-end; gap: 12px; height: 180px; border-bottom: 1px solid #333333">
+<sc-for list="{{ bars }}" as="b" hint-placeholder-count="6">
+<div style="flex: 1 1 0; height: {{ b.h }}; background: #0099ff; opacity: {{ b.o }}; border-radius: 4px 4px 0 0; box-shadow: {{ b.glow }}"></div>
+</sc-for>
+</div>
+<div style="display: flex; gap: 12px; font-size: 12px; color: #b3b3b3; text-align: center">
+<sc-for list="{{ bars }}" as="b" hint-placeholder-count="6">
+<span style="flex: 1 1 0">{{ b.m }}</span>
+</sc-for>
+</div>
+</div>
+<div style="flex: 2 1 280px; min-width: 0; display: flex; flex-direction: column; font-size: 14px">
+<sc-for list="{{ metrics }}" as="r" hint-placeholder-count="8">
+<div style="display: flex; justify-content: space-between; gap: 16px; padding: 9px 0; border-bottom: 1px solid #262626"><span style="color: #b3b3b3">{{ r.k }}</span><span style="color: #e6e6e6">{{ r.v }}</span></div>
+</sc-for>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{ isOwner }}" hint-placeholder-val="{{ false }}">
+<div style="position: relative; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px">
+<div style="border: 1px solid #0099ff; border-radius: 8px; padding: 22px; background: rgba(0,153,255,0.06); box-shadow: 0 0 24px rgba(0,153,255,0.35); display: flex; flex-direction: column; gap: 8px">
+<span style="font-family: 'Kode Mono', monospace; font-style: italic; font-weight: 700; font-size: 64px; line-height: 1; color: #0099ff; animation: textPulse 4s ease-in-out infinite">63</span>
+<span style="font-size: 17px; line-height: 1.45; color: #e6e6e6">people called you or filled out your form.</span>
+</div>
+<div style="border: 1px solid #0099ff; border-radius: 8px; padding: 22px; background: rgba(0,153,255,0.06); box-shadow: 0 0 24px rgba(0,153,255,0.35); display: flex; flex-direction: column; gap: 8px">
+<span style="font-family: 'Kode Mono', monospace; font-style: italic; font-weight: 700; font-size: 64px; line-height: 1; color: #0099ff; animation: textPulse 4s ease-in-out infinite">$24</span>
+<span style="font-size: 17px; line-height: 1.45; color: #e6e6e6">is what each of those leads cost in ads.</span>
+</div>
+<div style="border: 1px solid #0099ff; border-radius: 8px; padding: 22px; background: rgba(0,153,255,0.06); box-shadow: 0 0 24px rgba(0,153,255,0.35); display: flex; flex-direction: column; gap: 8px">
+<span style="font-family: 'Kode Mono', monospace; font-style: italic; font-weight: 700; font-size: 64px; line-height: 1; color: #0099ff; animation: textPulse 4s ease-in-out infinite">+18%</span>
+<span style="font-size: 17px; line-height: 1.45; color: #e6e6e6">more visits to your website than last month.</span>
+</div>
+</div>
+<div style="position: relative; display: flex; align-items: flex-start; gap: 12px; font-size: 16px; line-height: 1.5; color: #cccccc">
+<span aria-hidden="true" style="flex: 0 0 auto; width: 10px; height: 10px; margin-top: 7px; border-radius: 50%; background: #0099ff; animation: glowPulse 3s ease-in-out infinite"></span>
+<span>Next month I am moving budget out of the keyword that is not bringing in leads and into the two that are.</span>
+</div>
+</sc-if>
+</div>
+</section>
+
+<!-- Experience -->
+<section id="experience" style="max-width: 1200px; margin: 0 auto; padding: 56px 24px; display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; flex-direction: column; gap: 12px">
+<span style="font-family: 'Kode Mono', monospace; color: #0099ff; font-size: 15px">05 / EXPERIENCE</span>
+<h2 style="font-size: clamp(30px, 4vw, 52px)">PROFESSIONAL EXPERIENCE</h2>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 36px 48px; align-items: flex-start">
+<div style="flex: 3 1 480px; min-width: 0; display: flex; flex-direction: column; border-left: 2px solid #0099ff; margin-left: 6px">
+<div style="position: relative; padding: 0 0 36px 28px; display: flex; flex-direction: column; gap: 8px">
+<span aria-hidden="true" style="position: absolute; left: -7px; top: 2px; width: 12px; height: 12px; border-radius: 50%; background: #0099ff; animation: glowPulse 3s ease-in-out infinite"></span>
+<span style="font-family: 'Kode Mono', monospace; font-size: 14px; color: #0099ff">NOV 2026 TO PRESENT</span>
+<h3 style="font-size: 26px">Digital Marketing Specialist</h3>
+<p style="line-height: 1.65; color: #cccccc; font-size: 16px; max-width: 880px">Responsible for the organization's digital marketing program. Manages paid media across Search, Display, YouTube, and Meta, directs search engine optimization and editorial content, reports performance against defined KPIs using GA4 and Google Search Console, and oversees the website in coordination with outside agencies.</p>
+</div>
+<div style="position: relative; padding: 0 0 36px 28px; display: flex; flex-direction: column; gap: 8px">
+<span aria-hidden="true" style="position: absolute; left: -7px; top: 2px; width: 12px; height: 12px; border-radius: 50%; background: #0099ff; box-shadow: 0 0 10px #0099ff"></span>
+<span style="font-family: 'Kode Mono', monospace; font-size: 14px; color: #0099ff">FEB 2026 TO OCT 2026</span>
+<h3 style="font-size: 26px">Assistant Team Leader, SEO &amp; PPC</h3>
+<p style="line-height: 1.65; color: #cccccc; font-size: 16px; max-width: 880px">Directed organic growth and paid acquisition for a diverse portfolio of client websites at a digital marketing agency. Audited and resolved technical SEO issues across WordPress, Squarespace, and Wix, planned and optimized campaigns on Google Ads, Meta Ads, Walmart Ads, and Spotify Ads, and led client communication. Promoted to Assistant Team Leader, with responsibility for mentoring specialists and serving as a point of escalation.</p>
+</div>
+<div style="position: relative; padding: 0 0 36px 28px; display: flex; flex-direction: column; gap: 8px">
+<span aria-hidden="true" style="position: absolute; left: -7px; top: 2px; width: 12px; height: 12px; border-radius: 50%; background: #0099ff; box-shadow: 0 0 10px #0099ff"></span>
+<span style="font-family: 'Kode Mono', monospace; font-size: 14px; color: #0099ff">JUN 2023 TO PRESENT</span>
+<h3 style="font-size: 26px">Web Developer &amp; Digital Strategist</h3>
+<p style="line-height: 1.65; color: #cccccc; font-size: 16px; max-width: 880px">Founded an independent consultancy providing small businesses with a single partner for website development, search visibility, analytics, and technical infrastructure. Designs, builds, and deploys custom websites using Next.js, React, and TypeScript, and manages domains, hosting, and ongoing maintenance.</p>
+</div>
+<div style="position: relative; padding: 0 0 0 28px; display: flex; flex-direction: column; gap: 8px">
+<span aria-hidden="true" style="position: absolute; left: -7px; top: 2px; width: 12px; height: 12px; border-radius: 50%; background: #0099ff; box-shadow: 0 0 10px #0099ff"></span>
+<span style="font-family: 'Kode Mono', monospace; font-size: 14px; color: #0099ff">EDUCATION</span>
+<h3 style="font-size: 26px">Full-Stack Web Development Certificate</h3>
+<p style="line-height: 1.65; color: #cccccc; font-size: 16px; max-width: 880px">University of Central Florida. Project-based curriculum covering front-end and back-end development, version control, and deployment.</p>
+</div>
+</div>
+<div style="flex: 2 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+<button type="button" onClick="{{ togglePhoto }}" aria-label="Switch to the other photo of Gilmer" style="position: relative; width: 100%; aspect-ratio: 3 / 2; padding: 0; border: 1px solid #0099ff; border-radius: 8px; overflow: hidden; background: #060606; animation: glowPulse 6s ease-in-out infinite">
+<img src="/images/gilmer-perez-1.jpg" alt="Gilmer Perez standing at an overlook with the Hollywood Hills behind him" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: {{ photoA }}; transition: opacity 0.6s ease">
+<img src="/images/gilmer-perez-2.jpg" alt="Gilmer Perez on a trail below the Hollywood sign" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: {{ photoB }}; transition: opacity 0.6s ease">
+<span style="position: absolute; right: 10px; bottom: 10px; padding: 6px 10px; border-radius: 6px; background: rgba(6,6,6,0.82); color: #e6e6e6; font-family: 'Kode Mono', monospace; font-size: 13px">{{ photoCount }} / CLICK TO SWITCH</span>
+</button>
+</div>
+</div>
+</section>
+
+<!-- Projects -->
+<section id="projects" style="max-width: 1200px; margin: 0 auto; padding: 56px 24px; display: flex; flex-direction: column; gap: 24px">
+<div style="display: flex; flex-direction: column; gap: 12px">
+<span style="font-family: 'Kode Mono', monospace; color: #0099ff; font-size: 15px">06 / PROJECTS</span>
+<h2 style="font-size: clamp(30px, 4vw, 52px)">CUSTOM CODE IS STILL MY FAVORITE PART</h2>
+<p style="max-width: 820px; line-height: 1.5; color: #cccccc; font-size: 17px">Front-end development and UI/UX design is where I started and what I enjoy most. Every site below is custom built, responsive, and structured for search. Click one to look inside.</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px">
+<button class="lift" type="button" onClick="{{ open0 }}" aria-label="Open project details for Bubbalous Bodacious BBQ" style="text-align: left; padding: 0; border: 1px solid #0099ff; border-radius: 8px; background: #060606; color: #e6e6e6; display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 0 14px rgba(0,153,255,0.45)">
+<img src="/projects/bubbalous-bodacious-bbq/logo.jpg" alt="Bubbalous Bodacious BBQ logo" style="width: 100%; height: 170px; object-fit: contain; display: block">
+<span style="display: flex; flex-direction: column; gap: 10px; padding: 18px; flex-grow: 1">
+<span style="font-family: 'Kode Mono', monospace; font-size: 13px; color: #0099ff">RESTAURANT</span>
+<span style="font-family: 'Kode Mono', monospace; font-style: italic; font-weight: 700; font-size: 22px; line-height: 1.1">Bubbalous Bodacious BBQ</span>
+<span style="line-height: 1.5; font-size: 14px; color: #cccccc; flex-grow: 1">Menu, party packs, and a full online ordering flow with cart and checkout.</span>
+<span style="font-family: 'Kode Mono', monospace; font-size: 15px; color: #0099ff">LOOK INSIDE +</span>
+</span>
+</button>
+<button class="lift" type="button" onClick="{{ open1 }}" aria-label="Open project details for Kingdom Movement" style="text-align: left; padding: 0; border: 1px solid #0099ff; border-radius: 8px; background: #060606; color: #e6e6e6; display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 0 14px rgba(0,153,255,0.45)">
+<img src="/projects/kingdom-movement/logo.jpg" alt="Kingdom Movement logo" style="width: 100%; height: 170px; object-fit: contain; display: block">
+<span style="display: flex; flex-direction: column; gap: 10px; padding: 18px; flex-grow: 1">
+<span style="font-family: 'Kode Mono', monospace; font-size: 13px; color: #0099ff">FITNESS</span>
+<span style="font-family: 'Kode Mono', monospace; font-style: italic; font-weight: 700; font-size: 22px; line-height: 1.1">Kingdom Movement</span>
+<span style="line-height: 1.5; font-size: 14px; color: #cccccc; flex-grow: 1">Class schedules, nutrition menu, coach profiles, and membership tiers for a CrossFit gym.</span>
+<span style="font-family: 'Kode Mono', monospace; font-size: 15px; color: #0099ff">LOOK INSIDE +</span>
+</span>
+</button>
+<button class="lift" type="button" onClick="{{ open2 }}" aria-label="Open project details for Moonstar Esthetics" style="text-align: left; padding: 0; border: 1px solid #0099ff; border-radius: 8px; background: #060606; color: #e6e6e6; display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 0 14px rgba(0,153,255,0.45)">
+<img src="/projects/moonstar-esthetics/logo.jpg" alt="Moonstar Esthetics logo" style="width: 100%; height: 170px; object-fit: contain; display: block">
+<span style="display: flex; flex-direction: column; gap: 10px; padding: 18px; flex-grow: 1">
+<span style="font-family: 'Kode Mono', monospace; font-size: 13px; color: #0099ff">SKINCARE</span>
+<span style="font-family: 'Kode Mono', monospace; font-style: italic; font-weight: 700; font-size: 22px; line-height: 1.1">Moonstar Esthetics</span>
+<span style="line-height: 1.5; font-size: 14px; color: #cccccc; flex-grow: 1">Service catalog, client reviews, and appointment requests for a skincare clinic.</span>
+<span style="font-family: 'Kode Mono', monospace; font-size: 15px; color: #0099ff">LOOK INSIDE +</span>
+</span>
+</button>
+<button class="lift" type="button" onClick="{{ open3 }}" aria-label="Open project details for Reelix" style="text-align: left; padding: 0; border: 1px solid #0099ff; border-radius: 8px; background: #060606; color: #e6e6e6; display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 0 14px rgba(0,153,255,0.45)">
+<img src="/projects/reelix/logo.png" alt="Reelix logo" style="width: 100%; height: 170px; object-fit: contain; display: block">
+<span style="display: flex; flex-direction: column; gap: 10px; padding: 18px; flex-grow: 1">
+<span style="font-family: 'Kode Mono', monospace; font-size: 13px; color: #0099ff">WEB APP</span>
+<span style="font-family: 'Kode Mono', monospace; font-style: italic; font-weight: 700; font-size: 22px; line-height: 1.1">Reelix</span>
+<span style="line-height: 1.5; font-size: 14px; color: #cccccc; flex-grow: 1">Movie and TV discovery app on live TMDB data, with search and filtering.</span>
+<span style="font-family: 'Kode Mono', monospace; font-size: 15px; color: #0099ff">LOOK INSIDE +</span>
+</span>
+</button>
+</div>
+</section>
+
+<!-- Proof -->
+<section id="proof" style="max-width: 1200px; margin: 0 auto; padding: 56px 24px; display: flex; flex-direction: column; gap: 24px">
+<div style="display: flex; flex-direction: column; gap: 12px">
+<span style="font-family: 'Kode Mono', monospace; color: #0099ff; font-size: 15px">07 / PROOF</span>
+<h2 style="font-size: clamp(30px, 4vw, 52px)">THIS SITE DOES WHAT I SELL</h2>
+<p style="max-width: 820px; line-height: 1.5; color: #cccccc; font-size: 17px">The page you are reading is built the way I build for clients. These are its real Lighthouse scores and the structured data it sends to search engines.</p>
+</div>
+<div style="border: 1px solid #333333; border-radius: 8px; background: #060606; padding: 36px 20px 30px; display: flex; flex-direction: column; align-items: center; gap: 30px; font-family: Arial, Helvetica, sans-serif">
+<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 28px 56px">
+<sc-for list="{{ gauges }}" as="g" hint-placeholder-count="4">
+<div style="display: flex; flex-direction: column; align-items: center; gap: 14px; width: 130px; text-align: center">
+<div role="img" aria-label="{{ g.aria }}" style="width: 112px; height: 112px; box-sizing: border-box; border-radius: 50%; border: 8px solid #0cce6b; background: rgba(12,206,107,0.12); display: flex; align-items: center; justify-content: center; font-family: 'Source Code Pro', monospace; font-size: 36px; color: #0cce6b">{{ g.score }}</div>
+<span style="font-size: 18px; line-height: 1.3; color: #e6e6e6">{{ g.label }}</span>
+</div>
+</sc-for>
+</div>
+<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 28px; padding: 12px 26px; border: 1px solid #4d4d4d; border-radius: 999px; font-family: 'Source Code Pro', monospace; font-size: 14px; color: #e6e6e6">
+<span style="display: flex; align-items: center; gap: 10px"><span aria-hidden="true" style="width: 22px; height: 7px; border-radius: 999px; background: #ff4e42"></span>0–49</span>
+<span style="display: flex; align-items: center; gap: 10px"><span aria-hidden="true" style="width: 22px; height: 7px; border-radius: 999px; background: #ffa400"></span>50–89</span>
+<span style="display: flex; align-items: center; gap: 10px"><span aria-hidden="true" style="width: 22px; height: 7px; border-radius: 999px; background: #0cce6b"></span>90–100</span>
+</div>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start">
+<div style="flex: 2 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 14px">
+<h3 style="font-size: 26px">WHAT SEARCH ENGINES READ</h3>
+<p style="line-height: 1.6; font-size: 16px; color: #cccccc">This is <strong>STRUCTURED DATA</strong>, also called schema markup. Visitors never see it. Search engines and AI assistants read it to understand who a page is about and what they do. It is how a business gets its star ratings, hours, and prices to show up right in the search results.</p>
+<div style="display: flex; flex-direction: column; gap: 10px; font-size: 15px; line-height: 1.5; color: #cccccc">
+<span><span style="color: #0099ff">"@type": "Person"</span> tells them this page is about a person.</span>
+<span><span style="color: #0099ff">"jobTitle"</span> tells them what I do.</span>
+<span><span style="color: #0099ff">"knowsAbout"</span> tells them which topics to connect me with.</span>
+</div>
+<p style="font-size: 14px; line-height: 1.5; color: #b3b3b3">The code shown here is the actual schema running on this page. I set this up for every site I work on.</p>
+</div>
+<div style="flex: 3 1 420px; min-width: 0; border: 1px solid #333333; border-radius: 8px; background: #060606; overflow: hidden">
+<div style="padding: 10px 16px; border-bottom: 1px solid #333333; font-size: 13px; color: #b3b3b3">application/ld+json</div>
+<pre style="margin: 0; padding: 16px; font-family: 'Source Code Pro', monospace; font-size: 14px; line-height: 1.6; color: #cccccc; overflow-x: auto">{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Gilmer Perez",
+  "jobTitle": "Digital Growth Specialist",
+  "knowsAbout": ["SEO", "Google Ads", "Meta Ads", "GA4",
+                 "Next.js", "Technical SEO", "Web Development"]
+}</pre>
+</div>
+</div>
+</section>
+
+<!-- Contact -->
+<section id="contact" style="position: relative; max-width: 1200px; margin: 0 auto; padding: 72px 24px 96px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 20px">
+<h2 style="display: flex; flex-direction: column; align-items: center; gap: 8px">
+<span style="font-size: clamp(34px, 7vw, 96px); white-space: nowrap">ONE PARTNER</span>
+<span style="font-size: clamp(18px, 3.4vw, 46px); white-space: nowrap; color: rgba(230,230,230,0.6)">FOR THE WHOLE</span>
+<span style="font-size: clamp(34px, 7vw, 96px); white-space: nowrap">DIGITAL SIDE.</span>
+</h2>
+<p style="max-width: 760px; line-height: 1.5; color: #cccccc; font-size: 18px">Whether you need a website, more people finding it, ads that pay for themselves, or just someone to explain what the numbers mean, tell me the goal and I will take it from there.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 8px">
+<a href="mailto:gilmer2002@outlook.com" style="font-family: 'Kode Mono', monospace; font-weight: 500; font-size: 24px; padding: 12px 18px; border-radius: 8px; background: #0099ff; color: #ffffff; animation: glowPulse 4s ease-in-out infinite">EMAIL ME</a>
+<a href="tel:+14073501805" style="font-family: 'Kode Mono', monospace; font-weight: 500; font-size: 24px; padding: 10px 18px; border-radius: 8px; background: #060606; border: 2px solid #0099ff; box-shadow: 0 0 15px #0099ff">CALL ME</a>
+</div>
+</section>
+
+<!-- Footer -->
+<footer style="position: relative; background: #060606; border-top: 1px solid #0099ff; overflow: hidden">
+<div style="max-width: 1200px; margin: 0 auto; padding: 56px 24px 0; display: flex; flex-wrap: wrap; gap: 40px 72px">
+<div style="flex: 2 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+<a href="#top" style="font-family: 'Kode Mono', monospace; font-style: italic; font-weight: 700; font-size: 30px">GILMERPEREZ</a>
+<p style="font-style: italic; line-height: 1.55; font-size: 15px; color: #cccccc; max-width: 340px">Websites, search, ads, and analytics. One partner for the whole digital side of your business.</p>
+<div style="display: flex; flex-direction: column; gap: 4px; font-size: 15px; margin-top: 4px">
+<a href="mailto:gilmer2002@outlook.com" style="display: flex; align-items: center; gap: 12px; min-height: 36px"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0099ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg>gilmer2002@outlook.com</a>
+<a href="tel:+14073501805" style="display: flex; align-items: center; gap: 12px; min-height: 36px"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0099ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"></path></svg>+1 (407) 350-1805</a>
+<span style="display: flex; align-items: center; gap: 12px; min-height: 36px"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0099ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.500C5 14.800 12 21 12 21z"></path><circle cx="12" cy="9.500" r="2.500"></circle></svg>Florida, USA</span>
+</div>
+</div>
+<div style="flex: 1 1 140px; display: flex; flex-direction: column; gap: 10px; font-size: 15px">
+<span style="font-family: 'Kode Mono', monospace; font-size: 14px; letter-spacing: 2px; color: #0099ff; padding-bottom: 8px; border-bottom: 1px solid #333333">SECTIONS</span>
+<a href="#how">Process</a><a href="#search">Search</a><a href="#reporting">Reporting</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#proof">Proof</a>
+</div>
+<div style="flex: 1 1 140px; display: flex; flex-direction: column; gap: 10px; font-size: 15px">
+<span style="font-family: 'Kode Mono', monospace; font-size: 14px; letter-spacing: 2px; color: #0099ff; padding-bottom: 8px; border-bottom: 1px solid #333333">CONNECT</span>
+<a href="https://github.com/gilmerperez">GitHub</a><a href="https://linkedin.com/in/gilmer-perez-a35ba0354">LinkedIn</a>
+</div>
+<div style="flex: 1.400 1 220px; display: flex; flex-direction: column; gap: 12px; font-size: 15px">
+<span style="font-family: 'Kode Mono', monospace; font-size: 14px; letter-spacing: 2px; color: #0099ff; padding-bottom: 8px; border-bottom: 1px solid #333333">START SOMETHING</span>
+<p style="font-style: italic; line-height: 1.55; color: #cccccc">Have a goal for your business? Tell me what it is and I will map out how to get there.</p>
+<a href="#contact" style="align-self: flex-start; margin-top: 14px; font-family: 'Kode Mono', monospace; font-weight: 600; padding: 10px 14px; border-radius: 8px; border: 2px solid #0099ff; box-shadow: 0 0 12px #0099ff">GET IN TOUCH &gt;</a>
+</div>
+</div>
+<div style="max-width: 1200px; margin: 0 auto; padding: 36px 24px 0; display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; font-size: 13px; font-style: italic; color: #b3b3b3">
+<span>© 2026 Gilmer Perez. All rights reserved.</span>
+<span style="display: flex; gap: 14px"><a href="#top" style="color: #b3b3b3">Privacy Policy</a><span aria-hidden="true">|</span><a href="#top" style="color: #b3b3b3">Terms of Service</a></span>
+</div>
+<div style="position: relative; height: clamp(200px, 24vw, 340px); margin-top: 24px">
+<div aria-hidden="true" style="position: absolute; left: 50%; top: 22%; transform: translateX(-50%); width: 90%; height: 60%; background: radial-gradient(ellipse at center, rgba(0,153,255,0.55), rgba(0,153,255,0) 68%); filter: blur(36px); animation: hazePulse 7s ease-in-out infinite"></div>
+<svg aria-hidden="true" viewBox="0 0 1440 340" preserveAspectRatio="xMidYMax slice" style="position: absolute; inset: 0; width: 100%; height: 100%; display: block">
+<defs><filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="7"></feGaussianBlur></filter></defs>
+<g fill="#e6e6e6">
+<circle cx="90" cy="40" r="1.500" opacity="0.7"></circle><circle cx="210" cy="78" r="1" opacity="0.5"></circle><circle cx="340" cy="30" r="1.200" opacity="0.6"></circle><circle cx="470" cy="62" r="1" opacity="0.5"></circle><circle cx="610" cy="24" r="1.500" opacity="0.7"></circle><circle cx="760" cy="52" r="1" opacity="0.5"></circle><circle cx="880" cy="20" r="1.300" opacity="0.6"></circle><circle cx="1010" cy="66" r="1" opacity="0.5"></circle><circle cx="1130" cy="34" r="1.500" opacity="0.7"></circle><circle cx="1260" cy="58" r="1" opacity="0.5"></circle><circle cx="1380" cy="28" r="1.200" opacity="0.6"></circle>
+</g>
+<path d="M0 210 L0 150 L80 122 L150 152 L230 96 L310 142 L400 112 L470 152 L560 82 L650 136 L730 116 L820 152 L900 102 L990 142 L1080 92 L1160 136 L1250 106 L1330 146 L1440 116 L1440 210 Z" fill="#0a3352"></path>
+<path d="M0 210 L0 178 L110 160 L200 184 L300 150 L420 186 L540 164 L640 190 L760 170 L870 192 L980 160 L1100 188 L1210 166 L1320 190 L1440 168 L1440 210 Z" fill="#061c2e"></path>
+<rect x="0" y="210" width="1440" height="130" fill="#040404"></rect>
+<g stroke="#0099ff" stroke-width="1" opacity="0.22">
+<path d="M720 210 L-260 340"></path><path d="M720 210 L60 340"></path><path d="M720 210 L300 340"></path><path d="M720 210 L1140 340"></path><path d="M720 210 L1380 340"></path><path d="M720 210 L1700 340"></path>
+<path d="M0 222 H1440"></path><path d="M0 242 H1440"></path><path d="M0 272 H1440"></path><path d="M0 312 H1440"></path>
+</g>
+<path d="M712 210 L728 210 L980 340 L460 340 Z" fill="#0a0a0a"></path>
+<path d="M712 210 L460 340" stroke="#0099ff" stroke-width="1.500" opacity="0.6"></path>
+<path d="M728 210 L980 340" stroke="#0099ff" stroke-width="1.500" opacity="0.6"></path>
+<g fill="#e6e6e6" opacity="0.75">
+<rect x="719" y="218" width="2" height="4"></rect><rect x="718.500" y="230" width="3" height="7"></rect><rect x="718" y="248" width="4" height="11"></rect><rect x="717" y="274" width="6" height="17"></rect><rect x="716" y="308" width="8" height="26"></rect>
+</g>
+<path d="M0 210 H1440" stroke="#0099ff" stroke-width="6" opacity="0.5" filter="url(#softGlow)"></path>
+<path d="M0 210 H1440" stroke="#0099ff" stroke-width="2"></path>
+<ellipse cx="774" cy="278" rx="38" ry="6" fill="#0099ff" opacity="0.45" filter="url(#softGlow)" style="animation: hazePulse 3.500s ease-in-out infinite"></ellipse>
+<rect x="758" y="238" width="32" height="16" rx="6" fill="#000000" stroke="#1f1f1f"></rect>
+<rect x="752" y="248" width="44" height="22" rx="5" fill="#000000" stroke="#1f1f1f"></rect>
+<g style="animation: hazePulse 3.500s ease-in-out infinite">
+<rect x="750" y="252" width="48" height="10" rx="5" fill="#0099ff" opacity="0.8" filter="url(#softGlow)"></rect>
+</g>
+<rect x="754" y="255" width="11" height="5" rx="2" fill="#4dbbff"></rect>
+<rect x="783" y="255" width="11" height="5" rx="2" fill="#4dbbff"></rect>
+<rect x="765" y="256.500" width="18" height="2" fill="#0099ff"></rect>
+</svg>
+</div>
+</footer>
+
+<!-- Project modal -->
+<sc-if value="{{ modalOpen }}" hint-placeholder-val="{{ false }}">
+<div style="position: fixed; inset: 0; z-index: 100; display: flex; align-items: center; justify-content: center; padding: 16px">
+<button type="button" aria-label="Close project details" onClick="{{ closeModal }}" style="position: absolute; inset: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.84); backdrop-filter: blur(6px); cursor: default"></button>
+<div role="dialog" aria-modal="true" aria-label="{{ m.title }}" style="position: relative; width: 100%; max-width: 1120px; max-height: 92vh; overflow-y: auto; background: #0d0d0d; border: 1px solid #0099ff; border-radius: 10px; animation: glowPulse 5s ease-in-out infinite; display: flex; flex-direction: column">
+<div style="position: sticky; top: 0; z-index: 2; background: #0d0d0d; padding: 16px 22px; border-bottom: 1px solid #262626; display: flex; align-items: center; justify-content: space-between; gap: 16px">
+<div style="display: flex; flex-direction: column; gap: 6px; min-width: 0">
+<span style="font-family: 'Kode Mono', monospace; font-size: 13px; color: #0099ff">{{ m.kind }} / {{ m.count }}</span>
+<h3 style="font-size: clamp(22px, 3vw, 34px)">{{ m.title }}</h3>
+</div>
+<button type="button" onClick="{{ closeModal }}" aria-label="Close project details" style="flex: 0 0 auto; width: 46px; height: 46px; border-radius: 8px; background: #060606; border: 2px solid #0099ff; color: #e6e6e6; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 12px #0099ff">
+<svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.400" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"></path></svg>
+</button>
+</div>
+<div style="padding: 22px; display: flex; flex-wrap: wrap; gap: 26px">
+<div style="flex: 3 1 440px; min-width: 0; display: flex; flex-direction: column; gap: 12px">
+<div style="border: 1px solid #333333; border-radius: 8px; overflow: hidden; background: #1a1a1a; aspect-ratio: 16 / 9">
+<sc-if value="{{ show.p0s0 }}" hint-placeholder-val="{{ false }}"><img src="/projects/bubbalous-bodacious-bbq/screenshots/homePage.png" alt="Bubbalous Bodacious BBQ home page" style="width: 100%; height: 100%; object-fit: cover; object-position: top; display: block"></sc-if>
+<sc-if value="{{ show.p0s1 }}" hint-placeholder-val="{{ false }}"><img src="/projects/bubbalous-bodacious-bbq/screenshots/menuPage.png" alt="Bubbalous Bodacious BBQ menu page" style="width: 100%; height: 100%; object-fit: cover; object-position: top; display: block"></sc-if>
+<sc-if value="{{ show.p0s2 }}" hint-placeholder-val="{{ false }}"><img src="/projects/bubbalous-bodacious-bbq/screenshots/orderOnlinePage.png" alt="Bubbalous Bodacious BBQ online ordering page" style="width: 100%; height: 100%; object-fit: cover; object-position: top; display: block"></sc-if>
+<sc-if value="{{ show.p1s0 }}" hint-placeholder-val="{{ false }}"><img src="/projects/kingdom-movement/screenshots/homePage.png" alt="Kingdom Movement home page" style="width: 100%; height: 100%; object-fit: cover; object-position: top; display: block"></sc-if>
+<sc-if value="{{ show.p1s1 }}" hint-placeholder-val="{{ false }}"><img src="/projects/kingdom-movement/screenshots/nutritionPage.png" alt="Kingdom Movement nutrition page" style="width: 100%; height: 100%; object-fit: cover; object-position: top; display: block"></sc-if>
+<sc-if value="{{ show.p1s2 }}" hint-placeholder-val="{{ false }}"><img src="/projects/kingdom-movement/screenshots/schedulePage.png" alt="Kingdom Movement schedule page" style="width: 100%; height: 100%; object-fit: cover; object-position: top; display: block"></sc-if>
+<sc-if value="{{ show.p2s0 }}" hint-placeholder-val="{{ false }}"><img src="/projects/moonstar-esthetics/screenshots/homePage.png" alt="Moonstar Esthetics home page" style="width: 100%; height: 100%; object-fit: cover; object-position: top; display: block"></sc-if>
+<sc-if value="{{ show.p2s1 }}" hint-placeholder-val="{{ false }}"><img src="/projects/moonstar-esthetics/screenshots/servicesPage.png" alt="Moonstar Esthetics services page" style="width: 100%; height: 100%; object-fit: cover; object-position: top; display: block"></sc-if>
+<sc-if value="{{ show.p2s2 }}" hint-placeholder-val="{{ false }}"><img src="/projects/moonstar-esthetics/screenshots/reviewsPage.png" alt="Moonstar Esthetics reviews page" style="width: 100%; height: 100%; object-fit: cover; object-position: top; display: block"></sc-if>
+<sc-if value="{{ show.p3s0 }}" hint-placeholder-val="{{ false }}"><img src="/projects/reelix/screenshots/homePage.png" alt="Reelix home page" style="width: 100%; height: 100%; object-fit: cover; object-position: top; display: block"></sc-if>
+<sc-if value="{{ show.p3s1 }}" hint-placeholder-val="{{ false }}"><img src="/projects/reelix/screenshots/moviesPage.png" alt="Reelix movies page" style="width: 100%; height: 100%; object-fit: cover; object-position: top; display: block"></sc-if>
+<sc-if value="{{ show.p3s2 }}" hint-placeholder-val="{{ false }}"><img src="/projects/reelix/screenshots/tvShowsPage.png" alt="Reelix TV shows page" style="width: 100%; height: 100%; object-fit: cover; object-position: top; display: block"></sc-if>
+</div>
+<div role="group" aria-label="Screenshots" style="display: flex; flex-wrap: wrap; gap: 8px">
+<sc-for list="{{ m.shots }}" as="s" hint-placeholder-count="3">
+<button type="button" onClick="{{ s.pick }}" aria-pressed="{{ s.pressed }}" style="min-height: 44px; padding: 6px 14px; border-radius: 8px; font-family: 'Kode Mono', monospace; font-size: 14px; font-weight: 600; background: {{ s.bg }}; color: {{ s.fg }}; border: 2px solid {{ s.bd }}">{{ s.label }}</button>
+</sc-for>
+</div>
+<p style="line-height: 1.6; font-size: 15px; color: #cccccc">{{ m.description }}</p>
+</div>
+<div style="flex: 2 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+<div role="group" aria-label="Project details" style="display: flex; gap: 8px">
+<sc-for list="{{ mTabs }}" as="t" hint-placeholder-count="2">
+<button type="button" onClick="{{ t.pick }}" aria-pressed="{{ t.pressed }}" style="flex: 1 1 0; min-height: 44px; padding: 6px 10px; border-radius: 8px; font-family: 'Kode Mono', monospace; font-size: 15px; font-weight: 600; background: {{ t.bg }}; color: {{ t.fg }}; border: 2px solid {{ t.bd }}">{{ t.label }}</button>
+</sc-for>
+</div>
+<sc-if value="{{ isFeat }}" hint-placeholder-val="{{ true }}">
+<div style="display: flex; flex-direction: column; gap: 16px">
+<sc-for list="{{ m.features }}" as="f" hint-placeholder-count="5">
+<div style="display: flex; gap: 14px; align-items: flex-start">
+<span style="flex: 0 0 auto; font-family: 'Kode Mono', monospace; font-style: italic; font-weight: 700; font-size: 24px; line-height: 1; color: #0099ff; text-shadow: 0 0 12px #0099ff">{{ f.num }}</span>
+<span style="display: flex; flex-direction: column; gap: 4px; min-width: 0"><span style="font-size: 15px; font-weight: 700; color: #e6e6e6">{{ f.name }}</span><span style="font-size: 14px; line-height: 1.5; color: #cccccc">{{ f.text }}</span></span>
+</div>
+</sc-for>
+</div>
+</sc-if>
+<sc-if value="{{ isStack }}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; flex-direction: column">
+<sc-for list="{{ m.stack }}" as="k" hint-placeholder-count="6">
+<div style="display: flex; flex-direction: column; gap: 3px; padding: 10px 0; border-bottom: 1px solid #262626"><span style="font-family: 'Kode Mono', monospace; font-size: 13px; color: #0099ff; text-transform: uppercase">{{ k.name }}</span><span style="font-size: 14px; line-height: 1.45; color: #e6e6e6">{{ k.text }}</span></div>
+</sc-for>
+</div>
+</sc-if>
+</div>
+</div>
+<div style="position: sticky; bottom: 0; background: #0d0d0d; padding: 14px 22px; border-top: 1px solid #262626; display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between">
+<button type="button" onClick="{{ prevProject }}" style="min-height: 44px; padding: 8px 14px; border-radius: 8px; background: #060606; border: 2px solid #4d4d4d; color: #e6e6e6; font-family: 'Kode Mono', monospace; font-size: 15px">&lt; PREV</button>
+<a href="{{ m.url }}" style="font-family: 'Kode Mono', monospace; font-weight: 600; font-size: 18px; padding: 10px 18px; border-radius: 8px; background: #0099ff; color: #ffffff; box-shadow: 0 0 15px #0099ff">VISIT WEBSITE</a>
+<button type="button" onClick="{{ nextProject }}" style="min-height: 44px; padding: 8px 14px; border-radius: 8px; background: #060606; border: 2px solid #4d4d4d; color: #e6e6e6; font-family: 'Kode Mono', monospace; font-size: 15px">NEXT &gt;</button>
+</div>
+</div>
+</div>
+</sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":6900}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { stage: 0, serp: 'organic', owner: false, menu: false, open: null, shot: 0, mtab: 'feat', photo: 0 };
+  }
+  tab(on, pulse) {
+    return on
+      ? { bg: '#0099ff', fg: '#000000', bd: '#0099ff', anim: pulse ? 'glowPulse 4s ease-in-out infinite' : 'none', pressed: 'true' }
+      : { bg: '#060606', fg: '#e6e6e6', bd: '#4d4d4d', anim: 'none', pressed: 'false' };
+  }
+  renderVals() {
+    const st = this.state;
+    const stageData = [
+      { num: '01', label: 'BUILD', title: 'The website',
+        body: 'Custom-coded sites in Next.js and React, or builds on WordPress, Squarespace, and Wix. Fast, accessible, mobile-friendly, and structured so search engines can read it from day one.',
+        outcome: 'A site that looks right on every screen and is ready to be found.',
+        hasStat: true, statNum: '50+', statLabel: 'client websites managed',
+        tools: ['Next.js', 'React', 'TypeScript', 'JavaScript', 'HTML5', 'CSS', 'Responsive Design', 'Accessibility (WCAG)', 'UI/UX Design'] },
+      { num: '02', label: 'RANK', title: 'Search visibility',
+        body: 'Technical, on-page, off-page, and local SEO. Schema markup, Google Business Profile, citations, and content built to show up in Google, the Map Pack, and AI answers.',
+        outcome: 'Your business showing up where your customers are already searching.',
+        hasStat: false,
+        tools: ['Technical SEO', 'Schema Markup (JSON-LD)', 'Local SEO', 'Google Business Profile', 'Keyword Research', 'Core Web Vitals', 'AEO & GEO'] },
+      { num: '03', label: 'TRACK', title: 'Analytics',
+        body: 'GA4, Search Console, and Tag Manager set up properly, so every call, form, and sale is counted and tied back to where it came from. Connected to your CRM when you have one.',
+        outcome: 'Knowing what is working instead of guessing.',
+        hasStat: false,
+        tools: ['Google Analytics (GA4)', 'Google Search Console', 'Google Tag Manager', 'CRM Integration', 'Lighthouse'] },
+      { num: '04', label: 'ADVERTISE', title: 'Paid media',
+        body: 'Campaign setup, audience targeting, budget pacing, and ongoing optimization on Google Ads and Meta Ads, plus Walmart Ads, Spotify Ads, and other platforms when the business needs them.',
+        outcome: 'Qualified traffic and a lower cost per click.',
+        hasStat: true, statNum: '$500,000', statLabel: 'in ad spend managed for clients',
+        tools: ['Google Ads', 'Search', 'Display', 'YouTube', 'Meta Ads', 'Walmart Ads', 'Spotify Ads'] },
+      { num: '05', label: 'REPORT', title: 'Reporting',
+        body: 'Monthly reports and regular calls that turn GA4 and Search Console data into plain recommendations a business owner can act on.',
+        outcome: 'You always know what is being done and why.',
+        hasStat: false,
+        tools: ['Monthly Performance Reports', 'KPI Tracking', 'Client Calls', 'Clear Recommendations'] },
+      { num: '06', label: 'MAINTAIN', title: 'Hosting and infrastructure',
+        body: 'Domains, DNS, SSL, hosting, deployments, email delivery, and ongoing maintenance. The technical headache, handled.',
+        outcome: 'A site that stays online, secure, and up to date without you thinking about it.',
+        hasStat: false,
+        tools: ['Domain Registration', 'DNS', 'SSL/TLS', 'Vercel', 'Netlify', 'Render', 'CI/CD', 'Git/GitHub'] }
+    ];
+    const stages = stageData.map((s, i) => ({
+      ...s, ...this.tab(i === st.stage, true), pick: () => this.setState({ stage: i })
+    }));
+
+    const serpData = {
+      organic: { label: 'ORGANIC', title: 'Organic results', hasStat: false,
+        body: 'The free listings. Getting here takes a technically sound site, pages written around what people search for, and schema markup so the result shows more than a blue link.',
+        tools: ['On-Page SEO', 'Technical SEO', 'Meta Tags', 'Schema Markup', 'Core Web Vitals'] },
+      map: { label: 'MAP PACK', title: 'Local Map Pack', hasStat: false,
+        body: 'The three businesses next to the map. For a local business this is often where the calls come from. It runs on your Google Business Profile, citations, and local signals.',
+        tools: ['Google Business Profile', 'Local SEO', 'Citations', 'Local Schema'] },
+      ai: { label: 'AI ANSWER', title: 'AI answers', hasStat: false,
+        body: 'More people now get an answer written by AI before they see a single link. Answer Engine and Generative Engine Optimization is about being the business that answer names.',
+        tools: ['AEO', 'GEO', 'Structured Data', 'Clear, Direct Content'] },
+      ad: { label: 'PAID AD', title: 'Paid ads', hasStat: true,
+        body: 'The fastest way to the top of the page. I build the campaign, pick the keywords, write the ad, and send the click to a page built to turn it into a lead.',
+        tools: ['Google Ads', 'Keyword Targeting', 'Ad Copy', 'Landing Pages', 'Budget Pacing'] }
+    };
+    const serpTabs = Object.keys(serpData).map((k) => ({
+      label: serpData[k].label, ...this.tab(k === st.serp, true), pick: () => this.setState({ serp: k })
+    }));
+
+    const months = ['JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV'];
+    const sessions = [2890, 3120, 3050, 3340, 3570, 4210];
+    const bars = sessions.map((v, i) => {
+      const last = i === sessions.length - 1;
+      return { m: months[i], h: Math.round((v / 4210) * 100) + '%', o: last ? '1' : '0.38',
+        glow: last ? '0 0 14px #0099ff, 0 0 38px rgba(0,153,255,0.7)' : 'none' };
+    });
+    const metrics = [
+      { k: 'Sessions', v: '4,210 (+18% MoM)' }, { k: 'GSC clicks', v: '1,930' },
+      { k: 'Avg CTR', v: '4.6%' }, { k: 'Avg position', v: '8.4' },
+      { k: 'Ad spend', v: '$1,500' }, { k: 'Avg CPC', v: '$1.92' },
+      { k: 'Conversions', v: '63' }, { k: 'Cost / conv.', v: '$23.81' }
+    ];
+
+    const projects = [
+ {
+  "title": "Bubbalous Bodacious BBQ",
+  "kind": "RESTAURANT",
+  "description": "Savor the digital flavor of Orlando's premier BBQ experience! This mouth-watering website brings the smoky goodness of Bubbalous Bodacious BBQ directly to your screen. Customers can browse our signature menu, order party packs for special occasions, and place online orders with just a few clicks. Built with cutting-edge web technology that works seamlessly on phones, tablets, and computers, ensuring every customer gets the full BBQ experience whether they're dining in or ordering from home.",
+  "url": "https://bubbalous-bodacious.vercel.app/",
+  "shotLabels": [
+   "HOME",
+   "MENU",
+   "ORDER ONLINE"
+  ],
+  "features": [
+   {
+    "num": "01",
+    "name": "Theme Toggle System",
+    "text": "Seamless dark/light mode switching with persistent user preferences stored in localStorage and automatic system preference detection."
+   },
+   {
+    "num": "02",
+    "name": "Mobile-First Responsive Design",
+    "text": "Optimized layouts for all screen sizes with a collapsible mobile navigation menu featuring smooth animations and intuitive touch interactions."
+   },
+   {
+    "num": "03",
+    "name": "Online Ordering System",
+    "text": "Complete e-commerce functionality with shopping cart, item customization, checkout process, and localStorage persistence for cart items across sessions."
+   },
+   {
+    "num": "04",
+    "name": "Dynamic Image Carousel",
+    "text": "Auto-rotating banner images showcasing delicious BBQ dishes with manual navigation controls and smooth transitions, optimized using Next.js Image component for performance."
+   },
+   {
+    "num": "05",
+    "name": "SEO-Optimized Pages",
+    "text": "Each page includes comprehensive metadata with titles, descriptions, and keywords optimized for search engines. Next.js server-side rendering ensures content is crawlable and indexable."
+   }
+  ],
+  "stack": [
+   {
+    "name": "Styling",
+    "text": "CSS Modules with CSS Custom Properties for dynamic theming"
+   },
+   {
+    "name": "Frameworks/Libraries",
+    "text": "Next.js 16 (App Router), React 19, Next.js Image optimization"
+   },
+   {
+    "name": "State Management",
+    "text": "React Hooks (useState, useEffect) for component-level state management"
+   },
+   {
+    "name": "Runtime",
+    "text": "Node.js"
+   },
+   {
+    "name": "Framework",
+    "text": "Next.js (full-stack framework with API routes capability)"
+   },
+   {
+    "name": "Icons",
+    "text": "Font Awesome"
+   },
+   {
+    "name": "Data Management",
+    "text": "JSON files for menu and party pack data"
+   },
+   {
+    "name": "Font Loading",
+    "text": "Next.js Google Fonts integration (Oswald, Inter)"
+   },
+   {
+    "name": "SEO",
+    "text": "Next.js Metadata API for comprehensive page metadata and Open Graph tags"
+   },
+   {
+    "name": "Local Storage",
+    "text": "Browser localStorage API for cart persistence and theme preferences"
+   },
+   {
+    "name": "Responsive Design",
+    "text": "Mobile-first approach using CSS Grid, Flexbox, and media queries"
+   }
+  ]
+ },
+ {
+  "title": "Kingdom Movement",
+  "kind": "FITNESS",
+  "description": "Transform your fitness journey with Kingdom Movement's powerful digital platform! This dynamic website empowers fitness enthusiasts to discover their strength through interactive class schedules, personalized nutrition guidance, and flexible membership options. Whether you're a CrossFit beginner or seasoned athlete, the platform adapts to your device and fitness goals. The smart technology behind the scenes ensures smooth navigation and real-time updates, making it easier than ever to join the Kingdom Movement community and achieve your wellness aspirations.",
+  "url": "https://kingdom-movement.vercel.app/",
+  "shotLabels": [
+   "HOME",
+   "NUTRITION",
+   "SCHEDULE"
+  ],
+  "features": [
+   {
+    "num": "01",
+    "name": "Responsive Design",
+    "text": "Fully responsive layout optimized for desktop, tablet, and mobile devices. Adaptive navigation with mobile sidebar menu and sticky header functionality."
+   },
+   {
+    "num": "02",
+    "name": "Expert Coach Profiles",
+    "text": "Interactive carousel showcasing expert trainers with detailed profiles, images, and descriptions. Auto-rotating carousel with manual navigation controls."
+   },
+   {
+    "num": "03",
+    "name": "Dark/Light Theme Toggle",
+    "text": "Persistent theme switching with system preference detection. Theme preferences are saved to localStorage for consistent user experience across sessions."
+   },
+   {
+    "num": "04",
+    "name": "Interactive Class Schedule",
+    "text": "View weekly class schedules with day-by-day navigation. The schedule displays activities, times, and handles closed days with user-friendly messaging."
+   },
+   {
+    "num": "05",
+    "name": "Comprehensive Nutrition Menu",
+    "text": "Browse over 30+ nutrition items with category filtering. Each item includes detailed descriptions, images, and customization options (add-ons, extras, premium flavors)."
+   },
+   {
+    "num": "06",
+    "name": "Membership Tier Selection",
+    "text": "Explore multiple membership options with detailed benefits, pricing, and sign-up links. Features include popular tier highlighting and comprehensive additional information sections."
+   }
+  ],
+  "stack": [
+   {
+    "name": "UI Library",
+    "text": "React 19.2.3"
+   },
+   {
+    "name": "Framework",
+    "text": "Next.js 16.1.1 (App Router)"
+   },
+   {
+    "name": "Image Optimization",
+    "text": "Next.js Image component"
+   },
+   {
+    "name": "Styling",
+    "text": "CSS Modules with CSS Variables for theming"
+   },
+   {
+    "name": "State Management",
+    "text": "React Hooks (useState, useEffect, useRef)"
+   },
+   {
+    "name": "Font Optimization",
+    "text": "Next.js Font Optimization (Anton, Bebas Neue, Roboto Condensed)"
+   },
+   {
+    "name": "Runtime",
+    "text": "Node.js"
+   },
+   {
+    "name": "Framework",
+    "text": "Next.js (Server-Side Rendering & Static Generation)"
+   },
+   {
+    "name": "Version Control",
+    "text": "Git"
+   },
+   {
+    "name": "Build Tool",
+    "text": "Next.js built-in bundler"
+   },
+   {
+    "name": "Code Quality",
+    "text": "ESLint with Next.js configuration"
+   },
+   {
+    "name": "Data Storage",
+    "text": "JSON files for static data (coaches, nutrition, schedule, membership)"
+   }
+  ]
+ },
+ {
+  "title": "Moonstar Esthetics",
+  "kind": "SKINCARE",
+  "description": "Discover your natural radiance with Moonstar Esthetics' luxurious digital sanctuary! This elegant website invites clients into a world of professional skincare excellence, showcasing advanced facial treatments, precision laser services, and comprehensive body care solutions. The sophisticated design mirrors the premium quality of services offered, while intelligent web technology ensures effortless booking and seamless user experience across all devices. Every pixel reflects the confidence, care, and clarity that defines the Moonstar Esthetics brand.",
+  "url": "https://moonstar-esthetics.vercel.app/",
+  "shotLabels": [
+   "HOME",
+   "SERVICES",
+   "REVIEWS"
+  ],
+  "features": [
+   {
+    "num": "01",
+    "name": "Legal Pages",
+    "text": "Includes Privacy Policy and Terms of Service for compliance and transparency, with dynamic date updates."
+   },
+   {
+    "num": "02",
+    "name": "Contact & Inquiry",
+    "text": "Easy-to-use contact form for questions and appointment requests, with direct integration to email clients."
+   },
+   {
+    "num": "03",
+    "name": "Responsive Design",
+    "text": "Fully mobile-friendly layout ensures a seamless experience on all devices, with a mobile-optimized navigation sidebar and adaptive layouts."
+   },
+   {
+    "num": "04",
+    "name": "Client Reviews",
+    "text": "Real client testimonials build trust and credibility. The reviews page features an average rating display, rating distribution, and sortable review cards."
+   },
+   {
+    "num": "05",
+    "name": "Modern UI with Theme Toggle",
+    "text": "Clean, elegant design with smooth transitions and interactive elements. Includes a light/dark theme toggle that respects user system preferences and persists across sessions."
+   },
+   {
+    "num": "06",
+    "name": "Service Catalog",
+    "text": "Browse detailed listings for facial, laser/IPL, body, and waxing treatments, each with images, descriptions, pricing, and duration. Services can be sorted by price or duration for easy comparison."
+   }
+  ],
+  "stack": [
+   {
+    "name": "CSS Modules",
+    "text": "Scoped, maintainable styles for each component"
+   },
+   {
+    "name": "JavaScript (ES6+)",
+    "text": "Modern language features for robust, maintainable code"
+   },
+   {
+    "name": "React 19",
+    "text": "Component-based UI library for building interactive user interfaces"
+   },
+   {
+    "name": "Next.js 16",
+    "text": "React framework with App Router for server-side rendering, static generation, and optimized performance"
+   },
+   {
+    "name": "Next.js API Routes",
+    "text": "Server-side functionality and routing"
+   },
+   {
+    "name": "Font Awesome",
+    "text": "Icon library for UI elements"
+   },
+   {
+    "name": "JSON",
+    "text": "Structured data storage for services and reviews"
+   },
+   {
+    "name": "Google Fonts",
+    "text": "Montserrat and Libre Baskerville typography"
+   }
+  ]
+ },
+ {
+  "title": "Reelix",
+  "kind": "WEB APP",
+  "description": "Dive into the ultimate entertainment universe with Reelix! This cinematic discovery platform transforms how you explore movies and TV shows, featuring real-time data from the world's largest entertainment database. Navigate effortlessly through trending films, top-rated series, and personalized recommendations with lightning-fast performance. The sleek dark interface creates the perfect movie theater ambiance, while smart technology automatically adapts to your region and language preferences. Whether you're a casual viewer or film enthusiast, Reelix delivers an immersive entertainment experience that brings the magic of cinema to your fingertips.",
+  "url": "https://reelix-2.vercel.app/",
+  "shotLabels": [
+   "HOME",
+   "MOVIES",
+   "TV SHOWS"
+  ],
+  "features": [
+   {
+    "num": "01",
+    "name": "Top IMDB Ratings",
+    "text": "Dedicated page showcasing the highest-rated movies from TMDB, with detailed metadata and certification information."
+   },
+   {
+    "num": "02",
+    "name": "Performance Optimized",
+    "text": "Leverages Next.js Image component for optimized image loading, font optimization, and efficient code splitting."
+   },
+   {
+    "num": "03",
+    "name": "SEO Optimized",
+    "text": "Built with Next.js for optimal search engine optimization, including proper metadata, semantic HTML, and server-side rendering."
+   },
+   {
+    "num": "04",
+    "name": "Responsive Design",
+    "text": "Fully responsive layout optimized for desktops, tablets, smartphones, and smart TVs, ensuring a consistent experience across all devices."
+   },
+   {
+    "num": "05",
+    "name": "Advanced Filtering System",
+    "text": "Users can filter movies and TV shows by genre, year, and country with real-time URL parameter updates for shareable filtered views."
+   },
+   {
+    "num": "06",
+    "name": "Comprehensive Search",
+    "text": "Powerful search functionality that queries both movies and TV shows simultaneously, intelligently selecting the best match based on vote counts."
+   },
+   {
+    "num": "07",
+    "name": "Detailed Media Pages",
+    "text": "Each movie or TV show features a comprehensive detail page with poster, backdrop banner, trailer links, cast, crew, genres, ratings, and runtime information."
+   }
+  ],
+  "stack": [
+   {
+    "name": "Frameworks/Libraries",
+    "text": "Next.js 16 (App Router), React 19"
+   },
+   {
+    "name": "Styling",
+    "text": "CSS Modules for scoped, maintainable component styling"
+   },
+   {
+    "name": "Font Optimization",
+    "text": "Next.js Font Optimization (Bebas Neue, Montserrat)"
+   },
+   {
+    "name": "Runtime",
+    "text": "Node.js"
+   },
+   {
+    "name": "Framework",
+    "text": "Next.js (Server-Side Rendering, API Routes)"
+   },
+   {
+    "name": "API Integration",
+    "text": "The Movie Database (TMDB) API for real-time media data"
+   },
+   {
+    "name": "Image Optimization",
+    "text": "Next.js Image component for optimized image loading"
+   },
+   {
+    "name": "Environment Variables",
+    "text": "Next.js environment variable management"
+   },
+   {
+    "name": "Deployment",
+    "text": "Optimized for Vercel, Netlify, or similar Next.js-compatible platforms"
+   }
+  ]
+ }
+];
+    const openAt = (i) => () => this.setState({ open: i, shot: 0, mtab: 'feat' });
+    const n = projects.length;
+    const oi = st.open === null ? 0 : st.open;
+    const p = projects[oi];
+    const m = {
+      ...p, count: '0' + (oi + 1) + ' OF 0' + n,
+      shots: p.shotLabels.map((label, j) => ({ label, ...this.tab(j === st.shot, false), pick: () => this.setState({ shot: j }) }))
+    };
+    const show = {};
+    projects.forEach((_, i) => [0, 1, 2].forEach((j) => { show['p' + i + 's' + j] = st.open === i && st.shot === j; }));
+    const mTabs = [{ id: 'feat', label: 'KEY FEATURES' }, { id: 'stack', label: 'BUILT WITH' }]
+      .map((t) => ({ ...t, ...this.tab(t.id === st.mtab, false), pick: () => this.setState({ mtab: t.id }) }));
+
+    const gauges = ['Performance', 'Accessibility', 'Best Practices', 'SEO']
+      .map((label) => ({ label, score: '100', aria: label + ' score: 100 out of 100' }));
+
+    return {
+      stages, active: stageData[st.stage],
+      serpTabs, serp: serpData[st.serp],
+      isOrganic: st.serp === 'organic', isMap: st.serp === 'map', isAi: st.serp === 'ai', isAd: st.serp === 'ad',
+      bars, metrics,
+      isAnalyst: !st.owner, isOwner: st.owner, ownerChecked: st.owner ? 'true' : 'false',
+      knobLeft: st.owner ? '41px' : '5px',
+      lblAnalyst: st.owner ? '#b3b3b3' : '#0099ff', lblOwner: st.owner ? '#0099ff' : '#b3b3b3',
+      toggleView: () => this.setState({ owner: !st.owner }),
+      menuOpen: st.menu, menuClosed: !st.menu, menuExpanded: st.menu ? 'true' : 'false',
+      toggleMenu: () => this.setState({ menu: !st.menu }), closeMenu: () => this.setState({ menu: false }),
+      open0: openAt(0), open1: openAt(1), open2: openAt(2), open3: openAt(3),
+      modalOpen: st.open !== null, m, show, mTabs,
+      isFeat: st.mtab === 'feat', isStack: st.mtab === 'stack',
+      closeModal: () => this.setState({ open: null }),
+      prevProject: () => this.setState({ open: (oi + n - 1) % n, shot: 0, mtab: 'feat' }),
+      nextProject: () => this.setState({ open: (oi + 1) % n, shot: 0, mtab: 'feat' }),
+      gauges,
+      photoA: st.photo === 0 ? '1' : '0', photoB: st.photo === 1 ? '1' : '0',
+      photoCount: st.photo === 0 ? '01 OF 02' : '02 OF 02',
+      togglePhoto: () => this.setState({ photo: st.photo === 0 ? 1 : 0 })
+    };
+  }
+}
+</script>
+</body>
+</html>

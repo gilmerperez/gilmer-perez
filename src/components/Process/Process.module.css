@@ -1,0 +1,140 @@
+.section {
+  gap: 24px;
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+  padding: 56px var(--gutter);
+  max-width: var(--content-width);
+}
+
+/* Stage buttons */
+.stages {
+  gap: 12px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+}
+
+.stage {
+  gap: 6px;
+  display: flex;
+  min-height: 76px;
+  text-align: left;
+  padding: 14px 16px;
+  flex-direction: column;
+  background: var(--surface);
+  color: var(--text-primary);
+  border-radius: var(--radius);
+  font-family: var(--font-heading);
+  border: 2px solid var(--border-muted);
+}
+
+/* Active stage: solid blue with black text, pulsing */
+.stageActive {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: var(--text-on-primary-dark);
+  box-shadow: var(--glow-pulse-rest);
+  animation: var(--pulse-glow) 4s var(--pulse-timing);
+}
+
+.stageNum {
+  font-size: 13px;
+}
+
+.stageLabel {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* Panel */
+.panel {
+  gap: 28px;
+  padding: 28px;
+  display: flex;
+  flex-wrap: wrap;
+  background: var(--surface);
+  border-radius: var(--radius);
+  border: 1px solid var(--primary);
+}
+
+.panelMain {
+  gap: 14px;
+  min-width: 0;
+  display: flex;
+  flex: 1 1 380px;
+  flex-direction: column;
+}
+
+.panelTitle {
+  font-size: 30px;
+}
+
+.panelBody {
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.outcome {
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--text-primary);
+}
+
+.outcomeLabel {
+  color: var(--primary);
+  font-family: var(--font-heading);
+}
+
+/* Stat (BUILD and ADVERTISE only) */
+.stat {
+  gap: 6px 14px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 6px;
+  align-items: baseline;
+}
+
+.statNum {
+  font-size: 44px;
+  font-weight: 700;
+  font-style: italic;
+  color: var(--primary);
+  font-family: var(--font-heading);
+  text-shadow: var(--glow-text-pulse-rest);
+  animation: var(--pulse-text) 4s var(--pulse-timing);
+}
+
+.statLabel {
+  font-size: 16px;
+  color: var(--text-primary);
+}
+
+/* Tools */
+.panelTools {
+  gap: 12px;
+  min-width: 0;
+  display: flex;
+  flex: 1 1 320px;
+  flex-direction: column;
+}
+
+.toolsLabel {
+  font-size: 14px;
+  color: var(--text-muted);
+  font-family: var(--font-heading);
+}
+
+.chips {
+  gap: 8px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.chip {
+  font-size: 14px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  color: var(--text-primary);
+  border: 1px solid var(--border-muted);
+}

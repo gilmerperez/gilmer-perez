@@ -1,0 +1,533 @@
+.section {
+  gap: 24px;
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+  padding: 56px var(--gutter);
+  max-width: var(--content-width);
+}
+
+/* Tabs */
+.tabs {
+  gap: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tab {
+  font-size: 17px;
+  min-height: 44px;
+  font-weight: 600;
+  padding: 8px 16px;
+  background: var(--surface);
+  color: var(--text-primary);
+  border-radius: var(--radius);
+  font-family: var(--font-heading);
+  border: 2px solid var(--border-muted);
+}
+
+.tabActive {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: var(--text-on-primary-dark);
+  box-shadow: var(--glow-pulse-rest);
+  animation: var(--pulse-glow) 4s var(--pulse-timing);
+}
+
+.columns {
+  gap: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+/* ==========================================================================
+   The results page mock. Generic on purpose: Arial and neutral greys, no
+   real search engine branding. These colors are local to the mock.
+   ========================================================================== */
+.page {
+  --serp-text: #202124;
+  --serp-grey: #5f6368;
+  --serp-snippet: #4d5156;
+  --serp-link: #1a0dab;
+  --serp-accent: #1a73e8;
+  --serp-line: #dadce0;
+  --serp-star: #b06000;
+  --serp-open: #137333;
+  --serp-tint: #e8f0fe;
+
+  min-width: 0;
+  overflow: hidden;
+  flex: 3 1 520px;
+  border-radius: 12px;
+  background: #ffffff;
+  color: var(--serp-text);
+  font-family: Arial, Helvetica, sans-serif;
+  box-shadow: 0 0 40px rgba(var(--primary-rgb), 0.25);
+}
+
+/* Search bar and tab row */
+.pageTop {
+  gap: 14px;
+  display: flex;
+  padding: 18px 22px 0;
+  flex-direction: column;
+  border-bottom: 1px solid var(--serp-line);
+}
+
+.searchRow {
+  gap: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.pageLogo {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  color: var(--serp-grey);
+}
+
+.searchBox {
+  gap: 10px;
+  min-width: 0;
+  display: flex;
+  flex: 1 1 auto;
+  padding: 10px 16px;
+  align-items: center;
+  border-radius: 999px;
+  border: 1px solid var(--serp-line);
+  box-shadow: 0 1px 6px rgba(32, 33, 36, 0.18);
+}
+
+.query {
+  min-width: 0;
+  flex: 1 1 auto;
+  font-size: 15px;
+  overflow: hidden;
+  white-space: nowrap;
+  color: var(--serp-text);
+  text-overflow: ellipsis;
+}
+
+.pageTabs {
+  gap: 22px;
+  display: flex;
+  font-size: 13px;
+  overflow-x: auto;
+  color: var(--serp-grey);
+}
+
+.pageTab {
+  padding: 0 2px 10px;
+}
+
+.pageTabActive {
+  font-weight: 700;
+  color: var(--serp-accent);
+  border-bottom: 3px solid var(--serp-accent);
+}
+
+.pageBody {
+  gap: 24px;
+  display: flex;
+  min-height: 420px;
+  flex-direction: column;
+  padding: 20px 22px 26px;
+}
+
+/* "Your Business" is always ringed in blue glow */
+.highlight {
+  outline: 2px solid var(--primary);
+  box-shadow: var(--glow-ring);
+}
+
+/* Shared result pieces */
+.result {
+  gap: 6px;
+  padding: 12px;
+  display: flex;
+  border-radius: 10px;
+  flex-direction: column;
+}
+
+.siteRow {
+  gap: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.favIcon {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  background: var(--serp-tint);
+  color: var(--serp-accent);
+}
+
+.favIconSmall {
+  width: 16px;
+  height: 16px;
+  display: flex;
+  font-size: 10px;
+  font-weight: 700;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  background: var(--serp-tint);
+  color: var(--serp-accent);
+}
+
+.siteMeta {
+  display: flex;
+  flex-direction: column;
+}
+
+.siteName {
+  font-size: 14px;
+  color: var(--serp-text);
+}
+
+.siteUrl {
+  font-size: 12px;
+  color: var(--serp-snippet);
+}
+
+.resultTitle {
+  font-size: 20px;
+  line-height: 1.3;
+  color: var(--serp-link);
+}
+
+.resultTitlePlain {
+  font-size: 20px;
+  color: var(--serp-link);
+}
+
+.meta {
+  font-size: 13px;
+  color: var(--serp-snippet);
+}
+
+.stars {
+  letter-spacing: 1px;
+  color: var(--serp-star);
+}
+
+.snippet {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--serp-snippet);
+}
+
+.snippetPlain {
+  font-size: 14px;
+  color: var(--serp-snippet);
+}
+
+/* Dimmed results below yours */
+.dimmed {
+  gap: 4px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Results below yours are faded. Opacity can not go much lower than this while the
+   text still reaches 4.5:1 contrast on white, so the grey text inside is darkened. */
+.faded {
+  opacity: 0.65;
+}
+
+.faded .siteUrl,
+.faded .snippetPlain,
+.faded .meta {
+  color: var(--serp-text);
+}
+
+/* Organic: sitelinks */
+.sitelinks {
+  gap: 12px 24px;
+  display: grid;
+  margin-top: 8px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.sitelink {
+  gap: 2px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sitelinkTitle {
+  font-size: 16px;
+  color: var(--serp-link);
+}
+
+.sitelinkText {
+  font-size: 13px;
+  color: var(--serp-snippet);
+}
+
+/* Organic: People also ask */
+.questions {
+  opacity: 0.65;
+  display: flex;
+  flex-direction: column;
+}
+
+.questionsTitle {
+  font-size: 18px;
+  padding-bottom: 8px;
+  color: var(--serp-text);
+}
+
+.question {
+  display: flex;
+  font-size: 15px;
+  padding: 12px 0;
+  justify-content: space-between;
+  border-top: 1px solid var(--serp-line);
+}
+
+.questionLast {
+  border-bottom: 1px solid var(--serp-line);
+}
+
+/* Map Pack */
+.placesTitle {
+  font-size: 20px;
+  color: var(--serp-text);
+}
+
+.map {
+  width: 100%;
+  height: 190px;
+  display: block;
+  border-radius: 12px;
+  background: #e8eaed;
+}
+
+.places {
+  display: flex;
+  flex-direction: column;
+}
+
+.place {
+  gap: 14px;
+  padding: 12px;
+  display: flex;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.placeInfo {
+  gap: 3px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.placeName {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--serp-text);
+}
+
+.placeNamePlain {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.open {
+  color: var(--serp-open);
+}
+
+.placeActions {
+  gap: 12px;
+  display: flex;
+  font-size: 12px;
+  text-align: center;
+  color: var(--serp-accent);
+}
+
+.placeAction {
+  gap: 4px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.placeActionIcon {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--serp-line);
+}
+
+.competitorPlace {
+  gap: 3px;
+  display: flex;
+  padding: 14px 12px;
+  flex-direction: column;
+}
+
+.competitorDivider {
+  border-bottom: 1px solid var(--serp-line);
+}
+
+/* AI answer */
+.aiBox {
+  gap: 14px;
+  padding: 18px;
+  display: flex;
+  border-radius: 16px;
+  background: #f0f4ff;
+  flex-direction: column;
+}
+
+.aiHeading {
+  gap: 8px;
+  display: flex;
+  font-size: 15px;
+  font-weight: 700;
+  align-items: center;
+  color: var(--serp-text);
+}
+
+.aiText {
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--serp-text);
+}
+
+.aiMention {
+  font-weight: 700;
+  padding: 1px 6px;
+  border-radius: 6px;
+  outline: 2px solid var(--primary);
+  box-shadow: 0 0 18px rgba(var(--primary-rgb), 0.6);
+}
+
+.aiList {
+  gap: 8px;
+  display: flex;
+  font-size: 15px;
+  line-height: 1.5;
+  padding-left: 4px;
+  flex-direction: column;
+  color: var(--serp-text);
+}
+
+.aiSources {
+  gap: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 2px;
+}
+
+.aiSource {
+  font-size: 13px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: #ffffff;
+  color: var(--serp-grey);
+}
+
+.aiSourceOwn {
+  gap: 6px;
+  display: flex;
+  align-items: center;
+  color: var(--serp-text);
+  outline: 2px solid var(--primary);
+}
+
+/* Paid ad */
+.sponsored {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--serp-text);
+}
+
+.adLinks {
+  gap: 6px 18px;
+  display: flex;
+  font-size: 14px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+  color: var(--serp-link);
+}
+
+/* ==========================================================================
+   What it takes panel
+   ========================================================================== */
+.takes {
+  gap: 14px;
+  padding: 24px;
+  min-width: 0;
+  display: flex;
+  flex: 2 1 320px;
+  flex-direction: column;
+  background: var(--surface);
+  border-radius: var(--radius);
+  border: 1px solid var(--primary);
+}
+
+.takesLabel {
+  font-size: 14px;
+  color: var(--text-muted);
+  font-family: var(--font-heading);
+}
+
+.takesTitle {
+  font-size: 26px;
+}
+
+.takesBody {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.chips {
+  gap: 8px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.chip {
+  font-size: 14px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--border-muted);
+}
+
+.stat {
+  gap: 4px;
+  display: flex;
+  margin-top: 8px;
+  flex-direction: column;
+}
+
+.statNum {
+  font-size: 40px;
+  font-weight: 700;
+  font-style: italic;
+  color: var(--primary);
+  font-family: var(--font-heading);
+  text-shadow: var(--glow-text-pulse-rest);
+  animation: var(--pulse-text) 4s var(--pulse-timing);
+}
+
+.statLabel {
+  font-size: 15px;
+  color: var(--text-primary);
+}

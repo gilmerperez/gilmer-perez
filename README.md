@@ -2,77 +2,77 @@
 
 ## Description
 
-A modern, responsive portfolio website showcasing my work as a Front-End Web Developer and UI/UX enthusiast. This Next.js-powered application serves as my digital gateway where potential clients, employers, and collaborators can discover my diverse range of projects, technical skills, and professional journey in web development.
+The portfolio site of Gilmer Perez, a Digital Growth Specialist. It shows how one person can cover the whole path from website to customer: build and host the site, make it rank in search, track what it does, run paid ads, and report on the results, on custom code or any major website builder. Custom-coded front-end work is still shown as the favorite part.
 
-- **Problem:** The need for a professional online presence that effectively demonstrates technical capabilities, design sensibilities, and commitment to user experience excellence in today's competitive tech landscape.
+- **Problem:** Most small businesses hire a developer, an SEO, an ads manager, and someone to explain the reports, and things get lost between them.
 
-- **Solution:** A production-ready portfolio website built with Next.js that combines server-side rendering for optimal SEO performance, client-side interactivity for engaging user experiences, and modern web standards for accessibility and responsiveness.
+- **Solution:** A single-page site that explains the process, lets visitors explore it (search results, reports, projects), and proves the work by running on the same practices it sells.
 
-- **Methodology:** Component-based architecture using Next.js App Router for file-based routing, CSS Modules for scoped styling, and structured JSON data management for maintainable and scalable codebase.
+- **Methodology:** Next.js App Router with server components by default, client components only for the interactive pieces, CSS Modules with a small set of design tokens, and JSON files for content.
 
 **Live Demo:** [Link to Deployed Application](https://gilmer-perez.vercel.app/)
 
 ## Table of Contents
 
 - [Features](#features)
-- [Mock Up](#mock-up)
+- [Structure](#structure)
+- [Design Tokens](#design-tokens)
 - [Technology Stack](#technology-stack)
+- [Development](#development)
 
 ## Features
 
-- **Intelligent Navigation System:** Advanced sticky header with scroll-based visibility detection, smooth transitions, and mobile-optimized hamburger menu with portal-based sidebar overlay.
+- **Single-page layout with anchor sections:** Home, Process, Platforms, Search, Reporting, Experience, Projects, Proof, and Contact, plus separate Privacy Policy and Terms of Service pages. The old `/about`, `/contact`, `/projects`, and `/project-page/:id` URLs redirect permanently to the matching section.
 
-- **Performance-Optimized Delivery:** Next.js automatic code splitting, image optimization, font optimization, and static generation for fast loading times and optimal Core Web Vitals scores.
+- **Interactive process:** Six stages (Build, Rank, Track, Advertise, Report, Maintain), each with its own details, outcome, and tools.
 
-- **SEO-Optimized Architecture:** Server-side rendering with Next.js App Router, dynamic metadata generation, and optimized image loading for superior search engine visibility and performance.
+- **Search simulator:** Four tabs (Organic, Map Pack, AI Answer, Paid Ad) show a generic results page and what it takes to appear in each place.
 
-- **Interactive Profile Experience:** Dynamic profile image switching with click functionality and sophisticated 3D tilt effects using mouse tracking for enhanced user engagement and visual appeal.
+- **Report translator:** An accessible switch flips a sample monthly report between the analyst view and the plain-language owner view.
 
-- **Accessibility-First Development:** Semantic HTML structure, ARIA labels, keyboard navigation support, screen reader compatibility, and high contrast theme options for inclusive user experience.
+- **Project modal:** Native `<dialog>` with focus trapping, Escape and backdrop close, scroll lock, focus return, screenshots built from `projects.json`, and PREV and NEXT that wrap around.
 
-- **Advanced Theme Management:** Seamless dark/light mode switching with persistent localStorage preferences, automatic system preference detection, and smooth theme transitions across all components.
+- **Proof section:** Real Lighthouse scores read from `src/data/lighthouse.json`, plus a code panel that prints the exact JSON-LD object the page sends to search engines.
 
-- **Comprehensive Project Showcase:** Detailed project galleries featuring four diverse applications with complete case studies, technology breakdowns, and live deployment links for portfolio demonstration.
+- **Dark only:** A single dark design with a slow blue glow. All animation is switched off under `prefers-reduced-motion`.
 
-- **Mobile-First Responsive Design:** Optimized layouts for all screen sizes with collapsible navigation, touch-friendly interactions, and adaptive content presentation ensuring accessibility across devices.
+- **SEO and accessibility:** Metadata, canonical URLs, Open Graph and Twitter tags, sitemap, robots, JSON-LD (`Person` and `WebSite`), one `h1`, descriptive alt text, keyboard support, and visible focus outlines.
 
-## Mock Up
+## Structure
 
-The following images demonstrate the web application's appearance and functionality:
+```text
+src/app/page.jsx                 composes the sections and renders JSON-LD
+src/components/                  one folder per component, with a .module.css next to it
+src/data/projects.json           project content (cards and modal)
+src/data/process.json            the six process stages
+src/data/search.json             the four search tabs
+src/data/schema.js               Person and WebSite schema (shared by JSON-LD and the Proof panel)
+src/data/lighthouse.json         measured Lighthouse scores and the date they were measured
+src/data/contact.js              email, phone, location, and profile links
+```
 
-![Home Page](./public/screenshots/homePage.png)
+## Design Tokens
 
-![About Page](./public/screenshots/aboutPage.png)
-
-![Contact Page](./public/screenshots/contactPage.png)
-
-![Projects Page](./public/screenshots/projectsPage.png)
-
-![Project Page](./public/screenshots/projectPage.png)
-
-![Light Theme](./public/screenshots/lightTheme.png)
+Colors, fonts, and glow values live in `src/styles/globals.css` on `:root`, and the three keyframes (`glowPulse`, `textPulse`, `hazePulse`) sit next to them. Component modules use the tokens instead of hard-coded values, so restyling the site starts in that one file.
 
 ## Technology Stack
 
-**Frontend:**
+- **Next.js 16** (App Router) and **React 19**, plain JavaScript
+- **CSS Modules** with custom CSS (no CSS framework)
+- **next/font** for Kode Mono and Source Code Pro, **next/image** for photos, logos, and screenshots
+- **Vercel Analytics** and hosting on **Vercel**
+- Inline SVG for all icons and illustrations
 
-- **JavaScript ES6+:** Modern JavaScript features including destructuring, arrow functions, and template literals.
-- **Next.js 16:** React framework with App Router for server-side rendering, static generation, and optimized performance.
-- **CSS Modules:** Scoped styling system preventing style conflicts while maintaining modular, maintainable CSS architecture.
-- **CSS Custom Properties:** Dynamic theming system enabling real-time theme switching and consistent design token management.
-- **React 19:** Modern component-based UI library for building interactive user interfaces with hooks and functional components.
+## Development
 
-**Backend:**
+```bash
+npm install
+npm run dev      # development server
+npm run lint     # ESLint
+npm run build    # production build
+npm start        # serve the production build
+```
 
-- **Next.js API Routes:** Server-side functionality for handling requests and server-side rendering capabilities.
-
-**Other Technologies:**
-
-- **Local Storage API:** Client-side data persistence for user preferences and theme settings.
-- **Vercel Analytics:** Performance monitoring and analytics integration for production deployments.
-- **Next.js Image Optimization:** Automatic image optimization and lazy loading for improved performance.
-- **Next.js Font Optimization:** Automatic font loading optimization for Kode Mono and Source Code Pro fonts.
-- **JSON Data Management:** Structured data storage for projects and technologies enabling easy content updates.
-- **Responsive Design:** Mobile-first approach using CSS Grid, Flexbox, and media queries for optimal viewing across all devices.
+To refresh the Proof section's scores, run Lighthouse against the production build (`npm run build && npm start`) and update `src/data/lighthouse.json` with the results and the date.
 
 ---

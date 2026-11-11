@@ -1,4 +1,5 @@
 .privacyPolicyContainer {
+  padding: 2rem;
   width: 100%;
   display: flex;
   margin: 0 auto;
@@ -43,7 +44,7 @@
   transition: 0.3s ease;
   margin-bottom: 0.25rem;
   padding-bottom: 0.15rem;
-  font-family: var(--font-kode-mono), monospace;
+  font-family: var(--font-heading);
   border-bottom: 2px solid var(--primary);
 }
 
