@@ -8,8 +8,8 @@ import { pad, splitEntry, describeScreenshot } from "./projectHelpers";
 const SHOT_SIZES = "(max-width: 860px) 100vw, 680px";
 
 const DETAIL_TABS = [
-  { id: "features", label: "Key features" },
-  { id: "stack", label: "Built with" },
+  { id: "features", label: "Key Features" },
+  { id: "stack", label: "Built With" },
 ];
 
 // * Contents of one project. Keyed by project in the parent, so the screenshot and
@@ -110,10 +110,10 @@ function ModalContent({ project, position, total, titleId, onClose, onPrev, onNe
       {/* Sticky footer */}
       <div className={styles.modalFooter}>
         <button type="button" onClick={onPrev} className={styles.navButton}>
-          Prev
+          Previous
         </button>
         <a href={project.deployedLink} target="_blank" rel="noopener noreferrer" className={styles.visitButton}>
-          Visit website
+          Visit Website
         </a>
         <button type="button" onClick={onNext} className={styles.navButton}>
           Next

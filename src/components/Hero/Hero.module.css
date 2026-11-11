@@ -140,17 +140,59 @@
   }
 }
 
-/* Dither scene: one 2x mask image tinted with the theme's dither color.
-   The image is 1000px tall, shown at 500px, so every dot stays crisp. */
+/* Dither scene. Each layer is a 2x mask image tinted with a theme color, shown at
+   its natural size so every dot stays crisp. */
 .scene {
   width: 100vw;
   height: 500px;
-  opacity: 0.9;
+  overflow: hidden;
   margin-top: 56px;
+  position: relative;
   pointer-events: none;
+}
+
+/* The sun image is 80px taller than the scene so it can rise and sink behind the hills */
+.sun {
+  left: 0;
+  right: 0;
+  bottom: -80px;
+  height: 580px;
+  position: absolute;
   background-color: var(--dither);
-  -webkit-mask: url("/dither/hero.png") center bottom / auto 500px no-repeat;
-  mask: url("/dither/hero.png") center bottom / auto 500px no-repeat;
+  animation: sunRise 14s ease-in-out infinite;
+  -webkit-mask: url("/dither/hero-sun.png") center top / auto 580px no-repeat;
+  mask: url("/dither/hero-sun.png") center top / auto 580px no-repeat;
+}
+
+.hillsSolid,
+.hills {
+  inset: 0;
+  position: absolute;
+}
+
+.hillsSolid {
+  background-color: var(--bg-color);
+  -webkit-mask: url("/dither/hero-hills-solid.png") center bottom / auto 500px no-repeat;
+  mask: url("/dither/hero-hills-solid.png") center bottom / auto 500px no-repeat;
+}
+
+.hills {
+  opacity: 0.9;
+  background-color: var(--dither);
+  -webkit-mask: url("/dither/hero-hills.png") center bottom / auto 500px no-repeat;
+  mask: url("/dither/hero-hills.png") center bottom / auto 500px no-repeat;
+}
+
+@keyframes sunRise {
+  0%,
+  100% {
+    opacity: 0.82;
+    transform: translateY(30px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Phones: keep the art at full size (scaling it makes the dots shimmer) and

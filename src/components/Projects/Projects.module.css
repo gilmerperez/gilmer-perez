@@ -285,13 +285,13 @@
   align-items: flex-start;
 }
 
-/* Numbers are part of the heading voice, so they may be italic */
+/* Upright and heavier so the numbers anchor each feature */
 .featureNum {
-  width: 30px;
+  width: 32px;
   flex: 0 0 auto;
   font-size: 24px;
   line-height: 1;
-  font-style: italic;
+  font-weight: 600;
   color: var(--primary);
   text-shadow: var(--glow-text);
   font-family: var(--font-heading);
@@ -368,8 +368,8 @@
 
 .navButton {
   min-height: 44px;
-  font-size: 17px;
-  padding: 0 20px;
+  padding: 0 clamp(12px, 3vw, 20px);
+  font-size: clamp(14px, 3.8vw, 17px);
   border: 1px solid var(--border-muted);
 }
 
@@ -380,8 +380,8 @@
 .visitButton,
 .visitButton:hover {
   min-height: 48px;
-  font-size: 19px;
-  padding: 0 28px;
+  padding: 0 clamp(16px, 4vw, 28px);
+  font-size: clamp(15px, 4vw, 19px);
   background: var(--primary);
   color: var(--text-on-primary);
 }

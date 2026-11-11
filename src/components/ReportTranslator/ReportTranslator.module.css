@@ -65,12 +65,6 @@
   border: 1px solid var(--border-faint);
 }
 
-.caption {
-  font-size: 12px;
-  letter-spacing: 0.14em;
-  color: var(--text-muted);
-}
-
 /* Analyst view */
 .analyst {
   gap: 32px;
@@ -157,8 +151,8 @@
 }
 
 .ownerCard {
-  gap: 10px;
-  padding: 24px;
+  gap: 8px;
+  padding: 22px 24px;
   display: flex;
   flex-direction: column;
   border-radius: var(--radius);
@@ -172,9 +166,10 @@
   box-shadow: var(--glow-neutral);
 }
 
+/* Just a little larger than the sentence under it */
 .ownerNum {
-  font-size: 72px;
-  line-height: 0.9;
+  font-size: 28px;
+  line-height: 1;
   color: var(--primary);
   text-shadow: var(--glow-text);
   font-family: var(--font-heading);
@@ -187,20 +182,12 @@
 }
 
 .nextMonth {
-  gap: 12px;
-  display: flex;
   font-size: 17px;
-  line-height: 1.6;
-  align-items: flex-start;
+  line-height: 1.65;
   color: var(--text-secondary);
 }
 
-.nextDot {
-  width: 9px;
-  height: 9px;
-  flex: 0 0 auto;
-  margin-top: 8px;
-  border-radius: 50%;
-  background: var(--primary);
-  animation: var(--pulse-soft) 3s var(--pulse-timing);
+.nextLabel {
+  font-weight: 500;
+  color: var(--text-primary);
 }

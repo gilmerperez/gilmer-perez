@@ -47,6 +47,8 @@ function Experience() {
 
         {/* Photo switcher */}
         <div className={styles.photoColumn}>
+          {/* A cloud of dithered stardust the photo floats in front of */}
+          <div aria-hidden="true" className={styles.photoDust}></div>
           <PhotoSwitcher />
         </div>
       </div>

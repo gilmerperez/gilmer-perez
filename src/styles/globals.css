@@ -39,7 +39,15 @@ html[data-theme="dark"] {
   --footer-border: #2b2b2b;
   --footer-dither: #7fb0ff;
   --footer-accent: #ff4d3d;
+  --footer-icon: #4d94ff;
+  --footer-cta: #4d94ff;
+  --car-body: #1e2229;
+  --car-rim: rgba(127, 176, 255, 0.6);
   --orb-light: #f3ecdc;
+
+  /* Scrollbar */
+  --scroll-thumb: #474747;
+  --scroll-thumb-hover: #4d94ff;
 
   /* Glows: soft and rare. Accent glow on accent things, white glow on neutral things */
   --glow-text: 0 0 14px rgba(var(--primary-rgb), 0.38);
@@ -53,34 +61,42 @@ html[data-theme="dark"] {
   color-scheme: dark;
 }
 
+/* Light theme: bone white with a cobalt accent */
 html[data-theme="light"] {
-  --bg-color: #f3ecdc;
-  --bg-rgb: 243, 236, 220;
-  --surface: #ece4d1;
-  --surface-raised: #e4dac4;
+  --bg-color: #f4f1ea;
+  --bg-rgb: 244, 241, 234;
+  --surface: #ebe7de;
+  --surface-raised: #e2ddd2;
 
   --text-primary: #141626;
   --text-secondary: #383b52;
-  --text-muted: #5d5f72;
+  --text-muted: #5b5d70;
 
-  --border-faint: #dacfb8;
-  --border-muted: #b2a88e;
+  --border-faint: #d8d2c6;
+  --border-muted: #b1aa9c;
 
   --primary: #1f3fbf;
   --primary-rgb: 31, 63, 191;
-  --text-on-primary: #f3ecdc;
+  --text-on-primary: #f4f1ea;
   --focus-ring: #1f3fbf;
 
   --dither: #1f3fbf;
 
   --footer-bg: #1f3fbf;
   --footer-rgb: 31, 63, 191;
-  --footer-text: #f3ecdc;
+  --footer-text: #f4f1ea;
   --footer-muted: #c8cdee;
   --footer-border: #3a57cc;
-  --footer-dither: #f3ecdc;
+  --footer-dither: #f4f1ea;
   --footer-accent: #ff6a4d;
+  --footer-icon: #f4f1ea;
+  --footer-cta: #f4f1ea;
+  --car-body: #0f1c55;
+  --car-rim: rgba(244, 241, 234, 0.75);
   --orb-light: #fff6e0;
+
+  --scroll-thumb: #b1aa9c;
+  --scroll-thumb-hover: #1f3fbf;
 
   /* On cream a white glow disappears, so neutral things glow cobalt instead */
   --glow-text: 0 0 12px rgba(var(--primary-rgb), 0.2);
@@ -156,9 +172,12 @@ html[data-theme="light"] {
   box-sizing: border-box;
 }
 
-/* Root element */
+/* Root element. Hiding sideways overflow here (not on body) keeps decorative art
+   that is wider than the screen from causing horizontal scrolling, and leaves the
+   sticky header working. */
 html {
   height: 100%;
+  overflow-x: hidden;
   font-size: 16px;
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
@@ -260,14 +279,30 @@ section {
   background: var(--primary);
 }
 
-/* Scrollbar */
-body::-webkit-scrollbar {
-  width: 6px;
+/* Custom scrollbar: a slim pill that turns accent colored on hover */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scroll-thumb) transparent;
 }
 
-body::-webkit-scrollbar-thumb {
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
   border-radius: 999px;
-  background-color: var(--border-muted);
+  background-clip: content-box;
+  border: 3px solid transparent;
+  background-color: var(--scroll-thumb);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--scroll-thumb-hover);
 }
 
 /* Hidden from sight, still read by screen readers */

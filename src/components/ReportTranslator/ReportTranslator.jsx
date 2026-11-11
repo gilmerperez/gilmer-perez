@@ -70,10 +70,12 @@ function OwnerView() {
           </div>
         ))}
       </div>
-      <div className={styles.nextMonth}>
-        <span aria-hidden="true" className={styles.nextDot}></span>
-        <span>Next month I am moving budget out of the keyword that is not bringing in leads and into the two that are.</span>
-      </div>
+      <p className={styles.nextMonth}>
+        <span className={styles.nextLabel}>What I would say:</span> Two keywords brought in almost all 63 of your leads
+        this month. A third one used about a fifth of the budget and did not bring in a single call. Next month I am
+        moving that money into the two that work, adding the exact phrases people searched right before they called
+        you, and pausing ads during the hours when clicks never turn into leads.
+      </p>
     </>
   );
 }
@@ -105,7 +107,6 @@ function ReportTranslator() {
 
       {/* Report panel */}
       <div className={styles.panel}>
-        <span className={styles.caption}>SAMPLE MONTHLY REPORT. ILLUSTRATIVE NUMBERS, NOT A REAL CLIENT.</span>
         {ownerView ? <OwnerView /> : <AnalystView />}
       </div>
     </section>

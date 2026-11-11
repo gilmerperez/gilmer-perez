@@ -1,55 +1,75 @@
-/* One 2x mask image per variant (160px tall, shown at 80px), tinted with the theme's dither color */
+/* Each pattern is a 2x mask image (twice the band height in pixels), shown at its
+   natural size and tinted with the theme's dither color, so every dot stays crisp */
 .divider {
-  height: 80px;
-  opacity: 0.75;
+  opacity: 0.8;
   pointer-events: none;
   background-color: var(--dither);
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
   -webkit-mask-position: center;
   mask-position: center;
+}
+
+/* A thick dotted wave with stars and small planets */
+.wave {
+  height: 90px;
+  -webkit-mask-image: url("/dither/dv-wave.png");
+  mask-image: url("/dither/dv-wave.png");
+  -webkit-mask-size: auto 90px;
+  mask-size: auto 90px;
+}
+
+/* An edge-on galaxy: bright bulge, long thin arms, stars and planets */
+.galaxy {
+  height: 110px;
+  -webkit-mask-image: url("/dither/dv-galaxy.png");
+  mask-image: url("/dither/dv-galaxy.png");
+  -webkit-mask-size: auto 110px;
+  mask-size: auto 110px;
+}
+
+/* An asteroid belt circling a small planet */
+.asteroids {
+  height: 110px;
+  -webkit-mask-image: url("/dither/dv-asteroids.png");
+  mask-image: url("/dither/dv-asteroids.png");
+  -webkit-mask-size: auto 110px;
+  mask-size: auto 110px;
+}
+
+/* Scattered stardust */
+.stardust {
+  height: 80px;
+  -webkit-mask-image: url("/dither/dv-stardust.png");
+  mask-image: url("/dither/dv-stardust.png");
   -webkit-mask-size: auto 80px;
   mask-size: auto 80px;
 }
 
-/* 1: a glowing horizon line */
-.v1 {
-  -webkit-mask-image: url("/dither/divider-1.png");
-  mask-image: url("/dither/divider-1.png");
+/* Two waves crossing like sound waves */
+.sound {
+  height: 80px;
+  -webkit-mask-image: url("/dither/dv-sound.png");
+  mask-image: url("/dither/dv-sound.png");
+  -webkit-mask-size: auto 80px;
+  mask-size: auto 80px;
 }
 
-/* 2: a dotted wave */
-.v2 {
-  -webkit-mask-image: url("/dither/divider-2.png");
-  mask-image: url("/dither/divider-2.png");
+/* Ripples rising from the bottom: stretched across the whole width on wide
+   screens, the tighter version on narrow ones */
+.ripples {
+  height: 80px;
+  -webkit-mask-position: center bottom;
+  mask-position: center bottom;
+  -webkit-mask-image: url("/dither/dv-ripples-wide.png");
+  mask-image: url("/dither/dv-ripples-wide.png");
+  -webkit-mask-size: auto 80px;
+  mask-size: auto 80px;
 }
 
-/* 3: an ordered halftone band */
-.v3 {
-  -webkit-mask-image: url("/dither/divider-3.png");
-  mask-image: url("/dither/divider-3.png");
-}
-
-/* 4: scattered stardust */
-.v4 {
-  -webkit-mask-image: url("/dither/divider-4.png");
-  mask-image: url("/dither/divider-4.png");
-}
-
-/* 5: twin hairlines */
-.v5 {
-  -webkit-mask-image: url("/dither/divider-5.png");
-  mask-image: url("/dither/divider-5.png");
-}
-
-/* 6: ripples rising from the center */
-.v6 {
-  -webkit-mask-image: url("/dither/divider-6.png");
-  mask-image: url("/dither/divider-6.png");
-}
-
-/* 7: a fading dot grid */
-.v7 {
-  -webkit-mask-image: url("/dither/divider-7.png");
-  mask-image: url("/dither/divider-7.png");
+@media (max-width: 900px) {
+  .ripples {
+    -webkit-mask-image: url("/dither/dv-ripples.png");
+    mask-image: url("/dither/dv-ripples.png");
+  }
 }

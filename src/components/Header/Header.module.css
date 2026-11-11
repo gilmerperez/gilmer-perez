@@ -12,7 +12,14 @@
   backdrop-filter: blur(16px);
   background: rgba(var(--bg-rgb), 0.78);
   border: 1px solid var(--border-faint);
-  transition: background-color 0.4s ease, border-color 0.4s ease;
+  transition: transform 0.45s var(--ease), opacity 0.35s ease, background-color 0.4s ease, border-color 0.4s ease;
+}
+
+/* Slid up out of view (phones, while scrolling down) */
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(calc(-100% - 24px));
 }
 
 /* Top row: logo, links, hamburger */

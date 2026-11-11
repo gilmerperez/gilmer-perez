@@ -28,10 +28,10 @@ function Hero() {
         </p>
         <div className={styles.buttons}>
           <a href="#how" className={styles.primaryButton}>
-            See the process
+            My Process
           </a>
           <a href="#projects" className={styles.secondaryButton}>
-            View projects
+            View Projects
           </a>
         </div>
 
@@ -52,8 +52,14 @@ function Hero() {
         </p>
       </div>
 
-      {/* Dithered sphere rising over rolling hills */}
-      <div aria-hidden="true" className={styles.scene}></div>
+      {/* Dithered sun over rolling hills. Three layers: the sun (slowly rises and sinks),
+          a solid copy of the hills in the page color that hides the sun behind them,
+          and the dotted hills on top. */}
+      <div aria-hidden="true" className={styles.scene}>
+        <div className={styles.sun}></div>
+        <div className={styles.hillsSolid}></div>
+        <div className={styles.hills}></div>
+      </div>
     </section>
   );
 }

@@ -15,8 +15,29 @@ const NAV_LINKS = [
   { href: "/#projects", label: "Projects" },
 ];
 
+// * On phones the header slides away while scrolling down and comes back on any scroll up
+const HIDE_AFTER = 160; // px from the top before the header may hide
+const SCROLL_SLOP = 6; // ignore tiny scroll jitters
+
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [hidden, setHidden] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia(MOBILE_QUERY);
+    let lastY = window.scrollY;
+
+    const handleScroll = () => {
+      const y = window.scrollY;
+      const delta = y - lastY;
+      if (Math.abs(delta) < SCROLL_SLOP) return;
+      lastY = y;
+      setHidden(mediaQuery.matches && delta > 0 && y > HIDE_AFTER);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const closeMenu = () => setMenuOpen(false);
 
@@ -41,7 +62,8 @@ function Header() {
   }, [menuOpen]);
 
   return (
-    <header className={styles.header}>
+    // Never hide while the menu is open
+    <header className={hidden && !menuOpen ? `${styles.header} ${styles.hidden}` : styles.header}>
       <div className={styles.bar}>
         {/* Logo */}
         <Link href="/#top" className={styles.logo}>

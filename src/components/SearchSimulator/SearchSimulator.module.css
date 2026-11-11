@@ -523,11 +523,12 @@
 }
 
 .stat {
-  gap: 4px;
+  gap: 6px 12px;
   display: flex;
+  flex-wrap: wrap;
   margin-top: 8px;
   padding-top: 18px;
-  flex-direction: column;
+  align-items: center;
   border-top: 1px solid var(--border-faint);
 }
 
@@ -540,6 +541,7 @@
 }
 
 .statLabel {
-  font-size: 15px;
+  font-size: 18px;
+  line-height: 1.3;
   color: var(--text-secondary);
 }

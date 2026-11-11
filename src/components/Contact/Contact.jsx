@@ -4,10 +4,15 @@ import { EMAIL, PHONE_HREF } from "../../data/contact";
 function Contact() {
   return (
     <section id="contact" className={styles.contact}>
-      {/* Always three lines in title case: each span is a block that never wraps */}
+      {/* Two frames of dithered stardust that fade into each other, so the stars twinkle.
+          The art has a clearing in the middle and sits behind the text. */}
+      <div aria-hidden="true" className={`${styles.stars} ${styles.starsA}`}></div>
+      <div aria-hidden="true" className={`${styles.stars} ${styles.starsB}`}></div>
+
+      {/* Always three lines: each span is a block that never wraps */}
       <h2 className={styles.title}>
         <span className={styles.lineLarge}>One Partner</span>
-        <span className={styles.lineSmall}>for the Whole</span>
+        <span className={styles.lineSmall}>for the whole</span>
         <span className={styles.lineLarge}>Digital Side</span>
       </h2>
       <p className={styles.text}>
@@ -16,10 +21,10 @@ function Contact() {
       </p>
       <div className={styles.buttons}>
         <a href={`mailto:${EMAIL}`} className={styles.primaryButton}>
-          Email me
+          Email Me
         </a>
         <a href={PHONE_HREF} className={styles.secondaryButton}>
-          Call me
+          Call Me
         </a>
       </div>
     </section>

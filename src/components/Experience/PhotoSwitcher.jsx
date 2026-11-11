@@ -3,14 +3,14 @@ import Image from "next/image";
 import { useRef, useState } from "react";
 import styles from "./Experience.module.css";
 
-// Close-up first. `position` keeps Gilmer in frame when the photo is cropped to a portrait shape on wide screens.
+// Wide overlook shot first. `position` keeps Gilmer in frame when the photo is cropped to a portrait shape on wide screens.
 const PHOTOS = [
-  { src: "/images/gilmer-perez-2.jpg", alt: "Gilmer Perez on a trail below the Hollywood sign", position: "66% 50%" },
   {
     src: "/images/gilmer-perez-1.jpg",
     alt: "Gilmer Perez standing at an overlook with the Hollywood Hills behind him",
     position: "57% 50%",
   },
+  { src: "/images/gilmer-perez-2.jpg", alt: "Gilmer Perez on a trail below the Hollywood sign", position: "66% 50%" },
 ];
 
 // Full width below 1024px, about 40% of the 1200px content width above it

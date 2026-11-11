@@ -1,6 +1,7 @@
 .contact {
   gap: 24px;
   display: flex;
+  position: relative;
   margin: 0 auto;
   text-align: center;
   align-items: center;
@@ -10,6 +11,14 @@
 }
 
 /* Three-line heading: the small middle line sits between the two large ones */
+/* Everything in the section sits in front of the stars */
+.title,
+.text,
+.buttons {
+  z-index: 1;
+  position: relative;
+}
+
 .title {
   gap: 4px;
   display: flex;
@@ -20,14 +29,60 @@
 .lineLarge {
   line-height: 0.95;
   white-space: nowrap;
-  font-size: clamp(42px, 8vw, 112px);
+  font-size: clamp(54px, 9vw, 112px);
 }
 
 .lineSmall {
   font-style: italic;
   white-space: nowrap;
-  color: var(--text-muted);
-  font-size: clamp(22px, 3.6vw, 50px);
+  color: var(--primary);
+  font-size: clamp(26px, 3.8vw, 50px);
+  text-shadow: 0 0 16px rgba(var(--primary-rgb), 0.55), 0 0 40px rgba(var(--primary-rgb), 0.25);
+}
+
+/* Twinkling stardust: two 2x mask frames crossfading */
+.stars {
+  top: 30px;
+  left: 50%;
+  z-index: 0;
+  width: 100vw;
+  height: 360px;
+  position: absolute;
+  pointer-events: none;
+  transform: translateX(-50%);
+  background-color: var(--dither);
+}
+
+.starsA {
+  animation: twinkleA 5s ease-in-out infinite;
+  -webkit-mask: url("/dither/cta-stars-a.png") center / auto 360px no-repeat;
+  mask: url("/dither/cta-stars-a.png") center / auto 360px no-repeat;
+}
+
+.starsB {
+  animation: twinkleB 5s ease-in-out infinite;
+  -webkit-mask: url("/dither/cta-stars-b.png") center / auto 360px no-repeat;
+  mask: url("/dither/cta-stars-b.png") center / auto 360px no-repeat;
+}
+
+@keyframes twinkleA {
+  0%,
+  100% {
+    opacity: 0.75;
+  }
+  50% {
+    opacity: 0.15;
+  }
+}
+
+@keyframes twinkleB {
+  0%,
+  100% {
+    opacity: 0.15;
+  }
+  50% {
+    opacity: 0.75;
+  }
 }
 
 .text {

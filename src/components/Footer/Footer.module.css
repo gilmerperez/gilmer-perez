@@ -102,7 +102,7 @@
   justify-content: center;
   font-family: var(--font-heading);
   border-radius: var(--radius-pill);
-  border: 1px solid var(--footer-text);
+  border: 1px solid var(--footer-cta);
   transition: box-shadow 0.3s ease;
 }
 
@@ -148,8 +148,18 @@
   position: absolute;
   pointer-events: none;
   background-color: var(--footer-dither);
-  -webkit-mask: url("/dither/footer.png") center bottom / auto 400px no-repeat;
-  mask: url("/dither/footer.png") center bottom / auto 400px no-repeat;
+  -webkit-mask: url("/dither/footer-night.png") center bottom / auto 400px no-repeat;
+  mask: url("/dither/footer-night.png") center bottom / auto 400px no-repeat;
+}
+
+/* Daytime sky: clouds instead of stars */
+:global(html[data-theme="light"]) .sceneArt {
+  -webkit-mask-image: url("/dither/footer-day.png");
+  mask-image: url("/dither/footer-day.png");
+}
+
+:global(html[data-theme="light"]) .shootingStar {
+  display: none;
 }
 
 /* A streak that crosses the sky once every 11 seconds */
@@ -196,28 +206,30 @@
 
 .car {
   left: 50%;
-  bottom: 56px;
-  width: 96px;
-  height: 56px;
+  bottom: 46px;
+  width: 168px;
+  height: 76px;
+  overflow: visible;
   position: absolute;
   transform: translateX(-50%);
 }
 
 .taillight {
+  filter: drop-shadow(0 0 7px var(--footer-accent));
   animation: var(--pulse-tail) 3.5s var(--pulse-timing);
 }
 
 /* Taillight reflection on the road */
 .carGlow {
   left: 50%;
-  bottom: 40px;
-  width: 140px;
-  height: 18px;
+  bottom: 30px;
+  width: 260px;
+  height: 36px;
   position: absolute;
   border-radius: 50%;
   transform: translateX(-50%);
   animation: var(--pulse-tail) 3.5s var(--pulse-timing);
-  background: radial-gradient(ellipse at center, rgba(255, 77, 61, 0.45), rgba(255, 77, 61, 0) 70%);
+  background: radial-gradient(ellipse at center, rgba(255, 77, 61, 0.6), rgba(255, 77, 61, 0) 70%);
 }
 
 /* Phones: the art stays at full size (scaling it makes the dots shimmer) and is cropped at the sides */
