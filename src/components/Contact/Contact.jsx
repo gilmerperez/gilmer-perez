@@ -8,7 +8,7 @@ function Contact() {
       <h2 className={styles.title}>
         <span className={styles.lineLarge}>ONE PARTNER</span>
         <span className={styles.lineSmall}>FOR THE WHOLE</span>
-        <span className={styles.lineLarge}>DIGITAL SIDE.</span>
+        <span className={styles.lineLarge}>DIGITAL SIDE</span>
       </h2>
       <p className={styles.text}>
         Whether you need a website, more people finding it, ads that pay for themselves, or just someone to explain

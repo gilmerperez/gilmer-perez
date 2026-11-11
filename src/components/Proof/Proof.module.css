@@ -13,6 +13,10 @@
   --lh-average-rgb: 255, 164, 0;
   --lh-fail: #ff4e42;
   --lh-fail-rgb: 255, 78, 66;
+  /* Score text colors from Google's report, darker so they read on white */
+  --lh-pass-text: #008800;
+  --lh-average-text: #c33300;
+  --lh-fail-text: #cc0000;
 }
 
 /* ==========================================================================
@@ -24,9 +28,10 @@
   align-items: center;
   flex-direction: column;
   padding: 36px 20px 30px;
-  background: var(--surface);
+  color: #212121;
+  background: #ffffff;
   border-radius: var(--radius);
-  border: 1px solid var(--border-faint);
+  border: 1px solid #dadce0;
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -61,32 +66,32 @@
 }
 
 .gaugePass {
-  color: var(--lh-pass);
+  color: var(--lh-pass-text);
   border-color: var(--lh-pass);
   background: rgba(var(--lh-pass-rgb), 0.12);
 }
 
 .gaugeAverage {
-  color: var(--lh-average);
+  color: var(--lh-average-text);
   border-color: var(--lh-average);
   background: rgba(var(--lh-average-rgb), 0.12);
 }
 
 .gaugeFail {
-  color: var(--lh-fail);
+  color: var(--lh-fail-text);
   border-color: var(--lh-fail);
   background: rgba(var(--lh-fail-rgb), 0.12);
 }
 
 .gaugeUnknown {
-  color: var(--text-muted);
-  border-color: var(--border-muted);
+  color: #5f6368;
+  border-color: #dadce0;
 }
 
 .gaugeLabel {
   font-size: 18px;
   line-height: 1.3;
-  color: var(--text-primary);
+  color: #212121;
 }
 
 /* Legend pill */
@@ -98,9 +103,9 @@
   padding: 12px 26px;
   border-radius: 999px;
   justify-content: center;
-  color: var(--text-primary);
+  color: #212121;
   font-family: var(--font-body);
-  border: 1px solid var(--border-muted);
+  border: 1px solid #dadce0;
 }
 
 .legendItem {
@@ -130,18 +135,18 @@
 /* ==========================================================================
    Schema explainer
    ========================================================================== */
+/* Explanation first, code panel underneath, at every width */
 .schema {
   gap: 24px;
   display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
+  flex-direction: column;
 }
 
 .explainer {
   gap: 14px;
   min-width: 0;
   display: flex;
-  flex: 2 1 320px;
+  max-width: 820px;
   flex-direction: column;
 }
 
@@ -178,7 +183,6 @@
 .codePanel {
   min-width: 0;
   overflow: hidden;
-  flex: 3 1 420px;
   background: var(--surface);
   border-radius: var(--radius);
   border: 1px solid var(--border-faint);
@@ -197,6 +201,8 @@
   font-size: 14px;
   line-height: 1.6;
   overflow-x: auto;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
   color: var(--text-secondary);
   font-family: var(--font-body);
 }

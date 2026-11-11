@@ -21,9 +21,9 @@ const TITLE = "Gilmer Perez | Digital Growth Specialist";
 const DESCRIPTION =
   "Gilmer Perez is a Digital Growth Specialist covering web development, SEO, paid media, and analytics. One partner for the whole digital side of your business.";
 const SHARE_IMAGE = {
-  url: `${SITE_URL}/images/gilmer-perez-1.jpg`,
-  width: 1367,
-  height: 911,
+  url: `${SITE_URL}/images/share-image.png`,
+  width: 1200,
+  height: 630,
   alt: "Gilmer Perez, Digital Growth Specialist",
 };
 

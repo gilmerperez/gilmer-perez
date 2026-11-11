@@ -7,12 +7,11 @@
   max-width: var(--content-width);
 }
 
-/* Timeline and photo wrap, so the photo drops below on narrow screens */
+/* Stacked below 1024px: timeline, then a full-width 3:2 photo */
 .columns {
-  gap: 36px 48px;
+  gap: 36px;
   display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
+  flex-direction: column;
 }
 
 /* Timeline */
@@ -20,7 +19,6 @@
   min-width: 0;
   display: flex;
   margin-left: 6px;
-  flex: 3 1 480px;
   flex-direction: column;
   border-left: 2px solid var(--primary);
 }
@@ -75,7 +73,6 @@
   gap: 10px;
   min-width: 0;
   display: flex;
-  flex: 2 1 320px;
   flex-direction: column;
 }
 
@@ -91,6 +88,10 @@
   border: 1px solid var(--primary);
   box-shadow: var(--glow-pulse-rest);
   animation: var(--pulse-glow) 6s var(--pulse-timing);
+  /* Tilt set inline by PhotoSwitcher on pointer move; eases back to flat on leave */
+  will-change: transform;
+  transform-style: preserve-3d;
+  transition: transform 0.25s ease-out;
 }
 
 .photo {
@@ -116,4 +117,24 @@
   color: var(--text-primary);
   font-family: var(--font-heading);
   background: rgba(var(--surface-rgb), 0.82);
+}
+
+/* Wide screens: the photo becomes a tall portrait beside the timeline and stays
+   in view (sticky) while the timeline scrolls past it */
+@media (min-width: 1025px) {
+  .columns {
+    gap: 56px;
+    display: grid;
+    align-items: start;
+    grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr);
+  }
+
+  .photoColumn {
+    top: 120px;
+    position: sticky;
+  }
+
+  .photoButton {
+    aspect-ratio: 4 / 5;
+  }
 }

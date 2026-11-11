@@ -76,10 +76,22 @@
   color: var(--text-secondary);
 }
 
+/* Bordered pill with a slight glow so it reads as the call to action */
 .cardMore {
   font-size: 15px;
+  margin-top: 4px;
+  padding: 8px 14px;
+  align-self: flex-start;
   color: var(--primary);
+  border-radius: var(--radius);
   font-family: var(--font-heading);
+  border: 1px solid var(--primary);
+  transition: box-shadow 0.3s ease;
+  box-shadow: 0 0 10px rgba(var(--primary-rgb), 0.45);
+}
+
+.card:hover .cardMore {
+  box-shadow: 0 0 16px rgba(var(--primary-rgb), 0.7);
 }
 
 /* ==========================================================================

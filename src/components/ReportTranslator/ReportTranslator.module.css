@@ -33,8 +33,19 @@
   border-radius: 999px;
   background: var(--surface);
   border: 2px solid var(--primary);
-  box-shadow: var(--glow-pulse-rest);
-  animation: var(--pulse-glow) 4s var(--pulse-timing);
+  /* Softer than the other pulsing elements, on purpose */
+  box-shadow: 0 0 6px rgba(var(--primary-rgb), 0.35);
+  animation: softGlowPulse 4s var(--pulse-timing);
+}
+
+@keyframes softGlowPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 6px rgba(var(--primary-rgb), 0.35);
+  }
+  50% {
+    box-shadow: 0 0 12px rgba(var(--primary-rgb), 0.55);
+  }
 }
 
 .knob {
@@ -45,8 +56,8 @@
   position: absolute;
   border-radius: 50%;
   transition: left 0.3s ease;
-  background: var(--primary);
-  box-shadow: 0 0 14px var(--primary), 0 0 30px rgba(var(--primary-rgb), 0.7);
+  background: #ffffff;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.35);
 }
 
 .knobOn {
