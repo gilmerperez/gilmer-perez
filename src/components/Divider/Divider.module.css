@@ -15,8 +15,8 @@
   inset: 0;
   position: absolute;
   background-color: var(--dither);
-  -webkit-mask: var(--art) center / auto var(--h) no-repeat;
-  mask: var(--art) center / auto var(--h) no-repeat;
+  -webkit-mask: var(--sky) center / auto var(--h) no-repeat;
+  mask: var(--sky) center / auto var(--h) no-repeat;
 }
 
 /* ---------- Dark theme: the stardust braid ---------- */
@@ -42,8 +42,8 @@
   inset: 0;
   position: absolute;
   background-color: var(--dither);
-  -webkit-mask: url("/dither/dv-braid-a.png") center / auto 120px no-repeat;
-  mask: url("/dither/dv-braid-a.png") center / auto 120px no-repeat;
+  -webkit-mask: var(--braid) center / auto 120px no-repeat;
+  mask: var(--braid) center / auto 120px no-repeat;
 }
 
 /* Small bright points that race out along the center line during the reveal */

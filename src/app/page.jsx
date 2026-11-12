@@ -21,17 +21,17 @@ export default function Home() {
       <main>
         <Hero />
         <Process />
-        <Divider sky={1} />
+        <Divider variant={1} />
         <Platforms />
-        <Divider sky={2} />
+        <Divider variant={2} />
         <SearchSimulator />
-        <Divider sky={3} />
+        <Divider variant={3} />
         <ReportTranslator />
-        <Divider sky={4} />
+        <Divider variant={4} />
         <Experience />
-        <Divider sky={5} />
+        <Divider variant={5} />
         <Projects />
-        <Divider sky={6} />
+        <Divider variant={6} />
         <Proof />
         <Contact />
       </main>
