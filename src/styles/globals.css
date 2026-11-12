@@ -45,9 +45,10 @@ html[data-theme="dark"] {
   --car-rim: rgba(127, 176, 255, 0.6);
   --orb-light: #f3ecdc;
 
-  /* Scrollbar */
-  --scroll-thumb: #474747;
-  --scroll-thumb-hover: #4d94ff;
+  /* Scrollbar: a standard gray thumb with a thin accent border */
+  --scroll-thumb: #4a4a4a;
+  --scroll-thumb-hover: #5a5a5a;
+  --scroll-border: #4d94ff;
 
   /* Glows: soft and rare. Accent glow on accent things, white glow on neutral things */
   --glow-text: 0 0 14px rgba(var(--primary-rgb), 0.38);
@@ -95,8 +96,9 @@ html[data-theme="light"] {
   --car-rim: rgba(244, 241, 234, 0.75);
   --orb-light: #fff6e0;
 
-  --scroll-thumb: #b1aa9c;
-  --scroll-thumb-hover: #1f3fbf;
+  --scroll-thumb: #c4beb2;
+  --scroll-thumb-hover: #b1aa9c;
+  --scroll-border: #000000;
 
   /* On cream a white glow disappears, so neutral things glow cobalt instead */
   --glow-text: 0 0 12px rgba(var(--primary-rgb), 0.2);
@@ -279,26 +281,22 @@ section {
   background: var(--primary);
 }
 
-/* Custom scrollbar: a slim pill that turns accent colored on hover */
-html {
-  scrollbar-width: thin;
-  scrollbar-color: var(--scroll-thumb) transparent;
-}
-
+/* Scrollbar: looks like the normal one, with a 1px border (blue in dark, black in light).
+   Chrome, Edge, and Safari draw this; Firefox keeps its own scrollbar.
+   Do not add scrollbar-color or scrollbar-width: Chrome ignores these styles when they are set. */
 ::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+  width: 12px;
+  height: 12px;
 }
 
 ::-webkit-scrollbar-track {
-  background: transparent;
+  background: var(--bg-color);
 }
 
 ::-webkit-scrollbar-thumb {
-  border-radius: 999px;
-  background-clip: content-box;
-  border: 3px solid transparent;
+  border-radius: 6px;
   background-color: var(--scroll-thumb);
+  border: 1px solid var(--scroll-border);
 }
 
 ::-webkit-scrollbar-thumb:hover {

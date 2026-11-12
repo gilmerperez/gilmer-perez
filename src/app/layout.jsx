@@ -95,11 +95,6 @@ export const metadata = {
   verification: {
     google: "3FTfHaZrjPjKogJbOTyhOila5U11Fj2l512M51iBOH0",
   },
-  icons: {
-    icon: "/favicon.png",
-    shortcut: "/favicon.png",
-    apple: "/favicon.png",
-  },
 };
 
 export const viewport = {

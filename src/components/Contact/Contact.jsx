@@ -5,7 +5,7 @@ function Contact() {
   return (
     <section id="contact" className={styles.contact}>
       {/* Two frames of dithered stardust that fade into each other, so the stars twinkle.
-          The art has a clearing in the middle and sits behind the text. */}
+          They run edge to edge and thin out (but never stop) behind the words. */}
       <div aria-hidden="true" className={`${styles.stars} ${styles.starsA}`}></div>
       <div aria-hidden="true" className={`${styles.stars} ${styles.starsB}`}></div>
 

@@ -3,7 +3,7 @@ import styles from "./Divider.module.css";
 // * A dithered band between sections, each a different piece of a space scene:
 // "wave" (a starry wave with small planets), "galaxy" (an edge-on galaxy),
 // "asteroids" (an asteroid belt around a small planet), "stardust",
-// "sound" (two waves crossing like sound waves), and "ripples".
+// "sound" (two waves crossing like sound waves), and "ripples" (concentric rings).
 function Divider({ variant }) {
   return <div aria-hidden="true" className={`${styles.divider} ${styles[variant]}`}></div>;
 }

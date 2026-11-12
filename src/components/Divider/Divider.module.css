@@ -1,5 +1,6 @@
-/* Each pattern is a 2x mask image (twice the band height in pixels), shown at its
-   natural size and tinted with the theme's dither color, so every dot stays crisp */
+/* Each pattern is a 2x mask image, 3840 CSS px wide so it reaches the edges of
+   large screens, shown at its natural size and tinted with the theme's dither
+   color so every dot stays crisp. Narrower screens see the center of it. */
 .divider {
   opacity: 0.8;
   pointer-events: none;
@@ -10,7 +11,7 @@
   mask-position: center;
 }
 
-/* A thick dotted wave with stars and small planets */
+/* A dotted wave, thickest in the middle, with stars and small planets */
 .wave {
   height: 90px;
   -webkit-mask-image: url("/dither/dv-wave.png");
@@ -28,7 +29,7 @@
   mask-size: auto 110px;
 }
 
-/* An asteroid belt circling a small planet */
+/* An asteroid belt circling a small planet, with more planets and stars */
 .asteroids {
   height: 110px;
   -webkit-mask-image: url("/dither/dv-asteroids.png");
@@ -37,7 +38,7 @@
   mask-size: auto 110px;
 }
 
-/* Scattered stardust */
+/* Stardust with a few small planets */
 .stardust {
   height: 80px;
   -webkit-mask-image: url("/dither/dv-stardust.png");
@@ -55,21 +56,11 @@
   mask-size: auto 80px;
 }
 
-/* Ripples rising from the bottom: stretched across the whole width on wide
-   screens, the tighter version on narrow ones */
+/* Ripples: full concentric rings, wide enough to reach the edges */
 .ripples {
-  height: 80px;
-  -webkit-mask-position: center bottom;
-  mask-position: center bottom;
-  -webkit-mask-image: url("/dither/dv-ripples-wide.png");
-  mask-image: url("/dither/dv-ripples-wide.png");
-  -webkit-mask-size: auto 80px;
-  mask-size: auto 80px;
-}
-
-@media (max-width: 900px) {
-  .ripples {
-    -webkit-mask-image: url("/dither/dv-ripples.png");
-    mask-image: url("/dither/dv-ripples.png");
-  }
+  height: 120px;
+  -webkit-mask-image: url("/dither/dv-ripples.png");
+  mask-image: url("/dither/dv-ripples.png");
+  -webkit-mask-size: auto 120px;
+  mask-size: auto 120px;
 }
