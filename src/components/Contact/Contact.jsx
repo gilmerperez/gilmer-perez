@@ -18,10 +18,10 @@ function Contact() {
         <div className={`${styles.layer} ${styles.bank}`}></div>
       </div>
 
-      {/* Always three lines: each span is a block that never wraps */}
+      {/* Always three lines: each span is a block that never wraps. The {" "} between them is invisible but keeps the words apart for search engines and screen readers. */}
       <h2 className={styles.title}>
-        <span className={styles.lineLarge}>One Partner</span>
-        <span className={styles.lineSmall}>for the Whole</span>
+        <span className={styles.lineLarge}>One Partner</span>{" "}
+        <span className={styles.lineSmall}>for the Whole</span>{" "}
         <span className={styles.lineLarge}>Digital Side</span>
       </h2>
       <p className={styles.text}>

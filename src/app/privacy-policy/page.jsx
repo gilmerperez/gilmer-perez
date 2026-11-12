@@ -114,8 +114,11 @@ export default function PrivacyPolicy() {
             {/* Cookies and analytics */}
             <p className={styles.policyHeading}>Cookies and Analytics</p>
             <p className={styles.policyText}>
-              This website does not use cookies, tracking pixels, or third-party analytics tools. I do not track your
-              browsing behavior or device usage. Your visit to my portfolio is completely private and anonymous.
+              This website does not use cookies or tracking pixels, and it does not track you across other websites. It uses
+              Vercel Web Analytics, a privacy-focused tool that counts page views and shows which pages are visited, along
+              with general details such as country, browser, and device type. It does not use cookies and does not
+              identify you personally. The only thing saved in your browser is your light or dark theme choice, which
+              never leaves your device.
             </p>
           </section>
         </div>

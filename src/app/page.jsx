@@ -6,7 +6,7 @@ import Contact from "../components/Contact/Contact";
 import Projects from "../components/Projects/Projects";
 import Platforms from "../components/Platforms/Platforms";
 import Experience from "../components/Experience/Experience";
-import { personSchema, websiteSchema } from "../data/schema";
+import { personSchema, websiteSchema, serviceSchema } from "../data/schema";
 import SearchSimulator from "../components/SearchSimulator/SearchSimulator";
 import StructuredData from "../components/StructuredData/StructuredData";
 import ReportTranslator from "../components/ReportTranslator/ReportTranslator";
@@ -18,6 +18,7 @@ export default function Home() {
       {/* The Proof section prints this same Person object */}
       <StructuredData data={personSchema} />
       <StructuredData data={websiteSchema} />
+      <StructuredData data={serviceSchema} />
       <main>
         <Hero />
         <Process />

@@ -41,3 +41,35 @@ export const websiteSchema = {
     name: "Gilmer Perez",
   },
 };
+
+// * ProfessionalService schema
+// Describes the freelance work as a local business so it can show up in local searches
+export const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "@id": `${SITE_URL}/#service`,
+  name: "Gilmer Perez | Digital Growth Specialist",
+  url: SITE_URL,
+  image: `${SITE_URL}/images/gilmer-perez-1.jpg`,
+  description:
+    "Website development, SEO, paid advertising, analytics, and reporting for businesses in Orlando and across Florida.",
+  founder: { "@type": "Person", name: "Gilmer Perez", url: SITE_URL },
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Orlando",
+    addressRegion: "FL",
+    addressCountry: "US",
+  },
+  areaServed: [
+    { "@type": "City", name: "Orlando" },
+    { "@type": "State", name: "Florida" },
+  ],
+  knowsAbout: ["SEO", "Google Ads", "Meta Ads", "Google Analytics 4", "Web Development"],
+  makesOffer: [
+    "Website Development",
+    "Search Engine Optimization",
+    "Paid Advertising",
+    "Analytics and Tracking",
+    "Reporting",
+  ].map((name) => ({ "@type": "Offer", itemOffered: { "@type": "Service", name } })),
+};
