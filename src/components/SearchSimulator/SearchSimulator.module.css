@@ -18,7 +18,7 @@
   display: inline-flex;
   min-height: 44px;
   font-size: 18px;
-  padding: 0 20px;
+  padding: var(--serif-nudge) 20px 0;
   line-height: 1;
   text-align: center;
   align-items: center;

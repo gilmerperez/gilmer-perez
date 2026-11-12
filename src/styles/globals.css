@@ -125,6 +125,11 @@ html[data-theme="light"] {
 }
 
 :root {
+  /* Newsreader sits a little high in its line box (its capitals center 0.1em above
+     the middle). Serif buttons and toggles add this much padding on top, which moves
+     the text down 0.07em so it looks centered. */
+  --serif-nudge: 0.14em;
+
   /* Fonts (the next/font variables are set on <html> in layout.jsx) */
   --font-heading: var(--font-newsreader), Georgia, "Times New Roman", serif;
   --font-body: var(--font-outfit), system-ui, sans-serif;
@@ -339,6 +344,7 @@ html {
   justify-content: center;
   font-family: var(--font-heading);
   border-radius: var(--radius-pill);
+  padding-top: var(--serif-nudge);
   transition: box-shadow 0.3s ease, transform 0.3s var(--ease), background-color 0.3s ease, border-color 0.3s ease,
     color 0.3s ease;
 }
@@ -374,7 +380,7 @@ html {
 .btn-small {
   min-height: 40px;
   font-size: 16px;
-  padding: 0 18px;
+  padding: var(--serif-nudge) 18px 0;
 }
 
 /* Hidden from sight, still read by screen readers */

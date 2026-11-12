@@ -17,7 +17,10 @@
   font-family: var(--font-heading);
 }
 
+/* Nudged down so the serif lines up with the middle of the switch */
 .switchLabel {
+  top: 0.07em;
+  position: relative;
   color: var(--text-muted);
   transition: color 0.3s ease;
 }

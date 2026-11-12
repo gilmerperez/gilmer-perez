@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 import styles from "./Hero.module.css";
+import HeroOrb from "./HeroOrb";
 
 const STEPS = ["BUILD", "RANK", "TRACK", "ADVERTISE", "REPORT", "MAINTAIN"];
 
@@ -52,13 +53,22 @@ function Hero() {
         </p>
       </div>
 
-      {/* Dithered sun over rolling hills. Three layers: the sun (slowly rises and sinks),
-          a solid copy of the hills in the page color that hides the sun behind them,
-          and the dotted hills on top. */}
-      <div aria-hidden="true" className={styles.scene}>
-        <div className={styles.sun}></div>
-        <div className={styles.hillsSolid}></div>
-        <div className={styles.hills}></div>
+      {/* Dithered sky over rolling hills. In the light theme it is the sun; in the dark
+          theme the sun has collapsed into a black hole. Layers, back to front: the sun
+          (slowly rises and sinks), the black hole (two frames that shimmer), a solid copy
+          of the hills in the page color that hides whatever is behind them, the dotted
+          hills, and the button that switches the theme. */}
+      <div className={styles.scene}>
+        <div aria-hidden="true" className={styles.sun}>
+          <div className={styles.sunDisc}></div>
+        </div>
+        <div aria-hidden="true" className={styles.hole}>
+          <div className={`${styles.holeFrame} ${styles.holeA}`}></div>
+          <div className={`${styles.holeFrame} ${styles.holeB}`}></div>
+        </div>
+        <div aria-hidden="true" className={styles.hillsSolid}></div>
+        <div aria-hidden="true" className={styles.hills}></div>
+        <HeroOrb />
       </div>
     </section>
   );

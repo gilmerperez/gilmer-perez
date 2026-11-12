@@ -90,7 +90,7 @@
 }
 
 .stat {
-  gap: 6px 12px;
+  gap: 0 12px;
   display: flex;
   flex-wrap: wrap;
   margin-top: 8px;
@@ -99,19 +99,14 @@
   border-top: 1px solid var(--border-faint);
 }
 
-.statNum {
-  font-size: 52px;
-  line-height: 1;
+/* The number and its label read as one line, in one style */
+.statNum,
+.statLabel {
+  font-size: 40px;
+  line-height: 1.15;
   color: var(--primary);
   text-shadow: var(--glow-text);
   font-family: var(--font-heading);
-}
-
-/* Just a little smaller than the number beside it */
-.statLabel {
-  font-size: 38px;
-  line-height: 1.15;
-  color: var(--text-secondary);
 }
 
 .panelTools {
