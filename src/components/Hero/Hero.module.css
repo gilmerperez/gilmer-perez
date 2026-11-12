@@ -149,12 +149,13 @@
   inset: 0;
   opacity: 0;
   position: absolute;
-  background-color: var(--dither);
+  /* Near white at rest (what the light blue looked like brightened); the light blue on hover */
+  background-color: #ebffff;
   transform: scale(0.25) rotate(-12deg);
   transform-origin: 50% calc(100% - 250px);
   -webkit-mask: url("/dither/hero-hole.png") center bottom / auto 500px no-repeat;
   mask: url("/dither/hero-hole.png") center bottom / auto 500px no-repeat;
-  transition: transform 0.45s ease-in, opacity 0.35s ease-in, filter 0.4s ease;
+  transition: transform 0.45s ease-in, opacity 0.35s ease-in, background-color 0.4s ease;
 }
 
 /* Dark theme: the sun shrinks to a point and the black hole swirls open in its place */
@@ -167,7 +168,7 @@
 :global(html[data-theme="dark"]) .hole {
   opacity: 1;
   transform: none;
-  transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.5s, opacity 0.8s ease 0.5s, filter 0.4s ease;
+  transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.5s, opacity 0.8s ease 0.5s, background-color 0.4s ease;
 }
 
 /* The switch: an invisible round button over the sun or black hole */
@@ -190,10 +191,13 @@
   outline-offset: 6px;
 }
 
-/* A hint that it can be clicked: the sun or black hole brightens */
-.scene:has(.orb:hover) .sunDisc,
-.scene:has(.orb:hover) .hole {
+/* A hint that it can be clicked: the sun brightens, the black hole turns light blue */
+.scene:has(.orb:hover) .sunDisc {
   filter: brightness(1.25);
+}
+
+.scene:has(.orb:hover) .hole {
+  background-color: var(--dither);
 }
 
 /* The hills belong to the sunrise. In the dark theme the scene is open space,
