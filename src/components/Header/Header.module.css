@@ -58,26 +58,6 @@
   border-bottom: 1px solid var(--primary);
 }
 
-.contactButton {
-  display: inline-flex;
-  min-height: 40px;
-  font-size: 17px;
-  padding: 0 18px;
-  line-height: 1;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-primary);
-  font-family: var(--font-heading);
-  border-radius: var(--radius-pill);
-  border: 1px solid var(--primary);
-  transition: box-shadow 0.3s ease, color 0.3s ease;
-}
-
-.contactButton:hover {
-  box-shadow: var(--glow-accent);
-}
-
 /* Hamburger button (mobile only) */
 .burger {
   width: 48px;
@@ -104,19 +84,10 @@
   padding: 10px 4px;
 }
 
-.mobileContact,
-.mobileContact:hover {
+/* Full width in the dropdown */
+.mobileContact {
   display: flex;
-  font-size: 20px;
   margin-top: 10px;
-  min-height: 52px;
-  line-height: 1;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  background: var(--primary);
-  color: var(--text-on-primary);
-  border-radius: var(--radius-pill);
 }
 
 /* Collapse into the hamburger at 860px and below */

@@ -181,13 +181,14 @@
   color: var(--text-secondary);
 }
 
-.nextMonth {
-  font-size: 17px;
-  line-height: 1.65;
-  color: var(--text-secondary);
+/* Styled like the section heading and its intro line */
+.nextTitle {
+  font-size: 34px;
+  margin-top: 6px;
 }
 
-.nextLabel {
-  font-weight: 500;
-  color: var(--text-primary);
+.nextMonth {
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--text-secondary);
 }

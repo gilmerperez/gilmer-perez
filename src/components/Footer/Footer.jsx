@@ -80,7 +80,7 @@ function Footer() {
           <p className={styles.startText}>
             Have a goal for your business? Tell me what it is and I will map out how to get there.
           </p>
-          <Link href="/#contact" className={styles.startButton}>
+          <Link href="/#contact" className={`btn ${styles.startButton}`}>
             Get in touch
           </Link>
         </div>

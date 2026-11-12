@@ -89,25 +89,21 @@
   color: var(--footer-text);
 }
 
-.startButton {
-  display: inline-flex;
+/* The footer's one button: primary blue in dark mode, bone white on the cobalt footer in light mode */
+.startButton,
+.footer .startButton:hover {
   min-height: 44px;
   font-size: 17px;
   padding: 0 22px;
   margin-top: 14px;
-  line-height: 1;
-  text-align: center;
-  align-items: center;
+  text-shadow: none;
   align-self: flex-start;
-  justify-content: center;
-  font-family: var(--font-heading);
-  border-radius: var(--radius-pill);
-  border: 1px solid var(--footer-cta);
-  transition: box-shadow 0.3s ease;
+  color: var(--footer-button-text);
+  background: var(--footer-button-bg);
+  border: 1px solid var(--footer-button-bg);
 }
 
 .footer .startButton:hover {
-  text-shadow: none;
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.25);
 }
 

@@ -83,18 +83,6 @@
   color: var(--text-secondary);
 }
 
-.outcome {
-  font-size: 15px;
-  line-height: 1.6;
-}
-
-.outcomeLabel {
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--primary);
-  letter-spacing: 0.16em;
-}
-
 .stat {
   gap: 6px 12px;
   display: flex;
@@ -139,10 +127,18 @@
   flex-wrap: wrap;
 }
 
+/* Chips react on hover just like the stage buttons above */
 .chip {
   font-size: 14px;
   padding: 6px 14px;
   color: var(--text-secondary);
   border-radius: var(--radius-pill);
   border: 1px solid var(--border-faint);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+}
+
+.chip:hover {
+  color: var(--text-primary);
+  box-shadow: var(--glow-neutral);
+  border-color: var(--border-muted);
 }

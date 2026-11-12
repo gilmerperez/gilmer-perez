@@ -42,11 +42,11 @@
 
 /* Twinkling stardust: two 2x mask frames (3840 CSS px wide) crossfading */
 .stars {
-  top: 30px;
+  top: 10px;
   left: 50%;
   z-index: 0;
   width: 100vw;
-  height: 360px;
+  height: 680px;
   position: absolute;
   pointer-events: none;
   transform: translateX(-50%);
@@ -55,14 +55,14 @@
 
 .starsA {
   animation: twinkleA 5s ease-in-out infinite;
-  -webkit-mask: url("/dither/cta-stars-a.png") center / auto 360px no-repeat;
-  mask: url("/dither/cta-stars-a.png") center / auto 360px no-repeat;
+  -webkit-mask: url("/dither/cta-stars-a.png") center top / auto 680px no-repeat;
+  mask: url("/dither/cta-stars-a.png") center top / auto 680px no-repeat;
 }
 
 .starsB {
   animation: twinkleB 5s ease-in-out infinite;
-  -webkit-mask: url("/dither/cta-stars-b.png") center / auto 360px no-repeat;
-  mask: url("/dither/cta-stars-b.png") center / auto 360px no-repeat;
+  -webkit-mask: url("/dither/cta-stars-b.png") center top / auto 680px no-repeat;
+  mask: url("/dither/cta-stars-b.png") center top / auto 680px no-repeat;
 }
 
 @keyframes twinkleA {
@@ -100,37 +100,3 @@
   justify-content: center;
 }
 
-.primaryButton,
-.secondaryButton {
-  display: inline-flex;
-  min-height: 54px;
-  font-size: 21px;
-  padding: 0 32px;
-  line-height: 1;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-heading);
-  border-radius: var(--radius-pill);
-  transition: box-shadow 0.3s ease, transform 0.3s var(--ease), color 0.3s ease;
-}
-
-.primaryButton,
-.primaryButton:hover {
-  background: var(--primary);
-  color: var(--text-on-primary);
-}
-
-.primaryButton:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--glow-accent);
-}
-
-.secondaryButton {
-  border: 1px solid var(--border-muted);
-}
-
-.secondaryButton:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--glow-neutral);
-}

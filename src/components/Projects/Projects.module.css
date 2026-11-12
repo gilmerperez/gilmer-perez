@@ -16,8 +16,10 @@
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
-/* The whole card is one button */
+/* The card. A click anywhere on it opens the modal (see ProjectCard.jsx). */
 .card {
+  cursor: pointer;
+  position: relative;
   padding: 0;
   display: flex;
   overflow: hidden;
@@ -67,7 +69,6 @@
 .cardTitle {
   font-size: 26px;
   line-height: 1.1;
-  font-family: var(--font-heading);
 }
 
 .cardSummary {
@@ -77,29 +78,13 @@
   color: var(--text-secondary);
 }
 
-/* Bordered pill with a slight glow so it reads as the call to action */
-.cardMore {
-  display: inline-flex;
-  min-height: 38px;
-  font-size: 16px;
+.cardButtons {
+  gap: 10px;
+  display: flex;
+  flex-wrap: wrap;
   margin-top: 6px;
-  padding: 0 16px;
-  line-height: 1;
-  text-align: center;
-  align-items: center;
-  align-self: flex-start;
-  justify-content: center;
-  color: var(--primary);
-  font-family: var(--font-heading);
-  border-radius: var(--radius-pill);
-  border: 1px solid var(--primary);
-  box-shadow: 0 0 12px rgba(var(--primary-rgb), 0.22);
-  transition: box-shadow 0.3s ease;
 }
 
-.card:hover .cardMore {
-  box-shadow: var(--glow-accent);
-}
 
 /* ==========================================================================
    Modal (native <dialog>)
@@ -354,38 +339,9 @@
   border-top: 1px solid var(--border-faint);
 }
 
-.navButton,
-.visitButton {
-  display: inline-flex;
-  line-height: 1;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-heading);
-  border-radius: var(--radius-pill);
-  transition: box-shadow 0.3s ease;
-}
-
-.navButton {
-  min-height: 44px;
-  padding: 0 clamp(12px, 3vw, 20px);
-  font-size: clamp(14px, 3.8vw, 17px);
-  border: 1px solid var(--border-muted);
-}
-
-.navButton:hover {
-  box-shadow: var(--glow-neutral);
-}
-
-.visitButton,
-.visitButton:hover {
-  min-height: 48px;
-  padding: 0 clamp(16px, 4vw, 28px);
-  font-size: clamp(15px, 4vw, 19px);
-  background: var(--primary);
-  color: var(--text-on-primary);
-}
-
-.visitButton:hover {
-  box-shadow: var(--glow-accent);
+/* Smaller text and padding on phones so all three fit */
+.modalButton {
+  min-height: 46px;
+  padding: 0 clamp(14px, 3.4vw, 26px);
+  font-size: clamp(14px, 3.8vw, 19px);
 }

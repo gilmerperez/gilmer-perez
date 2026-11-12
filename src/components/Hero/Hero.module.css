@@ -63,40 +63,6 @@
   justify-content: center;
 }
 
-.primaryButton,
-.secondaryButton {
-  display: inline-flex;
-  min-height: 52px;
-  font-size: 20px;
-  padding: 0 28px;
-  line-height: 1;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-heading);
-  border-radius: var(--radius-pill);
-  transition: box-shadow 0.3s ease, transform 0.3s var(--ease), color 0.3s ease;
-}
-
-.primaryButton,
-.primaryButton:hover {
-  background: var(--primary);
-  color: var(--text-on-primary);
-}
-
-.secondaryButton {
-  border: 1px solid var(--border-muted);
-}
-
-.primaryButton:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--glow-accent);
-}
-
-.secondaryButton:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--glow-neutral);
-}
 
 /* BUILD · RANK · ... strip. Blue at rest in dark mode; each word in turn
    brightens and glows for 2.5s, one after another, on a 15s loop. */

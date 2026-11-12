@@ -18,7 +18,7 @@ function Hero() {
         <h1 className={styles.title}>
           Digital Growth
           <br />
-          <span className={styles.titleAccent}>Specialist.</span>
+          <span className={styles.titleAccent}>Specialist</span>
         </h1>
         <div aria-hidden="true" className={styles.rule}></div>
         <p className={styles.body}>
@@ -27,10 +27,10 @@ function Hero() {
           that send it qualified traffic. One partner for the whole digital side of your business.
         </p>
         <div className={styles.buttons}>
-          <a href="#how" className={styles.primaryButton}>
+          <a href="#how" className="btn btn-primary">
             My Process
           </a>
-          <a href="#projects" className={styles.secondaryButton}>
+          <a href="#projects" className="btn btn-secondary">
             View Projects
           </a>
         </div>

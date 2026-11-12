@@ -77,7 +77,7 @@ function Header() {
               {link.label}
             </Link>
           ))}
-          <Link href="/#contact" className={styles.contactButton}>
+          <Link href="/#contact" className="btn btn-primary btn-small">
             Contact
           </Link>
         </nav>
@@ -111,7 +111,7 @@ function Header() {
               {link.label}
             </Link>
           ))}
-          <Link href="/#contact" onClick={closeMenu} className={styles.mobileContact}>
+          <Link href="/#contact" onClick={closeMenu} className={`btn btn-primary ${styles.mobileContact}`}>
             Contact
           </Link>
         </nav>

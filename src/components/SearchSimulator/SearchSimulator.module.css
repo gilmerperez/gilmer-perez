@@ -514,12 +514,15 @@
   flex-wrap: wrap;
 }
 
+/* Same accent tint and soft pulsing glow as the active tab */
 .chip {
   font-size: 14px;
   padding: 6px 14px;
-  color: var(--text-secondary);
+  color: var(--text-primary);
   border-radius: var(--radius-pill);
-  border: 1px solid var(--border-faint);
+  border: 1px solid var(--primary);
+  background: rgba(var(--primary-rgb), 0.1);
+  animation: var(--pulse-soft) 4s var(--pulse-timing);
 }
 
 .stat {

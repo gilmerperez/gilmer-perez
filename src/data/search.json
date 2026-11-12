@@ -29,6 +29,6 @@
     "title": "Paid ads",
     "body": "The fastest way to the top of the page. I build the campaign, pick the keywords, write the ad, and send the click to a page built to turn it into a lead.",
     "tools": ["Google Ads", "Keyword Targeting", "Ad Copy", "Landing Pages", "Budget Pacing"],
-    "stat": { "num": "$500,000", "label": "in ad spend managed for clients" }
+    "stat": null
   }
 ]

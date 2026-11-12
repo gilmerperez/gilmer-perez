@@ -18,7 +18,7 @@ export default function NotFound() {
           {/* Description */}
           <p className={styles.pageNotFoundDescription}>Sorry, the page you are looking for does not exist</p>
           {/* Back button */}
-          <button type="button" className={styles.backButton} onClick={handleBackToHome}>
+          <button type="button" className="btn btn-primary" onClick={handleBackToHome}>
             Back to the home page
           </button>
         </div>

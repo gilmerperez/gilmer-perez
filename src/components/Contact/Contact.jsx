@@ -5,7 +5,7 @@ function Contact() {
   return (
     <section id="contact" className={styles.contact}>
       {/* Two frames of dithered stardust that fade into each other, so the stars twinkle.
-          They run edge to edge and thin out (but never stop) behind the words. */}
+          They run edge to edge, down past the buttons, and thin out (but never stop) behind the words. */}
       <div aria-hidden="true" className={`${styles.stars} ${styles.starsA}`}></div>
       <div aria-hidden="true" className={`${styles.stars} ${styles.starsB}`}></div>
 
@@ -20,10 +20,10 @@ function Contact() {
         what the numbers mean, tell me the goal and I will take it from there.
       </p>
       <div className={styles.buttons}>
-        <a href={`mailto:${EMAIL}`} className={styles.primaryButton}>
+        <a href={`mailto:${EMAIL}`} className="btn btn-primary">
           Email Me
         </a>
-        <a href={PHONE_HREF} className={styles.secondaryButton}>
+        <a href={PHONE_HREF} className="btn btn-secondary">
           Call Me
         </a>
       </div>

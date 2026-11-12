@@ -6,11 +6,35 @@
 
 /* Small spaced-out label, the one place capitals are used */
 .eyebrow {
+  gap: 10px;
+  display: inline-flex;
+  align-items: center;
   font-size: 12px;
   font-weight: 400;
   color: var(--primary);
   letter-spacing: 0.22em;
   text-transform: uppercase;
+}
+
+/* Solid blue dot that blinks slowly and glows a little */
+.dot {
+  width: 7px;
+  height: 7px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: var(--primary);
+  box-shadow: 0 0 8px rgba(var(--primary-rgb), 0.7);
+  animation: blink 1.8s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.25;
+  }
 }
 
 .title {

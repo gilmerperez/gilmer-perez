@@ -2,7 +2,7 @@
   {
     "num": "01",
     "label": "Build",
-    "title": "The website",
+    "title": "The Website",
     "body": "Custom-coded sites in Next.js and React, or builds on WordPress, Squarespace, and Wix. Fast, accessible, mobile-friendly, and structured so search engines can read it from day one.",
     "outcome": "A site that looks right on every screen and is ready to be found.",
     "stat": { "num": "50+", "label": "client websites managed" },
@@ -11,7 +11,7 @@
   {
     "num": "02",
     "label": "Rank",
-    "title": "Search visibility",
+    "title": "Search Visibility",
     "body": "Technical, on-page, off-page, and local SEO. Schema markup, Google Business Profile, citations, and content built to show up in Google, the Map Pack, and AI answers.",
     "outcome": "Your business showing up where your customers are already searching.",
     "stat": null,
@@ -29,7 +29,7 @@
   {
     "num": "04",
     "label": "Advertise",
-    "title": "Paid media",
+    "title": "Paid Media",
     "body": "Campaign setup, audience targeting, budget pacing, and ongoing optimization on Google Ads and Meta Ads, plus Walmart Ads, Spotify Ads, and other platforms when the business needs them.",
     "outcome": "Qualified traffic and a lower cost per click.",
     "stat": { "num": "$500,000", "label": "in ad spend managed for clients" },
@@ -47,7 +47,7 @@
   {
     "num": "06",
     "label": "Maintain",
-    "title": "Hosting and infrastructure",
+    "title": "Hosting and Infrastructure",
     "body": "Domains, DNS, SSL, hosting, deployments, email delivery, and ongoing maintenance. The technical headache, handled.",
     "outcome": "A site that stays online, secure, and up to date without you thinking about it.",
     "stat": null,

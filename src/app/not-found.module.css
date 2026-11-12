@@ -27,28 +27,6 @@
   color: var(--text-secondary);
 }
 
-/* Back button */
-.backButton {
-  display: inline-flex;
-  min-height: 52px;
-  font-size: 1.25rem;
-  padding: 0 28px;
-  line-height: 1;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  background: var(--primary);
-  color: var(--text-on-primary);
-  font-family: var(--font-heading);
-  border-radius: var(--radius-pill);
-  transition: box-shadow 0.3s ease, transform 0.3s var(--ease);
-}
-
-.backButton:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--glow-accent);
-}
-
 /* Tablet responsiveness */
 @media (max-width: 768px) {
   .pageNotFoundTitle {
@@ -57,10 +35,6 @@
 
   .pageNotFoundDescription {
     font-size: 1.15rem;
-  }
-
-  .backButton {
-    font-size: 1.25rem;
   }
 }
 
@@ -72,9 +46,5 @@
 
   .pageNotFoundDescription {
     font-size: 0.95rem;
-  }
-
-  .backButton {
-    font-size: 1.15rem;
   }
 }

@@ -45,10 +45,17 @@ html[data-theme="dark"] {
   --car-rim: rgba(127, 176, 255, 0.6);
   --orb-light: #f3ecdc;
 
-  /* Scrollbar: a standard gray thumb with a thin accent border */
-  --scroll-thumb: #4a4a4a;
-  --scroll-thumb-hover: #5a5a5a;
-  --scroll-border: #4d94ff;
+  /* Scrollbar */
+  --scroll-thumb: #474747;
+  --scroll-thumb-hover: #4d94ff;
+
+  /* Buttons. A slightly deeper blue than --primary so white text passes contrast. */
+  --button-bg: #2a6de0;
+  --button-text: #ffffff;
+  --button-glow: 0 0 22px rgba(77, 148, 255, 0.45);
+  /* The one button in the footer */
+  --footer-button-bg: #2a6de0;
+  --footer-button-text: #ffffff;
 
   /* Glows: soft and rare. Accent glow on accent things, white glow on neutral things */
   --glow-text: 0 0 14px rgba(var(--primary-rgb), 0.38);
@@ -96,9 +103,15 @@ html[data-theme="light"] {
   --car-rim: rgba(244, 241, 234, 0.75);
   --orb-light: #fff6e0;
 
-  --scroll-thumb: #c4beb2;
-  --scroll-thumb-hover: #b1aa9c;
-  --scroll-border: #000000;
+  --scroll-thumb: #b1aa9c;
+  --scroll-thumb-hover: #1f3fbf;
+
+  --button-bg: #1f3fbf;
+  --button-text: #ffffff;
+  --button-glow: 0 0 22px rgba(31, 63, 191, 0.35);
+  /* The footer is cobalt in light mode, so its button flips to bone white */
+  --footer-button-bg: #f4f1ea;
+  --footer-button-text: #1f3fbf;
 
   /* On cream a white glow disappears, so neutral things glow cobalt instead */
   --glow-text: 0 0 12px rgba(var(--primary-rgb), 0.2);
@@ -281,26 +294,87 @@ section {
   background: var(--primary);
 }
 
-/* Scrollbar: looks like the normal one, with a 1px border (blue in dark, black in light).
-   Chrome, Edge, and Safari draw this; Firefox keeps its own scrollbar.
-   Do not add scrollbar-color or scrollbar-width: Chrome ignores these styles when they are set. */
+/* Custom scrollbar: a slim pill that turns accent colored on hover */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scroll-thumb) transparent;
+}
+
 ::-webkit-scrollbar {
-  width: 12px;
-  height: 12px;
+  width: 10px;
+  height: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--bg-color);
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  border-radius: 6px;
+  border-radius: 999px;
+  background-clip: content-box;
+  border: 3px solid transparent;
   background-color: var(--scroll-thumb);
-  border: 1px solid var(--scroll-border);
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background-color: var(--scroll-thumb-hover);
+}
+
+/* ==========================================================================
+   Buttons. One shared style for the whole site:
+   - a pair of buttons is always .btn-primary + .btn-secondary
+   - a lone button is always .btn-primary
+   Add .btn-small for compact spots (header, project cards).
+   ========================================================================== */
+.btn {
+  display: inline-flex;
+  min-height: 52px;
+  font-size: 20px;
+  padding: 0 28px;
+  font-weight: 500;
+  line-height: 1;
+  text-align: center;
+  align-items: center;
+  white-space: nowrap;
+  justify-content: center;
+  font-family: var(--font-heading);
+  border-radius: var(--radius-pill);
+  transition: box-shadow 0.3s ease, transform 0.3s var(--ease), background-color 0.3s ease, border-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+/* Blue with white text */
+.btn-primary,
+.btn-primary:hover {
+  color: var(--button-text);
+  background: var(--button-bg);
+  border: 1px solid var(--button-bg);
+}
+
+.btn-primary:hover {
+  box-shadow: var(--button-glow);
+}
+
+/* Dark pill with a blue outline */
+.btn-secondary,
+.btn-secondary:hover {
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--primary);
+}
+
+.btn-secondary:hover {
+  box-shadow: var(--glow-accent);
+}
+
+.btn-small {
+  min-height: 40px;
+  font-size: 16px;
+  padding: 0 18px;
 }
 
 /* Hidden from sight, still read by screen readers */

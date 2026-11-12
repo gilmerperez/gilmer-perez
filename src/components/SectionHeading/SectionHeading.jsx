@@ -5,7 +5,10 @@ import styles from "./SectionHeading.module.css";
 function SectionHeading({ eyebrow, title, titleId, children }) {
   return (
     <div className={styles.heading}>
-      <span className={styles.eyebrow}>{eyebrow}</span>
+      <span className={styles.eyebrow}>
+        <span aria-hidden="true" className={styles.dot}></span>
+        {eyebrow}
+      </span>
       <h2 id={titleId} className={styles.title}>
         {title}
       </h2>

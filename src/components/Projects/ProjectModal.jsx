@@ -109,13 +109,13 @@ function ModalContent({ project, position, total, titleId, onClose, onPrev, onNe
 
       {/* Sticky footer */}
       <div className={styles.modalFooter}>
-        <button type="button" onClick={onPrev} className={styles.navButton}>
+        <button type="button" onClick={onPrev} className={`btn btn-secondary ${styles.modalButton}`}>
           Previous
         </button>
-        <a href={project.deployedLink} target="_blank" rel="noopener noreferrer" className={styles.visitButton}>
+        <a href={project.deployedLink} target="_blank" rel="noopener noreferrer" className={`btn btn-primary ${styles.modalButton}`}>
           Visit Website
         </a>
-        <button type="button" onClick={onNext} className={styles.navButton}>
+        <button type="button" onClick={onNext} className={`btn btn-secondary ${styles.modalButton}`}>
           Next
         </button>
       </div>
