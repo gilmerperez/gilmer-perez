@@ -53,8 +53,8 @@ function Hero() {
         </p>
       </div>
 
-      {/* Dithered sky over rolling hills. In the light theme it is the sun; in the dark
-          theme the sun has collapsed into a black hole. Layers, back to front: the sun
+      {/* Dithered sky. In the light theme it is the sun rising over rolling hills; in the
+          dark theme the sun has collapsed into a black hole in open space (the hills fade). Layers, back to front: the sun
           (slowly rises and sinks), the black hole (two frames that shimmer), a solid copy
           of the hills in the page color that hides whatever is behind them, the dotted
           hills, and the button that switches the theme. */}

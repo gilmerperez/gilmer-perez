@@ -1,66 +1,251 @@
-/* Each pattern is a 2x mask image, 3840 CSS px wide so it reaches the edges of
+/* Every pattern is a 2x mask image, 3840 CSS px wide so it reaches the edges of
    large screens, shown at its natural size and tinted with the theme's dither
    color so every dot stays crisp. Narrower screens see the center of it. */
 .divider {
   opacity: 0.8;
+  height: var(--h);
+  position: relative;
   pointer-events: none;
+}
+
+/* ---------- Light theme: a different space scene per divider ---------- */
+.art {
+  inset: 0;
+  position: absolute;
   background-color: var(--dither);
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  -webkit-mask-position: center;
-  mask-position: center;
+  -webkit-mask: var(--art) center / auto var(--h) no-repeat;
+  mask: var(--art) center / auto var(--h) no-repeat;
 }
 
 /* A dotted wave, thickest in the middle, with stars and small planets */
 .wave {
-  height: 90px;
-  -webkit-mask-image: url("/dither/dv-wave.png");
-  mask-image: url("/dither/dv-wave.png");
-  -webkit-mask-size: auto 90px;
-  mask-size: auto 90px;
+  --h: 90px;
+  --art: url("/dither/dv-wave.png");
 }
 
 /* An edge-on galaxy: bright bulge, long thin arms, stars and planets */
 .galaxy {
-  height: 110px;
-  -webkit-mask-image: url("/dither/dv-galaxy.png");
-  mask-image: url("/dither/dv-galaxy.png");
-  -webkit-mask-size: auto 110px;
-  mask-size: auto 110px;
+  --h: 110px;
+  --art: url("/dither/dv-galaxy.png");
 }
 
 /* An asteroid belt circling a small planet, with more planets and stars */
 .asteroids {
-  height: 110px;
-  -webkit-mask-image: url("/dither/dv-asteroids.png");
-  mask-image: url("/dither/dv-asteroids.png");
-  -webkit-mask-size: auto 110px;
-  mask-size: auto 110px;
+  --h: 110px;
+  --art: url("/dither/dv-asteroids.png");
 }
 
 /* Stardust with a few small planets */
 .stardust {
-  height: 80px;
-  -webkit-mask-image: url("/dither/dv-stardust.png");
-  mask-image: url("/dither/dv-stardust.png");
-  -webkit-mask-size: auto 80px;
-  mask-size: auto 80px;
+  --h: 80px;
+  --art: url("/dither/dv-stardust.png");
 }
 
 /* Two waves crossing like sound waves */
 .sound {
-  height: 80px;
-  -webkit-mask-image: url("/dither/dv-sound.png");
-  mask-image: url("/dither/dv-sound.png");
-  -webkit-mask-size: auto 80px;
-  mask-size: auto 80px;
+  --h: 80px;
+  --art: url("/dither/dv-sound.png");
 }
 
 /* Ripples: full concentric rings, wide enough to reach the edges */
 .ripples {
-  height: 120px;
-  -webkit-mask-image: url("/dither/dv-ripples.png");
-  mask-image: url("/dither/dv-ripples.png");
-  -webkit-mask-size: auto 120px;
-  mask-size: auto 120px;
+  --h: 120px;
+  --art: url("/dither/dv-ripples.png");
+}
+
+/* ---------- Dark theme: the stardust braid with a planet ---------- */
+.braid {
+  inset: 0;
+  display: none;
+  position: absolute;
+}
+
+:global(html[data-theme="dark"]) .divider {
+  --h: 120px;
+}
+
+:global(html[data-theme="dark"]) .art {
+  display: none;
+}
+
+:global(html[data-theme="dark"]) .braid {
+  display: block;
+}
+
+/* Two frames of the same braid with different dust; the second fades in and
+   out over the first so the dust shimmers */
+.stream {
+  inset: 0;
+  position: absolute;
+  background-color: var(--dither);
+}
+
+.streamA {
+  -webkit-mask: url("/dither/dv-braid-a.png") center / auto 120px no-repeat;
+  mask: url("/dither/dv-braid-a.png") center / auto 120px no-repeat;
+}
+
+.streamB {
+  opacity: 0;
+  -webkit-mask: url("/dither/dv-braid-b.png") center / auto 120px no-repeat;
+  mask: url("/dither/dv-braid-b.png") center / auto 120px no-repeat;
+  animation: shimmer 6s ease-in-out infinite;
+}
+
+/* The planet sits on a crossing. A solid copy in the page color hides the
+   streams passing behind it, then the dotted planet goes on top. It bobs gently. */
+.planet {
+  top: 50%;
+  position: absolute;
+  width: var(--pw);
+  height: var(--ph);
+  left: calc(50% + var(--planet-x));
+  margin: calc(var(--ph) / -2) 0 0 calc(var(--pw) / -2);
+  animation: bob 7s ease-in-out infinite;
+}
+
+.plain {
+  --pw: 64px;
+  --ph: 64px;
+  --planet-img: url("/dither/planet-plain.png");
+  --planet-solid: url("/dither/planet-plain-solid.png");
+}
+
+.ringed {
+  --pw: 104px;
+  --ph: 72px;
+  --planet-img: url("/dither/planet-ringed.png");
+  --planet-solid: url("/dither/planet-ringed-solid.png");
+}
+
+.planetSolid,
+.planetDots {
+  inset: 0;
+  position: absolute;
+}
+
+.planetSolid {
+  background-color: var(--bg-color);
+  -webkit-mask: var(--planet-solid) center / var(--pw) var(--ph) no-repeat;
+  mask: var(--planet-solid) center / var(--pw) var(--ph) no-repeat;
+}
+
+.planetDots {
+  background-color: var(--dither);
+  -webkit-mask: var(--planet-img) center / var(--pw) var(--ph) no-repeat;
+  mask: var(--planet-img) center / var(--pw) var(--ph) no-repeat;
+}
+
+/* Small bright points that race out along the center line during the reveal */
+.glint {
+  top: 50%;
+  left: 50%;
+  width: 6px;
+  height: 6px;
+  opacity: 0;
+  margin: -3px 0 0 -3px;
+  position: absolute;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 0 10px 3px rgba(var(--primary-rgb), 0.9), 0 0 28px 8px rgba(var(--primary-rgb), 0.45);
+}
+
+/* ---------- The reveal, played once when the divider is scrolled to ---------- */
+/* Armed (set by Divider.jsx once JavaScript runs): hidden until shown */
+.armed .stream {
+  clip-path: inset(0 50% 0 50%);
+}
+
+.armed .planet {
+  opacity: 0;
+}
+
+.shown .stream {
+  clip-path: inset(0 0 0 0);
+  transition: clip-path 1.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.shown .planet {
+  opacity: 1;
+  animation: planetIn 1s cubic-bezier(0.22, 1, 0.36, 1) 0.7s both, bob 7s ease-in-out 1.7s infinite;
+}
+
+.shown .glintLeft {
+  animation: glintLeft 1.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.shown .glintRight {
+  animation: glintRight 1.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes glintLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(0);
+  }
+  12% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-52vw);
+  }
+}
+
+@keyframes glintRight {
+  0% {
+    opacity: 0;
+    transform: translateX(0);
+  }
+  12% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(52vw);
+  }
+}
+
+@keyframes planetIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+@keyframes shimmer {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Phones: the planet sits on the center crossing */
+@media (max-width: 640px) {
+  .braid {
+    --planet-x: 0px !important;
+  }
 }
