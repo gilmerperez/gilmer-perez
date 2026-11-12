@@ -63,7 +63,9 @@ function Hero() {
         <div aria-hidden="true" className={styles.sun}>
           <div className={styles.sunDisc}></div>
         </div>
-        <div aria-hidden="true" className={styles.hole}></div>
+        <div aria-hidden="true" className={styles.holeWrap}>
+          <div className={styles.hole}></div>
+        </div>
         <div aria-hidden="true" className={styles.hillsSolid}></div>
         <div aria-hidden="true" className={styles.hills}></div>
         <HeroOrb />
