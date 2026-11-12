@@ -89,7 +89,7 @@
   color: var(--footer-text);
 }
 
-/* Secondary style: an outline pill. Blue outline in dark mode, bone white on the cobalt footer in light mode. */
+/* Secondary style: an outline pill. Blue outline in dark mode, white on the cobalt footer in light mode. */
 .startButton,
 .footer .startButton:hover {
   min-height: 44px;
@@ -148,7 +148,7 @@
   mask: url("/dither/footer-night.png") center bottom / auto 400px no-repeat;
 }
 
-/* Daytime sky: clouds instead of stars */
+/* Daytime sky: engraved clouds, wind lines, and birds instead of stars */
 :global(html[data-theme="light"]) .sceneArt {
   -webkit-mask-image: url("/dither/footer-day.png");
   mask-image: url("/dither/footer-day.png");

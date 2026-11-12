@@ -69,50 +69,50 @@ html[data-theme="dark"] {
   color-scheme: dark;
 }
 
-/* Light theme: white with bone white panels and a cobalt accent */
+/* Light theme: white with light gray panels and a cobalt accent */
 html[data-theme="light"] {
-  /* White page; the bone white is kept for panels and cards */
+  /* White page; panels and cards are light neutral grays, a step darker each */
   --bg-color: #ffffff;
   --bg-rgb: 255, 255, 255;
-  --surface: #f4f1ea;
-  --surface-raised: #ebe7de;
+  --surface: #f4f4f4;
+  --surface-raised: #eaeaea;
 
   --text-primary: #141626;
   --text-secondary: #383b52;
   --text-muted: #5b5d70;
 
-  --border-faint: #e3ded3;
-  --border-muted: #c2bbad;
+  --border-faint: #e2e2e2;
+  --border-muted: #bdbdbd;
 
   --primary: #1f3fbf;
   --primary-rgb: 31, 63, 191;
-  --text-on-primary: #f4f1ea;
+  --text-on-primary: #ffffff;
   --focus-ring: #1f3fbf;
 
   --dither: #1f3fbf;
 
   --footer-bg: #1f3fbf;
   --footer-rgb: 31, 63, 191;
-  --footer-text: #f4f1ea;
+  --footer-text: #ffffff;
   --footer-muted: #c8cdee;
   --footer-border: #3a57cc;
-  --footer-dither: #f4f1ea;
+  --footer-dither: #ffffff;
   --footer-accent: #ff6a4d;
-  --footer-icon: #f4f1ea;
-  --footer-cta: #f4f1ea;
+  --footer-icon: #ffffff;
+  --footer-cta: #ffffff;
   --car-body: #0f1c55;
-  --car-rim: rgba(244, 241, 234, 0.75);
+  --car-rim: rgba(255, 255, 255, 0.75);
   --orb-light: #fff6e0;
 
-  --scroll-thumb: #b1aa9c;
+  --scroll-thumb: #bdbdbd;
   --scroll-thumb-hover: #1f3fbf;
 
   --button-bg: #1f3fbf;
   --button-text: #ffffff;
   /* A white glow vanishes on the white page, so light mode uses a soft ink glow */
   --button-glow: 0 0 22px rgba(20, 22, 38, 0.22);
-  /* The footer is cobalt in light mode, so its outline is bone white */
-  --footer-button-border: #f4f1ea;
+  /* The footer is cobalt in light mode, so its outline is white */
+  --footer-button-border: #ffffff;
 
   /* On white a white glow disappears, so neutral things glow cobalt instead */
   --glow-text: 0 0 12px rgba(var(--primary-rgb), 0.2);
