@@ -6,12 +6,14 @@
   text-align: center;
   align-items: center;
   flex-direction: column;
-  padding: 80px var(--gutter) 110px;
+  padding: 80px var(--gutter) 140px;
   max-width: var(--content-width);
+  /* The backdrop is wider than the section; let it show to the sides but not above or below */
+  clip-path: inset(0 -100vmax);
 }
 
 /* Three-line heading: the small middle line sits between the two large ones */
-/* Everything in the section sits in front of the stars */
+/* Everything in the section sits in front of the backdrop */
 .title,
 .text,
 .buttons {
@@ -40,16 +42,30 @@
   text-shadow: 0 0 16px rgba(var(--primary-rgb), 0.55), 0 0 40px rgba(var(--primary-rgb), 0.25);
 }
 
-/* Twinkling stardust: two 2x mask frames (3840 CSS px wide) crossfading */
-.stars {
+/* ---------- Backdrop ---------- */
+/* Every layer is a 2x mask image, 3840 CSS px wide, shown at natural size and
+   tinted with the theme's dither color. Layers are a little wider than the
+   window so they can drift; all movement is in whole pixels (steps) so the
+   dots never blur. */
+.layer {
   top: 10px;
   left: 50%;
   z-index: 0;
-  width: 100vw;
   height: 680px;
   position: absolute;
   pointer-events: none;
-  transform: translateX(-50%);
+  width: calc(100vw + 120px);
+  margin-left: calc(-50vw - 60px);
+}
+
+:global(html[data-theme="light"]) .night,
+:global(html[data-theme="dark"]) .day {
+  display: none;
+}
+
+/* Dark theme: twinkling stardust, two frames crossfading */
+.starsA,
+.starsB {
   background-color: var(--dither);
 }
 
@@ -63,6 +79,64 @@
   animation: twinkleB 5s ease-in-out infinite;
   -webkit-mask: url("/dither/cta-stars-b.png") center top / auto 680px no-repeat;
   mask: url("/dither/cta-stars-b.png") center top / auto 680px no-repeat;
+}
+
+/* Dark theme: planets, galaxies, a comet, constellations, and nebula dust. The
+   whole layer floats up and down a few pixels while its two frames (same
+   shapes, different grain) fade into each other. */
+.space {
+  opacity: 0.75;
+  animation: float 18s steps(8) infinite alternate;
+}
+
+.spaceA,
+.spaceB {
+  inset: 0;
+  position: absolute;
+  background-color: var(--dither);
+}
+
+.spaceA {
+  -webkit-mask: url("/dither/cta-space-a.png") center top / auto 680px no-repeat;
+  mask: url("/dither/cta-space-a.png") center top / auto 680px no-repeat;
+}
+
+.spaceB {
+  opacity: 0;
+  -webkit-mask: url("/dither/cta-space-b.png") center top / auto 680px no-repeat;
+  mask: url("/dither/cta-space-b.png") center top / auto 680px no-repeat;
+  animation: grain 7s ease-in-out infinite;
+}
+
+/* Light theme: clouds drift one way, wind and birds the other */
+.clouds,
+.wind,
+.bank {
+  background-color: var(--dither);
+}
+
+.clouds {
+  opacity: 0.8;
+  -webkit-mask: url("/dither/cta-sky-clouds.png") center top / auto 680px no-repeat;
+  mask: url("/dither/cta-sky-clouds.png") center top / auto 680px no-repeat;
+  animation: driftRight 48s steps(48) infinite alternate;
+}
+
+.wind {
+  opacity: 0.75;
+  -webkit-mask: url("/dither/cta-sky-wind.png") center top / auto 680px no-repeat;
+  mask: url("/dither/cta-sky-wind.png") center top / auto 680px no-repeat;
+  animation: driftLeft 36s steps(72) infinite alternate;
+}
+
+/* The cloud bank sits on the bottom edge, where the section meets the footer */
+.bank {
+  top: auto;
+  bottom: 0;
+  height: 150px;
+  -webkit-mask: url("/dither/cta-sky-bank.png") center bottom / auto 150px no-repeat;
+  mask: url("/dither/cta-sky-bank.png") center bottom / auto 150px no-repeat;
+  animation: driftRight 64s steps(48) infinite alternate;
 }
 
 /* Kept faint so the stars stay in the background */
@@ -83,6 +157,43 @@
   }
   50% {
     opacity: 0.45;
+  }
+}
+
+@keyframes grain {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+  from {
+    transform: translateY(4px);
+  }
+  to {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes driftRight {
+  from {
+    transform: translateX(-24px);
+  }
+  to {
+    transform: translateX(24px);
+  }
+}
+
+@keyframes driftLeft {
+  from {
+    transform: translateX(36px);
+  }
+  to {
+    transform: translateX(-36px);
   }
 }
 

@@ -2,58 +2,27 @@
    large screens, shown at its natural size and tinted with the theme's dither
    color so every dot stays crisp. Narrower screens see the center of it. */
 .divider {
+  --h: 110px;
   opacity: 0.8;
+  overflow: hidden;
   height: var(--h);
   position: relative;
   pointer-events: none;
 }
 
-/* ---------- Light theme: a different space scene per divider ---------- */
-.art {
-  inset: 0;
+/* ---------- Light theme: sky with clouds, wind, and birds ---------- */
+/* A little wider than the page so it can drift from side to side. The drift
+   moves in whole pixels (steps) so the dots never blur. */
+.sky {
+  inset: 0 -30px;
   position: absolute;
   background-color: var(--dither);
   -webkit-mask: var(--art) center / auto var(--h) no-repeat;
   mask: var(--art) center / auto var(--h) no-repeat;
+  animation: drift 44s steps(40) infinite alternate;
 }
 
-/* A dotted wave, thickest in the middle, with stars and small planets */
-.wave {
-  --h: 90px;
-  --art: url("/dither/dv-wave.png");
-}
-
-/* An edge-on galaxy: bright bulge, long thin arms, stars and planets */
-.galaxy {
-  --h: 110px;
-  --art: url("/dither/dv-galaxy.png");
-}
-
-/* An asteroid belt circling a small planet, with more planets and stars */
-.asteroids {
-  --h: 110px;
-  --art: url("/dither/dv-asteroids.png");
-}
-
-/* Stardust with a few small planets */
-.stardust {
-  --h: 80px;
-  --art: url("/dither/dv-stardust.png");
-}
-
-/* Two waves crossing like sound waves */
-.sound {
-  --h: 80px;
-  --art: url("/dither/dv-sound.png");
-}
-
-/* Ripples: full concentric rings, wide enough to reach the edges */
-.ripples {
-  --h: 120px;
-  --art: url("/dither/dv-ripples.png");
-}
-
-/* ---------- Dark theme: the stardust braid with a planet ---------- */
+/* ---------- Dark theme: the stardust braid ---------- */
 .braid {
   inset: 0;
   display: none;
@@ -64,7 +33,7 @@
   --h: 120px;
 }
 
-:global(html[data-theme="dark"]) .art {
+:global(html[data-theme="dark"]) .sky {
   display: none;
 }
 
@@ -92,50 +61,6 @@
   animation: shimmer 6s ease-in-out infinite;
 }
 
-/* The planet sits on a crossing. A solid copy in the page color hides the
-   streams passing behind it, then the dotted planet goes on top. It bobs gently. */
-.planet {
-  top: 50%;
-  position: absolute;
-  width: var(--pw);
-  height: var(--ph);
-  left: calc(50% + var(--planet-x));
-  margin: calc(var(--ph) / -2) 0 0 calc(var(--pw) / -2);
-  animation: bob 7s ease-in-out infinite;
-}
-
-.plain {
-  --pw: 64px;
-  --ph: 64px;
-  --planet-img: url("/dither/planet-plain.png");
-  --planet-solid: url("/dither/planet-plain-solid.png");
-}
-
-.ringed {
-  --pw: 104px;
-  --ph: 72px;
-  --planet-img: url("/dither/planet-ringed.png");
-  --planet-solid: url("/dither/planet-ringed-solid.png");
-}
-
-.planetSolid,
-.planetDots {
-  inset: 0;
-  position: absolute;
-}
-
-.planetSolid {
-  background-color: var(--bg-color);
-  -webkit-mask: var(--planet-solid) center / var(--pw) var(--ph) no-repeat;
-  mask: var(--planet-solid) center / var(--pw) var(--ph) no-repeat;
-}
-
-.planetDots {
-  background-color: var(--dither);
-  -webkit-mask: var(--planet-img) center / var(--pw) var(--ph) no-repeat;
-  mask: var(--planet-img) center / var(--pw) var(--ph) no-repeat;
-}
-
 /* Small bright points that race out along the center line during the reveal */
 .glint {
   top: 50%;
@@ -152,22 +77,15 @@
 
 /* ---------- The reveal, played once when the divider is scrolled to ---------- */
 /* Armed (set by Divider.jsx once JavaScript runs): hidden until shown */
-.armed .stream {
+.armed .stream,
+.armed .sky {
   clip-path: inset(0 50% 0 50%);
 }
 
-.armed .planet {
-  opacity: 0;
-}
-
-.shown .stream {
+.shown .stream,
+.shown .sky {
   clip-path: inset(0 0 0 0);
   transition: clip-path 1.6s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.shown .planet {
-  opacity: 1;
-  animation: planetIn 1s cubic-bezier(0.22, 1, 0.36, 1) 0.7s both, bob 7s ease-in-out 1.7s infinite;
 }
 
 .shown .glintLeft {
@@ -212,24 +130,12 @@
   }
 }
 
-@keyframes planetIn {
+@keyframes drift {
   from {
-    opacity: 0;
-    transform: translateY(14px);
+    transform: translateX(-20px);
   }
   to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes bob {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-3px);
+    transform: translateX(20px);
   }
 }
 
@@ -240,12 +146,5 @@
   }
   50% {
     opacity: 1;
-  }
-}
-
-/* Phones: the planet sits on the center crossing */
-@media (max-width: 640px) {
-  .braid {
-    --planet-x: 0px !important;
   }
 }

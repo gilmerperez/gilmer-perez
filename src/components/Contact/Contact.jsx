@@ -4,10 +4,24 @@ import { EMAIL, PHONE_HREF } from "../../data/contact";
 function Contact() {
   return (
     <section id="contact" className={styles.contact}>
-      {/* Two frames of dithered stardust that fade into each other, so the stars twinkle.
-          They run edge to edge, down past the buttons, and thin out (but never stop) behind the words. */}
-      <div aria-hidden="true" className={`${styles.stars} ${styles.starsA}`}></div>
-      <div aria-hidden="true" className={`${styles.stars} ${styles.starsB}`}></div>
+      {/* Backdrop, edge to edge, kept clear of the words.
+          Dark theme: twinkling stardust plus planets, galaxies, a comet, and constellations
+          (two frames each that fade into one another, so everything shimmers).
+          Light theme: the sky above the footer, with drifting clouds, wind, and birds, and a
+          bank of cloud along the bottom that thickens into the footer's blue. */}
+      <div aria-hidden="true" className={styles.night}>
+        <div className={`${styles.layer} ${styles.starsA}`}></div>
+        <div className={`${styles.layer} ${styles.starsB}`}></div>
+        <div className={`${styles.layer} ${styles.space}`}>
+          <div className={styles.spaceA}></div>
+          <div className={styles.spaceB}></div>
+        </div>
+      </div>
+      <div aria-hidden="true" className={styles.day}>
+        <div className={`${styles.layer} ${styles.clouds}`}></div>
+        <div className={`${styles.layer} ${styles.wind}`}></div>
+        <div className={`${styles.layer} ${styles.bank}`}></div>
+      </div>
 
       {/* Always three lines: each span is a block that never wraps */}
       <h2 className={styles.title}>
