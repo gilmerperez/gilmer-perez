@@ -21,7 +21,10 @@ const outfit = Outfit({
 
 // * Runs before first paint so the page never flashes the wrong theme.
 // Uses the visitor's saved choice, otherwise their system setting, otherwise dark.
-const THEME_SCRIPT = `(function(){try{var t=localStorage.getItem("theme");if(t!=="light"&&t!=="dark"){t=window.matchMedia("(prefers-color-scheme: light)").matches?"light":"dark"}document.documentElement.setAttribute("data-theme",t)}catch(e){document.documentElement.setAttribute("data-theme","dark")}})();`;
+// It also adds the tab icon (a sun, colored for the theme). The icon is added
+// here rather than rendered by React so switching themes can change it freely;
+// src/lib/theme.js updates it on every switch.
+const THEME_SCRIPT = `(function(){var t="dark";try{t=localStorage.getItem("theme");if(t!=="light"&&t!=="dark"){t=window.matchMedia("(prefers-color-scheme: light)").matches?"light":"dark"}}catch(e){t="dark"}document.documentElement.setAttribute("data-theme",t);var i=document.createElement("link");i.id="theme-icon";i.rel="icon";i.type="image/svg+xml";i.setAttribute("sizes","any");i.href="/favicon-"+t+".svg";document.head.appendChild(i)})();`;
 
 const TITLE = "Gilmer Perez | Digital Growth Specialist";
 const DESCRIPTION =
@@ -91,6 +94,12 @@ export const metadata = {
       "max-image-preview": "large",
       "max-snippet": -1,
     },
+  },
+  // favicon.ico is the fallback for search results and browsers without SVG icons.
+  // Its 32x32 size keeps browsers that support SVG on the theme icon above.
+  icons: {
+    icon: [{ url: "/favicon.ico", sizes: "32x32" }],
+    apple: "/apple-touch-icon.png",
   },
   verification: {
     google: "3FTfHaZrjPjKogJbOTyhOila5U11Fj2l512M51iBOH0",

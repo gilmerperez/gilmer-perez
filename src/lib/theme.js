@@ -13,6 +13,11 @@ export function readTheme() {
 
 export function applyTheme(theme) {
   document.documentElement.setAttribute("data-theme", theme);
+
+  // The tab icon added by the script in layout.jsx
+  const icon = document.getElementById("theme-icon");
+  if (icon) icon.href = `/favicon-${theme}.svg`;
+
   try {
     localStorage.setItem(STORAGE_KEY, theme);
   } catch {
