@@ -5,14 +5,12 @@ function Contact() {
   return (
     <section id="contact" className={styles.contact}>
       {/* Backdrop, edge to edge, kept clear of the words.
-          Dark theme: twinkling stardust (two frames that fade into each other) behind
-          planets, galaxies, a comet, and constellations.
+          Dark theme: stardust behind planets, galaxies, a comet, and constellations.
           Light theme: the sky above the footer, engraving style, with cumulus clouds and
           birds over fine wavy lines, and a bank of cloud along the bottom that thickens
           into the footer's blue. */}
       <div aria-hidden="true" className={styles.night}>
-        <div className={`${styles.layer} ${styles.starsA}`}></div>
-        <div className={`${styles.layer} ${styles.starsB}`}></div>
+        <div className={`${styles.layer} ${styles.stars}`}></div>
         <div className={`${styles.layer} ${styles.space}`}></div>
       </div>
       <div aria-hidden="true" className={styles.day}>

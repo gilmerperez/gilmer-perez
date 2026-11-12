@@ -44,7 +44,7 @@
 
 /* ---------- Backdrop ---------- */
 /* Every layer is a 2x mask image, 3840 CSS px wide, shown at natural size and
-   tinted with the theme's dither color. Only the stars move (they twinkle). */
+   tinted with the theme's dither color. Nothing here moves. */
 .layer {
   top: 10px;
   left: 50%;
@@ -62,17 +62,11 @@
   display: none;
 }
 
-/* Dark theme: twinkling stardust, two frames crossfading */
-.starsA {
-  animation: twinkleA 5s ease-in-out infinite;
-  -webkit-mask: url("/dither/cta-stars-a.png") center top / auto 680px no-repeat;
-  mask: url("/dither/cta-stars-a.png") center top / auto 680px no-repeat;
-}
-
-.starsB {
-  animation: twinkleB 5s ease-in-out infinite;
-  -webkit-mask: url("/dither/cta-stars-b.png") center top / auto 680px no-repeat;
-  mask: url("/dither/cta-stars-b.png") center top / auto 680px no-repeat;
+/* Dark theme: stardust, kept faint so it stays in the background */
+.stars {
+  opacity: 0.4;
+  -webkit-mask: url("/dither/cta-stars.png") center top / auto 680px no-repeat;
+  mask: url("/dither/cta-stars.png") center top / auto 680px no-repeat;
 }
 
 /* Dark theme: planets, galaxies, a comet, constellations, and nebula dust */
@@ -96,27 +90,6 @@
   height: 150px;
   -webkit-mask: url("/dither/cta-sky-bank.png") center bottom / auto 150px no-repeat;
   mask: url("/dither/cta-sky-bank.png") center bottom / auto 150px no-repeat;
-}
-
-/* Kept faint so the stars stay in the background */
-@keyframes twinkleA {
-  0%,
-  100% {
-    opacity: 0.45;
-  }
-  50% {
-    opacity: 0.1;
-  }
-}
-
-@keyframes twinkleB {
-  0%,
-  100% {
-    opacity: 0.1;
-  }
-  50% {
-    opacity: 0.45;
-  }
 }
 
 .text {
