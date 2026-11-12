@@ -42,6 +42,7 @@
 .desktopNav {
   gap: 8px 26px;
   display: flex;
+  position: relative;
   font-size: 15px;
   align-items: center;
   letter-spacing: 0.02em;
@@ -50,12 +51,27 @@
 .navLink {
   padding: 6px 0;
   color: var(--text-secondary);
+  transition: color 0.3s ease;
 }
 
-/* HOME stays underlined, as in the approved mockup */
+.navLink:hover,
 .activeLink {
   color: var(--text-primary);
-  border-bottom: 1px solid var(--primary);
+}
+
+/* One blue line that slides under the link for the section being read
+   (position and width are set in Header.jsx) */
+.indicator {
+  left: 0;
+  width: 0;
+  opacity: 0;
+  top: 0;
+  height: 1px;
+  position: absolute;
+  pointer-events: none;
+  background: var(--primary);
+  box-shadow: 0 0 8px rgba(var(--primary-rgb), 0.8);
+  transition: transform 0.5s var(--ease), width 0.5s var(--ease), opacity 0.3s ease;
 }
 
 /* Hamburger button (mobile only) */
@@ -82,6 +98,12 @@
 
 .mobileLink {
   padding: 10px 4px;
+  transition: color 0.3s ease;
+}
+
+.mobileLinkActive {
+  color: var(--primary);
+  text-shadow: var(--glow-text);
 }
 
 /* Full width in the dropdown */

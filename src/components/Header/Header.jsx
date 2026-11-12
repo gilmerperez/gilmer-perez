@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import styles from "./Header.module.css";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 // * Breakpoint where the desktop links collapse into the hamburger menu (matches Header.module.css)
 const MOBILE_QUERY = "(max-width: 860px)";
@@ -15,6 +15,31 @@ const NAV_LINKS = [
   { href: "/#projects", label: "Projects" },
 ];
 
+// * Which link is underlined while reading each part of the page. Search and
+// Reporting belong to Process, Proof belongs to Projects, and the Contact
+// section has no link of its own (the Contact button is the destination).
+const SECTION_TO_LINK = [
+  { id: "top", link: 0 },
+  { id: "how", link: 1 },
+  { id: "experience", link: 2 },
+  { id: "projects", link: 3 },
+  { id: "contact", link: -1 },
+];
+const READING_LINE = 0.35; // a section counts as current once its top passes 35% down the window
+
+// Index of the link for the section being read, or -1 for none
+function findActiveLink() {
+  const line = window.innerHeight * READING_LINE;
+  const atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4;
+  let active = -1;
+  for (const { id, link } of SECTION_TO_LINK) {
+    const section = document.getElementById(id);
+    if (!section) continue;
+    if (section.getBoundingClientRect().top <= line || (atBottom && id === "contact")) active = link;
+  }
+  return active;
+}
+
 // * On phones the header slides away while scrolling down and comes back on any scroll up
 const HIDE_AFTER = 160; // px from the top before the header may hide
 const SCROLL_SLOP = 6; // ignore tiny scroll jitters
@@ -22,12 +47,24 @@ const SCROLL_SLOP = 6; // ignore tiny scroll jitters
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [hidden, setHidden] = useState(false);
+  const [activeLink, setActiveLink] = useState(-1);
+  const navRef = useRef(null);
+  const indicatorRef = useRef(null);
+  const linkRefs = useRef([]);
 
   useEffect(() => {
     const mediaQuery = window.matchMedia(MOBILE_QUERY);
     let lastY = window.scrollY;
 
+    // Underline the link for the section being read
+    let frame = 0;
+    const updateActive = () => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(() => setActiveLink(findActiveLink()));
+    };
+
     const handleScroll = () => {
+      updateActive();
       const y = window.scrollY;
       const delta = y - lastY;
       if (Math.abs(delta) < SCROLL_SLOP) return;
@@ -35,9 +72,39 @@ function Header() {
       setHidden(mediaQuery.matches && delta > 0 && y > HIDE_AFTER);
     };
 
+    updateActive();
     window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("resize", updateActive);
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", updateActive);
+    };
   }, []);
+
+  // * Slide the blue line under the active link. Measured from the links themselves,
+  // and again whenever the nav changes size (fonts loading, window resizing).
+  useEffect(() => {
+    const nav = navRef.current;
+    const indicator = indicatorRef.current;
+    if (!nav || !indicator) return;
+
+    const place = () => {
+      const link = linkRefs.current[activeLink];
+      if (!link) {
+        indicator.style.opacity = "0";
+        return;
+      }
+      indicator.style.opacity = "1";
+      indicator.style.width = `${link.offsetWidth}px`;
+      indicator.style.transform = `translate(${link.offsetLeft}px, ${link.offsetTop + link.offsetHeight - 1}px)`;
+    };
+
+    place();
+    const observer = new ResizeObserver(place);
+    observer.observe(nav);
+    return () => observer.disconnect();
+  }, [activeLink]);
 
   const closeMenu = () => setMenuOpen(false);
 
@@ -71,12 +138,21 @@ function Header() {
         </Link>
 
         {/* Desktop navigation */}
-        <nav className={styles.desktopNav} aria-label="Main site navigation">
+        <nav ref={navRef} className={styles.desktopNav} aria-label="Main site navigation">
           {NAV_LINKS.map((link, i) => (
-            <Link key={link.href} href={link.href} className={i === 0 ? `${styles.navLink} ${styles.activeLink}` : styles.navLink}>
+            <Link
+              key={link.href}
+              href={link.href}
+              ref={(el) => {
+                linkRefs.current[i] = el;
+              }}
+              aria-current={i === activeLink ? "location" : undefined}
+              className={i === activeLink ? `${styles.navLink} ${styles.activeLink}` : styles.navLink}
+            >
               {link.label}
             </Link>
           ))}
+          <span ref={indicatorRef} aria-hidden="true" className={styles.indicator}></span>
           <Link href="/#contact" className="btn btn-primary btn-small">
             Contact
           </Link>
@@ -106,8 +182,14 @@ function Header() {
       {/* Mobile dropdown, rendered inside the header box */}
       {menuOpen && (
         <nav id="mobile-navigation" className={styles.mobileNav} aria-label="Mobile site navigation">
-          {NAV_LINKS.map((link) => (
-            <Link key={link.href} href={link.href} onClick={closeMenu} className={styles.mobileLink}>
+          {NAV_LINKS.map((link, i) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              onClick={closeMenu}
+              aria-current={i === activeLink ? "location" : undefined}
+              className={i === activeLink ? `${styles.mobileLink} ${styles.mobileLinkActive}` : styles.mobileLink}
+            >
               {link.label}
             </Link>
           ))}

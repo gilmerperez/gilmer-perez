@@ -11,7 +11,7 @@ function Process() {
 
   return (
     <section id="how" className={styles.section} aria-labelledby="process-title">
-      <SectionHeading eyebrow="01 / THE PROCESS" title="One goal, carried all the way through" titleId="process-title">
+      <SectionHeading eyebrow="01 / THE PROCESS" title="One Goal, Carried All the Way Through" titleId="process-title">
         Most businesses hire a developer, an SEO, an ads manager, and someone to explain the reports. I do all of it, so
         nothing gets lost between them. Pick a stage.
       </SectionHeading>

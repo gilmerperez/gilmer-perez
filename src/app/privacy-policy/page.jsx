@@ -78,41 +78,41 @@ export default function PrivacyPolicy() {
           {/* Privacy policy */}
           <section className={styles.policy}>
             {/* Policy Updates */}
-            <p className={styles.policyHeading}>Policy updates</p>
+            <p className={styles.policyHeading}>Policy Updates</p>
             <p className={styles.policyText}>
               We may revise this policy occasionally. Updates will always appear on this page. Last updated: {month}{" "}
               {year}.
             </p>
             {/* Third-party links */}
-            <p className={styles.policyHeading}>Third-party links</p>
+            <p className={styles.policyHeading}>Third-Party Links</p>
             <p className={styles.policyText}>
               My portfolio may contain links to external websites, including project repositories, live demos, or
               professional profiles. These external sites have their own privacy policies, and I am not responsible for
               their content or privacy practices.
             </p>
             {/* Purpose of the site */}
-            <p className={styles.policyHeading}>Purpose of the site</p>
+            <p className={styles.policyHeading}>Purpose of the Site</p>
             <p className={styles.policyText}>
               This website serves as my personal portfolio to showcase my web development projects, skills, and
               professional experience. It includes information about my background, featured projects, technologies I
               work with, and ways to contact me. No purchases or account logins are required to browse.
             </p>
             {/* Contact information */}
-            <p className={styles.policyHeading}>Contact information</p>
+            <p className={styles.policyHeading}>Contact Information</p>
             <p className={styles.policyText}>
               If you have any questions about this privacy policy or my portfolio, please feel free to contact me
               through the contact information provided on this website. I am committed to transparency and will respond
               to any privacy-related inquiries.
             </p>
             {/* Personal information */}
-            <p className={styles.policyHeading}>Personal information</p>
+            <p className={styles.policyHeading}>Personal Information</p>
             <p className={styles.policyText}>
               I do not collect any personal data directly through this website. You can navigate my portfolio content
               without providing your name, email, or other personal details. If you choose to contact me through the
               provided contact methods, any information you share will be used solely for responding to your inquiry.
             </p>
             {/* Cookies and analytics */}
-            <p className={styles.policyHeading}>Cookies and analytics</p>
+            <p className={styles.policyHeading}>Cookies and Analytics</p>
             <p className={styles.policyText}>
               This website does not use cookies, tracking pixels, or third-party analytics tools. I do not track your
               browsing behavior or device usage. Your visit to my portfolio is completely private and anonymous.

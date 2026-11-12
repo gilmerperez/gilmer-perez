@@ -14,12 +14,12 @@ export default function NotFound() {
       <main>
         <div className={styles.pageNotFoundContainer}>
           {/* Title */}
-          <h1 className={styles.pageNotFoundTitle}>Page not found</h1>
+          <h1 className={styles.pageNotFoundTitle}>Page Not Found</h1>
           {/* Description */}
           <p className={styles.pageNotFoundDescription}>Sorry, the page you are looking for does not exist</p>
           {/* Back button */}
           <button type="button" className="btn btn-primary" onClick={handleBackToHome}>
-            Back to the home page
+            Back to the Home Page
           </button>
         </div>
       </main>

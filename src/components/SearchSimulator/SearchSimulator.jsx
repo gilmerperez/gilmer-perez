@@ -54,7 +54,7 @@ function OrganicResults() {
       </div>
 
       <div className={styles.questions}>
-        <span className={styles.questionsTitle}>People also ask</span>
+        <span className={styles.questionsTitle}>People Also Ask</span>
         <span className={styles.question}>
           <span>How much does [your service] cost?</span>
           <span aria-hidden="true">⌄</span>
@@ -67,7 +67,7 @@ function OrganicResults() {
 
       <div className={`${styles.dimmed} ${styles.faded}`}>
         <span className={styles.siteUrl}>https://competitor.com</span>
-        <span className={styles.resultTitlePlain}>A competitor, below you</span>
+        <span className={styles.resultTitlePlain}>A Competitor, Below You</span>
         <span className={styles.snippetPlain}>Their description goes here.</span>
       </div>
     </>
@@ -170,7 +170,7 @@ function AiResults() {
       </div>
       <div className={`${styles.dimmed} ${styles.faded}`}>
         <span className={styles.siteUrl}>https://competitor.com</span>
-        <span className={styles.resultTitlePlain}>The regular results start down here</span>
+        <span className={styles.resultTitlePlain}>The Regular Results Start Down Here</span>
         <span className={styles.snippetPlain}>Most people have their answer before they scroll this far.</span>
       </div>
     </>
@@ -204,11 +204,11 @@ function AdResults() {
       <div className={`${styles.dimmed} ${styles.faded}`}>
         <span className={styles.sponsored}>Sponsored</span>
         <span className={styles.siteUrl}>https://competitor.com</span>
-        <span className={styles.resultTitlePlain}>A competitor paying to be here too</span>
+        <span className={styles.resultTitlePlain}>A Competitor Paying to Be Here Too</span>
       </div>
       <div className={`${styles.dimmed} ${styles.faded}`}>
         <span className={styles.siteUrl}>https://another-site.com</span>
-        <span className={styles.resultTitlePlain}>The free results start down here</span>
+        <span className={styles.resultTitlePlain}>The Free Results Start Down Here</span>
       </div>
     </>
   );
@@ -228,7 +228,7 @@ function SearchSimulator() {
 
   return (
     <section id="search" className={styles.section} aria-labelledby="search-title">
-      <SectionHeading eyebrow="03 / SEARCH" title="Four ways a customer finds you" titleId="search-title">
+      <SectionHeading eyebrow="03 / SEARCH" title="Four Ways a Customer Finds You" titleId="search-title">
         One search, four places your business can show up. I work on all of them. Tap each one to see what it looks
         like and what it takes.
       </SectionHeading>

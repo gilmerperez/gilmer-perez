@@ -28,7 +28,7 @@ const PLATFORMS = [
 function Platforms() {
   return (
     <section className={styles.section} aria-labelledby="platforms-title">
-      <SectionHeading eyebrow="02 / ANY PLATFORM" title="Whatever your site is built on" titleId="platforms-title">
+      <SectionHeading eyebrow="02 / ANY PLATFORM" title="Whatever Your Site Is Built On" titleId="platforms-title">
         I have managed <strong>50+</strong> client websites, from fully custom code to the most popular website
         builders.
       </SectionHeading>

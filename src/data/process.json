@@ -5,7 +5,7 @@
     "title": "The Website",
     "body": "Custom-coded sites in Next.js and React, or builds on WordPress, Squarespace, and Wix. Fast, accessible, mobile-friendly, and structured so search engines can read it from day one.",
     "outcome": "A site that looks right on every screen and is ready to be found.",
-    "stat": { "num": "50+", "label": "client websites managed" },
+    "stat": { "num": "50+", "label": "Client Websites Managed" },
     "tools": ["Next.js", "React", "TypeScript", "JavaScript", "HTML5", "CSS", "Responsive Design", "Accessibility (WCAG)", "UI/UX Design"]
   },
   {
@@ -32,7 +32,7 @@
     "title": "Paid Media",
     "body": "Campaign setup, audience targeting, budget pacing, and ongoing optimization on Google Ads and Meta Ads, plus Walmart Ads, Spotify Ads, and other platforms when the business needs them.",
     "outcome": "Qualified traffic and a lower cost per click.",
-    "stat": { "num": "$500,000", "label": "in ad spend managed for clients" },
+    "stat": { "num": "$500,000", "label": "in Ad Spend Managed for Clients" },
     "tools": ["Google Ads", "Search", "Display", "YouTube", "Meta Ads", "Walmart Ads", "Spotify Ads"]
   },
   {

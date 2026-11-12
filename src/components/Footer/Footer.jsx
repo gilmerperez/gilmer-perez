@@ -81,7 +81,7 @@ function Footer() {
             Have a goal for your business? Tell me what it is and I will map out how to get there.
           </p>
           <Link href="/#contact" className={`btn btn-secondary ${styles.startButton}`}>
-            Get in touch
+            Get in Touch
           </Link>
         </div>
       </div>

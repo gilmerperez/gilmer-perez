@@ -29,7 +29,7 @@ const ENTRIES = [
 function Experience() {
   return (
     <section id="experience" className={styles.section} aria-labelledby="experience-title">
-      <SectionHeading eyebrow="05 / EXPERIENCE" title="Professional experience" titleId="experience-title" />
+      <SectionHeading eyebrow="05 / EXPERIENCE" title="Professional Experience" titleId="experience-title" />
 
       <div className={styles.columns}>
         {/* Timeline (no box-shadow on this container, on purpose) */}

@@ -13,19 +13,24 @@ export function splitEntry(entry) {
 // Short acronyms that camelCase file names write in lowercase (tvShowsPage)
 const ACRONYMS = ["tv", "ai", "faq", "bbq"];
 
-// ["order", "Online"] -> "Order online". Acronyms (IMDB, TV) keep their capitals.
-function toSentenceCase(words) {
-  const text = words
-    .map((w) => {
+// Small words that stay lowercase in title case unless they come first
+const MINOR_WORDS = ["a", "an", "the", "and", "or", "for", "of", "on", "in", "to", "with"];
+
+// ["order", "Online"] -> "Order Online". Acronyms (IMDB, TV) keep their capitals.
+function toTitleCase(words) {
+  return words
+    .map((w, i) => {
       if (ACRONYMS.includes(w.toLowerCase())) return w.toUpperCase();
-      return w.length > 1 && w === w.toUpperCase() ? w : w.toLowerCase();
+      if (w.length > 1 && w === w.toUpperCase()) return w;
+      const lower = w.toLowerCase();
+      if (i > 0 && MINOR_WORDS.includes(lower)) return lower;
+      return lower.charAt(0).toUpperCase() + lower.slice(1);
     })
     .join(" ");
-  return text.charAt(0).toUpperCase() + text.slice(1);
 }
 
 // Screenshot path -> button label and alt text, derived from the file name.
-// homePage -> Home, orderOnlinePage -> Order online, darkTheme -> Dark theme,
+// homePage -> Home, orderOnlinePage -> Order Online, darkTheme -> Dark Theme,
 // topIMDBPage -> Top IMDB (acronyms keep their capitals)
 export function describeScreenshot(src, projectTitle) {
   const fileName = src.split("/").pop().replace(/\.[a-z0-9]+$/i, "");
@@ -39,7 +44,7 @@ export function describeScreenshot(src, projectTitle) {
 
   return {
     src,
-    label: toSentenceCase(nameWords),
+    label: toTitleCase(nameWords),
     alt: `${projectTitle} ${name.toLowerCase()} ${isPage ? "page" : "screenshot"}`,
   };
 }

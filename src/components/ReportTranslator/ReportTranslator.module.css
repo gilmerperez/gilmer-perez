@@ -7,65 +7,257 @@
   max-width: var(--content-width);
 }
 
-/* Switch row */
-.switchRow {
-  gap: 12px 16px;
-  display: flex;
-  flex-wrap: wrap;
-  font-size: 20px;
-  align-items: center;
-  font-family: var(--font-heading);
-}
-
-/* Nudged down so the serif lines up with the middle of the switch */
-.switchLabel {
-  top: 0.07em;
+/* Two-way switch: two serif labels with a dotted blue thumb that slides,
+   with a little overshoot, behind the active one */
+.toggle {
+  padding: 5px;
+  display: grid;
   position: relative;
-  color: var(--text-muted);
-  transition: color 0.3s ease;
-}
-
-.switchLabelActive {
-  color: var(--text-primary);
-}
-
-.switch {
-  width: 80px;
-  height: 44px;
-  position: relative;
+  width: fit-content;
+  grid-template-columns: 1fr 1fr;
   border-radius: var(--radius-pill);
   background: var(--surface-raised);
   border: 1px solid var(--primary);
   animation: var(--pulse-soft) 4s var(--pulse-timing);
 }
 
-/* White knob with a small drop shadow */
-.knob {
-  top: 6px;
-  left: 6px;
-  width: 30px;
-  height: 30px;
+.thumb {
+  top: 5px;
+  left: 5px;
+  bottom: 5px;
+  overflow: hidden;
   position: absolute;
-  border-radius: 50%;
-  background: #ffffff;
-  transition: left 0.3s var(--ease);
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+  width: calc(50% - 5px);
+  background-color: var(--button-bg);
+  border-radius: var(--radius-pill);
+  box-shadow: 0 0 18px rgba(var(--primary-rgb), 0.45);
+  /* A fine dot pattern, the same dither texture as the art on the page */
+  background-image: radial-gradient(rgba(255, 255, 255, 0.16) 0.8px, transparent 1.2px);
+  background-size: 4px 4px;
+  transition: transform 0.65s cubic-bezier(0.68, -0.35, 0.32, 1.35);
 }
 
-.knobOn {
-  left: 42px;
+/* A slow sheen that keeps passing over the thumb */
+.thumb::after {
+  inset: 0;
+  content: "";
+  position: absolute;
+  background: linear-gradient(105deg, transparent 35%, rgba(255, 255, 255, 0.28) 50%, transparent 65%);
+  background-size: 260% 100%;
+  animation: sheen 4.5s ease-in-out infinite;
 }
 
-/* Report panel */
-.panel {
-  gap: 22px;
+.toggleOwner .thumb {
+  transform: translateX(100%);
+}
+
+.option {
+  z-index: 1;
+  gap: 10px;
   display: flex;
-  padding: 32px;
+  font-size: 19px;
+  min-height: 46px;
+  line-height: 1;
+  position: relative;
+  align-items: center;
+  white-space: nowrap;
+  justify-content: center;
+  color: var(--text-muted);
+  padding: var(--serif-nudge) 24px 0;
+  font-family: var(--font-heading);
+  border-radius: var(--radius-pill);
+  transition: color 0.4s ease;
+}
+
+.option:hover {
+  color: var(--text-primary);
+}
+
+.optionActive,
+.optionActive:hover {
+  color: var(--button-text);
+}
+
+.option:focus-visible {
+  outline: 1px solid var(--primary);
+  outline-offset: 3px;
+}
+
+/* Small chart and speech-bubble icons, nudged to match the serif */
+.optionIcon {
+  flex: 0 0 auto;
+  margin-top: calc(var(--serif-nudge) * -1);
+}
+
+@keyframes sheen {
+  0%,
+  35% {
+    background-position: 130% 0;
+  }
+  75%,
+  100% {
+    background-position: -30% 0;
+  }
+}
+
+/* Report panel. Padding lives on the layers so the wipe and the scan line
+   share the same box. */
+.panel {
+  overflow: hidden;
   min-height: 340px;
-  flex-direction: column;
+  position: relative;
   background: var(--surface);
   border-radius: var(--radius-large);
   border: 1px solid var(--border-faint);
+}
+
+.layer {
+  padding: 32px;
+}
+
+/* The old view sits on top and is wiped away behind the scan line */
+.layerOut {
+  inset: 0;
+  z-index: 1;
+  position: absolute;
+  background: var(--surface);
+  animation: wipeOut 0.9s cubic-bezier(0.65, 0, 0.35, 1) both;
+}
+
+.backward .layerOut {
+  animation-name: wipeOutBack;
+}
+
+.scan {
+  inset: 0;
+  z-index: 2;
+  position: absolute;
+  pointer-events: none;
+  animation: scan 0.9s cubic-bezier(0.65, 0, 0.35, 1) both;
+}
+
+.backward .scan {
+  animation-name: scanBack;
+}
+
+/* A bright line with a soft blue trail on the side it has already passed */
+.scanLine {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 2px;
+  position: absolute;
+  background: var(--primary);
+  box-shadow: 0 0 14px 2px rgba(var(--primary-rgb), 0.9), 0 0 40px 6px rgba(var(--primary-rgb), 0.35);
+}
+
+.scanLine::before {
+  top: 0;
+  bottom: 0;
+  right: 2px;
+  width: 140px;
+  content: "";
+  position: absolute;
+  background: linear-gradient(to left, rgba(var(--primary-rgb), 0.22), transparent);
+}
+
+.backward .scanLine::before {
+  right: auto;
+  left: 2px;
+  background: linear-gradient(to right, rgba(var(--primary-rgb), 0.22), transparent);
+}
+
+@keyframes scan {
+  0% {
+    opacity: 0;
+    transform: translateX(0);
+  }
+  12%,
+  85% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+
+@keyframes scanBack {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  12%,
+  85% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(0);
+  }
+}
+
+@keyframes wipeOut {
+  from {
+    clip-path: inset(0 0 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 100%);
+  }
+}
+
+@keyframes wipeOutBack {
+  from {
+    clip-path: inset(0 0 0 0);
+  }
+  to {
+    clip-path: inset(0 100% 0 0);
+  }
+}
+
+/* After a switch the new view builds itself: bars grow, rows and cards rise in */
+.enter .bar {
+  transform-origin: bottom;
+  animation: barGrow 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: calc(0.25s + var(--i) * 0.07s);
+}
+
+.enter .metric,
+.enter .ownerCard {
+  animation: riseIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: calc(0.3s + var(--i) * 0.06s);
+}
+
+.enter .nextTitle,
+.enter .nextMonth {
+  animation: riseIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.55s both;
+}
+
+@keyframes barGrow {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes riseIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Owner view */
+.owner {
+  gap: 22px;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Analyst view */
@@ -150,7 +342,6 @@
   color: var(--text-primary);
 }
 
-/* Owner view */
 .ownerGrid {
   gap: 16px;
   display: grid;
@@ -195,7 +386,32 @@
 }
 
 .nextMonth {
+  gap: 14px;
+  display: flex;
   font-size: 17px;
   line-height: 1.7;
+  flex-direction: column;
   color: var(--text-secondary);
+}
+
+/* The numbers that come straight from the report */
+.nextMonth strong {
+  font-weight: 500;
+  color: var(--primary);
+}
+
+/* Phones: drop the icons so both labels fit side by side */
+@media (max-width: 480px) {
+  .option {
+    font-size: 17px;
+    padding: var(--serif-nudge) 16px 0;
+  }
+
+  .optionIcon {
+    display: none;
+  }
+
+  .layer {
+    padding: 24px 20px;
+  }
 }
