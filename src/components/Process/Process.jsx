@@ -37,7 +37,7 @@ function Process() {
         <div className={styles.panelMain}>
           <h3 className={styles.panelTitle}>{active.title}</h3>
           <p className={styles.panelBody}>{active.body}</p>
-          <h4 className={styles.panelTitle}>What You Get:</h4>
+          <h4 className={styles.outcomeTitle}>What You Get</h4>
           <p className={styles.panelBody}>{active.outcome}</p>
           {active.stat && (
             <div className={styles.stat}>

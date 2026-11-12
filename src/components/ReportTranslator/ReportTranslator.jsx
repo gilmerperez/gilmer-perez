@@ -70,7 +70,7 @@ function OwnerView() {
           </div>
         ))}
       </div>
-      <h3 className={styles.nextTitle}>What I would say:</h3>
+      <h3 className={styles.nextTitle}>What I would say</h3>
       <p className={styles.nextMonth}>
         Two keywords brought in almost all 63 of your leads
         this month. A third one used about a fifth of the budget and did not bring in a single call. Next month I am

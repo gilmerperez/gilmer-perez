@@ -66,10 +66,12 @@
 }
 
 /* Analyst view */
+/* The chart column stretches to the height of the metric list beside it */
 .analyst {
   gap: 32px;
   display: flex;
   flex-wrap: wrap;
+  align-items: stretch;
 }
 
 .chart {
@@ -86,9 +88,11 @@
   color: var(--text-muted);
 }
 
+/* Bars grow to fill the column, so the chart sits on the bottom of the panel */
 .bars {
   gap: 12px;
-  height: 180px;
+  flex: 1 1 auto;
+  min-height: 180px;
   display: flex;
   align-items: flex-end;
   border-bottom: 1px solid var(--border-muted);

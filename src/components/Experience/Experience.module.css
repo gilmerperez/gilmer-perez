@@ -47,14 +47,25 @@
   border: 1px solid var(--primary);
 }
 
-/* The current role gets a solid, softly pulsing dot */
+/* The current role gets a solid dot that blinks and glows like the section label dots */
 .dotPulse {
   top: 3px;
   left: -6px;
   width: 11px;
   height: 11px;
   background: var(--primary);
-  animation: var(--pulse-soft) 3s var(--pulse-timing);
+  box-shadow: 0 0 10px rgba(var(--primary-rgb), 0.75);
+  animation: blink 1.8s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.25;
+  }
 }
 
 .when {

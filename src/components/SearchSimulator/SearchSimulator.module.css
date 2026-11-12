@@ -514,15 +514,19 @@
   flex-wrap: wrap;
 }
 
-/* Same accent tint and soft pulsing glow as the active tab */
+/* Tool pills: blue outline, white glow on hover like the stage buttons */
 .chip {
   font-size: 14px;
   padding: 6px 14px;
-  color: var(--text-primary);
+  color: var(--text-secondary);
   border-radius: var(--radius-pill);
   border: 1px solid var(--primary);
-  background: rgba(var(--primary-rgb), 0.1);
-  animation: var(--pulse-soft) 4s var(--pulse-timing);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+}
+
+.chip:hover {
+  color: var(--text-primary);
+  box-shadow: var(--glow-neutral);
 }
 
 .stat {

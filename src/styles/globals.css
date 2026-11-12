@@ -52,10 +52,10 @@ html[data-theme="dark"] {
   /* Buttons. A slightly deeper blue than --primary so white text passes contrast. */
   --button-bg: #2a6de0;
   --button-text: #ffffff;
-  --button-glow: 0 0 22px rgba(77, 148, 255, 0.45);
-  /* The one button in the footer */
-  --footer-button-bg: #2a6de0;
-  --footer-button-text: #ffffff;
+  /* Hover glow for every button: white */
+  --button-glow: 0 0 22px rgba(255, 255, 255, 0.28);
+  /* Outline color of the footer's secondary button */
+  --footer-button-border: #4d94ff;
 
   /* Glows: soft and rare. Accent glow on accent things, white glow on neutral things */
   --glow-text: 0 0 14px rgba(var(--primary-rgb), 0.38);
@@ -108,10 +108,10 @@ html[data-theme="light"] {
 
   --button-bg: #1f3fbf;
   --button-text: #ffffff;
-  --button-glow: 0 0 22px rgba(31, 63, 191, 0.35);
-  /* The footer is cobalt in light mode, so its button flips to bone white */
-  --footer-button-bg: #f4f1ea;
-  --footer-button-text: #1f3fbf;
+  /* A white glow vanishes on bone white, so light mode uses a soft ink glow */
+  --button-glow: 0 0 22px rgba(20, 22, 38, 0.22);
+  /* The footer is cobalt in light mode, so its outline is bone white */
+  --footer-button-border: #f4f1ea;
 
   /* On cream a white glow disappears, so neutral things glow cobalt instead */
   --glow-text: 0 0 12px rgba(var(--primary-rgb), 0.2);
@@ -331,7 +331,7 @@ html {
   min-height: 52px;
   font-size: 20px;
   padding: 0 28px;
-  font-weight: 500;
+  font-weight: 450;
   line-height: 1;
   text-align: center;
   align-items: center;
@@ -368,7 +368,7 @@ html {
 }
 
 .btn-secondary:hover {
-  box-shadow: var(--glow-accent);
+  box-shadow: var(--button-glow);
 }
 
 .btn-small {

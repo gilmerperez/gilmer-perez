@@ -65,23 +65,24 @@
   mask: url("/dither/cta-stars-b.png") center top / auto 680px no-repeat;
 }
 
+/* Kept faint so the stars stay in the background */
 @keyframes twinkleA {
   0%,
   100% {
-    opacity: 0.75;
+    opacity: 0.45;
   }
   50% {
-    opacity: 0.15;
+    opacity: 0.1;
   }
 }
 
 @keyframes twinkleB {
   0%,
   100% {
-    opacity: 0.15;
+    opacity: 0.1;
   }
   50% {
-    opacity: 0.75;
+    opacity: 0.45;
   }
 }
 

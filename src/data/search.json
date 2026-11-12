@@ -2,7 +2,7 @@
   {
     "key": "organic",
     "label": "Organic",
-    "title": "Organic results",
+    "title": "Organic Results",
     "body": "The free listings. Getting here takes a technically sound site, pages written around what people search for, and schema markup so the result shows more than a blue link.",
     "tools": ["On-Page SEO", "Technical SEO", "Meta Tags", "Schema Markup", "Core Web Vitals"],
     "stat": null
@@ -18,7 +18,7 @@
   {
     "key": "ai",
     "label": "AI Answer",
-    "title": "AI answers",
+    "title": "AI Answers",
     "body": "More people now get an answer written by AI before they see a single link. Answer Engine and Generative Engine Optimization is about being the business that answer names.",
     "tools": ["AEO", "GEO", "Structured Data", "Clear, Direct Content"],
     "stat": null
@@ -26,7 +26,7 @@
   {
     "key": "ad",
     "label": "Paid Ad",
-    "title": "Paid ads",
+    "title": "Paid Ads",
     "body": "The fastest way to the top of the page. I build the campaign, pick the keywords, write the ad, and send the click to a page built to turn it into a lead.",
     "tools": ["Google Ads", "Keyword Targeting", "Ad Copy", "Landing Pages", "Budget Pacing"],
     "stat": null
