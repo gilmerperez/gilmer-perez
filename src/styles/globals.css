@@ -1,6 +1,6 @@
 /* ==========================================================================
    Design tokens
-   Two themes: Graphite and Blue (dark, the default) and Cream and Cobalt
+   Two themes: Graphite and Blue (dark, the default) and White and Cobalt
    (light). The theme lives on <html data-theme="dark|light">, set before
    first paint by the script in layout.jsx and switched by ThemeToggle.
    Every color, font, glow, and radius value lives here.
@@ -69,19 +69,20 @@ html[data-theme="dark"] {
   color-scheme: dark;
 }
 
-/* Light theme: bone white with a cobalt accent */
+/* Light theme: white with bone white panels and a cobalt accent */
 html[data-theme="light"] {
-  --bg-color: #f4f1ea;
-  --bg-rgb: 244, 241, 234;
-  --surface: #ebe7de;
-  --surface-raised: #e2ddd2;
+  /* White page; the bone white is kept for panels and cards */
+  --bg-color: #ffffff;
+  --bg-rgb: 255, 255, 255;
+  --surface: #f4f1ea;
+  --surface-raised: #ebe7de;
 
   --text-primary: #141626;
   --text-secondary: #383b52;
   --text-muted: #5b5d70;
 
-  --border-faint: #d8d2c6;
-  --border-muted: #b1aa9c;
+  --border-faint: #e3ded3;
+  --border-muted: #c2bbad;
 
   --primary: #1f3fbf;
   --primary-rgb: 31, 63, 191;
@@ -108,12 +109,12 @@ html[data-theme="light"] {
 
   --button-bg: #1f3fbf;
   --button-text: #ffffff;
-  /* A white glow vanishes on bone white, so light mode uses a soft ink glow */
+  /* A white glow vanishes on the white page, so light mode uses a soft ink glow */
   --button-glow: 0 0 22px rgba(20, 22, 38, 0.22);
   /* The footer is cobalt in light mode, so its outline is bone white */
   --footer-button-border: #f4f1ea;
 
-  /* On cream a white glow disappears, so neutral things glow cobalt instead */
+  /* On white a white glow disappears, so neutral things glow cobalt instead */
   --glow-text: 0 0 12px rgba(var(--primary-rgb), 0.2);
   --glow-accent: 0 0 22px rgba(var(--primary-rgb), 0.28);
   --glow-neutral: 0 10px 30px -12px rgba(var(--primary-rgb), 0.3);

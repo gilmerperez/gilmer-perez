@@ -1,5 +1,5 @@
 // * Theme switching shared by the footer moon and the hero sun / black hole.
-// The dark theme is Graphite and Blue, the light theme is Bone and Cobalt. In
+// The dark theme is Graphite and Blue, the light theme is White and Cobalt. In
 // browsers with the View Transitions API the new theme spreads out from the
 // clicked control as a growing circle; elsewhere it switches instantly. The
 // choice is saved in localStorage and read back before first paint by the
