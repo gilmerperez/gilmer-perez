@@ -10,16 +10,13 @@
   pointer-events: none;
 }
 
-/* ---------- Light theme: sky with clouds, wind, and birds ---------- */
-/* A little wider than the page so it can drift from side to side. The drift
-   moves in whole pixels (steps) so the dots never blur. */
+/* ---------- Light theme: engraved sky with clouds and birds ---------- */
 .sky {
-  inset: 0 -30px;
+  inset: 0;
   position: absolute;
   background-color: var(--dither);
   -webkit-mask: var(--art) center / auto var(--h) no-repeat;
   mask: var(--art) center / auto var(--h) no-repeat;
-  animation: drift 44s steps(40) infinite alternate;
 }
 
 /* ---------- Dark theme: the stardust braid ---------- */
@@ -41,24 +38,12 @@
   display: block;
 }
 
-/* Two frames of the same braid with different dust; the second fades in and
-   out over the first so the dust shimmers */
 .stream {
   inset: 0;
   position: absolute;
   background-color: var(--dither);
-}
-
-.streamA {
   -webkit-mask: url("/dither/dv-braid-a.png") center / auto 120px no-repeat;
   mask: url("/dither/dv-braid-a.png") center / auto 120px no-repeat;
-}
-
-.streamB {
-  opacity: 0;
-  -webkit-mask: url("/dither/dv-braid-b.png") center / auto 120px no-repeat;
-  mask: url("/dither/dv-braid-b.png") center / auto 120px no-repeat;
-  animation: shimmer 6s ease-in-out infinite;
 }
 
 /* Small bright points that race out along the center line during the reveal */
@@ -127,24 +112,5 @@
   100% {
     opacity: 0;
     transform: translateX(52vw);
-  }
-}
-
-@keyframes drift {
-  from {
-    transform: translateX(-20px);
-  }
-  to {
-    transform: translateX(20px);
-  }
-}
-
-@keyframes shimmer {
-  0%,
-  100% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
   }
 }

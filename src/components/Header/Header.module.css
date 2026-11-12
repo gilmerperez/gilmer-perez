@@ -33,6 +33,7 @@
 
 /* Logo */
 .logo {
+  font-weight: 300;
   font-size: 24px;
   letter-spacing: -0.01em;
   font-family: var(--font-heading);
@@ -72,6 +73,12 @@
   background: var(--primary);
   box-shadow: 0 0 8px rgba(var(--primary-rgb), 0.8);
   transition: transform 0.5s var(--ease), width 0.5s var(--ease), opacity 0.3s ease;
+}
+
+/* Contact buttons use the same weight as the logo */
+.header .contactButton,
+.header .mobileContact {
+  font-weight: 300;
 }
 
 /* Hamburger button (mobile only) */

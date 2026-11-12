@@ -153,7 +153,7 @@ function Header() {
             </Link>
           ))}
           <span ref={indicatorRef} aria-hidden="true" className={styles.indicator}></span>
-          <Link href="/#contact" className="btn btn-primary btn-small">
+          <Link href="/#contact" className={`btn btn-primary btn-small ${styles.contactButton}`}>
             Contact
           </Link>
         </nav>
