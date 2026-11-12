@@ -142,28 +142,12 @@
   inset: 0;
   opacity: 0;
   position: absolute;
+  background-color: var(--dither);
   transform: scale(0.25) rotate(-12deg);
   transform-origin: 50% calc(100% - 250px);
+  -webkit-mask: url("/dither/hero-hole.png") center bottom / auto 500px no-repeat;
+  mask: url("/dither/hero-hole.png") center bottom / auto 500px no-repeat;
   transition: transform 0.45s ease-in, opacity 0.35s ease-in, filter 0.4s ease;
-}
-
-.holeFrame {
-  inset: 0;
-  position: absolute;
-  background-color: var(--dither);
-}
-
-.holeA {
-  -webkit-mask: url("/dither/hero-hole-a.png") center bottom / auto 500px no-repeat;
-  mask: url("/dither/hero-hole-a.png") center bottom / auto 500px no-repeat;
-}
-
-/* The second frame fades in and out over the first so the disk shimmers */
-.holeB {
-  opacity: 0;
-  -webkit-mask: url("/dither/hero-hole-b.png") center bottom / auto 500px no-repeat;
-  mask: url("/dither/hero-hole-b.png") center bottom / auto 500px no-repeat;
-  animation: holeShimmer 5s ease-in-out infinite;
 }
 
 /* Dark theme: the sun shrinks to a point and the black hole swirls open in its place */
@@ -232,16 +216,6 @@
   background-color: var(--dither);
   -webkit-mask: url("/dither/hero-hills.png") center bottom / auto 500px no-repeat;
   mask: url("/dither/hero-hills.png") center bottom / auto 500px no-repeat;
-}
-
-@keyframes holeShimmer {
-  0%,
-  100% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
 }
 
 @keyframes sunRise {

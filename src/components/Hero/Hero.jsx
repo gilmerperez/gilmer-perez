@@ -53,19 +53,17 @@ function Hero() {
         </p>
       </div>
 
-      {/* Dithered sky. In the light theme it is the sun rising over rolling hills; in the
-          dark theme the sun has collapsed into a black hole in open space (the hills fade). Layers, back to front: the sun
-          (slowly rises and sinks), the black hole (two frames that shimmer), a solid copy
-          of the hills in the page color that hides whatever is behind them, the dotted
-          hills, and the button that switches the theme. */}
+      {/* Dithered sky. In the light theme it is the sun rising over rolling hills. In the
+          dark theme the sun has collapsed into a black hole in open space, with planets on
+          dotted orbits, galaxies, and constellations (the hills fade away). Layers, back to
+          front: the sun (slowly rises and sinks), the black hole scene, a solid copy of the
+          hills in the page color that hides whatever is behind them, the dotted hills, and
+          the button that switches the theme. */}
       <div className={styles.scene}>
         <div aria-hidden="true" className={styles.sun}>
           <div className={styles.sunDisc}></div>
         </div>
-        <div aria-hidden="true" className={styles.hole}>
-          <div className={`${styles.holeFrame} ${styles.holeA}`}></div>
-          <div className={`${styles.holeFrame} ${styles.holeB}`}></div>
-        </div>
+        <div aria-hidden="true" className={styles.hole}></div>
         <div aria-hidden="true" className={styles.hillsSolid}></div>
         <div aria-hidden="true" className={styles.hills}></div>
         <HeroOrb />
