@@ -5,7 +5,6 @@
     "title": "The Website",
     "body": "Custom-coded sites in Next.js and React, or builds on WordPress, Squarespace, and Wix. Fast, accessible, mobile-friendly, and structured so search engines can read it from day one.",
     "outcome": "A site that looks right on every screen and is ready to be found.",
-    "stat": { "num": "50+", "label": "Client Websites Managed" },
     "tools": ["Next.js", "React", "TypeScript", "JavaScript", "HTML5", "CSS", "Responsive Design", "Accessibility (WCAG)", "UI/UX Design"]
   },
   {
@@ -14,7 +13,6 @@
     "title": "Search Visibility",
     "body": "Technical, on-page, off-page, and local SEO. Schema markup, Google Business Profile, citations, and content built to show up in Google, the Map Pack, and AI answers.",
     "outcome": "Your business showing up where your customers are already searching.",
-    "stat": null,
     "tools": ["Technical SEO", "Schema Markup (JSON-LD)", "Local SEO", "Google Business Profile", "Keyword Research", "Core Web Vitals", "AEO & GEO"]
   },
   {
@@ -23,7 +21,6 @@
     "title": "Analytics",
     "body": "GA4, Search Console, and Tag Manager set up properly, so every call, form, and sale is counted and tied back to where it came from. Connected to your CRM when you have one.",
     "outcome": "Knowing what is working instead of guessing.",
-    "stat": null,
     "tools": ["Google Analytics (GA4)", "Google Search Console", "Google Tag Manager", "CRM Integration", "Lighthouse"]
   },
   {
@@ -32,7 +29,6 @@
     "title": "Paid Media",
     "body": "Campaign setup, audience targeting, budget pacing, and ongoing optimization on Google Ads and Meta Ads, plus Walmart Ads, Spotify Ads, and other platforms when the business needs them.",
     "outcome": "Qualified traffic and a lower cost per click.",
-    "stat": { "num": "$500,000", "label": "in Ad Spend Managed for Clients" },
     "tools": ["Google Ads", "Search", "Display", "YouTube", "Meta Ads", "Walmart Ads", "Spotify Ads"]
   },
   {
@@ -41,7 +37,6 @@
     "title": "Reporting",
     "body": "Monthly reports and regular calls that turn GA4 and Search Console data into plain recommendations a business owner can act on.",
     "outcome": "You always know what is being done and why.",
-    "stat": null,
     "tools": ["Monthly Performance Reports", "KPI Tracking", "Client Calls", "Clear Recommendations"]
   },
   {
@@ -50,7 +45,6 @@
     "title": "Hosting and Infrastructure",
     "body": "Domains, DNS, SSL, hosting, deployments, email delivery, and ongoing maintenance. The technical headache, handled.",
     "outcome": "A site that stays online, secure, and up to date without you thinking about it.",
-    "stat": null,
     "tools": ["Domain Registration", "DNS", "SSL/TLS", "Vercel", "Netlify", "Render", "CI/CD", "Git/GitHub"]
   }
 ]

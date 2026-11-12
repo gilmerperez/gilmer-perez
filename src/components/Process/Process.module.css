@@ -89,26 +89,6 @@
   color: var(--text-secondary);
 }
 
-.stat {
-  gap: 0 12px;
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 8px;
-  padding-top: 18px;
-  align-items: center;
-  border-top: 1px solid var(--border-faint);
-}
-
-/* The number and its label read as one line, in one style */
-.statNum,
-.statLabel {
-  font-size: 40px;
-  line-height: 1.15;
-  color: var(--primary);
-  text-shadow: var(--glow-text);
-  font-family: var(--font-heading);
-}
-
 .panelTools {
   gap: 12px;
   min-width: 0;

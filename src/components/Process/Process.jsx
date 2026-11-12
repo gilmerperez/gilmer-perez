@@ -39,12 +39,6 @@ function Process() {
           <p className={styles.panelBody}>{active.body}</p>
           <h4 className={styles.outcomeTitle}>What You Get</h4>
           <p className={styles.panelBody}>{active.outcome}</p>
-          {active.stat && (
-            <div className={styles.stat}>
-              <span className={styles.statNum}>{active.stat.num}</span>
-              <span className={styles.statLabel}>{active.stat.label}</span>
-            </div>
-          )}
         </div>
 
         <div className={styles.panelTools}>
