@@ -145,6 +145,43 @@
   position: absolute;
 }
 
+/* In the dark theme the whole black hole scene drifts up and down like the sun does,
+   so the orbits, planets and stars float together */
+.holeDrift {
+  inset: 0;
+  position: absolute;
+}
+
+:global(html[data-theme="dark"]) .holeDrift {
+  animation: holeDrift 16s ease-in-out infinite;
+}
+
+/* The core glow: the same dots as the black hole, limited to the disk and ring around
+   it, drawn in near white. It fades in and out so the core seems to breathe. */
+.holeGlow {
+  inset: 0;
+  opacity: 0;
+  position: absolute;
+  pointer-events: none;
+  background-color: #ebffff;
+  -webkit-mask-image: url("/dither/hero-hole.png"),
+    radial-gradient(ellipse 400px 180px at 50% calc(100% - 250px), #000 45%, transparent 100%);
+  mask-image: url("/dither/hero-hole.png"),
+    radial-gradient(ellipse 400px 180px at 50% calc(100% - 250px), #000 45%, transparent 100%);
+  -webkit-mask-size: auto 500px, 100% 100%;
+  mask-size: auto 500px, 100% 100%;
+  -webkit-mask-position: center bottom, 0 0;
+  mask-position: center bottom, 0 0;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
+}
+
+:global(html[data-theme="dark"]) .holeGlow {
+  animation: holeGlow 8s ease-in-out infinite 1.5s;
+}
+
 .hole {
   inset: 0;
   opacity: 0;
@@ -228,6 +265,26 @@
   50% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes holeDrift {
+  0%,
+  100% {
+    transform: translateY(18px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes holeGlow {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.85;
   }
 }
 

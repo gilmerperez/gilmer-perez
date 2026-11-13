@@ -56,7 +56,7 @@ function Hero() {
       {/* Dithered sky. In the light theme it is the sun rising over rolling hills. In the
           dark theme the sun has collapsed into a black hole in open space, with planets on
           dotted orbits, galaxies, and constellations (the hills fade away). Layers, back to
-          front: the sun (slowly rises and sinks), the black hole scene, a solid copy of the
+          front: the sun (slowly rises and sinks), the black hole scene (it drifts the same way, while its core glows and fades), a solid copy of the
           hills in the page color that hides whatever is behind them, the dotted hills, and
           the button that switches the theme. */}
       <div className={styles.scene}>
@@ -64,7 +64,10 @@ function Hero() {
           <div className={styles.sunDisc}></div>
         </div>
         <div aria-hidden="true" className={styles.holeWrap}>
-          <div className={styles.hole}></div>
+          <div className={styles.holeDrift}>
+            <div className={styles.hole}></div>
+            <div className={styles.holeGlow}></div>
+          </div>
         </div>
         <div aria-hidden="true" className={styles.hillsSolid}></div>
         <div aria-hidden="true" className={styles.hills}></div>
