@@ -8,6 +8,10 @@ const STEPS = ["BUILD", "RANK", "TRACK", "ADVERTISE", "REPORT", "MAINTAIN"];
 function Hero() {
   return (
     <section id="top" className={styles.hero}>
+      {/* Dark theme only: faint planets, galaxies, constellations and nebula dust that
+          gather toward the sides and leave the middle open for the words, like the final CTA */}
+      <div aria-hidden="true" className={styles.sides}></div>
+
       {/* The wrapper shrinks to the heading's width. The paragraphs are given
           width: 0 so they add nothing to that measurement, then stretch with
           min-width: the intro to exactly the heading width, the body to the

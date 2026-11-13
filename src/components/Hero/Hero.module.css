@@ -1,9 +1,30 @@
 .hero {
   display: flex;
+  position: relative;
   text-align: center;
   align-items: center;
   flex-direction: column;
   padding: 84px var(--gutter) 0;
+}
+
+/* Backdrop behind the words (dark theme). It fades in with the black hole. */
+.sides {
+  top: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  height: 740px;
+  position: absolute;
+  pointer-events: none;
+  background-color: var(--dither);
+  -webkit-mask: url("/dither/hero-sides.png") center top / auto 740px no-repeat;
+  mask: url("/dither/hero-sides.png") center top / auto 740px no-repeat;
+  transition: opacity 0.35s ease-in;
+}
+
+:global(html[data-theme="dark"]) .sides {
+  opacity: 0.75;
+  transition: opacity 0.8s ease 0.5s;
 }
 
 /* Shrinks to the heading width (see Hero.jsx) */
