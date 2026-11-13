@@ -184,14 +184,19 @@
   position: absolute;
 }
 
-/* In the dark theme the whole black hole scene drifts up and down like the sun does,
-   so the orbits, planets and stars float together */
 .holeDrift {
   inset: 0;
   position: absolute;
 }
 
-:global(html[data-theme="dark"]) .holeDrift {
+/* In the dark theme the black hole, its orbits and planets drift up and down like the
+   sun does. The star field around them stays still. */
+.system {
+  inset: 0;
+  position: absolute;
+}
+
+:global(html[data-theme="dark"]) .system {
   animation: holeDrift 16s ease-in-out infinite;
 }
 

@@ -55,41 +55,44 @@ function HeroSpace() {
     <div className={styles.space}>
       <div className={styles.field}></div>
 
-      <svg className={styles.orbits} viewBox="0 0 2600 500" width="2600" height="500" focusable="false">
-        {ORBITS.map((orbit) => (
-          <path
-            key={orbit.a}
-            d={orbitPath(orbit.a)}
-            className={styles.orbit}
-            style={{ animationDuration: `${orbit.flow}s` }}
-          />
-        ))}
-      </svg>
+      {/* Only the black hole and its orbit system drift up and down; the field stays still */}
+      <div className={styles.system}>
+        <svg className={styles.orbits} viewBox="0 0 2600 500" width="2600" height="500" focusable="false">
+          {ORBITS.map((orbit) => (
+            <path
+              key={orbit.a}
+              d={orbitPath(orbit.a)}
+              className={styles.orbit}
+              style={{ animationDuration: `${orbit.flow}s` }}
+            />
+          ))}
+        </svg>
 
-      <div className={styles.core}>
-        <div className={styles.coreArt}></div>
-        <div className={styles.coreGlow}></div>
+        <div className={styles.core}>
+          <div className={styles.coreArt}></div>
+          <div className={styles.coreGlow}></div>
+        </div>
+
+        {PLANETS.map((planet) => {
+          const orbit = ORBITS[planet.orbit];
+          const start = (((planet.deg % 360) + 360) % 360) / 360;
+          return (
+            <div
+              key={planet.n}
+              className={styles.planet}
+              style={{
+                width: planet.w,
+                height: planet.h,
+                offsetPath: `path("${orbitPath(orbit.a)}")`,
+                "--start": `${(start * 100).toFixed(2)}%`,
+                "--lap": `${orbit.lap}s`,
+                "--back": `${planet.r * 2 + 3}px`,
+                "--art": `url("/dither/hero-planet-${planet.n}.png")`,
+              }}
+            ></div>
+          );
+        })}
       </div>
-
-      {PLANETS.map((planet) => {
-        const orbit = ORBITS[planet.orbit];
-        const start = (((planet.deg % 360) + 360) % 360) / 360;
-        return (
-          <div
-            key={planet.n}
-            className={styles.planet}
-            style={{
-              width: planet.w,
-              height: planet.h,
-              offsetPath: `path("${orbitPath(orbit.a)}")`,
-              "--start": `${(start * 100).toFixed(2)}%`,
-              "--lap": `${orbit.lap}s`,
-              "--back": `${planet.r * 2 + 3}px`,
-              "--art": `url("/dither/hero-planet-${planet.n}.png")`,
-            }}
-          ></div>
-        );
-      })}
     </div>
   );
 }
