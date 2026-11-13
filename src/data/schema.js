@@ -13,7 +13,7 @@ export const personSchema = {
   description:
     "Digital Growth Specialist who builds and hosts websites, makes them rank in search, tracks what they do, runs paid ads, and reports on the results. One partner for the whole digital side of a business.",
   url: SITE_URL,
-  image: `${SITE_URL}/images/gilmer-perez-1.jpg`,
+  image: `${SITE_URL}/images/gilmer-perez-2.jpg`,
   knowsAbout: ["SEO", "Google Ads", "Meta Ads", "GA4", "Next.js", "Technical SEO", "Web Development"],
   sameAs: [GITHUB_URL, LINKEDIN_URL],
   alumniOf: {
@@ -50,7 +50,7 @@ export const serviceSchema = {
   "@id": `${SITE_URL}/#service`,
   name: "Gilmer Perez | Digital Growth Specialist",
   url: SITE_URL,
-  image: `${SITE_URL}/images/gilmer-perez-1.jpg`,
+  image: `${SITE_URL}/images/gilmer-perez-2.jpg`,
   description:
     "Website development, SEO, paid advertising, analytics, and reporting for businesses in Orlando and across Florida.",
   founder: { "@type": "Person", name: "Gilmer Perez", url: SITE_URL },
