@@ -1,5 +1,5 @@
 import styles from "./Experience.module.css";
-import PhotoSwitcher from "./PhotoSwitcher";
+import PhotoFrame from "./PhotoFrame";
 import SectionHeading from "../SectionHeading/SectionHeading";
 
 // * Formal, third-person copy that names no employers
@@ -47,7 +47,7 @@ function Experience() {
 
         {/* Photo switcher */}
         <div className={styles.photoColumn}>
-          <PhotoSwitcher />
+          <PhotoFrame />
         </div>
       </div>
     </section>

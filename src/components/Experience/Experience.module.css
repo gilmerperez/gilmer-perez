@@ -94,8 +94,8 @@
 }
 
 
-/* Photo frame. PhotoSwitcher sets the tilt inline on pointer move. */
-.photoButton {
+/* Photo frame. PhotoFrame sets the tilt inline on pointer move. */
+.photoFrame {
   z-index: 1;
   padding: 0;
   width: 100%;
@@ -112,34 +112,12 @@
   transition: transform 0.25s ease-out, box-shadow 0.3s ease;
 }
 
-.photoButton:hover {
+.photoFrame:hover {
   box-shadow: var(--shadow-panel), var(--glow-neutral);
 }
 
 .photo {
   object-fit: cover;
-  transition: opacity 0.6s ease;
-}
-
-.photoVisible {
-  opacity: 1;
-}
-
-.photoHidden {
-  opacity: 0;
-}
-
-.photoCaption {
-  right: 12px;
-  bottom: 12px;
-  z-index: 1;
-  color: #ececea;
-  font-size: 12px;
-  padding: 6px 12px;
-  position: absolute;
-  letter-spacing: 0.12em;
-  border-radius: var(--radius-pill);
-  background: rgba(15, 15, 14, 0.72);
 }
 
 /* Wide screens: the photo becomes a tall portrait beside the timeline and stays
@@ -157,7 +135,7 @@
     position: sticky;
   }
 
-  .photoButton {
+  .photoFrame {
     aspect-ratio: 4 / 5;
   }
 }
