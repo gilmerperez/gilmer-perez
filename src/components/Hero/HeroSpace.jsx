@@ -2,7 +2,8 @@ import styles from "./Hero.module.css";
 
 // * The dark theme's scene: open space around a black hole. Everything lives in one
 // 2600 x 500 box centered on the black hole (1300, 250), the same size as the art.
-// Layers, back to front: stars and galaxies (still), the dotted orbits (their dashes
+// Layers, back to front: stars, galaxies, nebula dust and a few planets (still, and
+// wider than the box so big screens fill to the edges), the dotted orbits (their dashes
 // flow), the black hole (slowly grows and shrinks while its core glows), and the
 // planets, which travel along their orbits.
 

@@ -210,7 +210,6 @@
   left: calc(50% - 1300px);
 }
 
-.field,
 .core,
 .coreArt,
 .coreGlow,
@@ -219,7 +218,13 @@
   position: absolute;
 }
 
+/* Wider than the box (3840px) so the sides of big screens fill up too */
 .field {
+  top: 0;
+  left: -620px;
+  width: 3840px;
+  height: 500px;
+  position: absolute;
   background-color: var(--dither);
   -webkit-mask: url("/dither/hero-space-field.png") 0 0 / 100% 100% no-repeat;
   mask: url("/dither/hero-space-field.png") 0 0 / 100% 100% no-repeat;
