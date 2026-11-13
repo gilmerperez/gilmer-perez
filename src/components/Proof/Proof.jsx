@@ -24,7 +24,7 @@ function Proof() {
 
   return (
     <section id="proof" className={styles.section} aria-labelledby="proof-title">
-      <SectionHeading eyebrow="07 / PROOF" title="This Site Does What I Sell" titleId="proof-title">
+      <SectionHeading eyebrow="05 / PROOF" title="This Site Does What I Sell" titleId="proof-title">
         The page you are reading is built the way I build for clients. These are its real Lighthouse scores and the
         structured data it sends to search engines.
       </SectionHeading>

@@ -16,7 +16,7 @@ const NAV_LINKS = [
 ];
 
 // * Which link is underlined while reading each part of the page. Search and
-// Reporting belong to Process, Proof belongs to Projects, and the Contact
+// Reporting and Proof belong to Process, and the Contact
 // section has no link of its own (the Contact button is the destination).
 const SECTION_TO_LINK = [
   { id: "top", link: 0 },

@@ -29,11 +29,11 @@ export default function Home() {
         <Divider variant={3} />
         <ReportTranslator />
         <Divider variant={4} />
-        <Experience />
-        <Divider variant={5} />
-        <Projects />
-        <Divider variant={6} />
         <Proof />
+        <Divider variant={5} />
+        <Experience />
+        <Divider variant={6} />
+        <Projects />
         <Contact />
       </main>
     </>

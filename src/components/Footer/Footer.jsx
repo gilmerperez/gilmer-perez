@@ -8,9 +8,9 @@ const SECTION_LINKS = [
   { href: "/#how", label: "Process" },
   { href: "/#search", label: "Search" },
   { href: "/#reporting", label: "Reporting" },
+  { href: "/#proof", label: "Proof" },
   { href: "/#experience", label: "Experience" },
   { href: "/#projects", label: "Projects" },
-  { href: "/#proof", label: "Proof" },
 ];
 
 function Footer() {
