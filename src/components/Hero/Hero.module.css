@@ -156,42 +156,157 @@
   animation: holeDrift 16s ease-in-out infinite;
 }
 
-/* The core glow: the same dots as the black hole, limited to the disk and ring around
-   it, drawn in near white. It fades in and out so the core seems to breathe. */
-.holeGlow {
+.hole {
   inset: 0;
   opacity: 0;
   position: absolute;
-  pointer-events: none;
+  transform: scale(0.25) rotate(-12deg);
+  transform-origin: 50% calc(100% - 250px);
+  transition: transform 0.45s ease-in, opacity 0.35s ease-in;
+}
+
+/* The dark scene's box: the art's own size, centered on the black hole */
+.space {
+  bottom: 0;
+  width: 2600px;
+  height: 500px;
+  position: absolute;
+  left: calc(50% - 1300px);
+}
+
+.field,
+.core,
+.coreArt,
+.coreGlow,
+.orbits {
+  inset: 0;
+  position: absolute;
+}
+
+.field {
+  background-color: var(--dither);
+  -webkit-mask: url("/dither/hero-space-field.png") 0 0 / 100% 100% no-repeat;
+  mask: url("/dither/hero-space-field.png") 0 0 / 100% 100% no-repeat;
+}
+
+/* Dotted orbits. The dashes creep along in the same direction the planets travel. */
+.orbit {
+  fill: none;
+  opacity: 0.7;
+  stroke-width: 1.1;
+  stroke: var(--dither);
+  stroke-dasharray: 3 5;
+}
+
+:global(html[data-theme="dark"]) .orbit {
+  animation: orbitFlow 12s linear infinite;
+}
+
+/* The black hole grows and shrinks a little, and its core brightens as it grows */
+.core {
+  transform-origin: 1300px 250px;
+}
+
+:global(html[data-theme="dark"]) .core {
+  animation: coreBreathe 9s ease-in-out infinite;
+}
+
+.coreArt {
+  background-color: var(--dither);
+  -webkit-mask: url("/dither/hero-space-core.png") 0 0 / 100% 100% no-repeat;
+  mask: url("/dither/hero-space-core.png") 0 0 / 100% 100% no-repeat;
+}
+
+/* The same dots, limited to the disk and ring, in near white */
+.coreGlow {
+  opacity: 0;
   background-color: #ebffff;
-  -webkit-mask-image: url("/dither/hero-hole.png"),
-    radial-gradient(ellipse 400px 180px at 50% calc(100% - 250px), #000 45%, transparent 100%);
-  mask-image: url("/dither/hero-hole.png"),
-    radial-gradient(ellipse 400px 180px at 50% calc(100% - 250px), #000 45%, transparent 100%);
-  -webkit-mask-size: auto 500px, 100% 100%;
-  mask-size: auto 500px, 100% 100%;
-  -webkit-mask-position: center bottom, 0 0;
-  mask-position: center bottom, 0 0;
+  -webkit-mask-image: url("/dither/hero-space-core.png"),
+    radial-gradient(ellipse 400px 180px at 1300px 250px, #000 45%, transparent 100%);
+  mask-image: url("/dither/hero-space-core.png"),
+    radial-gradient(ellipse 400px 180px at 1300px 250px, #000 45%, transparent 100%);
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
   -webkit-mask-composite: source-in;
   mask-composite: intersect;
 }
 
-:global(html[data-theme="dark"]) .holeGlow {
-  animation: holeGlow 8s ease-in-out infinite 1.5s;
+:global(html[data-theme="dark"]) .coreGlow {
+  animation: coreGlow 9s ease-in-out infinite;
 }
 
-.hole {
-  inset: 0;
-  opacity: 0;
+/* Each planet rides its orbit's path (set inline). A dark disk behind the dots hides
+   the orbit line where the planet sits on it. */
+.planet {
+  top: 0;
+  left: 0;
   position: absolute;
+  offset-rotate: 0deg;
+  offset-distance: var(--start);
+}
+
+:global(html[data-theme="dark"]) .planet {
+  animation: planetLap var(--lap) linear infinite;
+}
+
+.planet::before,
+.planet::after {
+  content: "";
+  position: absolute;
+}
+
+.planet::before {
+  top: 50%;
+  left: 50%;
+  width: var(--back);
+  height: var(--back);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--bg-color);
+}
+
+.planet::after {
+  inset: 0;
   background-color: var(--dither);
-  transform: scale(0.25) rotate(-12deg);
-  transform-origin: 50% calc(100% - 250px);
-  -webkit-mask: url("/dither/hero-hole.png") center bottom / auto 500px no-repeat;
-  mask: url("/dither/hero-hole.png") center bottom / auto 500px no-repeat;
-  transition: transform 0.45s ease-in, opacity 0.35s ease-in;
+  -webkit-mask: var(--art) 0 0 / 100% 100% no-repeat;
+  mask: var(--art) 0 0 / 100% 100% no-repeat;
+}
+
+@keyframes orbitFlow {
+  to {
+    stroke-dashoffset: -80;
+  }
+}
+
+@keyframes coreBreathe {
+  0%,
+  100% {
+    transform: scale(0.94);
+  }
+  50% {
+    transform: scale(1.06);
+  }
+}
+
+@keyframes coreGlow {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.85;
+  }
+}
+
+@keyframes planetLap {
+  from {
+    offset-distance: var(--start);
+  }
+  to {
+    offset-distance: calc(var(--start) + 100%);
+  }
 }
 
 /* Dark theme: the sun shrinks to a point and the black hole swirls open in its place */
@@ -275,16 +390,6 @@
   }
   50% {
     transform: translateY(-6px);
-  }
-}
-
-@keyframes holeGlow {
-  0%,
-  100% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 0.85;
   }
 }
 

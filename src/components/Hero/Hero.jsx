@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 import styles from "./Hero.module.css";
 import HeroOrb from "./HeroOrb";
+import HeroSpace from "./HeroSpace";
 
 const STEPS = ["BUILD", "RANK", "TRACK", "ADVERTISE", "REPORT", "MAINTAIN"];
 
@@ -56,7 +57,7 @@ function Hero() {
       {/* Dithered sky. In the light theme it is the sun rising over rolling hills. In the
           dark theme the sun has collapsed into a black hole in open space, with planets on
           dotted orbits, galaxies, and constellations (the hills fade away). Layers, back to
-          front: the sun (slowly rises and sinks), the black hole scene (it drifts the same way, while its core glows and fades), a solid copy of the
+          front: the sun (slowly rises and sinks), the black hole scene (it drifts the same way, its planets orbit and the black hole breathes), a solid copy of the
           hills in the page color that hides whatever is behind them, the dotted hills, and
           the button that switches the theme. */}
       <div className={styles.scene}>
@@ -65,8 +66,9 @@ function Hero() {
         </div>
         <div aria-hidden="true" className={styles.holeWrap}>
           <div className={styles.holeDrift}>
-            <div className={styles.hole}></div>
-            <div className={styles.holeGlow}></div>
+            <div className={styles.hole}>
+              <HeroSpace />
+            </div>
           </div>
         </div>
         <div aria-hidden="true" className={styles.hillsSolid}></div>
