@@ -7,7 +7,7 @@
   padding: 84px var(--gutter) 0;
 }
 
-/* Backdrop behind the words (dark theme). It fades in with the black hole. */
+/* Backdrop behind the words. Each theme's art fades in with its own scene. */
 .sides {
   top: 0;
   left: 0;
@@ -25,6 +25,21 @@
 :global(html[data-theme="dark"]) .sides {
   opacity: 0.75;
   transition: opacity 0.8s ease 0.5s;
+}
+
+.sidesDay {
+  -webkit-mask-image: url("/dither/hero-sides-day.png");
+  mask-image: url("/dither/hero-sides-day.png");
+}
+
+:global(html[data-theme="light"]) .sidesDay {
+  opacity: 0.8;
+  transition: opacity 0.8s ease 0.5s;
+}
+
+:global(html[data-theme="dark"]) .sidesDay {
+  opacity: 0;
+  transition: opacity 0.35s ease-in;
 }
 
 /* Shrinks to the heading width (see Hero.jsx) */
