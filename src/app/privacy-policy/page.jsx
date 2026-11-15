@@ -120,8 +120,10 @@ export default function PrivacyPolicy() {
               recognize repeat visits, and the data it collects is processed by Google. It is used only to understand and
               improve this site, and I do not sell it. The site also uses Vercel Web Analytics, which counts page views
               without cookies. Your light or dark theme choice is saved in your browser and never leaves your device. To
-              opt out of Google Analytics, you can use your browser's privacy settings or install Google's Analytics
-              opt-out browser add-on.
+              opt out of Google Analytics, you can use your browser&apos;s privacy settings or install Google&apos;s Analytics
+              opt-out browser add-on. I also use Google Search Console, which shows me how the site appears and performs
+              in Google Search, such as the searches that lead to it. It reports on search activity and does not place
+              anything on your device.
             </p>
           </section>
         </div>
