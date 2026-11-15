@@ -2,7 +2,7 @@ import { SITE_URL } from "../data/schema";
 
 // Update these only when the content of the page actually changes
 const HOME_UPDATED = "2026-11-12";
-const LEGAL_UPDATED = "2026-11-12";
+const LEGAL_UPDATED = "2026-11-15";
 
 export default function sitemap() {
   // The site is a single page plus the two legal pages

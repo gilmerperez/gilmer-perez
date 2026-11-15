@@ -114,11 +114,14 @@ export default function PrivacyPolicy() {
             {/* Cookies and analytics */}
             <p className={styles.policyHeading}>Cookies and Analytics</p>
             <p className={styles.policyText}>
-              This website does not use cookies or tracking pixels, and it does not track you across other websites. It uses
-              Vercel Web Analytics, a privacy-focused tool that counts page views and shows which pages are visited, along
-              with general details such as country, browser, and device type. It does not use cookies and does not
-              identify you personally. The only thing saved in your browser is your light or dark theme choice, which
-              never leaves your device.
+              This website uses Google Tag Manager to load Google Analytics 4, which measures how visitors use the site,
+              such as which pages are viewed, how long visits last, which buttons and links are clicked, and general
+              details like country, browser, and device type. Google Analytics may set cookies in your browser to
+              recognize repeat visits, and the data it collects is processed by Google. It is used only to understand and
+              improve this site, and I do not sell it. The site also uses Vercel Web Analytics, which counts page views
+              without cookies. Your light or dark theme choice is saved in your browser and never leaves your device. To
+              opt out of Google Analytics, you can use your browser's privacy settings or install Google's Analytics
+              opt-out browser add-on.
             </p>
           </section>
         </div>

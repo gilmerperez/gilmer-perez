@@ -121,15 +121,22 @@ export default function RootLayout({ children }) {
     <html lang="en" data-theme="dark" className={`${newsreader.variable} ${outfit.variable}`} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />
-        {/* Google Tag Manager, installed as provided */}
+        {/* Google Tag Manager. GA4 and any other tags are managed inside the container. */}
         <Script id="gtm-init" strategy="afterInteractive">
           {`window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());`}
+window.dataLayer.push({ "gtm.start": new Date().getTime(), event: "gtm.js" });`}
         </Script>
         <Script src="https://www.googletagmanager.com/gtm.js?id=GTM-THVKHVR4" strategy="afterInteractive" />
       </head>
       <body>
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-THVKHVR4"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          ></iframe>
+        </noscript>
         <Header />
         {children}
         <Footer />
