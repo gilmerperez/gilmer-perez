@@ -2,6 +2,7 @@ import "../styles/globals.css";
 import { SITE_URL } from "../data/schema";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
+import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
 import { Newsreader, Outfit } from "next/font/google";
 
@@ -120,6 +121,13 @@ export default function RootLayout({ children }) {
     <html lang="en" data-theme="dark" className={`${newsreader.variable} ${outfit.variable}`} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />
+        {/* Google Tag Manager, installed as provided */}
+        <Script id="gtm-init" strategy="afterInteractive">
+          {`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());`}
+        </Script>
+        <Script src="https://www.googletagmanager.com/gtm.js?id=GTM-THVKHVR4" strategy="afterInteractive" />
       </head>
       <body>
         <Header />
