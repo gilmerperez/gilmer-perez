@@ -1,37 +1,36 @@
 [
   {
     "id": 1,
-    "title": "Bubbalous Bodacious BBQ",
-    "kind": "RESTAURANT",
-    "summary": "Menu, party packs, catering, and ordering handoff for an Orlando BBQ restaurant.",
-    "logoBg": "#0b0b0b",
-    "description": "A custom website for an Orlando BBQ restaurant, rebuilt around what hungry customers look for first: the menu, party packs, catering, and a fast way to order. The menu is organized into 9 categories, there are 4 party packs and 10 catering menus, and ordering hands off to the restaurant's delivery and pickup partners. Reviews and a photo gallery show the food, and the whole site is available in English, Spanish and Portuguese.",
-    "deployedLink": "https://bubbalous-bodacious.vercel.app/",
-    "logo": "/projects/bubbalous-bodacious-bbq/logo.png",
+    "title": "Redline Collision Center",
+    "kind": "CONCEPT",
+    "summary": "Portfolio concept: one fast, organized site for a fictional three-shop collision repair group.",
+    "logoBg": "#0b0c0e",
+    "description": "A portfolio concept for a fictional collision repair group with three shops. It is built for a driver on a phone right after an accident, who needs to know three things fast: is this shop good, is it close, and how do I reach them. Each shop has its own page with hours, an open-now status, and an on-site map, and every service links back to all three locations. The business, shops, addresses and reviews are all made up, and the site is hidden from search engines.",
+    "deployedLink": "https://redline-collision-center.vercel.app/",
+    "logo": "/projects/redline-collision-center/logo.png",
     "keyFeatures": [
-      "Full Menu: 9 categories of dishes with descriptions, organized so customers can find what they want quickly.",
-      "Party Packs and Catering: 4 party packs plus 10 catering menus for events, with a service area covering 8 counties.",
-      "Order Online Handoff: Ordering sends customers to the restaurant's delivery and pickup partners, so there is no separate cart to maintain.",
-      "Reviews and Photo Gallery: 19 customer reviews and a 22-photo gallery that build trust before anyone walks in.",
-      "Three Languages: Every page is available in English, Spanish and Portuguese, with its own SEO metadata.",
-      "Self-Hosted Fonts: Archivo Expanded and Barlow load from the site's own domain for faster, more private page loads."
+      "Three Locations, One Source of Truth: Every shop name, address, phone number and set of hours lives in one typed content file, so the site can never disagree with itself.",
+      "Open-Now Status: Each shop shows whether it is open right now, computed in Eastern Time after the page loads to avoid hydration mismatches.",
+      "Call-First Mobile Layout: A sticky action bar and call panel keep Get Directions and one-tap calling within reach on a phone.",
+      "Estimate Request Form: A plain, validated form with clear errors and a normal success state. Nothing is sent anywhere, and the legal pages say so.",
+      "Training and Standards Page: Shows general technician training as text badges, with no claims of carmaker certification.",
+      "Structured Data and Hidden by Design: Location, service, FAQ and breadcrumb schema are built per page, while robots rules and headers keep the fictional business out of search results."
     ],
     "technologyStack": [
-      "Framework: Next.js 16 (App Router), React 19",
-      "Styling: CSS Modules with CSS custom properties",
-      "Data: JSON files for the menu, party packs, catering and reviews",
-      "Internationalization: English, Spanish and Portuguese routes with a language switcher",
-      "Fonts: Archivo Expanded and Barlow, self-hosted",
-      "Images: Next.js Image optimization",
-      "Analytics: Google Tag Manager",
-      "SEO: Next.js Metadata API with per-page titles and descriptions"
+      "Framework: Next.js 16 (App Router, Turbopack), React 19, React Compiler",
+      "Language: TypeScript in strict mode",
+      "Styling: Plain CSS with global design tokens and one CSS Module per component",
+      "Content: Typed content files for locations, services, FAQs and reviews",
+      "Fonts: Archivo Expanded and Inter, self-hosted with next/font/local",
+      "Icons: Lucide",
+      "SEO: Metadata builder and JSON-LD schema builders, noindex headers"
     ],
     "screenshots": [
-      "/projects/bubbalous-bodacious-bbq/screenshots/homePage.webp",
-      "/projects/bubbalous-bodacious-bbq/screenshots/menuPage.webp",
-      "/projects/bubbalous-bodacious-bbq/screenshots/orderOnlinePage.webp",
-      "/projects/bubbalous-bodacious-bbq/screenshots/partyPacksPage.webp",
-      "/projects/bubbalous-bodacious-bbq/screenshots/cateringPage.webp"
+      "/projects/redline-collision-center/screenshots/homePage.webp",
+      "/projects/redline-collision-center/screenshots/locationsPage.webp",
+      "/projects/redline-collision-center/screenshots/servicesPage.webp",
+      "/projects/redline-collision-center/screenshots/estimatePage.webp",
+      "/projects/redline-collision-center/screenshots/standardsPage.webp"
     ]
   },
   {
@@ -105,6 +104,41 @@
   },
   {
     "id": 4,
+    "title": "Bubbalous Bodacious BBQ",
+    "kind": "RESTAURANT",
+    "summary": "Menu, party packs, catering, and ordering handoff for an Orlando BBQ restaurant.",
+    "logoBg": "#0b0b0b",
+    "description": "A custom website for an Orlando BBQ restaurant, rebuilt around what hungry customers look for first: the menu, party packs, catering, and a fast way to order. The menu is organized into 9 categories, there are 4 party packs and 10 catering menus, and ordering hands off to the restaurant's delivery and pickup partners. Reviews and a photo gallery show the food, and the whole site is available in English, Spanish and Portuguese.",
+    "deployedLink": "https://bubbalous-bodacious.vercel.app/",
+    "logo": "/projects/bubbalous-bodacious-bbq/logo.png",
+    "keyFeatures": [
+      "Full Menu: 9 categories of dishes with descriptions, organized so customers can find what they want quickly.",
+      "Party Packs and Catering: 4 party packs plus 10 catering menus for events, with a service area covering 8 counties.",
+      "Order Online Handoff: Ordering sends customers to the restaurant's delivery and pickup partners, so there is no separate cart to maintain.",
+      "Reviews and Photo Gallery: 19 customer reviews and a 22-photo gallery that build trust before anyone walks in.",
+      "Three Languages: Every page is available in English, Spanish and Portuguese, with its own SEO metadata.",
+      "Self-Hosted Fonts: Archivo Expanded and Barlow load from the site's own domain for faster, more private page loads."
+    ],
+    "technologyStack": [
+      "Framework: Next.js 16 (App Router), React 19",
+      "Styling: CSS Modules with CSS custom properties",
+      "Data: JSON files for the menu, party packs, catering and reviews",
+      "Internationalization: English, Spanish and Portuguese routes with a language switcher",
+      "Fonts: Archivo Expanded and Barlow, self-hosted",
+      "Images: Next.js Image optimization",
+      "Analytics: Google Tag Manager",
+      "SEO: Next.js Metadata API with per-page titles and descriptions"
+    ],
+    "screenshots": [
+      "/projects/bubbalous-bodacious-bbq/screenshots/homePage.webp",
+      "/projects/bubbalous-bodacious-bbq/screenshots/menuPage.webp",
+      "/projects/bubbalous-bodacious-bbq/screenshots/orderOnlinePage.webp",
+      "/projects/bubbalous-bodacious-bbq/screenshots/partyPacksPage.webp",
+      "/projects/bubbalous-bodacious-bbq/screenshots/cateringPage.webp"
+    ]
+  },
+  {
+    "id": 5,
     "title": "Reelix",
     "kind": "WEB APP",
     "summary": "Movie and TV discovery app on live TMDB data, with search and filtering.",
@@ -137,40 +171,6 @@
       "/projects/reelix/screenshots/moviesPage.png",
       "/projects/reelix/screenshots/tvShowsPage.png",
       "/projects/reelix/screenshots/topIMDBPage.png"
-    ]
-  },
-  {
-    "id": 5,
-    "title": "Redline Collision Center",
-    "kind": "CONCEPT",
-    "summary": "Portfolio concept: one fast, organized site for a fictional three-shop collision repair group.",
-    "logoBg": "#0b0c0e",
-    "description": "A portfolio concept for a fictional collision repair group with three shops. It is built for a driver on a phone right after an accident, who needs to know three things fast: is this shop good, is it close, and how do I reach them. Each shop has its own page with hours, an open-now status, and an on-site map, and every service links back to all three locations. The business, shops, addresses and reviews are all made up, and the site is hidden from search engines.",
-    "deployedLink": "https://redline-collision-center.vercel.app/",
-    "logo": "/projects/redline-collision-center/logo.png",
-    "keyFeatures": [
-      "Three Locations, One Source of Truth: Every shop name, address, phone number and set of hours lives in one typed content file, so the site can never disagree with itself.",
-      "Open-Now Status: Each shop shows whether it is open right now, computed in Eastern Time after the page loads to avoid hydration mismatches.",
-      "Call-First Mobile Layout: A sticky action bar and call panel keep Get Directions and one-tap calling within reach on a phone.",
-      "Estimate Request Form: A plain, validated form with clear errors and a normal success state. Nothing is sent anywhere, and the legal pages say so.",
-      "Training and Standards Page: Shows general technician training as text badges, with no claims of carmaker certification.",
-      "Structured Data and Hidden by Design: Location, service, FAQ and breadcrumb schema are built per page, while robots rules and headers keep the fictional business out of search results."
-    ],
-    "technologyStack": [
-      "Framework: Next.js 16 (App Router, Turbopack), React 19, React Compiler",
-      "Language: TypeScript in strict mode",
-      "Styling: Plain CSS with global design tokens and one CSS Module per component",
-      "Content: Typed content files for locations, services, FAQs and reviews",
-      "Fonts: Archivo Expanded and Inter, self-hosted with next/font/local",
-      "Icons: Lucide",
-      "SEO: Metadata builder and JSON-LD schema builders, noindex headers"
-    ],
-    "screenshots": [
-      "/projects/redline-collision-center/screenshots/homePage.webp",
-      "/projects/redline-collision-center/screenshots/locationsPage.webp",
-      "/projects/redline-collision-center/screenshots/servicesPage.webp",
-      "/projects/redline-collision-center/screenshots/estimatePage.webp",
-      "/projects/redline-collision-center/screenshots/standardsPage.webp"
     ]
   }
 ]
