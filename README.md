@@ -1,78 +1,60 @@
 # Gilmer Perez Portfolio
 
-## Description
+Hi, I'm Gilmer. This is the code behind my portfolio, live at [gilmer-perez.vercel.app](https://gilmer-perez.vercel.app/).
 
-The portfolio site of Gilmer Perez, a Digital Growth Specialist. It shows how one person can cover the whole path from website to customer: build and host the site, make it rank in search, track what it does, run paid ads, and report on the results, on custom code or any major website builder. Custom-coded front-end work is still shown as the favorite part.
+I'm a Digital Growth Specialist. I started out building websites, then spent my time in SEO, paid ads, and reporting at a marketing agency. That showed me how much gets lost when a small business hires one person for the website, another for search, another for ads, and nobody explains the reports. So I like to handle the whole path myself: build and host the site, help it get found, track what it does, run the ads, and report on the results in a way an owner can actually use.
 
-- **Problem:** Most small businesses hire a developer, an SEO, an ads manager, and someone to explain the reports, and things get lost between them.
+Front-end development is still my favorite part, so I coded this site by hand instead of using a builder. I wanted it to prove the work by following the same practices I use for clients.
 
-- **Solution:** A single-page site that explains the process, lets visitors explore it (search results, reports, projects), and proves the work by running on the same practices it sells.
+## What's on the Site
 
-- **Methodology:** Next.js App Router with server components by default, client components only for the interactive pieces, CSS Modules with a small set of design tokens, and JSON files for content.
+It's one page split into sections, and the navigation jumps between them.
 
-**Live Demo:** [Link to Deployed Application](https://gilmer-perez.vercel.app/)
+- **The Process:** The six steps I take a business through (Build, Rank, Track, Advertise, Report, Maintain), each with what I do, the outcome, and the tools I use.
+- **Any Platform:** Custom code or a popular website builder. I work with whichever fits the business.
+- **Search:** A small results page you can click through (Organic, Map Pack, AI Answer, Paid Ad) showing what it takes to show up in each spot.
+- **Reporting:** A sample monthly report you can switch between the analyst view and a plain-language view for the owner.
+- **Proof:** Real Lighthouse scores for this site and the exact structured data it sends to search engines.
+- **Experience:** The roles I've held and what I handled in each one.
+- **Projects:** A carousel of sites I've built. It slides slowly on its own, the project in the middle grows and glows, and you can use the arrows, the dots, your keyboard, or a swipe. Opening one shows screenshots, features, and the tech behind it.
+- **Contact:** How to reach me.
 
-## Table of Contents
+There's also a dark theme and a light theme. You can switch between them with the moon in the footer, or by clicking the sun (or the black hole, in the dark theme) at the top of the page.
 
-- [Features](#features)
-- [Structure](#structure)
-- [Design Tokens](#design-tokens)
-- [Technology Stack](#technology-stack)
-- [Development](#development)
+## How I Built It
 
-## Features
+- **Next.js 16** (App Router) and **React 19**, in plain JavaScript
+- **CSS Modules** with custom CSS. I don't use Tailwind because I like being able to read my styles. Colors, fonts, and glows live as tokens in `src/styles/globals.css`, so a restyle starts in one file.
+- **Content in data files**, so updating a project or a section doesn't mean digging through components. Projects live in `src/data/projects.json`.
+- **Server components by default.** Only the interactive pieces (the carousel, the project popup, the search tabs, the report switch, the theme switch) run in the browser.
+- **SEO basics done right:** page metadata, canonical URLs, Open Graph tags, a sitemap, robots rules, and structured data (`Person`, `WebSite`, and the services I offer). Old URLs from the previous version redirect to the matching section.
+- **Accessibility:** one `h1`, real buttons and links, keyboard support everywhere, visible focus outlines, and every animation turned off for people who prefer reduced motion.
+- **Tracking:** Google Tag Manager with Google Analytics 4, plus Vercel Analytics.
+- **Fonts:** Newsreader for headings and Outfit for body text, loaded with `next/font`.
+- **Hosting:** Vercel, which deploys every push to `main`.
 
-- **Single-page layout with anchor sections:** Home, Process, Platforms, Search, Reporting, Experience, Projects, Proof, and Contact, plus separate Privacy Policy and Terms of Service pages. The old `/about`, `/contact`, `/projects`, and `/project-page/:id` URLs redirect permanently to the matching section.
-
-- **Interactive process:** Six stages (Build, Rank, Track, Advertise, Report, Maintain), each with its own details, outcome, and tools.
-
-- **Search simulator:** Four tabs (Organic, Map Pack, AI Answer, Paid Ad) show a generic results page and what it takes to appear in each place.
-
-- **Report translator:** An accessible switch flips a sample monthly report between the analyst view and the plain-language owner view.
-
-- **Project modal:** Native `<dialog>` with focus trapping, Escape and backdrop close, scroll lock, focus return, screenshots built from `projects.json`, and PREV and NEXT that wrap around.
-
-- **Proof section:** Real Lighthouse scores read from `src/data/lighthouse.json`, plus a code panel that prints the exact JSON-LD object the page sends to search engines.
-
-- **Dark only:** A single dark design with a slow blue glow. All animation is switched off under `prefers-reduced-motion`.
-
-- **SEO and accessibility:** Metadata, canonical URLs, Open Graph and Twitter tags, sitemap, robots, JSON-LD (`Person` and `WebSite`), one `h1`, descriptive alt text, keyboard support, and visible focus outlines.
-
-## Structure
+## Project Structure
 
 ```text
-src/app/page.jsx                 composes the sections and renders JSON-LD
-src/components/                  one folder per component, with a .module.css next to it
-src/data/projects.json           project content (cards and modal)
-src/data/process.json            the six process stages
-src/data/search.json             the four search tabs
-src/data/schema.js               Person and WebSite schema (shared by JSON-LD and the Proof panel)
-src/data/lighthouse.json         measured Lighthouse scores and the date they were measured
-src/data/contact.js              email, phone, location, and profile links
+src/app/              the page, layout, legal pages, sitemap, and robots
+src/components/       one folder per component, with its CSS Module next to it
+src/data/             projects, process steps, search tabs, Lighthouse scores, contact info, and schema
+src/styles/           global tokens, themes, and shared styles
+public/projects/      logos and screenshots for each project
 ```
 
-## Design Tokens
-
-Colors, fonts, and glow values live in `src/styles/globals.css` on `:root`, and the three keyframes (`glowPulse`, `textPulse`, `hazePulse`) sit next to them. Component modules use the tokens instead of hard-coded values, so restyling the site starts in that one file.
-
-## Technology Stack
-
-- **Next.js 16** (App Router) and **React 19**, plain JavaScript
-- **CSS Modules** with custom CSS (no CSS framework)
-- **next/font** for Kode Mono and Source Code Pro, **next/image** for photos, logos, and screenshots
-- **Vercel Analytics** and hosting on **Vercel**
-- Inline SVG for all icons and illustrations
-
-## Development
+## Running It Locally
 
 ```bash
 npm install
-npm run dev      # development server
-npm run lint     # ESLint
-npm run build    # production build
+npm run dev      # start the dev server at http://localhost:3000
+npm run lint     # check the code with ESLint
+npm run build    # make a production build
 npm start        # serve the production build
 ```
 
-To refresh the Proof section's scores, run Lighthouse against the production build (`npm run build && npm start`) and update `src/data/lighthouse.json` with the results and the date.
+To refresh the scores in the Proof section, I run Lighthouse against the production build (`npm run build && npm start`) and update `src/data/lighthouse.json` with the new numbers and the date.
 
----
+## Get in Touch
+
+If you have a project in mind or just want to talk, the contact section on [the site](https://gilmer-perez.vercel.app/#contact) is the best way to reach me. You can also find me on [LinkedIn](https://www.linkedin.com/in/gilmer-perez-a35ba0354/).
