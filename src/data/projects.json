@@ -141,36 +141,35 @@
     "id": 5,
     "title": "Reelix",
     "kind": "WEB APP",
-    "summary": "Movie and TV discovery app on live TMDB data, with search and filtering.",
-    "logoBg": "#060606",
-    "description": "Dive into the ultimate entertainment universe with Reelix! This cinematic discovery platform transforms how you explore movies and TV shows, featuring real-time data from the world's largest entertainment database. Navigate effortlessly through trending films, top-rated series, and personalized recommendations with lightning-fast performance. The sleek dark interface creates the perfect movie theater ambiance, while smart technology automatically adapts to your region and language preferences. Whether you're a casual viewer or film enthusiast, Reelix delivers an immersive entertainment experience that brings the magic of cinema to your fingertips.",
+    "summary": "A free movie and TV database with trailers, cast, ratings, and where to stream.",
+    "logoBg": "#070707",
+    "description": "A free movie and TV show database built on live data from The Movie Database (TMDB). Visitors can browse what's trending, popular, in theaters, coming soon and top rated, filter by genre, year and country, and open any title for its trailer, cast, ratings and the services it's streaming on in the US. I rebuilt it from the ground up with a new logo, a black and red look, a faster and safer data layer that keeps the API key on the server, and a full SEO pass.",
     "deployedLink": "https://reelix-2.vercel.app/",
-    "logo": "/projects/reelix/logo.png",
+    "logo": "/projects/reelix/wordmark.png",
     "keyFeatures": [
-      "Top IMDB Ratings: Dedicated page showcasing the highest-rated movies from TMDB, with detailed metadata and certification information.",
-      "Performance Optimized: Leverages Next.js Image component for optimized image loading, font optimization, and efficient code splitting.",
-      "SEO Optimized: Built with Next.js for optimal search engine optimization, including proper metadata, semantic HTML, and server-side rendering.",
-      "Responsive Design: Fully responsive layout optimized for desktops, tablets, smartphones, and smart TVs, ensuring a consistent experience across all devices.",
-      "Advanced Filtering System: Users can filter movies and TV shows by genre, year, and country with real-time URL parameter updates for shareable filtered views.",
-      "Comprehensive Search: Powerful search functionality that queries both movies and TV shows simultaneously, intelligently selecting the best match based on vote counts.",
-      "Detailed Media Pages: Each movie or TV show features a comprehensive detail page with poster, backdrop banner, trailer links, cast, crew, genres, ratings, and runtime information."
+      "Home Page Rows: A featured title that changes daily, a Top 10 Today row, and rows for trending, popular, in theaters, coming soon, top rated and favorite genres.",
+      "Browse and Filter: Movies and TV shows can be filtered by genre, year, country and sort order, with real page links instead of endless scrolling.",
+      "Genre Pages: 35 genre pages with clean addresses, like /movies/genre/horror.",
+      "Title Pages: Poster, backdrop, trailer in a popup, cast and crew, seasons for TV shows, recommendations, and where to watch in the US.",
+      "Search: One search covers movies and TV shows together, rendered on the server.",
+      "Built for Search Engines: Titles and descriptions for every page, structured data for movies, TV series, FAQs and breadcrumbs, a daily-refreshed sitemap, and redirects for old links."
     ],
     "technologyStack": [
-      "Frameworks/Libraries: Next.js 16 (App Router), React 19",
-      "Styling: CSS Modules for scoped, maintainable component styling",
-      "Font Optimization: Next.js Font Optimization (Bebas Neue, Montserrat)",
-      "Runtime: Node.js",
-      "Framework: Next.js (Server-Side Rendering, API Routes)",
-      "API Integration: The Movie Database (TMDB) API for real-time media data",
-      "Image Optimization: Next.js Image component for optimized image loading",
-      "Environment Variables: Next.js environment variable management",
-      "Deployment: Optimized for Vercel, Netlify, or similar Next.js-compatible platforms"
+      "Framework: Next.js 16 (App Router), React 19, React Compiler",
+      "Data: TMDB API, called only on the server and cached with Next.js revalidation",
+      "Streaming Info: JustWatch data through TMDB",
+      "Styling: CSS Modules with CSS custom properties",
+      "Fonts: Big Shoulders Display and Manrope, self-hosted with next/font/local",
+      "Brand: Custom SVG logo and icon set",
+      "Analytics: Google Tag Manager with GA4, and Vercel Web Analytics",
+      "Security: Server-only API key and security headers"
     ],
     "screenshots": [
-      "/projects/reelix/screenshots/homePage.png",
-      "/projects/reelix/screenshots/moviesPage.png",
-      "/projects/reelix/screenshots/tvShowsPage.png",
-      "/projects/reelix/screenshots/topIMDBPage.png"
+      "/projects/reelix/screenshots/homePage.webp",
+      "/projects/reelix/screenshots/topTenToday.webp",
+      "/projects/reelix/screenshots/moviesPage.webp",
+      "/projects/reelix/screenshots/moviePage.webp",
+      "/projects/reelix/screenshots/tvShowPage.webp"
     ]
   }
 ]
