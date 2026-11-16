@@ -1,13 +1,16 @@
 import Image from "next/image";
 import styles from "./Projects.module.css";
 
-// Cards sit in an auto-fit grid with a 260px minimum, so they are never wider than about 560px
-const LOGO_SIZES = "(max-width: 600px) calc(100vw - 48px), 300px";
+// Carousel cards are at most 320px wide (78vw on phones), scaled up to about 1.06x when centered
+const LOGO_SIZES = "(max-width: 600px) 80vw, 340px";
 
 // * Two buttons: Learn More opens the project modal, Visit opens the live site.
 // A click anywhere else on the card also opens the modal (keyboard users use the
 // Learn More button, so the card itself is not a tab stop).
-function ProjectCard({ project, onOpen, buttonRef }) {
+// Clones (the looping copies in the carousel) stay clickable but are left out of
+// the tab order, since screen readers and keyboards only see the real cards.
+function ProjectCard({ project, onOpen, buttonRef, isClone = false }) {
+  const tabIndex = isClone ? -1 : undefined;
   const handleCardClick = (event) => {
     // The buttons handle their own clicks
     if (event.target.closest("a, button")) return;
@@ -18,7 +21,7 @@ function ProjectCard({ project, onOpen, buttonRef }) {
     <article className={styles.card} onClick={handleCardClick}>
       {/* Logo tile. The logos have solid backgrounds, so the tile matches them. */}
       <span className={styles.logoTile} style={{ background: project.logoBg }}>
-        <Image src={project.logo} alt={`${project.title} logo`} fill sizes={LOGO_SIZES} className={styles.logo} />
+        <Image src={project.logo} alt={isClone ? "" : `${project.title} logo`} fill sizes={LOGO_SIZES} className={styles.logo} />
       </span>
       <div className={styles.cardBody}>
         <span className={styles.cardKind}>{project.kind}</span>
@@ -28,6 +31,7 @@ function ProjectCard({ project, onOpen, buttonRef }) {
           <button
             ref={buttonRef}
             type="button"
+            tabIndex={tabIndex}
             onClick={onOpen}
             aria-label={`Learn more about ${project.title}`}
             className="btn btn-primary btn-small"
@@ -38,6 +42,7 @@ function ProjectCard({ project, onOpen, buttonRef }) {
             href={project.deployedLink}
             target="_blank"
             rel="noopener noreferrer"
+            tabIndex={tabIndex}
             aria-label={`Visit the ${project.title} website (opens in a new tab)`}
             className="btn btn-secondary btn-small"
           >

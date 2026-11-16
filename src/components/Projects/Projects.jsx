@@ -1,6 +1,6 @@
 "use client";
 import { useRef, useState } from "react";
-import ProjectCard from "./ProjectCard";
+import ProjectCarousel from "./ProjectCarousel";
 import ProjectModal from "./ProjectModal";
 import styles from "./Projects.module.css";
 import projects from "../../data/projects.json";
@@ -26,21 +26,11 @@ function Projects() {
     <section id="projects" className={styles.section} aria-labelledby="projects-title">
       <SectionHeading eyebrow="07 / PROJECTS" title="Custom Code Is Still My Favorite Part" titleId="projects-title">
         Front-end development and UI/UX design is where I started and what I enjoy most. Every site below is custom
-        built, responsive, and structured for search. Click one to look inside.
+        built, responsive, and structured for search. Browse with the arrows or swipe, and open any project to look
+        inside.
       </SectionHeading>
 
-      <div className={styles.grid}>
-        {projects.map((project, i) => (
-          <ProjectCard
-            key={project.id}
-            project={project}
-            onOpen={() => openProject(i)}
-            buttonRef={(el) => {
-              cardRefs.current[i] = el;
-            }}
-          />
-        ))}
-      </div>
+      <ProjectCarousel projects={projects} onOpen={openProject} cardRefs={cardRefs} modalOpen={openIndex !== null} />
 
       <ProjectModal projects={projects} openIndex={openIndex} onClose={closeProject} onNavigate={setOpenIndex} />
     </section>

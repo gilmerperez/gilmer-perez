@@ -8,16 +8,79 @@
 }
 
 /* ==========================================================================
-   Cards
+   Carousel (see ProjectCarousel.jsx)
    ========================================================================== */
-.grid {
-  gap: 14px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+.carousel {
+  gap: 8px;
+  display: flex;
+  flex-direction: column;
+  --gap: 28px;
+  --card-w: min(320px, 72vw);
+}
+
+/* Phones: a tighter gap so the next and previous cards peek in from the sides */
+@media (max-width: 640px) {
+  .carousel {
+    --gap: 16px;
+  }
+}
+
+/* Clips sideways only. clip (not hidden) also stops the browser from scrolling
+   the track when a card takes focus. The edge fade (mask) clips to this box, so the
+   vertical padding leaves room for the centered card's scale and glow. */
+.viewport {
+  cursor: grab;
+  touch-action: pan-y;
+  overflow-x: clip;
+  overflow-y: visible;
+  padding: 56px 0 72px;
+  user-select: none;
+  margin: 0 calc(-1 * var(--gutter));
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 9%, #000 91%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 9%, #000 91%, transparent);
+}
+
+.viewport:active {
+  cursor: grabbing;
+}
+
+/* The track starts at the viewport center and is pulled left so that the first
+   card of the middle (real) copy is centered. JS then moves it with a transform. */
+.track {
+  gap: var(--gap);
+  display: flex;
+  width: max-content;
+  position: relative;
+  left: 50%;
+  will-change: transform;
+  margin-left: calc(-1 * (var(--count) * (var(--card-w) + var(--gap)) + var(--card-w) / 2));
+}
+
+/* --focus runs from 0 (a card away or more) to 1 (centered), set every frame */
+.slide {
+  display: flex;
+  flex: 0 0 auto;
+  position: relative;
+  width: var(--card-w);
+  border-radius: var(--radius-large);
+  scale: calc(0.88 + 0.18 * var(--focus));
+}
+
+/* Glow behind the centered card, in the theme's accent color */
+.slide::before {
+  inset: 0;
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  border-radius: inherit;
+  opacity: var(--focus);
+  box-shadow: 0 0 0 1px rgba(var(--primary-rgb), 0.55), 0 0 34px rgba(var(--primary-rgb), 0.38),
+    0 18px 60px -12px rgba(var(--primary-rgb), 0.45);
 }
 
 /* The card. A click anywhere on it opens the modal (see ProjectCard.jsx). */
 .card {
+  width: 100%;
   cursor: pointer;
   position: relative;
   padding: 0;
@@ -29,12 +92,10 @@
   color: var(--text-primary);
   border-radius: var(--radius-large);
   border: 1px solid var(--border-faint);
-  transition: transform 0.35s var(--ease), border-color 0.35s ease, box-shadow 0.35s ease;
+  transition: border-color 0.35s ease;
 }
 
 .card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--glow-neutral);
   border-color: var(--border-muted);
 }
 
@@ -50,6 +111,7 @@
 .logo {
   padding: 18px;
   object-fit: contain;
+  pointer-events: none;
 }
 
 .cardBody {
@@ -85,6 +147,84 @@
   margin-top: 6px;
 }
 
+/* Controls row: prev, dots, pause, next */
+.controls {
+  gap: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.controlButton {
+  width: 46px;
+  height: 46px;
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  border-radius: 50%;
+  justify-content: center;
+  color: var(--text-primary);
+  background: var(--surface);
+  border: 1px solid var(--border-muted);
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.controlButton:hover {
+  border-color: var(--primary);
+  box-shadow: var(--glow-neutral);
+}
+
+.dots {
+  display: flex;
+  padding: 0 6px;
+  align-items: center;
+}
+
+/* 28px tap target around a small mark */
+.dot {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dotMark {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--border-muted);
+  transition: width 0.35s var(--ease), background-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.dot:hover .dotMark {
+  background: var(--text-muted);
+}
+
+.dot[aria-current="true"] .dotMark {
+  width: 22px;
+  background: var(--primary);
+  box-shadow: var(--glow-accent);
+}
+
+.counter {
+  gap: 12px;
+  display: flex;
+  font-size: 14px;
+  align-items: baseline;
+  justify-content: center;
+  color: var(--text-muted);
+}
+
+.counterNum {
+  color: var(--primary);
+  letter-spacing: 0.12em;
+  font-family: var(--font-code);
+}
+
+.counterTitle {
+  color: var(--text-secondary);
+}
 
 /* ==========================================================================
    Modal (native <dialog>)
