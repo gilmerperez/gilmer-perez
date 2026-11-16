@@ -17,14 +17,15 @@
 .tab {
   display: inline-flex;
   min-height: 44px;
-  font-size: 18px;
-  padding: var(--serif-nudge) 20px 0;
+  font-size: 16px;
+  padding: 0 20px;
+  font-weight: 600;
   line-height: 1;
   text-align: center;
   align-items: center;
   justify-content: center;
   color: var(--text-secondary);
-  font-family: var(--font-heading);
+  font-family: var(--font-body);
   border-radius: var(--radius-pill);
   border: 1px solid var(--border-faint);
   transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;

@@ -1,6 +1,6 @@
 # Gilmer Perez Portfolio
 
-Hi, I'm Gilmer. This is the code behind my portfolio, live at [gilmer-perez.vercel.app](https://gilmer-perez.vercel.app/).
+Hi, I'm Gilmer. This is the code behind my portfolio, live at [gilmerperez.vercel.app](https://gilmerperez.vercel.app/).
 
 I'm a Digital Growth Specialist. I started out building websites, then spent my time in SEO, paid ads, and reporting at a marketing agency. That showed me how much gets lost when a small business hires one person for the website, another for search, another for ads, and nobody explains the reports. So I like to handle the whole path myself: build and host the site, help it get found, track what it does, run the ads, and report on the results in a way an owner can actually use.
 
@@ -57,4 +57,4 @@ To refresh the scores in the Proof section, I run Lighthouse against the product
 
 ## Get in Touch
 
-If you have a project in mind or just want to talk, the contact section on [the site](https://gilmer-perez.vercel.app/#contact) is the best way to reach me. You can also find me on [LinkedIn](https://www.linkedin.com/in/gilmer-perez-a35ba0354/).
+If you have a project in mind or just want to talk, the contact section on [the site](https://gilmerperez.vercel.app/#contact) is the best way to reach me. You can also find me on [LinkedIn](https://www.linkedin.com/in/gilmer-perez-a35ba0354/).

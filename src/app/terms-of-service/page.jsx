@@ -1,7 +1,7 @@
 import styles from "./page.module.css";
 import StructuredData from "../../components/StructuredData/StructuredData";
 
-const BASE_URL = "https://gilmer-perez.vercel.app";
+const BASE_URL = "https://gilmerperez.vercel.app";
 
 export const metadata = {
   title: "Terms of Service",

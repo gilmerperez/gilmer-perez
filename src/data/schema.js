@@ -1,6 +1,6 @@
 import { GITHUB_URL, LINKEDIN_URL } from "./contact";
 
-export const SITE_URL = "https://gilmer-perez.vercel.app";
+export const SITE_URL = "https://gilmerperez.vercel.app";
 
 // * Person schema
 // This exact object is injected as JSON-LD on the home page and printed in the

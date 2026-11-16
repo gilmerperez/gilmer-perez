@@ -75,12 +75,6 @@
   transition: transform 0.5s var(--ease), width 0.5s var(--ease), opacity 0.3s ease;
 }
 
-/* Contact buttons use the same weight as the logo */
-.header .contactButton,
-.header .mobileContact {
-  font-weight: 300;
-}
-
 /* Hamburger button (mobile only) */
 .burger {
   width: 48px;

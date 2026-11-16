@@ -55,7 +55,7 @@
   z-index: 1;
   gap: 10px;
   display: flex;
-  font-size: 19px;
+  font-size: 16px;
   min-height: 46px;
   line-height: 1;
   position: relative;
@@ -63,8 +63,9 @@
   white-space: nowrap;
   justify-content: center;
   color: var(--text-muted);
-  padding: var(--serif-nudge) 24px 0;
-  font-family: var(--font-heading);
+  padding: 0 24px;
+  font-weight: 600;
+  font-family: var(--font-body);
   border-radius: var(--radius-pill);
   transition: color 0.4s ease;
 }
@@ -83,10 +84,9 @@
   outline-offset: 3px;
 }
 
-/* Small chart and speech-bubble icons, nudged to match the serif */
+/* Small chart and speech-bubble icons */
 .optionIcon {
   flex: 0 0 auto;
-  margin-top: calc(var(--serif-nudge) * -1);
 }
 
 @keyframes sheen {
@@ -403,8 +403,8 @@
 /* Phones: drop the icons so both labels fit side by side */
 @media (max-width: 480px) {
   .option {
-    font-size: 17px;
-    padding: var(--serif-nudge) 16px 0;
+    font-size: 15px;
+    padding: 0 16px;
   }
 
   .optionIcon {

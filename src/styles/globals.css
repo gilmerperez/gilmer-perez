@@ -126,11 +126,6 @@ html[data-theme="light"] {
 }
 
 :root {
-  /* Newsreader sits a little high in its line box (its capitals center 0.1em above
-     the middle). Serif buttons and toggles add this much padding on top, which moves
-     the text down 0.07em so it looks centered. */
-  --serif-nudge: 0.14em;
-
   /* Fonts (the next/font variables are set on <html> in layout.jsx) */
   --font-heading: var(--font-newsreader), Georgia, "Times New Roman", serif;
   --font-body: var(--font-outfit), system-ui, sans-serif;
@@ -331,21 +326,21 @@ html {
    - a pair of buttons is always .btn-primary + .btn-secondary
    - a lone button is always .btn-primary
    Add .btn-small for compact spots (header, project cards).
+   Buttons use the body font at a heavier weight so they stand out.
    ========================================================================== */
 .btn {
   display: inline-flex;
   min-height: 52px;
-  font-size: 20px;
+  font-size: 18px;
   padding: 0 28px;
-  font-weight: 450;
+  font-weight: 600;
   line-height: 1;
   text-align: center;
   align-items: center;
   white-space: nowrap;
   justify-content: center;
-  font-family: var(--font-heading);
+  font-family: var(--font-body);
   border-radius: var(--radius-pill);
-  padding-top: var(--serif-nudge);
   transition: box-shadow 0.3s ease, transform 0.3s var(--ease), background-color 0.3s ease, border-color 0.3s ease,
     color 0.3s ease;
 }
@@ -381,7 +376,7 @@ html {
 .btn-small {
   min-height: 40px;
   font-size: 16px;
-  padding: var(--serif-nudge) 18px 0;
+  padding: 0 18px;
 }
 
 /* Hidden from sight, still read by screen readers */

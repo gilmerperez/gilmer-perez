@@ -40,7 +40,7 @@
     "summary": "Programs, class schedule, nutrition menu, coaches, and memberships for a CrossFit gym.",
     "logoBg": "#000000",
     "description": "A custom website for an Orlando CrossFit gym that answers a new member's questions in order: what do you offer, when are classes, who will coach me, and what does it cost. It covers programs, a weekly class schedule, a 31-item nutrition menu, 5 coach profiles, 7 membership options, and member reviews, all in English, Spanish and Portuguese, with a bold look that matches the gym's brand.",
-    "deployedLink": "https://kingdom-movement.vercel.app/",
+    "deployedLink": "https://kingdommovement.vercel.app/",
     "logo": "/projects/kingdom-movement/logo.jpg",
     "keyFeatures": [
       "Programs Page: Explains what the gym offers so a first-time visitor knows where they fit.",
@@ -109,7 +109,7 @@
     "summary": "Menu, party packs, catering, and ordering handoff for an Orlando BBQ restaurant.",
     "logoBg": "#0b0b0b",
     "description": "A custom website for an Orlando BBQ restaurant, rebuilt around what hungry customers look for first: the menu, party packs, catering, and a fast way to order. The menu is organized into 9 categories, there are 4 party packs and 10 catering menus, and ordering hands off to the restaurant's delivery and pickup partners. Reviews and a photo gallery show the food, and the whole site is available in English, Spanish and Portuguese.",
-    "deployedLink": "https://bubbalous-bodacious.vercel.app/",
+    "deployedLink": "https://bubbalous.vercel.app/",
     "logo": "/projects/bubbalous-bodacious-bbq/logo.png",
     "keyFeatures": [
       "Full Menu: 9 categories of dishes with descriptions, organized so customers can find what they want quickly.",
