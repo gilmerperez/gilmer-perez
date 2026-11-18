@@ -50,7 +50,7 @@ html[data-theme="dark"] {
   --scroll-thumb-hover: #4d94ff;
 
   /* Buttons. A slightly deeper blue than --primary so white text passes contrast. */
-  --button-bg: #2a6de0;
+  --button-bg: #1f5fd6;
   --button-text: #ffffff;
   /* Hover glow for every button: white */
   --button-glow: 0 0 22px rgba(255, 255, 255, 0.28);
@@ -333,7 +333,7 @@ html {
   min-height: 52px;
   font-size: 18px;
   padding: 0 28px;
-  font-weight: 600;
+  font-weight: 450;
   line-height: 1;
   text-align: center;
   align-items: center;
@@ -349,16 +349,48 @@ html {
   transform: translateY(-2px);
 }
 
-/* Blue with white text */
+/* Blue with white text, styled like the report switch thumb: a fine dot texture,
+   a soft blue glow and a slow sheen. isolation keeps the sheen (z-index -1) above
+   the blue but under the label, and the text shadow keeps the label crisp while
+   the sheen passes. */
 .btn-primary,
 .btn-primary:hover {
+  overflow: hidden;
+  position: relative;
+  isolation: isolate;
   color: var(--button-text);
-  background: var(--button-bg);
+  background-color: var(--button-bg);
   border: 1px solid var(--button-bg);
+  text-shadow: 0 1px 2px rgba(6, 16, 48, 0.45);
+  background-image: radial-gradient(rgba(255, 255, 255, 0.12) 0.8px, transparent 1.2px);
+  background-size: 4px 4px;
+  box-shadow: 0 0 18px rgba(var(--primary-rgb), 0.4);
+}
+
+.btn-primary::after {
+  inset: 0;
+  z-index: -1;
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  background: linear-gradient(105deg, transparent 35%, rgba(255, 255, 255, 0.2) 50%, transparent 65%);
+  background-size: 260% 100%;
+  animation: btn-sheen 4.5s ease-in-out infinite;
 }
 
 .btn-primary:hover {
-  box-shadow: var(--button-glow);
+  box-shadow: 0 0 18px rgba(var(--primary-rgb), 0.4), var(--button-glow);
+}
+
+@keyframes btn-sheen {
+  0%,
+  35% {
+    background-position: 130% 0;
+  }
+  75%,
+  100% {
+    background-position: -30% 0;
+  }
 }
 
 /* Dark pill with a blue outline */
