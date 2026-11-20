@@ -2,7 +2,6 @@ import "../styles/globals.css";
 import { SITE_URL } from "../data/schema";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
-import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
 import { Newsreader, Outfit } from "next/font/google";
 
@@ -26,6 +25,10 @@ const outfit = Outfit({
 // here rather than rendered by React so switching themes can change it freely;
 // src/lib/theme.js updates it on every switch.
 const THEME_SCRIPT = `(function(){var t="dark";try{t=localStorage.getItem("theme");if(t!=="light"&&t!=="dark"){t=window.matchMedia("(prefers-color-scheme: light)").matches?"light":"dark"}}catch(e){t="dark"}document.documentElement.setAttribute("data-theme",t);var i=document.createElement("link");i.id="theme-icon";i.rel="icon";i.type="image/svg+xml";i.setAttribute("sizes","any");i.href="/favicon-"+t+".svg";document.head.appendChild(i)})();`;
+
+// * Google Tag Manager's standard snippet, rendered into the server HTML <head>.
+const GTM_ID = "GTM-THVKHVR4";
+const GTM_SCRIPT = `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${GTM_ID}');`;
 
 const TITLE = "Gilmer Perez | Digital Growth Specialist";
 const DESCRIPTION =
@@ -120,18 +123,15 @@ export default function RootLayout({ children }) {
     // data-theme is set by THEME_SCRIPT before React hydrates, hence suppressHydrationWarning
     <html lang="en" data-theme="dark" className={`${newsreader.variable} ${outfit.variable}`} suppressHydrationWarning>
       <head>
+        {/* Google Tag Manager, as high in <head> as possible. GA4 and any other tags live inside
+            the container. Search Console also reads this snippet to verify the site. */}
+        <script dangerouslySetInnerHTML={{ __html: GTM_SCRIPT }} />
         <script dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />
-        {/* Google Tag Manager. GA4 and any other tags are managed inside the container. */}
-        <Script id="gtm-init" strategy="afterInteractive">
-          {`window.dataLayer = window.dataLayer || [];
-window.dataLayer.push({ "gtm.start": new Date().getTime(), event: "gtm.js" });`}
-        </Script>
-        <Script src="https://www.googletagmanager.com/gtm.js?id=GTM-THVKHVR4" strategy="afterInteractive" />
       </head>
       <body>
         <noscript>
           <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-THVKHVR4"
+            src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
             height="0"
             width="0"
             style={{ display: "none", visibility: "hidden" }}
